@@ -1,0 +1,72 @@
+{
+  "schema_version": "dce.symptom-evidence-inspection.v1",
+  "inspection_time_utc": "2026-10-07T20:40:34.368549+00:00",
+  "scope": "Retained metadata/source inspection; no raw scan, database query, projection replay or detector",
+  "assessment": "NOT SUPPORTED",
+  "assessment_scope": "Current evidence does not support a scientifically valid symptom-detection qualification execution",
+  "experiment_registered": false,
+  "experiment_executed": false,
+  "review_required": true,
+  "counts": {
+    "registry_entries": 7956,
+    "distinct_scenario_metric_name_pairs": 1808,
+    "registry_status_counts": {
+      "UNKNOWN": 7956
+    },
+    "registry_entries_by_scenario": {
+      "Bank": 3630,
+      "Market/cloudbed-1": 1170,
+      "Market/cloudbed-2": 1174,
+      "Telecom": 1982
+    },
+    "documented_qualified_registry_entries": 0,
+    "inherited_source_profiles": 162,
+    "profile_decision_counts": {
+      "QUALIFIED": 162
+    },
+    "profiles_by_modality": {
+      "log": 18,
+      "metric": 115,
+      "span": 29
+    },
+    "profile_scales_by_scenario": {
+      "Bank": {
+        "s": 33,
+        "ms": 7
+      },
+      "Market/cloudbed-1": {
+        "s": 14,
+        "ms": 2
+      },
+      "Market/cloudbed-2": {
+        "s": 14,
+        "ms": 2
+      },
+      "Telecom": {
+        "ms": 90
+      }
+    },
+    "inherited_source_rows": 523947689,
+    "all_profile_row_conservation": true,
+    "all_profile_crc_eof_flags": true,
+    "coverage_cases": 335,
+    "cases_by_scenario": {
+      "Bank": 136,
+      "Market/cloudbed-1": 70,
+      "Market/cloudbed-2": 78,
+      "Telecom": 51
+    },
+    "root_before_only_available": 284,
+    "root_before_only_unavailable": 51
+  },
+  "healthy_reference": "NOT ESTABLISHED; retained windows are fault-conditioned, not certified healthy controls",
+  "holdout": "NOT ESTABLISHED; all 335 E004 cases have been inspected",
+  "interpretation": "Zero documented QUALIFIED registry entries does not prove the raw telemetry contains no useful signal",
+  "next_action": "Review an evidence-acquisition scope for metric semantics and independently documented normal controls",
+  "checks": {
+    "registry_profile_count_mismatches": 0,
+    "csv_identity_accounting": "PASS",
+    "source_preservation": "PASS",
+    "frozen_metadata_and_profile_hashes": "PASS"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-04",
+  "scope": "Read-only provenance inventory of the 18 distinct metric names frozen by the 2026-10-08 sample plan. No telemetry payload, label, detector, threshold, experiment registration, or execution was accessed.",
+  "input_sample_plan": "docs/research-design/2026-10-08-bounded-acquisition/sample-plan.json",
+  "input_sample_plan_sha256": "dc4e3ded1f28cc0206202a1f00c549c304384832635f1851dc91b4659f9a4c25",
+  "local_dataset_archives": {
+    "Bank.zip": "0dafa2a45f48b6078deae8e2e88791c13946a51003524efa728449a5cff34743",
+    "Market.zip": "9506d898045ad0e8928318289677c6cab09d3a238f9840d5eec3845fa6b4cd06",
+    "Telecom.zip": "b6c217d11ce5989bd964d6a8745e0246c5180eca9b79b02bbb243039d82f57c7"
+  },
+  "dataset_version_match_to_upstream_openrca_commit": "UNKNOWN",
+  "official_sources": [
+    {
+      "id": "openrca-bank-schema",
+      "url": "https://raw.githubusercontent.com/microsoft/OpenRCA/c1bd4af7f635171a1c31cdd567c07d698dff6abc/rca/baseline/rca_agent/prompt/basic_prompt_Bank.py",
+      "sha256": "a702127cd22cde022f7f3975c0ab3203c15d8ceb0e74b3357f2615d1fafef987",
+      "supports": "Bank metric_app field names; metric timestamp scale seconds; metric_container KPI-name slot"
+    },
+    {
+      "id": "openrca-market-schema",
+      "url": "https://raw.githubusercontent.com/microsoft/OpenRCA/c1bd4af7f635171a1c31cdd567c07d698dff6abc/rca/baseline/rca_agent/prompt/basic_prompt_Market.py",
+      "sha256": "d54e2f710290019446c3b9a6d4636f0c2140aba14096c081ff7d2ca1d82fb23e",
+      "supports": "Market metric_container and metric_mesh KPI-name slots; metric timestamp scale seconds"
+    },
+    {
+      "id": "openrca-telecom-schema",
+      "url": "https://raw.githubusercontent.com/microsoft/OpenRCA/c1bd4af7f635171a1c31cdd567c07d698dff6abc/rca/baseline/rca_agent/prompt/basic_prompt_Telecom.py",
+      "sha256": "f0fcdbc4ec481fb17b660d7e6b765cfaee78366f3d2834056bc980e18f3e414d",
+      "supports": "Telecom metric_app field names; metric_container name slot; metric timestamp scale milliseconds"
+    },
+    {
+      "id": "cadvisor-prometheus-current",
+      "url": "https://raw.githubusercontent.com/google/cadvisor/master/docs/storage/prometheus.md",
+      "retrieved_at_utc": "2026-11-04",
+      "bytes": 14555,
+      "sha256": "51b400bcc26b901c25e9951cbb13fcefa2fd812a7948442db3f9bba20cb8281f",
+      "supports": "Definitions for *_total cAdvisor names only; no link to the local Market exporter, transformation, or version"
+    }
+  ],
+  "candidate_groups": [
+    {
+      "local_sources": ["Bank/telemetry/2021_03_04/metric/metric_app.csv"],
+      "names": ["cnt", "mrt", "rr"],
+      "source_support": "The official Bank schema says these are metric_app KPI names and that Bank metric timestamps are seconds.",
+      "qualified_fields": {"source_field_presence": true, "timestamp_scale": "s"},
+      "unsupported_fields": ["meaning", "unit", "kind", "temporality", "aggregation", "reset_behavior", "exporter_configuration", "dataset_version_match", "healthy_control", "independent_split"],
+      "status": "NOT QUALIFIED"
+    },
+    {
+      "local_sources": ["Bank/telemetry/2021_03_04/metric/metric_container.csv"],
+      "names": ["Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent", "Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit", "Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent"],
+      "source_support": "The official Bank schema establishes the generic kpi_name/value container layout and seconds-scale metric timestamps; it does not define these names.",
+      "qualified_fields": {"source_field_presence": true, "timestamp_scale": "s"},
+      "unsupported_fields": ["meaning", "unit", "kind", "temporality", "aggregation", "reset_behavior", "exporter_configuration", "dataset_version_match", "healthy_control", "independent_split"],
+      "status": "NOT QUALIFIED"
+    },
+    {
+      "local_sources": ["Market/cloudbed-1/telemetry/2022_03_20/metric/metric_container.csv", "Market/cloudbed-2/telemetry/2022_03_20/metric/metric_container.csv"],
+      "names": ["container_cpu_cfs_periods", "container_cpu_cfs_throttled_periods", "container_cpu_cfs_throttled_seconds"],
+      "source_support": "The official Market schema establishes the KPI-name/value layout and seconds-scale timestamps. cAdvisor documents similarly named *_total metrics, but the local names omit _total and no local exporter or transformation link exists.",
+      "qualified_fields": {"source_field_presence": true, "timestamp_scale": "s"},
+      "unsupported_fields": ["meaning", "unit", "kind", "temporality", "aggregation", "reset_behavior", "exporter_configuration", "transformation_provenance", "dataset_version_match", "healthy_control", "independent_split"],
+      "status": "NOT QUALIFIED"
+    },
+    {
+      "local_sources": ["Market/cloudbed-1/telemetry/2022_03_20/metric/metric_mesh.csv", "Market/cloudbed-2/telemetry/2022_03_20/metric/metric_mesh.csv"],
+      "names": ["istio_agent_endpoint_no_pod", "istio_agent_go_gc_duration_seconds", "istio_agent_go_gc_duration_seconds.0.0"],
+      "source_support": "The official Market schema establishes the KPI-name/value layout and seconds-scale timestamps. No source-owner exporter/configuration mapping was found in the bounded local records.",
+      "qualified_fields": {"source_field_presence": true, "timestamp_scale": "s"},
+      "unsupported_fields": ["meaning", "unit", "kind", "temporality", "aggregation", "reset_behavior", "exporter_configuration", "transformation_provenance", "dataset_version_match", "healthy_control", "independent_split"],
+      "status": "NOT QUALIFIED"
+    },
+    {
+      "local_sources": ["Telecom/telemetry/2020_04_11/metric/metric_app.csv"],
+      "names": ["avg_time", "num", "succee_num"],
+      "source_support": "The official Telecom schema establishes these as metric_app fields and metric timestamps as milliseconds. It does not define their units, counter policy, or aggregation.",
+      "qualified_fields": {"source_field_presence": true, "timestamp_scale": "ms"},
+      "unsupported_fields": ["meaning", "unit", "kind", "temporality", "aggregation", "reset_behavior", "exporter_configuration", "dataset_version_match", "healthy_control", "independent_split"],
+      "status": "NOT QUALIFIED"
+    },
+    {
+      "local_sources": ["Telecom/telemetry/2020_04_11/metric/metric_container.csv"],
+      "names": ["container_cpu_used", "container_fgc", "container_fgct"],
+      "source_support": "The official Telecom schema establishes the name/value container layout and millisecond metric timestamps. It does not define these names or their units/temporality.",
+      "qualified_fields": {"source_field_presence": true, "timestamp_scale": "ms"},
+      "unsupported_fields": ["meaning", "unit", "kind", "temporality", "aggregation", "reset_behavior", "exporter_configuration", "dataset_version_match", "healthy_control", "independent_split"],
+      "status": "NOT QUALIFIED"
+    }
+  ],
+  "answers": {
+    "any_sampled_metric_fully_semantically_qualified": "NO",
+    "documented_healthy_control_source": "NO",
+    "documented_independent_evaluation_population": "NO"
+  },
+  "next_action_requires_human_review": true,
+  "detector_authorized": false,
+  "successor_experiment_authorized": false
+}

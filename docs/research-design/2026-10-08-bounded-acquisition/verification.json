@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-08",
+  "prior_acquisition_input_files_unchanged": 188,
+  "profile_hashes_unchanged": 162,
+  "official_source_archive_hashes_valid": 6,
+  "sample_accounting_and_caps": "PASS",
+  "overwrite_refusal_checks": {
+    "scripts/inspect_retained_sample_20261008.py": "PASS: refused existing outputs before telemetry/network access",
+    "scripts/fetch_openrca_reference_20261008.py": "PASS: refused existing outputs before telemetry/network access"
+  },
+  "safety_tests": "6 passed; synthetic scope tests only",
+  "project_governance": "PASS: 116 protected files; historical E003 pending checkpoint not rewritten",
+  "e004_governance": "PASS: additive registration; scientific limitations retained",
+  "full_retained_database_hash_reverified": false,
+  "no_raw_scan": true,
+  "no_E005_directory": true,
+  "output_hashes": {
+    "docs/research-design/2026-10-08-bounded-acquisition/acquisition-scope.md": "2a99ac21c0c70838ef02faa7b7a96680cb988acb401361c91d31503fc7727cc0",
+    "docs/research-design/2026-10-08-bounded-acquisition/evidence-acquisition-assessment.md": "918ba4fdf51b0593deb4c51f58ee7914078716e325d48629c5be54c164764a06",
+    "docs/research-design/2026-10-08-bounded-acquisition/official-reference.json": "90dd491faefe915bd0c3afe14a6780c848f25b200770551690a584eaad2dfa40",
+    "docs/research-design/2026-10-08-bounded-acquisition/retained-sample-summary.json": "d7b95323efcc69c4ccdeb76280b9c606f047a755365808256fd5c315ce1b28b9",
+    "docs/research-design/2026-10-08-bounded-acquisition/review-summary.json": "e9b2116e0877f8c7233ce12b1eccd4c1923d848e0c0ca49817030856fc52e107",
+    "docs/research-design/2026-10-08-bounded-acquisition/sample-plan.json": "dc4e3ded1f28cc0206202a1f00c549c304384832635f1851dc91b4659f9a4c25"
+  }
+}
