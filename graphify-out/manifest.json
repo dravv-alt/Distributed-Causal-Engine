@@ -1,0 +1,452 @@
+{
+  "docs/E003-implementation-report.md": {
+    "mtime": 1791004448.8340988,
+    "seen": 1793906158.3569872,
+    "ast_hash": "412a803c8281c00985ffbb220c86d925",
+    "semantic_hash": "412a803c8281c00985ffbb220c86d925"
+  },
+  "docs/FRONTEND_AUDIT_2026-10-08.md": {
+    "mtime": 1791399714.0101874,
+    "seen": 1793906158.3569872,
+    "ast_hash": "e45745fd7d00f181ec40db5d80740e71",
+    "semantic_hash": "e45745fd7d00f181ec40db5d80740e71"
+  },
+  "docs/IMPLEMENTATION_PLAN.md": {
+    "mtime": 1790920533.2303586,
+    "seen": 1793906158.3569872,
+    "ast_hash": "958f45206f143c560af807020d92aed6",
+    "semantic_hash": "958f45206f143c560af807020d92aed6"
+  },
+  "docs/PRD.md": {
+    "mtime": 1790920532.8274138,
+    "seen": 1793906158.3569872,
+    "ast_hash": "58ee421d9589c11e9f9140a19b660d25",
+    "semantic_hash": "58ee421d9589c11e9f9140a19b660d25"
+  },
+  "docs/TECH_STACK.md": {
+    "mtime": 1790954669.411134,
+    "seen": 1793906158.3569872,
+    "ast_hash": "76f48338b92a15e83dfedc9275aa26bd",
+    "semantic_hash": "76f48338b92a15e83dfedc9275aa26bd"
+  },
+  "docs/WORKSPACE_MAP_2026-11-05.md": {
+    "mtime": 1793887391.585735,
+    "seen": 1793906158.3569872,
+    "ast_hash": "ffbb90d9a6ceeacb557304e6c9071e9a",
+    "semantic_hash": "ffbb90d9a6ceeacb557304e6c9071e9a"
+  },
+  "docs/causal-model.md": {
+    "mtime": 1790957744.1863606,
+    "seen": 1793906158.3569872,
+    "ast_hash": "f691cd9ddd199acef566dd528a4a7cb0",
+    "semantic_hash": "f691cd9ddd199acef566dd528a4a7cb0"
+  },
+  "docs/decisions/ADR-0001-permanent-experiment-record.md": {
+    "mtime": 1790957745.8875892,
+    "seen": 1793906158.3569872,
+    "ast_hash": "1c0b51682f1006f50e097984ad202f5f",
+    "semantic_hash": "1c0b51682f1006f50e097984ad202f5f"
+  },
+  "docs/decisions/README.md": {
+    "mtime": 1790957745.6665661,
+    "seen": 1793906158.3569872,
+    "ast_hash": "1a45c8d08ddc60e12220d43a4d5a09aa",
+    "semantic_hash": "1a45c8d08ddc60e12220d43a4d5a09aa"
+  },
+  "docs/domain-model.md": {
+    "mtime": 1790957742.9455473,
+    "seen": 1793906158.3569872,
+    "ast_hash": "2122196b41bc278ccaf41b37d6bd6ed8",
+    "semantic_hash": "2122196b41bc278ccaf41b37d6bd6ed8"
+  },
+  "docs/engineering/otlp-intake-implementation.md": {
+    "mtime": 1791014664.4924726,
+    "seen": 1793906158.3569872,
+    "ast_hash": "6b1797644b550a2c9d37ddfd72fd0b6c",
+    "semantic_hash": "6b1797644b550a2c9d37ddfd72fd0b6c"
+  },
+  "docs/evaluation-protocol.md": {
+    "mtime": 1790957744.939575,
+    "seen": 1793906158.3569872,
+    "ast_hash": "3ca005f3435dcd0c7336fc545428b995",
+    "semantic_hash": "3ca005f3435dcd0c7336fc545428b995"
+  },
+  "docs/event-time-model.md": {
+    "mtime": 1790957743.920285,
+    "seen": 1793906158.3569872,
+    "ast_hash": "7c0af85efc252ada697c4f3707bc1198",
+    "semantic_hash": "7c0af85efc252ada697c4f3707bc1198"
+  },
+  "docs/governance/EXECUTION_CHECKLIST.md": {
+    "mtime": 1791008564.7445717,
+    "seen": 1793906158.3569872,
+    "ast_hash": "f8e1796e5e0363a9e105bc1cde83494c",
+    "semantic_hash": "f8e1796e5e0363a9e105bc1cde83494c"
+  },
+  "docs/governance/EXECUTION_PROGRAM_ORIGINAL.md": {
+    "mtime": 1791008461.135472,
+    "seen": 1793906158.3569872,
+    "ast_hash": "4b7afc43ea17ce93b9362234e6837df0",
+    "semantic_hash": "4b7afc43ea17ce93b9362234e6837df0"
+  },
+  "docs/governance/EXECUTION_ROADMAP.md": {
+    "mtime": 1791008689.2101514,
+    "seen": 1793906158.3569872,
+    "ast_hash": "e24fb5b8f573805f1ac53bcf751316c7",
+    "semantic_hash": "e24fb5b8f573805f1ac53bcf751316c7"
+  },
+  "docs/governance/README.md": {
+    "mtime": 1791008564.437197,
+    "seen": 1793906158.3569872,
+    "ast_hash": "d83188062a149e63f07f135a1e214a3d",
+    "semantic_hash": "d83188062a149e63f07f135a1e214a3d"
+  },
+  "docs/governance/RECONCILIATION.md": {
+    "mtime": 1791008564.587571,
+    "seen": 1793906158.3569872,
+    "ast_hash": "78d7dbdbd9743b32d8330ad765af8100",
+    "semantic_hash": "78d7dbdbd9743b32d8330ad765af8100"
+  },
+  "docs/governance/amendments/2026-10-06-E003-V006-acceptance-and-E004-scope.md": {
+    "mtime": 1791296598.6712835,
+    "seen": 1793906158.3569872,
+    "ast_hash": "6800d90e3585dc8acdc8f6067ae72950",
+    "semantic_hash": "6800d90e3585dc8acdc8f6067ae72950"
+  },
+  "docs/governance/amendments/2026-10-08-E002-R002-REVISE-approval.md": {
+    "mtime": 1791409139.2237694,
+    "seen": 1793906158.3569872,
+    "ast_hash": "c009cc1a7a2a76c1bb5220b91d636d5f",
+    "semantic_hash": "c009cc1a7a2a76c1bb5220b91d636d5f"
+  },
+  "docs/governance/amendments/2026-10-08-E004-R001-execution-acceptance.md": {
+    "mtime": 1791409139.0085464,
+    "seen": 1793906158.3569872,
+    "ast_hash": "774574fda193f184155b7fbc4d553eab",
+    "semantic_hash": "774574fda193f184155b7fbc4d553eab"
+  },
+  "docs/governance/stages/XP001-domain-model-adequacy.md": {
+    "mtime": 1791008680.0148654,
+    "seen": 1793906158.3572974,
+    "ast_hash": "c4280d75b7abd777e05fb46c047006f2",
+    "semantic_hash": "c4280d75b7abd777e05fb46c047006f2"
+  },
+  "docs/governance/stages/XP002-telemetry-attachment.md": {
+    "mtime": 1791008680.2708633,
+    "seen": 1793906158.3572974,
+    "ast_hash": "b8444f01def71cbea924b00d003242ec",
+    "semantic_hash": "b8444f01def71cbea924b00d003242ec"
+  },
+  "docs/governance/stages/XP003-real-feature-coverage.md": {
+    "mtime": 1791008680.500736,
+    "seen": 1793906158.3572974,
+    "ast_hash": "cd63658f46c7ad09b34d32fc199c2fa4",
+    "semantic_hash": "cd63658f46c7ad09b34d32fc199c2fa4"
+  },
+  "docs/governance/stages/XP004-temporal-correctness.md": {
+    "mtime": 1791008680.7619913,
+    "seen": 1793906158.3572974,
+    "ast_hash": "03a3669b159d1840fff042c0406c82b4",
+    "semantic_hash": "03a3669b159d1840fff042c0406c82b4"
+  },
+  "docs/governance/stages/XP005-graph-correctness.md": {
+    "mtime": 1791008681.0135505,
+    "seen": 1793906158.3572974,
+    "ast_hash": "eec4b7782573c8345d1de120dfee5629",
+    "semantic_hash": "eec4b7782573c8345d1de120dfee5629"
+  },
+  "docs/governance/stages/XP006-topology-only-baseline.md": {
+    "mtime": 1791008681.2631762,
+    "seen": 1793906158.3572974,
+    "ast_hash": "36f38ba6b9d9afd92962208fae511b5a",
+    "semantic_hash": "36f38ba6b9d9afd92962208fae511b5a"
+  },
+  "docs/governance/stages/XP007-topology-plus-temporal-reasoning.md": {
+    "mtime": 1791008681.5040944,
+    "seen": 1793906158.3572974,
+    "ast_hash": "7d5e0de788333e511065eca43d7aac47",
+    "semantic_hash": "7d5e0de788333e511065eca43d7aac47"
+  },
+  "docs/governance/stages/XP008-topology-temporal-domain-rules.md": {
+    "mtime": 1791008681.7400126,
+    "seen": 1793906158.3572974,
+    "ast_hash": "ea628a91b573989dff297dcac89ee835",
+    "semantic_hash": "ea628a91b573989dff297dcac89ee835"
+  },
+  "docs/governance/stages/XP009-contradiction-handling.md": {
+    "mtime": 1791008681.9861524,
+    "seen": 1793906158.3572974,
+    "ast_hash": "1ef74c58d8d62a61d4ac9ff37e740ab8",
+    "semantic_hash": "1ef74c58d8d62a61d4ac9ff37e740ab8"
+  },
+  "docs/governance/stages/XP010-multiple-simultaneous-symbolic-faults.md": {
+    "mtime": 1791008682.2042415,
+    "seen": 1793906158.3572974,
+    "ast_hash": "d07f940b87dff38b9fa62a79068d8aa2",
+    "semantic_hash": "d07f940b87dff38b9fa62a79068d8aa2"
+  },
+  "docs/governance/stages/XP011-neural-anomaly-baseline.md": {
+    "mtime": 1791008682.4448383,
+    "seen": 1793906158.3572974,
+    "ast_hash": "73931bc778010c047e999f1124c9108f",
+    "semantic_hash": "73931bc778010c047e999f1124c9108f"
+  },
+  "docs/governance/stages/XP012-pytorch-onnx-parity.md": {
+    "mtime": 1791008682.6858358,
+    "seen": 1793906158.3572974,
+    "ast_hash": "71117dbd3f40e5fb2a396a23103d660a",
+    "semantic_hash": "71117dbd3f40e5fb2a396a23103d660a"
+  },
+  "docs/governance/stages/XP013-variable-service-membership.md": {
+    "mtime": 1791008682.9378407,
+    "seen": 1793906158.3572974,
+    "ast_hash": "4f13804f007ada24e84dbddc2c85be0f",
+    "semantic_hash": "4f13804f007ada24e84dbddc2c85be0f"
+  },
+  "docs/governance/stages/XP014-fusion-ablation.md": {
+    "mtime": 1791008683.229854,
+    "seen": 1793906158.3572974,
+    "ast_hash": "27814dcace0089c1ea52eaa8ec9c4ba0",
+    "semantic_hash": "27814dcace0089c1ea52eaa8ec9c4ba0"
+  },
+  "docs/governance/stages/XP015-remove-neural-evidence.md": {
+    "mtime": 1791008683.5922036,
+    "seen": 1793906158.3572974,
+    "ast_hash": "52b32b291917563e53b21a0b23032b38",
+    "semantic_hash": "52b32b291917563e53b21a0b23032b38"
+  },
+  "docs/governance/stages/XP016-remove-topology.md": {
+    "mtime": 1791008683.8727436,
+    "seen": 1793906158.3572974,
+    "ast_hash": "c8d432aee44f05bdbf77069f213c8837",
+    "semantic_hash": "c8d432aee44f05bdbf77069f213c8837"
+  },
+  "docs/governance/stages/XP017-remove-temporal-evidence.md": {
+    "mtime": 1791008684.1396613,
+    "seen": 1793906158.3572974,
+    "ast_hash": "7d0b84f1d77664b6b6dfd3def8a3c93f",
+    "semantic_hash": "7d0b84f1d77664b6b6dfd3def8a3c93f"
+  },
+  "docs/governance/stages/XP018-correlation-versus-causal-hypothesis.md": {
+    "mtime": 1791008684.3766568,
+    "seen": 1793906158.3572974,
+    "ast_hash": "bf752642c7a0b15b6a8b812509a35eb5",
+    "semantic_hash": "bf752642c7a0b15b6a8b812509a35eb5"
+  },
+  "docs/governance/stages/XP019-controlled-intervention.md": {
+    "mtime": 1791008684.6146617,
+    "seen": 1793906158.3572974,
+    "ast_hash": "d9aca3946faecc6a632a896177e42da8",
+    "semantic_hash": "d9aca3946faecc6a632a896177e42da8"
+  },
+  "docs/governance/stages/XP020-causal-model-comparison.md": {
+    "mtime": 1791008684.8398676,
+    "seen": 1793906158.3572974,
+    "ast_hash": "e19928504ccb48c854211eb01a508f62",
+    "semantic_hash": "e19928504ccb48c854211eb01a508f62"
+  },
+  "docs/governance/stages/XP021-counterfactual-root-cause-test.md": {
+    "mtime": 1791008685.059959,
+    "seen": 1793906158.3572974,
+    "ast_hash": "d51198abb34479a650b49a1bea0ec491",
+    "semantic_hash": "d51198abb34479a650b49a1bea0ec491"
+  },
+  "docs/governance/stages/XP022-alternative-intervention.md": {
+    "mtime": 1791008685.2406642,
+    "seen": 1793906158.3572974,
+    "ast_hash": "fc6832d599d27e506622c37a36b5a54c",
+    "semantic_hash": "fc6832d599d27e506622c37a36b5a54c"
+  },
+  "docs/governance/stages/XP023-planning-validity.md": {
+    "mtime": 1791008685.478084,
+    "seen": 1793906158.3572974,
+    "ast_hash": "24916ff496a0488ae3258dc122e17675",
+    "semantic_hash": "24916ff496a0488ae3258dc122e17675"
+  },
+  "docs/governance/stages/XP024-constraint-aware-planning.md": {
+    "mtime": 1791008685.729994,
+    "seen": 1793906158.3572974,
+    "ast_hash": "8214b4d10b037d008efdf48cbca08946",
+    "semantic_hash": "8214b4d10b037d008efdf48cbca08946"
+  },
+  "docs/governance/stages/XP025-plan-optimality.md": {
+    "mtime": 1791008685.964286,
+    "seen": 1793906158.3572974,
+    "ast_hash": "9f444179c34d72b72a44c730df951cf6",
+    "semantic_hash": "9f444179c34d72b72a44c730df951cf6"
+  },
+  "docs/governance/stages/XP026-recommendation-correctness.md": {
+    "mtime": 1791008686.2042878,
+    "seen": 1793906158.3572974,
+    "ast_hash": "87c895cff089f4edc8be9fee565ffcc5",
+    "semantic_hash": "87c895cff089f4edc8be9fee565ffcc5"
+  },
+  "docs/governance/stages/XP027-execution-correctness.md": {
+    "mtime": 1791008686.439284,
+    "seen": 1793906158.3572974,
+    "ast_hash": "e4759a9b8b4f376bf6f498c2c512d93c",
+    "semantic_hash": "e4759a9b8b4f376bf6f498c2c512d93c"
+  },
+  "docs/governance/stages/XP028-failed-remediation.md": {
+    "mtime": 1791008686.6733606,
+    "seen": 1793906158.3572974,
+    "ast_hash": "16651061259d236537347a3c6ff981c4",
+    "semantic_hash": "16651061259d236537347a3c6ff981c4"
+  },
+  "docs/governance/stages/XP029-single-fault-self-healing.md": {
+    "mtime": 1791008686.9053583,
+    "seen": 1793906158.3572974,
+    "ast_hash": "c7c156c596727cbb19806c2715ebe237",
+    "semantic_hash": "c7c156c596727cbb19806c2715ebe237"
+  },
+  "docs/governance/stages/XP030-cascading-self-healing-failure.md": {
+    "mtime": 1791008687.1275115,
+    "seen": 1793906158.3572974,
+    "ast_hash": "7765e4f59752b64c4b89af4c6d0964e7",
+    "semantic_hash": "7765e4f59752b64c4b89af4c6d0964e7"
+  },
+  "docs/governance/stages/XP031-multiple-self-healing-faults.md": {
+    "mtime": 1791008687.3349693,
+    "seen": 1793906158.3572974,
+    "ast_hash": "a2f290244c3b526bfe54f1a3c5889995",
+    "semantic_hash": "a2f290244c3b526bfe54f1a3c5889995"
+  },
+  "docs/governance/stages/XP032-unsafe-action-rejection.md": {
+    "mtime": 1791008687.5620506,
+    "seen": 1793906158.3572974,
+    "ast_hash": "02cfd476871b341e38157fc1748191d5",
+    "semantic_hash": "02cfd476871b341e38157fc1748191d5"
+  },
+  "docs/governance/stages/XP033-neural-symbolic-event-extraction.md": {
+    "mtime": 1791008687.7780385,
+    "seen": 1793906158.3572974,
+    "ast_hash": "43b703a44a0d328f22181e436224fe28",
+    "semantic_hash": "43b703a44a0d328f22181e436224fe28"
+  },
+  "docs/governance/stages/XP034-neural-hypothesis-generation.md": {
+    "mtime": 1791008687.994868,
+    "seen": 1793906158.3572974,
+    "ast_hash": "39d6a25b76a4092de52fa234a1df0bba",
+    "semantic_hash": "39d6a25b76a4092de52fa234a1df0bba"
+  },
+  "docs/governance/stages/XP035-neural-hallucination-rejection.md": {
+    "mtime": 1791008688.217091,
+    "seen": 1793906158.3572974,
+    "ast_hash": "7d60e07fae6d0585b4048ae631def0d1",
+    "semantic_hash": "7d60e07fae6d0585b4048ae631def0d1"
+  },
+  "docs/governance/stages/XP036-crash-safe-persistence.md": {
+    "mtime": 1791008688.4161184,
+    "seen": 1793906158.3572974,
+    "ast_hash": "f67f0570c71fd38b3e3033869faafc2b",
+    "semantic_hash": "f67f0570c71fd38b3e3033869faafc2b"
+  },
+  "docs/governance/stages/XP037-concurrent-workers.md": {
+    "mtime": 1791008688.6821566,
+    "seen": 1793906158.3572974,
+    "ast_hash": "b9b047a25e7d512776266f58b863243f",
+    "semantic_hash": "b9b047a25e7d512776266f58b863243f"
+  },
+  "docs/governance/stages/XP038-kafka-transition-qualification.md": {
+    "mtime": 1791008688.9411514,
+    "seen": 1793906158.3572974,
+    "ast_hash": "ece0d664415c9467b519152443d216bc",
+    "semantic_hash": "ece0d664415c9467b519152443d216bc"
+  },
+  "docs/governance/templates/amendment.md": {
+    "mtime": 1791008565.3767235,
+    "seen": 1793906158.3572974,
+    "ast_hash": "d8f7d0f06edfe70eb3ab85ef1cf9b9af",
+    "semantic_hash": "d8f7d0f06edfe70eb3ab85ef1cf9b9af"
+  },
+  "docs/governance/templates/decision-review.md": {
+    "mtime": 1791008565.229709,
+    "seen": 1793906158.3572974,
+    "ast_hash": "1b823b03d59b934be4fe5b6fcc7aa9b1",
+    "semantic_hash": "1b823b03d59b934be4fe5b6fcc7aa9b1"
+  },
+  "docs/graph-ontology.md": {
+    "mtime": 1790957743.1439672,
+    "seen": 1793906158.3572974,
+    "ast_hash": "18e5df7dcd092f0138a4f1076c2a0020",
+    "semantic_hash": "18e5df7dcd092f0138a4f1076c2a0020"
+  },
+  "docs/openrca-dataset-analysis.md": {
+    "mtime": 1791004346.9807575,
+    "seen": 1793906158.3572974,
+    "ast_hash": "d8ab06e6e6d715768e54545e42e6773f",
+    "semantic_hash": "d8ab06e6e6d715768e54545e42e6773f"
+  },
+  "docs/otlp-intake-slice.md": {
+    "mtime": 1791014624.8117492,
+    "seen": 1793906158.3572974,
+    "ast_hash": "6f678c3807f6a50509b04a7fdc9a5377",
+    "semantic_hash": "6f678c3807f6a50509b04a7fdc9a5377"
+  },
+  "docs/planning-model.md": {
+    "mtime": 1790957744.4763162,
+    "seen": 1793906158.3572974,
+    "ast_hash": "2a8c74a802ce21e7f98dde7249b40563",
+    "semantic_hash": "2a8c74a802ce21e7f98dde7249b40563"
+  },
+  "docs/reasoning-semantics.md": {
+    "mtime": 1790957743.412117,
+    "seen": 1793906158.3572974,
+    "ast_hash": "8eea9dc84d03ff72eadd85b034db695a",
+    "semantic_hash": "8eea9dc84d03ff72eadd85b034db695a"
+  },
+  "docs/research-design/2026-10-08-bounded-acquisition/acquisition-scope.md": {
+    "mtime": 1791409265.0135353,
+    "seen": 1793906158.3572974,
+    "ast_hash": "ffa7bef5af3cd5f14383b9904573d4a4",
+    "semantic_hash": "ffa7bef5af3cd5f14383b9904573d4a4"
+  },
+  "docs/research-design/2026-10-08-bounded-acquisition/evidence-acquisition-assessment.md": {
+    "mtime": 1791410149.9641826,
+    "seen": 1793906158.3572974,
+    "ast_hash": "31c42d4e9679528ec7b28c92106fe0b5",
+    "semantic_hash": "31c42d4e9679528ec7b28c92106fe0b5"
+  },
+  "docs/research-design/2026-10-08-symptom-evidence/symptom-evidence-qualification-assessment.md": {
+    "mtime": 1791405633.2182426,
+    "seen": 1793906158.3572974,
+    "ast_hash": "338ce0ef1805bc19fcc7713df75ec229",
+    "semantic_hash": "338ce0ef1805bc19fcc7713df75ec229"
+  },
+  "docs/research-design/2026-11-04-source-provenance-inventory/cadvisor-prometheus.md": {
+    "mtime": 1793809243.9721644,
+    "seen": 1793906158.3572974,
+    "ast_hash": "289ead0de9eb117562b9a8060ff3a50f",
+    "semantic_hash": "289ead0de9eb117562b9a8060ff3a50f"
+  },
+  "docs/research-design/2026-11-04-source-provenance-inventory/report.md": {
+    "mtime": 1793809446.6584196,
+    "seen": 1793906158.3572974,
+    "ast_hash": "a3ca05cdc578775ba89261093fbc214f",
+    "semantic_hash": "a3ca05cdc578775ba89261093fbc214f"
+  },
+  "docs/research-design/2026-11-04-source-provenance-inventory/scope.md": {
+    "mtime": 1793808946.8940856,
+    "seen": 1793906158.3572974,
+    "ast_hash": "dcf30686b7e3438ea778eca4fffd0ec0",
+    "semantic_hash": "dcf30686b7e3438ea778eca4fffd0ec0"
+  },
+  "docs/research-design/2026-11-04-source-provenance-inventory/verification.md": {
+    "mtime": 1793809481.6257288,
+    "seen": 1793906158.3572974,
+    "ast_hash": "d435a5862a99c738185af246cfb9cb8b",
+    "semantic_hash": "d435a5862a99c738185af246cfb9cb8b"
+  },
+  "docs/safety-model.md": {
+    "mtime": 1790957744.7025678,
+    "seen": 1793906158.3572974,
+    "ast_hash": "a68ce1c2c1b241b220401fe163cedab4",
+    "semantic_hash": "a68ce1c2c1b241b220401fe163cedab4"
+  },
+  "docs/telemetry-contract.md": {
+    "mtime": 1790957743.6617336,
+    "seen": 1793906158.3572974,
+    "ast_hash": "9bd41b5e9ed2edce4ee612bd8152d251",
+    "semantic_hash": "9bd41b5e9ed2edce4ee612bd8152d251"
+  }
+}
