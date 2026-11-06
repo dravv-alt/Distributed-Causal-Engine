@@ -22,3 +22,54 @@ dce_log.txt
 # Misc
 .DS_Store
 *.json
+
+# Reviewed scientific metadata and small result summaries are versioned.
+!data/manifests/**/*.json
+!data/schemas/**/*.json
+!experiments/**/configuration.json
+!experiments/**/results/**/*.json
+!experiments/**/logs/*-manifest.json
+!dce-r0/dce/docs/baseline-report-r0.json
+
+# Generated data/model payloads remain outside ordinary Git history.
+/data/raw/**
+!/data/raw/.gitkeep
+/data/processed/**
+!/data/processed/.gitkeep
+/models/**/*.npz
+/models/**/*.pt
+/models/**/*.onnx
+*.parquet
+
+# External archives remain immutable locally and are referenced by manifests.
+/data/dataset/**
+/data/external/openrca/**
+!/data/external/openrca/README.md
+
+# Test scratch and serialized raw samples are not scientific summaries.
+/.test-tmp-e003/
+/experiments/E003_domain_model_adequacy/results/**/*-sample.json
+
+# Publication safeguards (2026-10-16): preserve local payloads outside Git.
+.venv*/
+node_modules/
+.pytest_cache/
+pytest-cache-files-*/
+pytest-temp/
+*.npz
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+.env.*
+!.env.example
+*.pem
+*.key
+# Generated operational graphs and prediction payloads are local artifacts.
+/experiments/**/results/**/graph-*.json
+/experiments/**/results/**/predictions.jsonl
+# Presentation snapshots and reviewed acquisition metadata are required to read results.
+!frontend/**/*.json
+!docs/research-design/**/*.json
+!docs/research-design/**/metric-eligibility-inventory.csv
+!docs/DCE_PROGRESS_REPORT_VERIFICATION_2026-10-08.json
