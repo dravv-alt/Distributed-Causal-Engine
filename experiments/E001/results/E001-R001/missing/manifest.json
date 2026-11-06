@@ -1,0 +1,1281 @@
+{
+ "schema_version": "dce.features.v1",
+ "features": [
+  "latency_ms",
+  "error_rate",
+  "request_rate",
+  "cpu_util"
+ ],
+ "units": [
+  "ms",
+  "ratio",
+  "req/s",
+  "ratio"
+ ],
+ "topology": {
+  "version": "topo-0d190f1d4b6e",
+  "services": [
+   "gateway",
+   "lb-1",
+   "lb-2",
+   "auth-svc",
+   "api-svc",
+   "rec-engine",
+   "user-db",
+   "cache"
+  ],
+  "edges": [
+   [
+    "api-svc",
+    "rec-engine"
+   ],
+   [
+    "api-svc",
+    "user-db"
+   ],
+   [
+    "auth-svc",
+    "cache"
+   ],
+   [
+    "auth-svc",
+    "user-db"
+   ],
+   [
+    "gateway",
+    "lb-1"
+   ],
+   [
+    "gateway",
+    "lb-2"
+   ],
+   [
+    "lb-1",
+    "api-svc"
+   ],
+   [
+    "lb-1",
+    "auth-svc"
+   ],
+   [
+    "lb-2",
+    "api-svc"
+   ],
+   [
+    "lb-2",
+    "auth-svc"
+   ],
+   [
+    "rec-engine",
+    "cache"
+   ]
+  ]
+ },
+ "events": [
+  {
+   "event_id": 0,
+   "fault_type": "error_burst",
+   "roots": [
+    "rec-engine"
+   ],
+   "onset": 628,
+   "end": 686,
+   "impact": {
+    "rec-engine": [
+     628,
+     688
+    ],
+    "api-svc": [
+     631,
+     689
+    ],
+    "lb-1": [
+     633,
+     691
+    ],
+    "lb-2": [
+     633,
+     691
+    ],
+    "gateway": [
+     636,
+     692
+    ]
+   }
+  },
+  {
+   "event_id": 1,
+   "fault_type": "error_burst",
+   "roots": [
+    "rec-engine"
+   ],
+   "onset": 642,
+   "end": 736,
+   "impact": {
+    "rec-engine": [
+     642,
+     738
+    ],
+    "api-svc": [
+     644,
+     740
+    ],
+    "lb-1": [
+     647,
+     741
+    ],
+    "lb-2": [
+     647,
+     741
+    ],
+    "gateway": [
+     649,
+     743
+    ]
+   }
+  },
+  {
+   "event_id": 2,
+   "fault_type": "error_burst",
+   "roots": [
+    "lb-1"
+   ],
+   "onset": 694,
+   "end": 783,
+   "impact": {
+    "lb-1": [
+     694,
+     785
+    ],
+    "gateway": [
+     697,
+     786
+    ]
+   }
+  },
+  {
+   "event_id": 3,
+   "fault_type": "saturation",
+   "roots": [
+    "lb-1"
+   ],
+   "onset": 1110,
+   "end": 1173,
+   "impact": {
+    "lb-1": [
+     1110,
+     1175
+    ],
+    "gateway": [
+     1113,
+     1178
+    ]
+   }
+  },
+  {
+   "event_id": 4,
+   "fault_type": "error_burst",
+   "roots": [
+    "gateway"
+   ],
+   "onset": 1114,
+   "end": 1225,
+   "impact": {
+    "gateway": [
+     1114,
+     1227
+    ]
+   }
+  },
+  {
+   "event_id": 5,
+   "fault_type": "error_burst",
+   "roots": [
+    "rec-engine"
+   ],
+   "onset": 2272,
+   "end": 2319,
+   "impact": {
+    "rec-engine": [
+     2272,
+     2321
+    ],
+    "api-svc": [
+     2275,
+     2324
+    ],
+    "lb-1": [
+     2279,
+     2326
+    ],
+    "lb-2": [
+     2279,
+     2326
+    ],
+    "gateway": [
+     2282,
+     2329
+    ]
+   }
+  },
+  {
+   "event_id": 6,
+   "fault_type": "saturation",
+   "roots": [
+    "cache"
+   ],
+   "onset": 2367,
+   "end": 2412,
+   "impact": {
+    "cache": [
+     2367,
+     2414
+    ],
+    "auth-svc": [
+     2369,
+     2416
+    ],
+    "rec-engine": [
+     2370,
+     2417
+    ],
+    "lb-1": [
+     2372,
+     2417
+    ],
+    "lb-2": [
+     2372,
+     2417
+    ],
+    "api-svc": [
+     2373,
+     2418
+    ],
+    "gateway": [
+     2374,
+     2419
+    ]
+   }
+  },
+  {
+   "event_id": 7,
+   "fault_type": "saturation",
+   "roots": [
+    "api-svc"
+   ],
+   "onset": 2603,
+   "end": 2714,
+   "impact": {
+    "api-svc": [
+     2603,
+     2716
+    ],
+    "lb-1": [
+     2606,
+     2719
+    ],
+    "lb-2": [
+     2605,
+     2718
+    ],
+    "gateway": [
+     2610,
+     2721
+    ]
+   }
+  },
+  {
+   "event_id": 8,
+   "fault_type": "latency_spike",
+   "roots": [
+    "auth-svc"
+   ],
+   "onset": 3348,
+   "end": 3460,
+   "impact": {
+    "auth-svc": [
+     3348,
+     3462
+    ],
+    "lb-1": [
+     3351,
+     3463
+    ],
+    "lb-2": [
+     3351,
+     3463
+    ],
+    "gateway": [
+     3353,
+     3465
+    ]
+   }
+  },
+  {
+   "event_id": 9,
+   "fault_type": "error_burst",
+   "roots": [
+    "lb-1"
+   ],
+   "onset": 3927,
+   "end": 4017,
+   "impact": {
+    "lb-1": [
+     3927,
+     4019
+    ],
+    "gateway": [
+     3930,
+     4020
+    ]
+   }
+  },
+  {
+   "event_id": 10,
+   "fault_type": "latency_spike",
+   "roots": [
+    "gateway"
+   ],
+   "onset": 4616,
+   "end": 4700,
+   "impact": {
+    "gateway": [
+     4616,
+     4702
+    ]
+   }
+  },
+  {
+   "event_id": 11,
+   "fault_type": "error_burst",
+   "roots": [
+    "user-db"
+   ],
+   "onset": 6841,
+   "end": 6950,
+   "impact": {
+    "user-db": [
+     6841,
+     6952
+    ],
+    "api-svc": [
+     6843,
+     6954
+    ],
+    "auth-svc": [
+     6843,
+     6954
+    ],
+    "lb-1": [
+     6846,
+     6955
+    ],
+    "lb-2": [
+     6846,
+     6955
+    ],
+    "gateway": [
+     6848,
+     6957
+    ]
+   }
+  },
+  {
+   "event_id": 12,
+   "fault_type": "saturation",
+   "roots": [
+    "auth-svc"
+   ],
+   "onset": 6851,
+   "end": 6921,
+   "impact": {
+    "auth-svc": [
+     6851,
+     6923
+    ],
+    "lb-1": [
+     6854,
+     6924
+    ],
+    "lb-2": [
+     6854,
+     6924
+    ],
+    "gateway": [
+     6856,
+     6926
+    ]
+   }
+  },
+  {
+   "event_id": 13,
+   "fault_type": "saturation",
+   "roots": [
+    "cache"
+   ],
+   "onset": 8524,
+   "end": 8627,
+   "impact": {
+    "cache": [
+     8524,
+     8629
+    ],
+    "auth-svc": [
+     8528,
+     8631
+    ],
+    "rec-engine": [
+     8528,
+     8631
+    ],
+    "lb-1": [
+     8530,
+     8633
+    ],
+    "lb-2": [
+     8530,
+     8633
+    ],
+    "api-svc": [
+     8530,
+     8633
+    ],
+    "gateway": [
+     8534,
+     8635
+    ]
+   }
+  },
+  {
+   "event_id": 14,
+   "fault_type": "saturation",
+   "roots": [
+    "gateway"
+   ],
+   "onset": 9010,
+   "end": 9050,
+   "impact": {
+    "gateway": [
+     9010,
+     9052
+    ]
+   }
+  },
+  {
+   "event_id": 15,
+   "fault_type": "saturation",
+   "roots": [
+    "auth-svc"
+   ],
+   "onset": 9449,
+   "end": 9548,
+   "impact": {
+    "auth-svc": [
+     9449,
+     9550
+    ],
+    "lb-1": [
+     9452,
+     9553
+    ],
+    "lb-2": [
+     9451,
+     9552
+    ],
+    "gateway": [
+     9456,
+     9555
+    ]
+   }
+  },
+  {
+   "event_id": 16,
+   "fault_type": "error_burst",
+   "roots": [
+    "gateway"
+   ],
+   "onset": 9674,
+   "end": 9776,
+   "impact": {
+    "gateway": [
+     9674,
+     9778
+    ]
+   }
+  },
+  {
+   "event_id": 17,
+   "fault_type": "saturation",
+   "roots": [
+    "lb-2"
+   ],
+   "onset": 9960,
+   "end": 10027,
+   "impact": {
+    "lb-2": [
+     9960,
+     10029
+    ],
+    "gateway": [
+     9962,
+     10031
+    ]
+   }
+  },
+  {
+   "event_id": 18,
+   "fault_type": "saturation",
+   "roots": [
+    "rec-engine"
+   ],
+   "onset": 10669,
+   "end": 10724,
+   "impact": {
+    "rec-engine": [
+     10669,
+     10726
+    ],
+    "api-svc": [
+     10672,
+     10727
+    ],
+    "lb-1": [
+     10674,
+     10729
+    ],
+    "lb-2": [
+     10674,
+     10729
+    ],
+    "gateway": [
+     10677,
+     10730
+    ]
+   }
+  },
+  {
+   "event_id": 19,
+   "fault_type": "latency_spike",
+   "roots": [
+    "lb-2"
+   ],
+   "onset": 11806,
+   "end": 11904,
+   "impact": {
+    "lb-2": [
+     11806,
+     11906
+    ],
+    "gateway": [
+     11808,
+     11908
+    ]
+   }
+  },
+  {
+   "event_id": 20,
+   "fault_type": "saturation",
+   "roots": [
+    "lb-1"
+   ],
+   "onset": 14014,
+   "end": 14132,
+   "impact": {
+    "lb-1": [
+     14014,
+     14134
+    ],
+    "gateway": [
+     14017,
+     14137
+    ]
+   }
+  },
+  {
+   "event_id": 21,
+   "fault_type": "error_burst",
+   "roots": [
+    "rec-engine"
+   ],
+   "onset": 15797,
+   "end": 15857,
+   "impact": {
+    "rec-engine": [
+     15797,
+     15859
+    ],
+    "api-svc": [
+     15800,
+     15860
+    ],
+    "lb-1": [
+     15802,
+     15862
+    ],
+    "lb-2": [
+     15802,
+     15862
+    ],
+    "gateway": [
+     15806,
+     15864
+    ]
+   }
+  },
+  {
+   "event_id": 22,
+   "fault_type": "saturation",
+   "roots": [
+    "rec-engine"
+   ],
+   "onset": 16323,
+   "end": 16408,
+   "impact": {
+    "rec-engine": [
+     16323,
+     16410
+    ],
+    "api-svc": [
+     16325,
+     16412
+    ],
+    "lb-1": [
+     16329,
+     16414
+    ],
+    "lb-2": [
+     16328,
+     16413
+    ],
+    "gateway": [
+     16332,
+     16417
+    ]
+   }
+  },
+  {
+   "event_id": 23,
+   "fault_type": "saturation",
+   "roots": [
+    "cache"
+   ],
+   "onset": 16329,
+   "end": 16383,
+   "impact": {
+    "cache": [
+     16329,
+     16385
+    ],
+    "auth-svc": [
+     16333,
+     16387
+    ],
+    "rec-engine": [
+     16332,
+     16386
+    ],
+    "lb-1": [
+     16336,
+     16390
+    ],
+    "lb-2": [
+     16335,
+     16389
+    ],
+    "api-svc": [
+     16334,
+     16388
+    ],
+    "gateway": [
+     16339,
+     16391
+    ]
+   }
+  },
+  {
+   "event_id": 24,
+   "fault_type": "latency_spike",
+   "roots": [
+    "cache"
+   ],
+   "onset": 16501,
+   "end": 16583,
+   "impact": {
+    "cache": [
+     16501,
+     16585
+    ],
+    "auth-svc": [
+     16504,
+     16586
+    ],
+    "rec-engine": [
+     16505,
+     16587
+    ],
+    "lb-1": [
+     16506,
+     16588
+    ],
+    "lb-2": [
+     16506,
+     16588
+    ],
+    "api-svc": [
+     16507,
+     16589
+    ],
+    "gateway": [
+     16509,
+     16589
+    ]
+   }
+  },
+  {
+   "event_id": 25,
+   "fault_type": "saturation",
+   "roots": [
+    "api-svc"
+   ],
+   "onset": 16593,
+   "end": 16711,
+   "impact": {
+    "api-svc": [
+     16593,
+     16713
+    ],
+    "lb-1": [
+     16595,
+     16715
+    ],
+    "lb-2": [
+     16595,
+     16715
+    ],
+    "gateway": [
+     16598,
+     16716
+    ]
+   }
+  },
+  {
+   "event_id": 26,
+   "fault_type": "saturation",
+   "roots": [
+    "rec-engine"
+   ],
+   "onset": 17641,
+   "end": 17723,
+   "impact": {
+    "rec-engine": [
+     17641,
+     17725
+    ],
+    "api-svc": [
+     17643,
+     17727
+    ],
+    "lb-1": [
+     17646,
+     17728
+    ],
+    "lb-2": [
+     17647,
+     17729
+    ],
+    "gateway": [
+     17648,
+     17730
+    ]
+   }
+  },
+  {
+   "event_id": 27,
+   "fault_type": "latency_spike",
+   "roots": [
+    "user-db"
+   ],
+   "onset": 17660,
+   "end": 17731,
+   "impact": {
+    "user-db": [
+     17660,
+     17733
+    ],
+    "api-svc": [
+     17662,
+     17735
+    ],
+    "auth-svc": [
+     17662,
+     17735
+    ],
+    "lb-1": [
+     17666,
+     17737
+    ],
+    "lb-2": [
+     17666,
+     17737
+    ],
+    "gateway": [
+     17669,
+     17740
+    ]
+   }
+  },
+  {
+   "event_id": 28,
+   "fault_type": "latency_spike",
+   "roots": [
+    "cache"
+   ],
+   "onset": 18180,
+   "end": 18226,
+   "impact": {
+    "cache": [
+     18180,
+     18228
+    ],
+    "auth-svc": [
+     18182,
+     18230
+    ],
+    "rec-engine": [
+     18182,
+     18230
+    ],
+    "lb-1": [
+     18185,
+     18231
+    ],
+    "lb-2": [
+     18185,
+     18231
+    ],
+    "api-svc": [
+     18185,
+     18231
+    ],
+    "gateway": [
+     18187,
+     18233
+    ]
+   }
+  },
+  {
+   "event_id": 29,
+   "fault_type": "latency_spike",
+   "roots": [
+    "lb-1"
+   ],
+   "onset": 19160,
+   "end": 19259,
+   "impact": {
+    "lb-1": [
+     19160,
+     19261
+    ],
+    "gateway": [
+     19163,
+     19262
+    ]
+   }
+  },
+  {
+   "event_id": 30,
+   "fault_type": "latency_spike",
+   "roots": [
+    "gateway"
+   ],
+   "onset": 20087,
+   "end": 20140,
+   "impact": {
+    "gateway": [
+     20087,
+     20142
+    ]
+   }
+  },
+  {
+   "event_id": 31,
+   "fault_type": "latency_spike",
+   "roots": [
+    "api-svc"
+   ],
+   "onset": 20405,
+   "end": 20454,
+   "impact": {
+    "api-svc": [
+     20405,
+     20456
+    ],
+    "lb-1": [
+     20408,
+     20459
+    ],
+    "lb-2": [
+     20407,
+     20458
+    ],
+    "gateway": [
+     20411,
+     20460
+    ]
+   }
+  },
+  {
+   "event_id": 32,
+   "fault_type": "error_burst",
+   "roots": [
+    "user-db"
+   ],
+   "onset": 20410,
+   "end": 20494,
+   "impact": {
+    "user-db": [
+     20410,
+     20496
+    ],
+    "api-svc": [
+     20412,
+     20498
+    ],
+    "auth-svc": [
+     20413,
+     20499
+    ],
+    "lb-1": [
+     20415,
+     20499
+    ],
+    "lb-2": [
+     20415,
+     20499
+    ],
+    "gateway": [
+     20417,
+     20501
+    ]
+   }
+  },
+  {
+   "event_id": 33,
+   "fault_type": "latency_spike",
+   "roots": [
+    "rec-engine"
+   ],
+   "onset": 22243,
+   "end": 22329,
+   "impact": {
+    "rec-engine": [
+     22243,
+     22331
+    ],
+    "api-svc": [
+     22245,
+     22333
+    ],
+    "lb-1": [
+     22248,
+     22334
+    ],
+    "lb-2": [
+     22248,
+     22334
+    ],
+    "gateway": [
+     22250,
+     22336
+    ]
+   }
+  },
+  {
+   "event_id": 34,
+   "fault_type": "latency_spike",
+   "roots": [
+    "user-db"
+   ],
+   "onset": 22729,
+   "end": 22848,
+   "impact": {
+    "user-db": [
+     22729,
+     22850
+    ],
+    "api-svc": [
+     22731,
+     22852
+    ],
+    "auth-svc": [
+     22731,
+     22852
+    ],
+    "lb-1": [
+     22735,
+     22854
+    ],
+    "lb-2": [
+     22735,
+     22854
+    ],
+    "gateway": [
+     22737,
+     22856
+    ]
+   }
+  },
+  {
+   "event_id": 35,
+   "fault_type": "latency_spike",
+   "roots": [
+    "lb-2"
+   ],
+   "onset": 22923,
+   "end": 22990,
+   "impact": {
+    "lb-2": [
+     22923,
+     22992
+    ],
+    "gateway": [
+     22927,
+     22994
+    ]
+   }
+  },
+  {
+   "event_id": 36,
+   "fault_type": "error_burst",
+   "roots": [
+    "rec-engine"
+   ],
+   "onset": 22924,
+   "end": 22993,
+   "impact": {
+    "rec-engine": [
+     22924,
+     22995
+    ],
+    "api-svc": [
+     22926,
+     22997
+    ],
+    "lb-1": [
+     22929,
+     22998
+    ],
+    "lb-2": [
+     22930,
+     22999
+    ],
+    "gateway": [
+     22932,
+     23001
+    ]
+   }
+  },
+  {
+   "event_id": 37,
+   "fault_type": "error_burst",
+   "roots": [
+    "cache"
+   ],
+   "onset": 22934,
+   "end": 23032,
+   "impact": {
+    "cache": [
+     22934,
+     23034
+    ],
+    "auth-svc": [
+     22938,
+     23036
+    ],
+    "rec-engine": [
+     22937,
+     23035
+    ],
+    "lb-1": [
+     22941,
+     23037
+    ],
+    "lb-2": [
+     22942,
+     23038
+    ],
+    "api-svc": [
+     22941,
+     23037
+    ],
+    "gateway": [
+     22943,
+     23039
+    ]
+   }
+  },
+  {
+   "event_id": 38,
+   "fault_type": "latency_spike",
+   "roots": [
+    "lb-1"
+   ],
+   "onset": 24473,
+   "end": 24559,
+   "impact": {
+    "lb-1": [
+     24473,
+     24561
+    ],
+    "gateway": [
+     24477,
+     24563
+    ]
+   }
+  },
+  {
+   "event_id": 39,
+   "fault_type": "latency_spike",
+   "roots": [
+    "lb-2"
+   ],
+   "onset": 24786,
+   "end": 24900,
+   "impact": {
+    "lb-2": [
+     24786,
+     24902
+    ],
+    "gateway": [
+     24788,
+     24904
+    ]
+   }
+  },
+  {
+   "event_id": 40,
+   "fault_type": "latency_spike",
+   "roots": [
+    "cache"
+   ],
+   "onset": 24841,
+   "end": 24889,
+   "impact": {
+    "cache": [
+     24841,
+     24891
+    ],
+    "auth-svc": [
+     24843,
+     24893
+    ],
+    "rec-engine": [
+     24844,
+     24894
+    ],
+    "lb-1": [
+     24847,
+     24895
+    ],
+    "lb-2": [
+     24846,
+     24894
+    ],
+    "api-svc": [
+     24848,
+     24896
+    ],
+    "gateway": [
+     24849,
+     24897
+    ]
+   }
+  },
+  {
+   "event_id": 41,
+   "fault_type": "error_burst",
+   "roots": [
+    "api-svc"
+   ],
+   "onset": 26710,
+   "end": 26752,
+   "impact": {
+    "api-svc": [
+     26710,
+     26754
+    ],
+    "lb-1": [
+     26712,
+     26756
+    ],
+    "lb-2": [
+     26713,
+     26757
+    ],
+    "gateway": [
+     26716,
+     26758
+    ]
+   }
+  },
+  {
+   "event_id": 42,
+   "fault_type": "latency_spike",
+   "roots": [
+    "gateway"
+   ],
+   "onset": 27140,
+   "end": 27235,
+   "impact": {
+    "gateway": [
+     27140,
+     27237
+    ]
+   }
+  },
+  {
+   "event_id": 43,
+   "fault_type": "latency_spike",
+   "roots": [
+    "lb-1"
+   ],
+   "onset": 27517,
+   "end": 27612,
+   "impact": {
+    "lb-1": [
+     27517,
+     27614
+    ],
+    "gateway": [
+     27519,
+     27616
+    ]
+   }
+  }
+ ],
+ "meta": {
+  "sim_config": {
+   "duration_s": 30000,
+   "seed": 15,
+   "env_seed": 11,
+   "hurst": 0.75,
+   "mean_gap_s": 700.0,
+   "p_concurrent": 0.1,
+   "min_duration_s": 40,
+   "max_duration_s": 120,
+   "fault_types": [
+    "latency_spike",
+    "saturation",
+    "error_burst"
+   ],
+   "missing_rate": 0.03,
+   "diurnal_period_s": 3600,
+   "diurnal_amp": 0.1,
+   "load_scale": 1.0,
+   "with_faults": true,
+   "max_hops": 3,
+   "start_epoch": 1700000000
+  }
+ },
+ "telemetry_sha256": "b09567a4705e85212889ac0309cda0b268b190842f9c1bdc011cf0a06e45484c"
+}

@@ -1,0 +1,1240 @@
+{
+ "model_version": "tmlp-48790ca718ef",
+ "note": "synthetic data; not evidence of real-world accuracy",
+ "datasets": {
+  "C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\experiments\\E001\\results\\E001-R001/train": {
+   "range": [
+    32024,
+    40000
+   ],
+   "heldout": false,
+   "results": {
+    "threshold_only": {
+     "events": 13,
+     "incidents": 9,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.692,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 3.0,
+      "p95": 6.0,
+      "n": 13
+     },
+     "top1_all_events": 0.462,
+     "top1_ci95_all_events": [
+      0.154,
+      0.692
+     ],
+     "top3_detected": 0.462,
+     "root_in_set_detected": 0.462,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.462
+    },
+    "neural_only": {
+     "events": 13,
+     "incidents": 9,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.692,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 1.0,
+      "p95": 2.3999999999999986,
+      "n": 13
+     },
+     "top1_all_events": 0.846,
+     "top1_ci95_all_events": [
+      0.615,
+      1.0
+     ],
+     "top3_detected": 1.0,
+     "root_in_set_detected": 0.923,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.846
+    },
+    "symbolic_only": {
+     "events": 13,
+     "incidents": 9,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.692,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 3.0,
+      "p95": 6.0,
+      "n": 13
+     },
+     "top1_all_events": 0.846,
+     "top1_ci95_all_events": [
+      0.615,
+      1.0
+     ],
+     "top3_detected": 0.923,
+     "root_in_set_detected": 0.923,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.846
+    },
+    "hybrid": {
+     "events": 13,
+     "incidents": 9,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.692,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 1.0,
+      "p95": 2.3999999999999986,
+      "n": 13
+     },
+     "top1_all_events": 0.846,
+     "top1_ci95_all_events": [
+      0.615,
+      1.0
+     ],
+     "top3_detected": 1.0,
+     "root_in_set_detected": 0.923,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.846
+    },
+    "hybrid_no_topology": {
+     "events": 13,
+     "incidents": 9,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.692,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 1.0,
+      "p95": 2.3999999999999986,
+      "n": 13
+     },
+     "top1_all_events": 0.846,
+     "top1_ci95_all_events": [
+      0.615,
+      1.0
+     ],
+     "top3_detected": 0.923,
+     "root_in_set_detected": 0.385,
+     "abstain_rate_detected": 0.462,
+     "top1_given_causal_claim": 0.714
+    },
+    "hybrid_no_timing": {
+     "events": 13,
+     "incidents": 9,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.692,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 1.0,
+      "p95": 2.3999999999999986,
+      "n": 13
+     },
+     "top1_all_events": 0.846,
+     "top1_ci95_all_events": [
+      0.615,
+      1.0
+     ],
+     "top3_detected": 1.0,
+     "root_in_set_detected": 0.846,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.846
+    },
+    "hybrid_shuffled_neural": {
+     "events": 13,
+     "incidents": 29,
+     "false_positives": 27,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.069,
+     "incident_precision_ci95": [
+      0.0,
+      0.172
+     ],
+     "incident_recall_one_to_one": 0.154,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 3.0,
+      "p95": 6.0,
+      "n": 13
+     },
+     "top1_all_events": 0.538,
+     "top1_ci95_all_events": [
+      0.231,
+      0.769
+     ],
+     "top3_detected": 0.769,
+     "root_in_set_detected": 0.923,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.538
+    },
+    "hybrid_vs_strongest_ablation": {
+     "ablation": "symbolic_only",
+     "mean_diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "n_events": 13
+    }
+   }
+  },
+  "C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\experiments\\E001\\results\\E001-R001/heldout_sparse": {
+   "range": [
+    0,
+    100000
+   ],
+   "heldout": true,
+   "results": {
+    "threshold_only": {
+     "events": 41,
+     "incidents": 37,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.902,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 4.0,
+      "p95": 6.0,
+      "n": 41
+     },
+     "top1_all_events": 0.707,
+     "top1_ci95_all_events": [
+      0.561,
+      0.854
+     ],
+     "top3_detected": 0.707,
+     "root_in_set_detected": 0.707,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.707
+    },
+    "neural_only": {
+     "events": 41,
+     "incidents": 37,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.902,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 2.0,
+      "p95": 4.0,
+      "n": 41
+     },
+     "top1_all_events": 0.951,
+     "top1_ci95_all_events": [
+      0.878,
+      1.0
+     ],
+     "top3_detected": 0.951,
+     "root_in_set_detected": 0.927,
+     "abstain_rate_detected": 0.049,
+     "top1_given_causal_claim": 0.974
+    },
+    "symbolic_only": {
+     "events": 41,
+     "incidents": 37,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.902,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 4.0,
+      "p95": 6.0,
+      "n": 41
+     },
+     "top1_all_events": 0.951,
+     "top1_ci95_all_events": [
+      0.878,
+      1.0
+     ],
+     "top3_detected": 0.951,
+     "root_in_set_detected": 0.976,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.951
+    },
+    "hybrid": {
+     "events": 41,
+     "incidents": 37,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.902,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 2.0,
+      "p95": 4.0,
+      "n": 41
+     },
+     "top1_all_events": 0.951,
+     "top1_ci95_all_events": [
+      0.878,
+      1.0
+     ],
+     "top3_detected": 0.951,
+     "root_in_set_detected": 0.951,
+     "abstain_rate_detected": 0.024,
+     "top1_given_causal_claim": 0.95
+    },
+    "hybrid_no_topology": {
+     "events": 41,
+     "incidents": 37,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.902,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 2.0,
+      "p95": 4.0,
+      "n": 41
+     },
+     "top1_all_events": 0.927,
+     "top1_ci95_all_events": [
+      0.829,
+      1.0
+     ],
+     "top3_detected": 0.927,
+     "root_in_set_detected": 0.561,
+     "abstain_rate_detected": 0.366,
+     "top1_given_causal_claim": 0.885
+    },
+    "hybrid_no_timing": {
+     "events": 41,
+     "incidents": 37,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.902,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 2.0,
+      "p95": 4.0,
+      "n": 41
+     },
+     "top1_all_events": 0.951,
+     "top1_ci95_all_events": [
+      0.878,
+      1.0
+     ],
+     "top3_detected": 0.976,
+     "root_in_set_detected": 0.927,
+     "abstain_rate_detected": 0.024,
+     "top1_given_causal_claim": 0.95
+    },
+    "hybrid_shuffled_neural": {
+     "events": 41,
+     "incidents": 490,
+     "false_positives": 473,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.035,
+     "incident_precision_ci95": [
+      0.02,
+      0.053
+     ],
+     "incident_recall_one_to_one": 0.415,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 4.0,
+      "p95": 6.0,
+      "n": 41
+     },
+     "top1_all_events": 0.732,
+     "top1_ci95_all_events": [
+      0.585,
+      0.854
+     ],
+     "top3_detected": 0.902,
+     "root_in_set_detected": 0.927,
+     "abstain_rate_detected": 0.024,
+     "top1_given_causal_claim": 0.75
+    },
+    "hybrid_vs_strongest_ablation": {
+     "ablation": "symbolic_only",
+     "mean_diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "n_events": 41
+    }
+   }
+  },
+  "C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\experiments\\E001\\results\\E001-R001/heldout_seed": {
+   "range": [
+    0,
+    30000
+   ],
+   "heldout": true,
+   "results": {
+    "threshold_only": {
+     "events": 63,
+     "incidents": 42,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.667,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 4.0,
+      "p95": 6.0,
+      "n": 63
+     },
+     "top1_all_events": 0.651,
+     "top1_ci95_all_events": [
+      0.524,
+      0.762
+     ],
+     "top3_detected": 0.698,
+     "root_in_set_detected": 0.714,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.651
+    },
+    "neural_only": {
+     "events": 63,
+     "incidents": 42,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.667,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 3.0,
+      "p95": 4.0,
+      "n": 63
+     },
+     "top1_all_events": 0.794,
+     "top1_ci95_all_events": [
+      0.698,
+      0.889
+     ],
+     "top3_detected": 0.905,
+     "root_in_set_detected": 0.746,
+     "abstain_rate_detected": 0.143,
+     "top1_given_causal_claim": 0.815
+    },
+    "symbolic_only": {
+     "events": 63,
+     "incidents": 42,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.667,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 4.0,
+      "p95": 6.0,
+      "n": 63
+     },
+     "top1_all_events": 0.794,
+     "top1_ci95_all_events": [
+      0.698,
+      0.889
+     ],
+     "top3_detected": 0.857,
+     "root_in_set_detected": 0.889,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.794
+    },
+    "hybrid": {
+     "events": 63,
+     "incidents": 42,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.667,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 3.0,
+      "p95": 4.0,
+      "n": 63
+     },
+     "top1_all_events": 0.825,
+     "top1_ci95_all_events": [
+      0.73,
+      0.921
+     ],
+     "top3_detected": 0.873,
+     "root_in_set_detected": 0.905,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.825
+    },
+    "hybrid_no_topology": {
+     "events": 63,
+     "incidents": 42,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.667,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 3.0,
+      "p95": 4.0,
+      "n": 63
+     },
+     "top1_all_events": 0.762,
+     "top1_ci95_all_events": [
+      0.635,
+      0.857
+     ],
+     "top3_detected": 0.825,
+     "root_in_set_detected": 0.619,
+     "abstain_rate_detected": 0.19,
+     "top1_given_causal_claim": 0.706
+    },
+    "hybrid_no_timing": {
+     "events": 63,
+     "incidents": 42,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.667,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 3.0,
+      "p95": 4.0,
+      "n": 63
+     },
+     "top1_all_events": 0.857,
+     "top1_ci95_all_events": [
+      0.778,
+      0.937
+     ],
+     "top3_detected": 0.905,
+     "root_in_set_detected": 0.857,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.857
+    },
+    "hybrid_shuffled_neural": {
+     "events": 63,
+     "incidents": 63,
+     "false_positives": 58,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.079,
+     "incident_precision_ci95": [
+      0.016,
+      0.159
+     ],
+     "incident_recall_one_to_one": 0.079,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 3.0,
+      "p95": 5.899999999999999,
+      "n": 63
+     },
+     "top1_all_events": 0.397,
+     "top1_ci95_all_events": [
+      0.286,
+      0.508
+     ],
+     "top3_detected": 0.683,
+     "root_in_set_detected": 0.81,
+     "abstain_rate_detected": 0.016,
+     "top1_given_causal_claim": 0.403
+    },
+    "hybrid_vs_strongest_ablation": {
+     "ablation": "symbolic_only",
+     "mean_diff": 0.032,
+     "ci95": [
+      0.0,
+      0.079
+     ],
+     "n_events": 63
+    }
+   }
+  },
+  "C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\experiments\\E001\\results\\E001-R001/heldout_load": {
+   "range": [
+    0,
+    30000
+   ],
+   "heldout": true,
+   "results": {
+    "threshold_only": {
+     "events": 47,
+     "incidents": 56,
+     "false_positives": 24,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.571,
+     "incident_precision_ci95": [
+      0.429,
+      0.696
+     ],
+     "incident_recall_one_to_one": 0.681,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 3.0,
+      "p95": 6.0,
+      "n": 47
+     },
+     "top1_all_events": 0.617,
+     "top1_ci95_all_events": [
+      0.489,
+      0.745
+     ],
+     "top3_detected": 0.681,
+     "root_in_set_detected": 0.681,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.617
+    },
+    "neural_only": {
+     "events": 47,
+     "incidents": 67,
+     "false_positives": 39,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.418,
+     "incident_precision_ci95": [
+      0.313,
+      0.537
+     ],
+     "incident_recall_one_to_one": 0.596,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 1.0,
+      "p95": 4.0,
+      "n": 47
+     },
+     "top1_all_events": 0.915,
+     "top1_ci95_all_events": [
+      0.83,
+      0.979
+     ],
+     "top3_detected": 0.979,
+     "root_in_set_detected": 0.809,
+     "abstain_rate_detected": 0.128,
+     "top1_given_causal_claim": 0.902
+    },
+    "symbolic_only": {
+     "events": 47,
+     "incidents": 56,
+     "false_positives": 24,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.571,
+     "incident_precision_ci95": [
+      0.429,
+      0.696
+     ],
+     "incident_recall_one_to_one": 0.681,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 3.0,
+      "p95": 6.0,
+      "n": 47
+     },
+     "top1_all_events": 0.872,
+     "top1_ci95_all_events": [
+      0.766,
+      0.957
+     ],
+     "top3_detected": 0.957,
+     "root_in_set_detected": 0.915,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.872
+    },
+    "hybrid": {
+     "events": 47,
+     "incidents": 67,
+     "false_positives": 39,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.418,
+     "incident_precision_ci95": [
+      0.313,
+      0.537
+     ],
+     "incident_recall_one_to_one": 0.596,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 1.0,
+      "p95": 4.0,
+      "n": 47
+     },
+     "top1_all_events": 0.894,
+     "top1_ci95_all_events": [
+      0.787,
+      0.979
+     ],
+     "top3_detected": 0.979,
+     "root_in_set_detected": 0.936,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.894
+    },
+    "hybrid_no_topology": {
+     "events": 47,
+     "incidents": 67,
+     "false_positives": 39,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.418,
+     "incident_precision_ci95": [
+      0.313,
+      0.537
+     ],
+     "incident_recall_one_to_one": 0.596,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 1.0,
+      "p95": 4.0,
+      "n": 47
+     },
+     "top1_all_events": 0.787,
+     "top1_ci95_all_events": [
+      0.66,
+      0.894
+     ],
+     "top3_detected": 0.894,
+     "root_in_set_detected": 0.596,
+     "abstain_rate_detected": 0.298,
+     "top1_given_causal_claim": 0.727
+    },
+    "hybrid_no_timing": {
+     "events": 47,
+     "incidents": 67,
+     "false_positives": 39,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.418,
+     "incident_precision_ci95": [
+      0.313,
+      0.537
+     ],
+     "incident_recall_one_to_one": 0.596,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 1.0,
+      "p95": 4.0,
+      "n": 47
+     },
+     "top1_all_events": 0.851,
+     "top1_ci95_all_events": [
+      0.723,
+      0.936
+     ],
+     "top3_detected": 0.957,
+     "root_in_set_detected": 0.851,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.851
+    },
+    "hybrid_shuffled_neural": {
+     "events": 47,
+     "incidents": 49,
+     "false_positives": 48,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.02,
+     "incident_precision_ci95": [
+      0.0,
+      0.061
+     ],
+     "incident_recall_one_to_one": 0.021,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 3.0,
+      "p95": 6.0,
+      "n": 47
+     },
+     "top1_all_events": 0.511,
+     "top1_ci95_all_events": [
+      0.362,
+      0.66
+     ],
+     "top3_detected": 0.723,
+     "root_in_set_detected": 0.809,
+     "abstain_rate_detected": 0.021,
+     "top1_given_causal_claim": 0.522
+    },
+    "hybrid_vs_strongest_ablation": {
+     "ablation": "neural_only",
+     "mean_diff": -0.021,
+     "ci95": [
+      -0.064,
+      0.0
+     ],
+     "n_events": 47
+    }
+   }
+  },
+  "C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\experiments\\E001\\results\\E001-R001/missing": {
+   "range": [
+    0,
+    30000
+   ],
+   "heldout": true,
+   "results": {
+    "threshold_only": {
+     "events": 44,
+     "incidents": 30,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.682,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 4.0,
+      "p95": 6.0,
+      "n": 44
+     },
+     "top1_all_events": 0.636,
+     "top1_ci95_all_events": [
+      0.5,
+      0.773
+     ],
+     "top3_detected": 0.705,
+     "root_in_set_detected": 0.705,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.636
+    },
+    "neural_only": {
+     "events": 44,
+     "incidents": 43,
+     "false_positives": 13,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.698,
+     "incident_precision_ci95": [
+      0.558,
+      0.837
+     ],
+     "incident_recall_one_to_one": 0.682,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 2.0,
+      "p95": 4.0,
+      "n": 44
+     },
+     "top1_all_events": 0.818,
+     "top1_ci95_all_events": [
+      0.705,
+      0.932
+     ],
+     "top3_detected": 0.932,
+     "root_in_set_detected": 0.75,
+     "abstain_rate_detected": 0.182,
+     "top1_given_causal_claim": 0.861
+    },
+    "symbolic_only": {
+     "events": 44,
+     "incidents": 30,
+     "false_positives": 0,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 1.0,
+     "incident_precision_ci95": [
+      1.0,
+      1.0
+     ],
+     "incident_recall_one_to_one": 0.682,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 4.0,
+      "p95": 6.0,
+      "n": 44
+     },
+     "top1_all_events": 0.818,
+     "top1_ci95_all_events": [
+      0.705,
+      0.932
+     ],
+     "top3_detected": 0.932,
+     "root_in_set_detected": 0.909,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.818
+    },
+    "hybrid": {
+     "events": 44,
+     "incidents": 42,
+     "false_positives": 13,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.69,
+     "incident_precision_ci95": [
+      0.548,
+      0.833
+     ],
+     "incident_recall_one_to_one": 0.659,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 2.0,
+      "p95": 4.0,
+      "n": 44
+     },
+     "top1_all_events": 0.818,
+     "top1_ci95_all_events": [
+      0.705,
+      0.932
+     ],
+     "top3_detected": 0.955,
+     "root_in_set_detected": 0.909,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.818
+    },
+    "hybrid_no_topology": {
+     "events": 44,
+     "incidents": 42,
+     "false_positives": 13,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.69,
+     "incident_precision_ci95": [
+      0.548,
+      0.833
+     ],
+     "incident_recall_one_to_one": 0.659,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 2.0,
+      "p95": 4.0,
+      "n": 44
+     },
+     "top1_all_events": 0.727,
+     "top1_ci95_all_events": [
+      0.591,
+      0.864
+     ],
+     "top3_detected": 0.818,
+     "root_in_set_detected": 0.545,
+     "abstain_rate_detected": 0.273,
+     "top1_given_causal_claim": 0.656
+    },
+    "hybrid_no_timing": {
+     "events": 44,
+     "incidents": 42,
+     "false_positives": 13,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.69,
+     "incident_precision_ci95": [
+      0.548,
+      0.833
+     ],
+     "incident_recall_one_to_one": 0.659,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 2.0,
+      "p95": 4.0,
+      "n": 44
+     },
+     "top1_all_events": 0.864,
+     "top1_ci95_all_events": [
+      0.75,
+      0.955
+     ],
+     "top3_detected": 0.932,
+     "root_in_set_detected": 0.864,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.864
+    },
+    "hybrid_shuffled_neural": {
+     "events": 44,
+     "incidents": 111,
+     "false_positives": 105,
+     "duplicates": 0,
+     "ignored_other_segment": 0,
+     "incident_precision": 0.054,
+     "incident_precision_ci95": [
+      0.018,
+      0.099
+     ],
+     "incident_recall_one_to_one": 0.136,
+     "event_recall": 1.0,
+     "event_recall_ci95": [
+      1.0,
+      1.0
+     ],
+     "detection_delay_s": {
+      "median": 4.0,
+      "p95": 6.0,
+      "n": 44
+     },
+     "top1_all_events": 0.432,
+     "top1_ci95_all_events": [
+      0.273,
+      0.568
+     ],
+     "top3_detected": 0.636,
+     "root_in_set_detected": 0.932,
+     "abstain_rate_detected": 0.0,
+     "top1_given_causal_claim": 0.432
+    },
+    "hybrid_vs_strongest_ablation": {
+     "ablation": "symbolic_only",
+     "mean_diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "n_events": 44
+    }
+   }
+  }
+ },
+ "false_alerts": {
+  "C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\experiments\\E001\\results\\E001-R001/faultfree": {
+   "threshold_only": {
+    "false_alerts": 0,
+    "per_environment_day": 0.0,
+    "service_hours": 66.7
+   },
+   "neural_only": {
+    "false_alerts": 0,
+    "per_environment_day": 0.0,
+    "service_hours": 66.7
+   },
+   "symbolic_only": {
+    "false_alerts": 0,
+    "per_environment_day": 0.0,
+    "service_hours": 66.7
+   },
+   "hybrid": {
+    "false_alerts": 0,
+    "per_environment_day": 0.0,
+    "service_hours": 66.7
+   }
+  }
+ }
+}

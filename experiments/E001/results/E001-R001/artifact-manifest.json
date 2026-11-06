@@ -1,0 +1,21 @@
+{
+  "run_id": "E001-R001",
+  "report": {
+    "path": "report.json",
+    "sha256": "a0ef00babb8163b0e6ec0b7bfe792ae209296ad3b28d4007dbdd0c155a2486c5"
+  },
+  "bundle": {
+    "manifest_sha256": "994b944ec6bcfdbf9419bd40132cbeaa6eb3facc173f04edc49ece171e158707",
+    "weights_sha256": "48790ca718ef2011bb62782922c01a2c33b78347487e373082fcfc7100164993"
+  },
+  "source": {
+    "archive_sha256": "d521692acc25df69a0898896497cc1aaa65cc18c7b1110c5021389e2c89b7c35",
+    "tree_sha256": "1442a5343674c0c6113a9d8f1d1388a7d0db29ab207c7f03f8cb700b6c9e4e8b",
+    "tree_file_count": 19
+  },
+  "comparison": {
+    "reference": "dce-r0/dce/docs/baseline-report-r0.json",
+    "compared_dataset_tables": 5,
+    "result_table_mismatches": []
+  }
+}
