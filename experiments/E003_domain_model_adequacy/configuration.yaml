@@ -1,0 +1,12 @@
+experiment_id: E003
+protocol_version: 1
+dataset_root: data/dataset
+scenarios: [Bank, Market/cloudbed-1, Market/cloudbed-2, Telecom]
+selection: earliest_and_latest_label_timestamp_then_source_row
+window: UTC_plus_8_source_local_day_containing_label
+max_rows_per_file: 2000
+duplicate_policy: preserve_and_flag
+unknown_unit_policy: null_and_report
+label_access: evaluator_only
+random_seed: null
+downstream_gate: human_review_required
