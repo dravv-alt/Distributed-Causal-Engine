@@ -1,0 +1,69 @@
+{
+  "adequacy_passed": false,
+  "amendment_id": "E003-AM001",
+  "canonical_hashes": [
+    "adacd867bf96755ad612dba09dc3c9754be24c64b7684b7f8d3886e48e4506a8",
+    "adacd867bf96755ad612dba09dc3c9754be24c64b7684b7f8d3886e48e4506a8"
+  ],
+  "decision": "REVISE",
+  "evaluation": {
+    "fault_labels": 335,
+    "incident_root_near_event": 8,
+    "incident_root_present": 283,
+    "invalid_labels": [],
+    "query_association": "UNKNOWN; original evaluator rules not inferred",
+    "query_rows": 335
+  },
+  "gates": {
+    "A": {
+      "reason": "Sample-date validated per-file profiles; whole-file scale and clock semantics unverified.",
+      "result": "PARTIAL"
+    },
+    "B": {
+      "reason": "Source identities scoped/preserved, explicit kinds including UNKNOWN, unreviewed aliases not applied.",
+      "result": "PASS"
+    },
+    "C": {
+      "reason": "RUNS_ON derives from workbook cells; CALLS only unique same-trace parents; no causal relations.",
+      "result": "PASS"
+    },
+    "D": {
+      "reason": "Bounded context, self/missing/ambiguous/unresolved parent states explicit; no invented parents.",
+      "result": "PASS"
+    },
+    "E": {
+      "reason": "Registry and raw preservation implemented; source metric units/temporality/duration/status remain UNKNOWN.",
+      "result": "PARTIAL"
+    },
+    "F": {
+      "reason": "Every file sampled and conservation/missingness/duplicates measured; full row counts and incident coverage unverified.",
+      "result": "PARTIAL"
+    },
+    "G": {
+      "reason": "Evaluation is stored separately and projection excludes raw paths/attributes/log text; complete content and query/edge look-ahead audit pending.",
+      "result": "PARTIAL"
+    },
+    "H": {
+      "reason": "Two independent processing passes compared by canonical representation digest.",
+      "result": "PASS"
+    }
+  },
+  "historical_record_hashes_unchanged": true,
+  "rcaeval_started": false,
+  "review_required": true,
+  "source_after_execution_unchanged": true,
+  "telemetry_files": 162,
+  "total_sample_counts": {
+    "duplicates": 2,
+    "log_observations": 9216,
+    "mapped": 80205,
+    "metric_observations": 95748,
+    "missing_service": 14028,
+    "missing_type": 4406,
+    "out_of_window": 908,
+    "scanned": 81113,
+    "span_observations": 14028
+  },
+  "validation_id": "V002",
+  "version": "dce-representation-v2-am001"
+}
