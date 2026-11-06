@@ -1,0 +1,2250 @@
+{
+  "schema_version": 1,
+  "adopted_on": "2026-10-03",
+  "original": "docs/governance/EXECUTION_PROGRAM_ORIGINAL.md",
+  "constitution": "EXPERIMENTAL_PROTOCOL.md",
+  "experiment_registry": "EXPERIMENT_INDEX.md",
+  "authority": "Current no-existing-record-changes instruction and human gate review; roadmap does not authorize execution",
+  "numbering": "XP planning keys and original E source labels are not experiment allocations",
+  "phase_interpretation": "Detailed source phases 0..20, not abbreviated overview 0..16",
+  "decisions": [
+    "PROCEED",
+    "REVISE",
+    "REPEAT",
+    "BRANCH",
+    "ABANDON"
+  ],
+  "phases": [
+    {
+      "phase_id": "P00",
+      "title": "Research definition",
+      "objective": "Connect each component to RQ1–RQ8 and measurable evidence; review G0 before architecture claims.",
+      "gate": "G00",
+      "gate_status": "not_approved",
+      "stages": [],
+      "predecessor_gate": null,
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P01",
+      "title": "Formal world model",
+      "objective": "Review entities, relations, observations, events, state, evidence, hypotheses, rules, constraints, actions and causal-model contracts.",
+      "gate": "G01",
+      "gate_status": "blocked_review_pending",
+      "stages": [
+        "XP001"
+      ],
+      "predecessor_gate": "G00",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P02",
+      "title": "Dataset and experimental environment",
+      "objective": "Establish versioned real telemetry plus a separately controlled fault-injection environment; distinguish replay from intervention capabilities.",
+      "gate": "G02",
+      "gate_status": "not_approved",
+      "stages": [],
+      "predecessor_gate": "G01",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P03",
+      "title": "Experimental distributed system and ingestion",
+      "objective": "Use minimal instrumented services and trustworthy telemetry attachment before downstream experiments; no production platform expansion.",
+      "gate": "G03",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP002",
+        "XP003"
+      ],
+      "predecessor_gate": "G02",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P04",
+      "title": "Temporal representation",
+      "objective": "Prove event-time alignment, windows, masks, missing/reset/late and membership semantics before learned models.",
+      "gate": "G04",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP004"
+      ],
+      "predecessor_gate": "G03",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P05",
+      "title": "Dynamic distributed-system graph",
+      "objective": "Validate typed relation direction, cycles, shared dependencies, scoped identities and topology provenance.",
+      "gate": "G05",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP005"
+      ],
+      "predecessor_gate": "G04",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P06",
+      "title": "Pure symbolic baseline",
+      "objective": "Establish topology, time, domain rules, contradictions and multiple-root baselines without neural leakage.",
+      "gate": "G06",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP006",
+        "XP007",
+        "XP008",
+        "XP009",
+        "XP010"
+      ],
+      "predecessor_gate": "G05",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P07",
+      "title": "Neural anomaly evidence",
+      "objective": "Validate held-out incident detection, preprocessing, ONNX parity and changing memberships after symbolic baselines.",
+      "gate": "G07",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP011",
+        "XP012",
+        "XP013"
+      ],
+      "predecessor_gate": "G06",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P08",
+      "title": "Evidence fusion",
+      "objective": "Demonstrate independent component contributions through matched baselines and ablations.",
+      "gate": "G08",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP014",
+        "XP015",
+        "XP016",
+        "XP017"
+      ],
+      "predecessor_gate": "G07",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P09",
+      "title": "Causal reasoning",
+      "objective": "Distinguish observations/hypotheses/causality with documented assumptions and controlled interventions.",
+      "gate": "G09",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP018",
+        "XP019",
+        "XP020"
+      ],
+      "predecessor_gate": "G08",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P10",
+      "title": "Counterfactual reasoning",
+      "objective": "Test predicted alternative worlds against controlled intervention outcomes and limits.",
+      "gate": "G10",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP021",
+        "XP022"
+      ],
+      "predecessor_gate": "G09",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P11",
+      "title": "Symbolic planning",
+      "objective": "Define state/action preconditions/effects/goals and reject constraint-violating plans; compare declared objectives.",
+      "gate": "G11",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP023",
+        "XP024",
+        "XP025"
+      ],
+      "predecessor_gate": "G10",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P12",
+      "title": "Controlled remediation",
+      "objective": "Require safety checking and explicit human approval, then verify actual transitions and failed recovery in isolated testbeds.",
+      "gate": "G12",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP026",
+        "XP027",
+        "XP028"
+      ],
+      "predecessor_gate": "G11",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P13",
+      "title": "Self-healing",
+      "objective": "Only enable bounded closed-loop autonomy after reviewed diagnosis, planning, safety, execution and verification evidence.",
+      "gate": "G13",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP029",
+        "XP030",
+        "XP031",
+        "XP032"
+      ],
+      "predecessor_gate": "G12",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P14",
+      "title": "Neuro-symbolic integration",
+      "objective": "Validate event extraction, bounded hypothesis generation and symbolic rejection of unsupported neural claims.",
+      "gate": "G14",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP033",
+        "XP034",
+        "XP035"
+      ],
+      "predecessor_gate": "G13",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P15",
+      "title": "Distributed production architecture",
+      "objective": "Qualify persistence and scope ownership before API/workers/deployment; Kafka only for measured need.",
+      "gate": "G15",
+      "gate_status": "not_approved",
+      "stages": [
+        "XP036",
+        "XP037",
+        "XP038"
+      ],
+      "predecessor_gate": "G14",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P16",
+      "title": "Frontend and operator experiments",
+      "objective": "Build an operator evidence interface after backend qualification; test usability and uncertainty without UI becoming reasoning truth.",
+      "gate": "G16",
+      "gate_status": "not_approved",
+      "stages": [],
+      "predecessor_gate": "G15",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P17",
+      "title": "Final evaluation campaign",
+      "objective": "Compare detection/statistical, topology, temporal, neural, fusion and causal/counterfactual baselines under identical held-out conditions.",
+      "gate": "G17",
+      "gate_status": "not_approved",
+      "stages": [],
+      "predecessor_gate": "G16",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P18",
+      "title": "Robustness campaign",
+      "objective": "Challenge missing/late/duplicate/incorrect data, partial traces, membership/topology changes, novel faults, contradictions and process/DB/network failures.",
+      "gate": "G18",
+      "gate_status": "not_approved",
+      "stages": [],
+      "predecessor_gate": "G17",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P19",
+      "title": "Global ablation matrix",
+      "objective": "Remove neural, topology, temporal, rules, causal, counterfactual, fusion and constraints independently; measure real contributions.",
+      "gate": "G19",
+      "gate_status": "not_approved",
+      "stages": [],
+      "predecessor_gate": "G18",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    },
+    {
+      "phase_id": "P20",
+      "title": "Final research report",
+      "objective": "Synthesize reproducible experiment evidence, baselines, ablations, failures, limitations, validity threats and decisions; do not replace negative results with narrative.",
+      "gate": "G20",
+      "gate_status": "not_approved",
+      "stages": [],
+      "predecessor_gate": "G19",
+      "review_status": "pending",
+      "approval_reference": null,
+      "completion_evidence": "Reviewed protocol, independent reference, controlled results, uncertainty/failures, source/data provenance and explicit scope approval"
+    }
+  ],
+  "stages": [
+    {
+      "planning_id": "XP001",
+      "title": "Domain model adequacy",
+      "source_label": "E001",
+      "phase_id": "P01",
+      "research_question": "RQ1",
+      "experiment_id": "E003",
+      "status": "executed_partial_review_pending",
+      "depends_on": [],
+      "gate": "G01",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Source rows/schema as oracle; cross-scenario fixtures",
+      "metric_families": [
+        "source fidelity",
+        "special-case fields",
+        "reconstruction completeness"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Represent diverse failure states using one domain model; audit fields, identity, times, topology, labels and reconstruction.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP001-domain-model-adequacy.md"
+    },
+    {
+      "planning_id": "XP002",
+      "title": "Telemetry attachment",
+      "source_label": "E002",
+      "phase_id": "P03",
+      "research_question": "RQ1",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP001"
+      ],
+      "gate": "G03",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Known emitted payloads versus received durable records",
+      "metric_families": [
+        "malformed/retry rates",
+        "acknowledgment durability",
+        "identity/unit fidelity"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Attach a minimal instrumented service through SDK/Collector/OTLP-HTTP; validate retries, malformed payloads and durable acknowledgment.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP002-telemetry-attachment.md"
+    },
+    {
+      "planning_id": "XP003",
+      "title": "Real feature coverage",
+      "source_label": "E003",
+      "phase_id": "P03",
+      "research_question": "RQ1",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP002"
+      ],
+      "gate": "G03",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Actual source catalogue; no assumed notebook columns",
+      "metric_families": [
+        "metric coverage",
+        "units",
+        "temporality",
+        "distinct aligned windows"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Inventory available metrics, counters/histograms, missingness and rates; define supported features only from verified sources.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP003-real-feature-coverage.md"
+    },
+    {
+      "planning_id": "XP004",
+      "title": "Temporal correctness",
+      "source_label": "E004",
+      "phase_id": "P04",
+      "research_question": "RQ1",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP003"
+      ],
+      "gate": "G04",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Same event set with permuted arrival order; offline oracle",
+      "metric_families": [
+        "online/offline equality",
+        "missing/reset/late handling"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Implement alignment, masks and bounded late-event/reset policies; compare event-time windows under disorder before ML.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP004-temporal-correctness.md"
+    },
+    {
+      "planning_id": "XP005",
+      "title": "Graph correctness",
+      "source_label": "E005",
+      "phase_id": "P05",
+      "research_question": "RQ1",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP004"
+      ],
+      "gate": "G05",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Known controlled topology and independently specified expected paths",
+      "metric_families": [
+        "direction/reference fidelity",
+        "cycles",
+        "shared roots",
+        "impact coverage"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Build typed dynamic relations and scoped identities; test direction, cycles, shared dependencies and multiple faults without causal promotion.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP005-graph-correctness.md"
+    },
+    {
+      "planning_id": "XP006",
+      "title": "Topology-only baseline",
+      "source_label": "E006",
+      "phase_id": "P06",
+      "research_question": "RQ2",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP005"
+      ],
+      "gate": "G06",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Structural-only baseline; frozen incidents and symptom input policy",
+      "metric_families": [
+        "Top-1/Top-k/root-set localization",
+        "explanation coverage"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Implement a pure topology baseline with no neural/temporal/domain-rule leakage; define how affected entities enter the baseline.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP006-topology-only-baseline.md"
+    },
+    {
+      "planning_id": "XP007",
+      "title": "Topology plus temporal reasoning",
+      "source_label": "E007",
+      "phase_id": "P06",
+      "research_question": "RQ2",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP006"
+      ],
+      "gate": "G06",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "XP006 with identical incidents and tuning budget",
+      "metric_families": [
+        "localization delta",
+        "temporal consistency",
+        "abstention"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Add onset ordering and bounded propagation delays; compare against topology-only, investigating absent improvement.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP007-topology-plus-temporal-reasoning.md"
+    },
+    {
+      "planning_id": "XP008",
+      "title": "Topology temporal domain rules",
+      "source_label": "E008",
+      "phase_id": "P06",
+      "research_question": "RQ2",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP007"
+      ],
+      "gate": "G06",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "XP007; fixed rules and held-out incidents",
+      "metric_families": [
+        "localization delta",
+        "rule/path accuracy"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Implement evidence-backed domain rules for mechanism hypotheses; compare their contribution independently.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP008-topology-temporal-domain-rules.md"
+    },
+    {
+      "planning_id": "XP009",
+      "title": "Contradiction handling",
+      "source_label": "E009",
+      "phase_id": "P06",
+      "research_question": "RQ2",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP008"
+      ],
+      "gate": "G06",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "XP008 with/without explicit observed-healthy evidence",
+      "metric_families": [
+        "contradiction rejection",
+        "abstention",
+        "false diagnosis"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Add contradiction provenance and abstention; distinguish missing measurements from healthy observations.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP009-contradiction-handling.md"
+    },
+    {
+      "planning_id": "XP010",
+      "title": "Multiple simultaneous symbolic faults",
+      "source_label": "E010",
+      "phase_id": "P06",
+      "research_question": "RQ2",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP008"
+      ],
+      "gate": "G06",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Known multi-fault interventions versus single-fault controls",
+      "metric_families": [
+        "root-set accuracy",
+        "collapse rate",
+        "ambiguity"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Represent independent simultaneous roots; test whether the symbolic reasoner wrongly collapses distinct mechanisms.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP010-multiple-simultaneous-symbolic-faults.md"
+    },
+    {
+      "planning_id": "XP011",
+      "title": "Neural anomaly baseline",
+      "source_label": "E011",
+      "phase_id": "P07",
+      "research_question": "RQ3",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP009",
+        "XP010"
+      ],
+      "gate": "G07",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Independent statistical/detection baseline; chronological splits",
+      "metric_families": [
+        "incident precision/recall/F1",
+        "delay",
+        "false positives"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Train a bounded anomaly model with shared preprocessing and masks; evaluate held-out incident-level detection without symbolic leakage.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP011-neural-anomaly-baseline.md"
+    },
+    {
+      "planning_id": "XP012",
+      "title": "PyTorch ONNX parity",
+      "source_label": "E012",
+      "phase_id": "P07",
+      "research_question": "RQ3",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP011"
+      ],
+      "gate": "G07",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Same weights/preprocessing/inputs in PyTorch and ONNX Runtime",
+      "metric_families": [
+        "numerical/decision parity",
+        "CPU latency",
+        "boundary correctness"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Export the approved model and compare normal, anomaly, boundary-shape and missing-mask outputs on CPU.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP012-pytorch-onnx-parity.md"
+    },
+    {
+      "planning_id": "XP013",
+      "title": "Variable service membership",
+      "source_label": "E013",
+      "phase_id": "P07",
+      "research_question": "RQ3",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP012"
+      ],
+      "gate": "G07",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Fixed model/version controls; 8/12/20-service held-out scenarios",
+      "metric_families": [
+        "quality across memberships",
+        "mismatch rejection",
+        "adaptation"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Test service additions/removals and topology changes; compare a reviewed topology-aware challenger without silently reordering nodes.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP013-variable-service-membership.md"
+    },
+    {
+      "planning_id": "XP014",
+      "title": "Fusion ablation",
+      "source_label": "E014",
+      "phase_id": "P08",
+      "research_question": "RQ4",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP013"
+      ],
+      "gate": "G08",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Neural-only, symbolic-only, neural+graph, +time, full fusion",
+      "metric_families": [
+        "Top-1/Top-k/path accuracy",
+        "false diagnosis",
+        "abstention",
+        "coverage"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Implement explicit evidence fusion; run independent branch combinations on identical incidents with equal tuning controls.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP014-fusion-ablation.md"
+    },
+    {
+      "planning_id": "XP015",
+      "title": "Remove neural evidence",
+      "source_label": "E015",
+      "phase_id": "P08",
+      "research_question": "RQ4",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP014"
+      ],
+      "gate": "G08",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Frozen full-fusion model versus truly disabled neural branch",
+      "metric_families": [
+        "quality/calibration/explanation delta"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Disable neural evidence at the contract boundary and demonstrate whether it changes decisions; preserve all other controls.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP015-remove-neural-evidence.md"
+    },
+    {
+      "planning_id": "XP016",
+      "title": "Remove topology",
+      "source_label": "E016",
+      "phase_id": "P08",
+      "research_question": "RQ4",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP014"
+      ],
+      "gate": "G08",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Frozen full fusion versus graph-disabled path",
+      "metric_families": [
+        "localization/explanation delta"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Remove graph evidence without retaining graph-derived candidate/ranking shortcuts; measure independent topology contribution.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP016-remove-topology.md"
+    },
+    {
+      "planning_id": "XP017",
+      "title": "Remove temporal evidence",
+      "source_label": "E017",
+      "phase_id": "P08",
+      "research_question": "RQ4",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP014"
+      ],
+      "gate": "G08",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Frozen full fusion versus temporal-disabled path",
+      "metric_families": [
+        "onset/localization/abstention delta"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Remove temporal evidence while preserving other inputs; measure time's contribution with matched incidents.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP017-remove-temporal-evidence.md"
+    },
+    {
+      "planning_id": "XP018",
+      "title": "Correlation versus causal hypothesis",
+      "source_label": "E018",
+      "phase_id": "P09",
+      "research_question": "RQ5",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP015",
+        "XP016",
+        "XP017"
+      ],
+      "gate": "G09",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Correlated noncausal and controlled causal scenarios",
+      "metric_families": [
+        "mechanism discrimination",
+        "causal false-positive rate"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Represent observed/potential-cause/hypothesis/causal categories separately; compare known causal and confounded mechanisms.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP018-correlation-versus-causal-hypothesis.md"
+    },
+    {
+      "planning_id": "XP019",
+      "title": "Controlled intervention",
+      "source_label": "E019",
+      "phase_id": "P09",
+      "research_question": "RQ5",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP018"
+      ],
+      "gate": "G09",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Injected DB saturation versus no saturation under matched workload",
+      "metric_families": [
+        "intervention consistency",
+        "downstream effect differences"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Execute approved controlled interventions in an isolated environment; retain workload, topology, ground truth and downstream observations.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP019-controlled-intervention.md"
+    },
+    {
+      "planning_id": "XP020",
+      "title": "Causal model comparison",
+      "source_label": "E020",
+      "phase_id": "P09",
+      "research_question": "RQ5",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP019"
+      ],
+      "gate": "G09",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Observational correlation versus explicit structural model",
+      "metric_families": [
+        "causal effect/path accuracy",
+        "sensitivity to assumptions"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Compare causal models with stated identification assumptions and intervention evidence; use DoWhy only if justified offline.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP020-causal-model-comparison.md"
+    },
+    {
+      "planning_id": "XP021",
+      "title": "Counterfactual root-cause test",
+      "source_label": "E021",
+      "phase_id": "P10",
+      "research_question": "RQ6",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP020"
+      ],
+      "gate": "G10",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Observed worlds and separately controlled intervention outcomes",
+      "metric_families": [
+        "prediction accuracy",
+        "causal path accuracy",
+        "consistency"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Compute counterfactual predicted states using the approved causal model; compare to controlled outcomes without claiming observation-only proof.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP021-counterfactual-root-cause-test.md"
+    },
+    {
+      "planning_id": "XP022",
+      "title": "Alternative intervention",
+      "source_label": "E022",
+      "phase_id": "P10",
+      "research_question": "RQ6",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP021"
+      ],
+      "gate": "G10",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Scale service vs repair DB vs reroute under matched faults",
+      "metric_families": [
+        "recovery prediction",
+        "mechanism removal",
+        "intervention ranking"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Compare alternative intervention predictions and actual controlled effects; retain costs, risks and uncertainty for planning.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP022-alternative-intervention.md"
+    },
+    {
+      "planning_id": "XP023",
+      "title": "Planning validity",
+      "source_label": "E023",
+      "phase_id": "P11",
+      "research_question": "RQ7",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP022"
+      ],
+      "gate": "G11",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Known action/state transition oracle; diagnosis fixed",
+      "metric_families": [
+        "precondition/effect validity",
+        "goal attainment"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Implement explicit state/goal/action/precondition/effect contracts and verify every generated plan against the declared model.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP023-planning-validity.md"
+    },
+    {
+      "planning_id": "XP024",
+      "title": "Constraint-aware planning",
+      "source_label": "E024",
+      "phase_id": "P11",
+      "research_question": "RQ7",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP023"
+      ],
+      "gate": "G11",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Unconstrained planning versus explicit safety constraints",
+      "metric_families": [
+        "constraint violations",
+        "invalid-plan rejection"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Add replica, disruption, availability and budget constraints; reject unsafe plans rather than merely rank them lower.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP024-constraint-aware-planning.md"
+    },
+    {
+      "planning_id": "XP025",
+      "title": "Plan optimality",
+      "source_label": "E025",
+      "phase_id": "P11",
+      "research_question": "RQ7",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP024"
+      ],
+      "gate": "G11",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Declared objective and feasible alternatives; identical initial state",
+      "metric_families": [
+        "cost/risk/recovery/disruption/reversibility tradeoff"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Define objective and tradeoffs before comparison; evaluate feasible plans without labelling arbitrary preferences optimal.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP025-plan-optimality.md"
+    },
+    {
+      "planning_id": "XP026",
+      "title": "Recommendation correctness",
+      "source_label": "E026",
+      "phase_id": "P12",
+      "research_question": "RQ7",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP025"
+      ],
+      "gate": "G12",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Known mechanisms and independently reviewed recommended actions",
+      "metric_families": [
+        "mechanism/action consistency",
+        "recommendation correctness"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Validate that recommendations address diagnosed mechanisms before any execution authorization.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP026-recommendation-correctness.md"
+    },
+    {
+      "planning_id": "XP027",
+      "title": "Execution correctness",
+      "source_label": "E027",
+      "phase_id": "P12",
+      "research_question": "RQ7",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP024",
+        "XP026"
+      ],
+      "gate": "G12",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Approved isolated actions and precondition/state oracle",
+      "metric_families": [
+        "actual versus predicted state transition",
+        "verification/rollback"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Execute explicitly human-approved allowlisted actions only in the controlled testbed; verify effects, limits and recovery/rollback.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP027-execution-correctness.md"
+    },
+    {
+      "planning_id": "XP028",
+      "title": "Failed remediation",
+      "source_label": "E028",
+      "phase_id": "P12",
+      "research_question": "RQ7",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP027"
+      ],
+      "gate": "G12",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Successful versus deliberately failed actions under matched faults",
+      "metric_families": [
+        "failure detection",
+        "re-diagnosis",
+        "rollback correctness"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Induce failed recovery and detect action/effect mismatch; stop execution and return to diagnosis rather than declare success.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP028-failed-remediation.md"
+    },
+    {
+      "planning_id": "XP029",
+      "title": "Single-fault self-healing",
+      "source_label": "E029",
+      "phase_id": "P13",
+      "research_question": "RQ8",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP028"
+      ],
+      "gate": "G13",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Human-approved closed loop versus approved baseline recovery",
+      "metric_families": [
+        "MTTD/MTTR",
+        "diagnosis/plan validity",
+        "recovery",
+        "false remediation"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Enable bounded autonomy only after reviewed safety/execution evidence; measure end-to-end detection through verified recovery.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP029-single-fault-self-healing.md"
+    },
+    {
+      "planning_id": "XP030",
+      "title": "Cascading self-healing failure",
+      "source_label": "E030",
+      "phase_id": "P13",
+      "research_question": "RQ8",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP029"
+      ],
+      "gate": "G13",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Matched single-root cascade versus independent symptom treatment",
+      "metric_families": [
+        "propagation understanding",
+        "recovery",
+        "symptom/root separation"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Inject approved cascades and retry storms; evaluate propagation-aware diagnosis and safe recovery.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP030-cascading-self-healing-failure.md"
+    },
+    {
+      "planning_id": "XP031",
+      "title": "Multiple self-healing faults",
+      "source_label": "E031",
+      "phase_id": "P13",
+      "research_question": "RQ8",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP029"
+      ],
+      "gate": "G13",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Known concurrent interventions and matched single-fault runs",
+      "metric_families": [
+        "root-set accuracy",
+        "safe recovery",
+        "interference"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Inject approved DB/network fault combinations; test diagnosis, action interference and verified joint recovery.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP031-multiple-self-healing-faults.md"
+    },
+    {
+      "planning_id": "XP032",
+      "title": "Unsafe-action rejection",
+      "source_label": "E032",
+      "phase_id": "P13",
+      "research_question": "RQ8",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP029"
+      ],
+      "gate": "G13",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Injected violating plans versus valid plans; no destructive execution of rejected actions",
+      "metric_families": [
+        "unsafe-action rate",
+        "refusal correctness",
+        "collateral effects"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Adversarially propose availability/replica/risk violations; verify rejection and audit trail before any actual action.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP032-unsafe-action-rejection.md"
+    },
+    {
+      "planning_id": "XP033",
+      "title": "Neural symbolic event extraction",
+      "source_label": "E033",
+      "phase_id": "P14",
+      "research_question": "RQ3",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP030",
+        "XP031",
+        "XP032"
+      ],
+      "gate": "G14",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Labelled source text/telemetry and rule/statistical reference",
+      "metric_families": [
+        "event/entity extraction accuracy",
+        "provenance",
+        "schema compliance"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Extract structured events from real evidence; validate identities, uncertainty and symbolic consumption without invented observations.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP033-neural-symbolic-event-extraction.md"
+    },
+    {
+      "planning_id": "XP034",
+      "title": "Neural hypothesis generation",
+      "source_label": "E034",
+      "phase_id": "P14",
+      "research_question": "RQ4",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP033"
+      ],
+      "gate": "G14",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Verified symbolic baseline versus neural candidate proposals",
+      "metric_families": [
+        "candidate utility",
+        "verification accuracy",
+        "explanation fidelity"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Generate candidate hypotheses through a bounded neural interface; independently verify topology/time/constraints/evidence.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP034-neural-hypothesis-generation.md"
+    },
+    {
+      "planning_id": "XP035",
+      "title": "Neural hallucination rejection",
+      "source_label": "E035",
+      "phase_id": "P14",
+      "research_question": "RQ4",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP034"
+      ],
+      "gate": "G14",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Deliberately incorrect candidates and known supported hypotheses",
+      "metric_families": [
+        "false hypothesis rejection",
+        "valid hypothesis retention",
+        "abstention"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Challenge verification with incorrect neural proposals; reject inconsistent candidates rather than convert confidence into evidence.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP035-neural-hallucination-rejection.md"
+    },
+    {
+      "planning_id": "XP036",
+      "title": "Crash-safe persistence",
+      "source_label": "E036",
+      "phase_id": "P15",
+      "research_question": "RQ8",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP035"
+      ],
+      "gate": "G15",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Defined commit/notification/lease crash points; reference state",
+      "metric_families": [
+        "corruption/duplicate decisions",
+        "replay/ownership recovery"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Build minimum persistence/API/worker instrument then inject crashes before/after commits/notifications/leases; verify safe recovery.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP036-crash-safe-persistence.md"
+    },
+    {
+      "planning_id": "XP037",
+      "title": "Concurrent workers",
+      "source_label": "E037",
+      "phase_id": "P15",
+      "research_question": "RQ8",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP036"
+      ],
+      "gate": "G15",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": null,
+      "baseline_reference": "Single worker versus concurrent workers at identical workload",
+      "metric_families": [
+        "stale commit rejection",
+        "duplicate work",
+        "ownership correctness"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Test leases, fencing, expiry and recovery with concurrent scopes; prevent stale owners from committing results.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP037-concurrent-workers.md"
+    },
+    {
+      "planning_id": "XP038",
+      "title": "Kafka transition qualification",
+      "source_label": "E038",
+      "phase_id": "P15",
+      "research_question": "RQ8",
+      "experiment_id": null,
+      "status": "planned_not_authorized",
+      "depends_on": [
+        "XP037"
+      ],
+      "gate": "G15",
+      "review_status": "pending",
+      "approval_reference": null,
+      "condition": "Only if measured PostgreSQL queue limits justify comparison; reviewed not-required disposition can retain PostgreSQL",
+      "baseline_reference": "Measured PostgreSQL limit versus equivalent Kafka workload",
+      "metric_families": [
+        "throughput/latency/replay/recovery/operational complexity"
+      ],
+      "acceptance_thresholds": null,
+      "controls": [
+        "Same versioned datasets/incidents and declared workload",
+        "Independent branch inputs; no evaluation-label leakage",
+        "Frozen selection/splits, tuning budget, configuration/seeds and hardware",
+        "Preserve failures and non-overwriting source/result snapshots"
+      ],
+      "implementation_steps": [
+        "Recover repository/experiment context and obtain explicit prerequisite/scope authorization.",
+        "Preregister hypothesis, variables, controls, independent baseline, metrics and reviewed thresholds under an allocated permanent experiment ID.",
+        "Only after measured queue limits, compare Kafka with established replay/ownership/delivery contracts; do not migrate if PostgreSQL meets requirements.",
+        "Build fixtures and real/controlled integration tests covering stage-specific normal, boundary and failure cases.",
+        "Execute only the frozen protocol; retain dataset/code/configuration/environment provenance and unsuccessful attempts.",
+        "Compare against the declared reference; analyze uncertainty, coverage and failure categories.",
+        "Write evidence-backed decision and await human review; do not advance automatically."
+      ],
+      "required_artifacts": [
+        "README.md",
+        "hypothesis.md",
+        "protocol.md",
+        "configuration.yaml",
+        "run.md",
+        "results/",
+        "figures/",
+        "logs/",
+        "decision.md",
+        "dataset/run/source manifests and hashes"
+      ],
+      "card": "docs/governance/stages/XP038-kafka-transition-qualification.md"
+    }
+  ]
+}

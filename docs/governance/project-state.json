@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "checkpoint_date": "2026-10-03",
+  "scope": "Governance adoption only; no edits to pre-existing files/records",
+  "permanent_registry": "EXPERIMENT_INDEX.md",
+  "active_experiment": "E003",
+  "active_run": "E003-R001",
+  "planning_stage": "XP001",
+  "gate_status": "blocked_review_pending",
+  "review_status": "pending",
+  "reviewer": null,
+  "review_date": null,
+  "approval_reference": null,
+  "next_available_experiment_id": "E004",
+  "next_experiment_allocated": false,
+  "allowed_next_action": "Review E003 report, results and decision with user; new governance additions/read-only review within authorization",
+  "authority_to_modify_existing_records": false,
+  "forbidden_next_actions": [
+    "Implement unreviewed E003 model/adapter revisions",
+    "Rerun changed adequacy protocol",
+    "Allocate or start successor experiment",
+    "Implement downstream reasoning/ML/causal/planning/remediation/infrastructure",
+    "Overwrite existing scientific records"
+  ],
+  "registered_experiments": [
+    {
+      "id": "E001",
+      "meaning": "R0 baseline reproduction",
+      "status": "draft_not_run",
+      "path": "experiments/E001"
+    },
+    {
+      "id": "E002",
+      "meaning": "onset/timing analysis",
+      "status": "reserved_waiting_E001_review",
+      "path": "experiments/E002"
+    },
+    {
+      "id": "E003",
+      "meaning": "domain model adequacy",
+      "status": "executed_gate_blocked_review_pending",
+      "path": "experiments/E003_domain_model_adequacy"
+    }
+  ],
+  "evidence": {
+    "report": "docs/E003-implementation-report.md",
+    "analysis": "docs/openrca-dataset-analysis.md",
+    "decision": "experiments/E003_domain_model_adequacy/decision.md",
+    "results": "experiments/E003_domain_model_adequacy/results/E003-R001/adequacy.json",
+    "run_manifest": "experiments/E003_domain_model_adequacy/results/E003-R001/run-manifest.json",
+    "dataset_manifest": "data/manifests/openrca.json"
+  },
+  "verified_checkpoint_facts": {
+    "tests_passed": 39,
+    "scope_replays": 8,
+    "source_rows_scanned": 100763,
+    "source_rows_mapped": 98736,
+    "source_rows_rejected": 2000,
+    "source_rows_outside_window": 27,
+    "canonical_observations": 136992,
+    "full_volume_audit": false,
+    "downstream_ready": false
+  },
+  "recovery_order": [
+    "AGENTS.md",
+    "EXPERIMENTAL_PROTOCOL.md",
+    "PROJECT_STATE.md",
+    "docs/governance/project-state.json",
+    "EXPERIMENT_INDEX.md",
+    "live active-experiment evidence",
+    "docs/governance/EXECUTION_ROADMAP.md",
+    "docs/governance/execution-plan.json",
+    "relevant stage card",
+    "applicable scientific contracts"
+  ],
+  "required_revisions_pending_review": [
+    "file-level Bank trace timestamp scale",
+    "entity/resource kinds and aliases",
+    "workbook deployment relations",
+    "trace root/parent/context semantics",
+    "metric/duration/status units and meanings",
+    "event-centered/full-day coverage and memory",
+    "incident/query evaluator association"
+  ],
+  "checkpoint_policy": "Verify live scientific records; corrections are separate dated files with explicit review, not edits to this checkpoint under current authority"
+}
