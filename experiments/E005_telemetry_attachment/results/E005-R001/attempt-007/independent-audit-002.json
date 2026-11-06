@@ -1,0 +1,18 @@
+{
+  "run_id": "E005-R001",
+  "attempt": "007",
+  "independent_audit": "REVIEW_REQUIRED",
+  "records": 16,
+  "counts": {
+    "traces": 8,
+    "metrics": 4,
+    "logs": 4
+  },
+  "metric_points": 4,
+  "spans": 8,
+  "logs": 4,
+  "checks_failed": [],
+  "unknowns": [
+    "metric timestamp was present and retained, but the SDK pre-export timestamp was not captured for exact equality comparison"
+  ]
+}

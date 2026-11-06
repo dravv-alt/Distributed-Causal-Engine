@@ -1,0 +1,439 @@
+2026-11-06T16:34:10.295+0530	info	otelconftelemetry/tracer.go:47	Internal trace telemetry disabled	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}}
+2026-11-06T16:34:10.297+0530	warn	builders/builders.go:40	"otlphttp" alias is deprecated; use "otlp_http" instead	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-06T16:34:10.297+0530	warn	builders/builders.go:40	"otlphttp" alias is deprecated; use "otlp_http" instead	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "logs"}
+2026-11-06T16:34:10.298+0530	warn	builders/builders.go:40	"otlphttp" alias is deprecated; use "otlp_http" instead	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-06T16:34:10.299+0530	info	service@v0.164.0/service.go:233	Starting otelcol...	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "Version": "0.164.0", "NumCPU": 20}
+2026-11-06T16:34:10.299+0530	info	extensions/extensions.go:43	Starting extensions...	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}}
+2026-11-06T16:34:10.299+0530	info	otlpreceiver@v0.164.0/otlp.go:175	Starting HTTP server	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "127.0.0.1:4318"}
+2026-11-06T16:34:10.299+0530	info	service@v0.164.0/service.go:256	Everything is ready. Begin running and processing data.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}}
+2026-11-06T16:34:10.845+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-06T16:34:10.864+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-06T16:34:10.892+0530	info	Metrics	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 1, "data points": 1}
+2026-11-06T16:34:10.928+0530	info	Logs	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "logs", "resource logs": 1, "log records": 1}
+2026-11-06T16:34:11.110+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-06T16:34:11.123+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-06T16:34:11.154+0530	info	Metrics	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 1, "data points": 1}
+2026-11-06T16:34:11.188+0530	info	Logs	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "logs", "resource logs": 1, "log records": 1}
+2026-11-06T16:34:11.373+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-06T16:34:11.387+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-06T16:34:11.402+0530	info	Metrics	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 1, "data points": 1}
+2026-11-06T16:34:11.433+0530	info	Logs	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "logs", "resource logs": 1, "log records": 1}
+2026-11-06T16:34:11.732+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "143.198013ms"}
+2026-11-06T16:34:11.903+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-06T16:34:11.922+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-06T16:34:11.959+0530	info	Metrics	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 1, "data points": 1}
+2026-11-06T16:34:11.975+0530	info	Logs	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "logs", "resource logs": 1, "log records": 1}
+2026-11-06T16:34:12.357+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "63.095477ms"}
+2026-11-06T16:34:12.424+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "220.423438ms"}
+2026-11-06T16:34:12.647+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "169.28757ms"}
+2026-11-06T16:34:12.820+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "258.607974ms"}
+2026-11-06T16:34:13.082+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "129.639038ms"}
+2026-11-06T16:34:13.216+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "249.922173ms"}
+2026-11-06T16:34:13.469+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "228.685292ms"}
+2026-11-06T16:34:13.701+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "119.404377ms"}
+2026-11-06T16:34:13.847+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "267.1444ms"}
+2026-11-06T16:34:14.122+0530	error	internal/base_exporter.go:119	Exporting failed. Rejecting data. Try enabling sending_queue to survive temporary failures.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "no more retries left: rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "rejected_items": 1}
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.(*BaseExporter).Send
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/base_exporter.go:119
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewTracesRequest.newConsumeTraces.func1
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/new_request.go:123
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.164.0/internal/refconsumer/traces.go:30
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.164.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlphttp.go:47
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2848
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/server.go:469
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:194
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3331
+net/http.(*conn).serve
+	net/http/server.go:2087
+2026-11-06T16:34:14.122+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-06T16:34:15.634+0530	error	internal/base_exporter.go:119	Exporting failed. Rejecting data. Try enabling sending_queue to survive temporary failures.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "no more retries left: rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "rejected_items": 80}
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.(*BaseExporter).Send
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/base_exporter.go:119
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewTracesRequest.newConsumeTraces.func1
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/new_request.go:123
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.164.0/internal/refconsumer/traces.go:30
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.164.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlphttp.go:47
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2848
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/server.go:469
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:194
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3331
+net/http.(*conn).serve
+	net/http/server.go:2087
+2026-11-06T16:34:15.634+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 80}
+2026-11-06T16:34:17.042+0530	error	internal/base_exporter.go:119	Exporting failed. Rejecting data. Try enabling sending_queue to survive temporary failures.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "no more retries left: rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "rejected_items": 1}
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.(*BaseExporter).Send
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/base_exporter.go:119
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewTracesRequest.newConsumeTraces.func1
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/new_request.go:123
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.164.0/internal/refconsumer/traces.go:30
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.164.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlphttp.go:47
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2848
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/server.go:469
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:194
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3331
+net/http.(*conn).serve
+	net/http/server.go:2087
+2026-11-06T16:34:18.387+0530	error	internal/base_exporter.go:119	Exporting failed. Rejecting data. Try enabling sending_queue to survive temporary failures.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "no more retries left: rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "rejected_items": 80}
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.(*BaseExporter).Send
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/base_exporter.go:119
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewTracesRequest.newConsumeTraces.func1
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/new_request.go:123
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.164.0/internal/refconsumer/traces.go:30
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.164.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlphttp.go:47
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2848
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/server.go:469
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:194
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3331
+net/http.(*conn).serve
+	net/http/server.go:2087
+2026-11-06T16:34:20.817+0530	error	internal/base_exporter.go:119	Exporting failed. Rejecting data. Try enabling sending_queue to survive temporary failures.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "no more retries left: rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "rejected_items": 1}
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.(*BaseExporter).Send
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/base_exporter.go:119
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewTracesRequest.newConsumeTraces.func1
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/new_request.go:123
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.164.0/internal/refconsumer/traces.go:30
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.164.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlphttp.go:47
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2848
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/server.go:469
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:194
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3331
+net/http.(*conn).serve
+	net/http/server.go:2087
+2026-11-06T16:34:21.803+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "261.749744ms"}
+2026-11-06T16:34:22.077+0530	error	internal/base_exporter.go:119	Exporting failed. Rejecting data. Try enabling sending_queue to survive temporary failures.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "no more retries left: rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "rejected_items": 80}
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.(*BaseExporter).Send
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/base_exporter.go:119
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewTracesRequest.newConsumeTraces.func1
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/new_request.go:123
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.164.0/internal/refconsumer/traces.go:30
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.164.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlphttp.go:47
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2848
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/server.go:469
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:194
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3331
+net/http.(*conn).serve
+	net/http/server.go:2087
+2026-11-06T16:34:22.077+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 80}
+2026-11-06T16:34:24.825+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "135.310157ms"}
+2026-11-06T16:34:24.964+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "212.205467ms"}
+2026-11-06T16:34:25.180+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "227.774793ms"}
+2026-11-06T16:34:25.412+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "139.635178ms"}
+2026-11-06T16:34:25.556+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "288.869109ms"}
+2026-11-06T16:34:25.848+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "152.445409ms"}
+2026-11-06T16:34:26.023+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "205.101446ms"}
+2026-11-06T16:34:26.233+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "108.709578ms"}
+2026-11-06T16:34:26.345+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "134.979499ms"}
+2026-11-06T16:34:26.731+0530	error	internal/base_exporter.go:119	Exporting failed. Rejecting data. Try enabling sending_queue to survive temporary failures.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "no more retries left: rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "rejected_items": 1}
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.(*BaseExporter).Send
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/base_exporter.go:119
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewTracesRequest.newConsumeTraces.func1
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/new_request.go:123
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.164.0/internal/refconsumer/traces.go:30
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.164.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlphttp.go:47
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2848
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/server.go:469
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:194
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3331
+net/http.(*conn).serve
+	net/http/server.go:2087
+2026-11-06T16:34:26.731+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-06T16:34:34.737+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "131.775597ms"}
+2026-11-06T16:34:34.873+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "174.092631ms"}
+2026-11-06T16:34:35.053+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "205.95176ms"}
+2026-11-06T16:34:35.263+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "233.238176ms"}
+2026-11-06T16:34:35.501+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "296.138976ms"}
+2026-11-06T16:34:35.801+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "223.629328ms"}
+2026-11-06T16:34:36.030+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "135.878763ms"}
+2026-11-06T16:34:36.171+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "249.9382ms"}
+2026-11-06T16:34:36.424+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "168.891452ms"}
+2026-11-06T16:34:36.598+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "100.668455ms"}
+2026-11-06T16:34:36.702+0530	error	internal/base_exporter.go:119	Exporting failed. Rejecting data. Try enabling sending_queue to survive temporary failures.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "no more retries left: rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "rejected_items": 1}
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.(*BaseExporter).Send
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/base_exporter.go:119
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewTracesRequest.newConsumeTraces.func1
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/new_request.go:123
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.164.0/internal/refconsumer/traces.go:30
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.164.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlphttp.go:47
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2848
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/server.go:469
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:194
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3331
+net/http.(*conn).serve
+	net/http/server.go:2087
+2026-11-06T16:34:36.702+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-06T16:34:52.709+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "98.746952ms"}
+2026-11-06T16:34:52.812+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "175.719473ms"}
+2026-11-06T16:34:52.991+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "281.974211ms"}
+2026-11-06T16:34:53.278+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "113.293555ms"}
+2026-11-06T16:34:53.399+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "220.437378ms"}
+2026-11-06T16:34:53.624+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "238.542783ms"}
+2026-11-06T16:34:53.866+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "270.574807ms"}
+2026-11-06T16:34:54.141+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "181.755335ms"}
+2026-11-06T16:34:54.327+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "162.285039ms"}
+2026-11-06T16:34:54.493+0530	info	internal/retry_sender.go:136	Exporting failed. Will retry the request after interval.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "interval": "195.86501ms"}
+2026-11-06T16:34:54.694+0530	error	internal/base_exporter.go:119	Exporting failed. Rejecting data. Try enabling sending_queue to survive temporary failures.	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlphttp/dce", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "error": "no more retries left: rpc error: code = Unavailable desc = error exporting items, request to http://127.0.0.1:9000/v1/traces responded with HTTP Status Code 503, Message=, Details=[]", "rejected_items": 1}
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.(*BaseExporter).Send
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/base_exporter.go:119
+go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewTracesRequest.newConsumeTraces.func1
+	go.opentelemetry.io/collector/exporter/exporterhelper@v0.164.0/internal/new_request.go:123
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/service/internal/refconsumer.refTraces.ConsumeTraces
+	go.opentelemetry.io/collector/service@v0.164.0/internal/refconsumer/traces.go:30
+go.opentelemetry.io/collector/internal/fanoutconsumer.(*tracesConsumer).ConsumeTraces
+	go.opentelemetry.io/collector/internal/fanoutconsumer@v0.164.0/traces.go:71
+go.opentelemetry.io/collector/consumer.ConsumeTracesFunc.ConsumeTraces
+	go.opentelemetry.io/collector/consumer@v1.70.0/traces.go:27
+go.opentelemetry.io/collector/receiver/otlpreceiver/internal/trace.(*Receiver).Export
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/internal/trace/otlp.go:42
+go.opentelemetry.io/collector/receiver/otlpreceiver.handleTraces
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlphttp.go:47
+go.opentelemetry.io/collector/receiver/otlpreceiver.(*otlpReceiver).startHTTPServer.func1
+	go.opentelemetry.io/collector/receiver/otlpreceiver@v0.164.0/otlp.go:141
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+net/http.(*ServeMux).ServeHTTP
+	net/http/server.go:2848
+go.opentelemetry.io/collector/config/confighttp.(*decompressor).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/compression.go:287
+go.opentelemetry.io/collector/config/confighttp.(*ServerConfig).ToServer.maxRequestBodySizeInterceptor.func3
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/server.go:469
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*middleware).serveHTTP
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:194
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewMiddleware.func2.1
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.72.0/handler.go:67
+net/http.HandlerFunc.ServeHTTP
+	net/http/server.go:2306
+go.opentelemetry.io/collector/config/confighttp.(*clientInfoHandler).ServeHTTP
+	go.opentelemetry.io/collector/config/confighttp@v0.164.0/clientinfohandler.go:26
+net/http.serverHandler.ServeHTTP
+	net/http/server.go:3331
+net/http.(*conn).serve
+	net/http/server.go:2087
+2026-11-06T16:34:54.694+0530	info	Traces	{"resource": {"service.instance.id": "bff0c76f-4dae-4010-8bc0-131f62bd5f67", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}

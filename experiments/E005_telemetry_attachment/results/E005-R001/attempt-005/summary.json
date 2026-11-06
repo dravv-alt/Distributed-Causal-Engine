@@ -1,0 +1,36 @@
+{
+  "run_id": "E005-R001",
+  "status": "FAIL",
+  "cases": [
+    {
+      "case": "valid-1",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "SUCCESS"
+      }
+    },
+    {
+      "case": "valid-2",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "SUCCESS"
+      }
+    },
+    {
+      "case": "valid-3",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "SUCCESS"
+      }
+    }
+  ],
+  "error": "AssertionError: valid counts {'logs': 3, 'metrics': 6, 'traces': 6}",
+  "counts": {
+    "logs": 3,
+    "metrics": 6,
+    "traces": 6
+  }
+}

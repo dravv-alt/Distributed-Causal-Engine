@@ -1,0 +1,19 @@
+{
+  "run_id": "E005-R001",
+  "status": "FAIL",
+  "cases": [
+    {
+      "case": "valid-1",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "NOT_CALLED"
+      }
+    }
+  ],
+  "error": "AssertionError: valid export result 1: {'traces': 'SUCCESS', 'metrics': 'SUCCESS', 'logs': 'NOT_CALLED'}",
+  "counts": {
+    "metrics": 2,
+    "traces": 3
+  }
+}

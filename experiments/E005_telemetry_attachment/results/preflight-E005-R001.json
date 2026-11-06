@@ -1,0 +1,55 @@
+{
+  "run_id": "E005-R001",
+  "status": "preflight-before-execution",
+  "captured_utc": null,
+  "git_head": "319b50f564027fc0fac2503c4656e703a741c318",
+  "git_worktree_dirty": true,
+  "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "ram": "UNKNOWN (not queried successfully)",
+  "opentelemetry_versions": {
+    "opentelemetry-api": "1.31.1",
+    "opentelemetry-sdk": "1.31.1",
+    "opentelemetry-proto": "1.31.1",
+    "opentelemetry-exporter-otlp-proto-http": "1.31.1",
+    "protobuf": "7.36.2",
+    "requests": "2.34.2"
+  },
+  "collector_version": "0.164.0",
+  "files": {
+    "experiments/E005_telemetry_attachment/hypothesis.md": {
+      "bytes": 1393,
+      "sha256": "4f8b32f2c9968fcce846c056faa2b728a73b70c8d64ef012c5a24870ad5b1f37"
+    },
+    "experiments/E005_telemetry_attachment/protocol.md": {
+      "bytes": 5273,
+      "sha256": "28ac89b857c999ded9e3646057400cecd8de3c4290fe7170f1a48f0b4d9bb317"
+    },
+    "experiments/E005_telemetry_attachment/configuration.json": {
+      "bytes": 923,
+      "sha256": "80ac362bad98f11ddf0a75e7bbe0b551e5560ae814746b172c056ed46d050640"
+    },
+    "experiments/E005_telemetry_attachment/receiver.py": {
+      "bytes": 5284,
+      "sha256": "d19955666b56ea4b894e1c158175c2f512a147e8ef1605a4d053af1e5da7f978"
+    },
+    "experiments/E005_telemetry_attachment/collector.yaml": {
+      "bytes": 613,
+      "sha256": "9b1ea442c9db6e9464e6f08db2863380d8ddca4a711aa3193088af57e1d90bc6"
+    },
+    "experiments/E005_telemetry_attachment/run_e005_r001.py": {
+      "bytes": 11064,
+      "sha256": "5cf9b778b30847537065827272433d7993c00d1ba5f4c25e876a314b5d0c473d"
+    },
+    "tools/e005/otelcol_0.164.0_windows_amd64.tar.gz": {
+      "bytes": 49150563,
+      "sha256": "ff9a3d79687cca7863bfbea1198542ca0c1800841289541913211d75ab6fea38"
+    },
+    "tools/e005/otelcol.exe": {
+      "bytes": 187862528,
+      "sha256": "20aa55b613207c37f6b65df555b16001ec3f965d7218bf619742cb8579f0daa1"
+    }
+  },
+  "execution": "loopback only; no remote compute or external dataset"
+}

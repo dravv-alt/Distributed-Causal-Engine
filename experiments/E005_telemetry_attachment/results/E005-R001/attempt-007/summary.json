@@ -1,0 +1,57 @@
+{
+  "run_id": "E005-R001",
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "valid-1",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "SUCCESS"
+      }
+    },
+    {
+      "case": "valid-2",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "SUCCESS"
+      }
+    },
+    {
+      "case": "valid-3",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "SUCCESS"
+      }
+    },
+    {
+      "case": "malformed",
+      "statuses": {
+        "traces": 400,
+        "metrics": 400,
+        "logs": 400
+      },
+      "counts_unchanged": true
+    },
+    {
+      "case": "transient-rejection-retry",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "SUCCESS"
+      }
+    },
+    {
+      "case": "storage-failure",
+      "http_status": 503
+    }
+  ],
+  "counts": {
+    "logs": 4,
+    "metrics": 4,
+    "traces": 8
+  },
+  "durable_records": 16
+}
