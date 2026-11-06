@@ -1,0 +1,91 @@
+{
+  "candidate_date_support": {
+    "ms": 172113
+  },
+  "candidate_epoch_support": {
+    "ms": 172113
+  },
+  "compressed_bytes": 1412407,
+  "counts": {
+    "in_window": 172113,
+    "rows_seen": 172113
+  },
+  "crc_eof_verified": true,
+  "decision": "QUALIFIED",
+  "decompressed_sha256": "09c8f273fd07f031b3971f755c2473e19aa433fa3a697e86635def00d75b14fb",
+  "elapsed_seconds": 5.304943799972534,
+  "expanded_bytes": 11768264,
+  "header": [
+    "itemid",
+    "name",
+    "bomc_id",
+    "timestamp",
+    "value",
+    "cmdb_id"
+  ],
+  "max_timestamp_ns": 1590616799000000000,
+  "metric_counts": {
+    "ACS": 4680,
+    "AIOS": 4680,
+    "AWS": 4680,
+    "Asm_Free_Tb": 936,
+    "CPU_Used_Pct": 3806,
+    "CPU_free_pct": 4680,
+    "Call_Per_Sec": 4680,
+    "DFParaWrite_Per_Sec": 4680,
+    "DbFile_Used_Pct": 16,
+    "DbTime": 4680,
+    "Exec_Per_Sec": 4680,
+    "Hang": 4680,
+    "LFParaWrite_Per_Sec": 4680,
+    "LFSync_Per_Sec": 4680,
+    "Logic_Read_Per_Sec": 4680,
+    "Login_Per_Sec": 4680,
+    "MEM_Total": 4680,
+    "MEM_Used": 4680,
+    "MEM_Used_Pct": 4680,
+    "MEM_real_util": 4680,
+    "New_Tbs_Free_Gb": 4788,
+    "New_Tbs_Used_Pct": 4788,
+    "On_Off_State": 4680,
+    "PGA_Used_Pct": 2340,
+    "PGA_used_total": 2340,
+    "Physical_Read_Per_Sec": 4680,
+    "Proc_Used_Pct": 4680,
+    "Proc_User_Used_Pct": 4680,
+    "Redo_Per_Sec": 4680,
+    "Row_Lock": 4680,
+    "SEQ_Used_Pct": 99,
+    "SctRead_Per_Sec": 4680,
+    "SeqRead_Per_Sec": 4680,
+    "Sess_Active": 4680,
+    "Sess_Connect": 4680,
+    "Sess_Used_Temp": 2340,
+    "Sess_Used_Undo": 2340,
+    "Session_pct": 4680,
+    "TPS_Per_Sec": 4680,
+    "Tbs_Free_Gb": 156,
+    "Tbs_Used_Pct": 156,
+    "TempTbs_Pct": 2340,
+    "Total_Tbs_Size": 198,
+    "UndoTbs_Pct": 156,
+    "Used_Tbs_Size": 234,
+    "User_Commit": 4680,
+    "tnsping_result_time": 4680
+  },
+  "min_timestamp_ns": 1590595200000000000,
+  "path": "Telecom/telemetry/2020_05_28/metric/metric_service.csv",
+  "row_conservation": true,
+  "scenario": "Telecom",
+  "selected_scale": "ms",
+  "selection_counts": {
+    "mapped": 9557
+  },
+  "selection_evidence": "entire-file unique candidate + directory date + neighbour ordering; no magnitude-only selection",
+  "source_day_ns": [
+    1590595200000000000,
+    1590681600000000000
+  ],
+  "source_identifier_cue_counts": {},
+  "source_key": "b2f0173db5dbae4a3b7ee43902b7f57499eb23157507d6fe9b7740f0c1fae4e1"
+}

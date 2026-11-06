@@ -1,0 +1,66 @@
+{
+  "candidate_date_support": {
+    "ms": 91704
+  },
+  "candidate_epoch_support": {
+    "ms": 91704
+  },
+  "compressed_bytes": 595476,
+  "counts": {
+    "in_window": 91704,
+    "rows_seen": 91704
+  },
+  "crc_eof_verified": true,
+  "decision": "QUALIFIED",
+  "decompressed_sha256": "3d2ab1cea0193bde54cb89aa0ba1518b5b1ebb84338c9005ed77b48d57600b02",
+  "elapsed_seconds": 3.372901799972169,
+  "expanded_bytes": 6936259,
+  "header": [
+    "itemid",
+    "name",
+    "bomc_id",
+    "timestamp",
+    "value",
+    "cmdb_id"
+  ],
+  "max_timestamp_ns": 1590875994000000000,
+  "metric_counts": {
+    "Redis_key_count": 4168,
+    "blocked_clients": 4168,
+    "connected_clients": 4168,
+    "evicted_keys": 4168,
+    "expired_keys": 4168,
+    "instantaneous_input_kbps": 4168,
+    "instantaneous_ops_per_sec": 4168,
+    "instantaneous_output_kbps": 4168,
+    "keyspace_hits": 4168,
+    "keyspace_misses": 4168,
+    "maxmemory": 4168,
+    "mem_fragmentation_ratio": 4168,
+    "redis_load": 4172,
+    "redis_ping": 4172,
+    "rejected_connections": 4168,
+    "total_commands_processed": 4168,
+    "total_connections_received": 4168,
+    "used_cpu_sys": 4168,
+    "used_cpu_user": 4168,
+    "used_memory": 4168,
+    "used_memory_peak": 4168,
+    "used_memory_rss": 4168
+  },
+  "min_timestamp_ns": 1590854403000000000,
+  "path": "Telecom/telemetry/2020_05_31/metric/metric_middleware.csv",
+  "row_conservation": true,
+  "scenario": "Telecom",
+  "selected_scale": "ms",
+  "selection_counts": {
+    "mapped": 10560
+  },
+  "selection_evidence": "entire-file unique candidate + directory date + neighbour ordering; no magnitude-only selection",
+  "source_day_ns": [
+    1590854400000000000,
+    1590940800000000000
+  ],
+  "source_identifier_cue_counts": {},
+  "source_key": "aba9f9f18a2f4247b2a0f9bb8bef113dd93e29b3db32777b6126aee75d222074"
+}

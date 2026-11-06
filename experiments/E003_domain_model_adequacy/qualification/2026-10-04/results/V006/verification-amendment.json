@@ -1,0 +1,37 @@
+{
+  "run_id": "E003-AM002-V006",
+  "reason": "Apply the existing independent typed NetworkX/trace conservation verifier to the recovery artifact reader. No window, projection, threshold, or scientific protocol changed.",
+  "auditor_before_sha256": "e14c80d1844f8c11262421e4a824480741fa481f3f510214fdcfa50645b46f99",
+  "auditor_after_sha256": "29d8e1f6d9b0b3048840ad51799cbbc92377bd306176f9e4477f8569d0dbbd40",
+  "semantic_verifier_source_sha256": "f2485694ec65b26235b1d012e1eb78fc0e5e372201e03a8e3aa712e0d563b59b",
+  "auditor_after_source": {
+    "value": "\"\"\"Independent artifact reader for the single V006 recovery pass.\"\"\"\nimport argparse\nimport gzip\nimport json\nfrom pathlib import Path\nimport hashlib\nfrom dce_foundation.domain import digest\nfrom dce_foundation.qualification.projection import projection_violations\nfrom dce_foundation.representation_v2.audit import write_new\nfrom validate_e003_am002 import verify_projection\n\n\ndef sha(path):\n    h = hashlib.sha256()\n    with path.open('rb') as stream:\n        for block in iter(lambda:stream.read(1024*1024), b''):\n            h.update(block)\n    return h.hexdigest()\n\n\ndef main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('--run', required=True)\n    run = Path(parser.parse_args().run)\n    inventory = json.loads((run/'replay1-inventory.json').read_text())\n    preflight = json.loads((run/'preflight.json').read_text())\n    labels = json.loads((run/'evaluation-labels.json').read_text())\n    config = preflight['configuration']\n    expected = {'context:'+digest([l['scenario'],l['fault_ns']-config['incident_before_seconds']*10**9,l['fault_ns']]) for l in labels}\n    checks, errors, graph_records = {}, [], []\n    windows = inventory['windows']\n    checks['windows'] = len(windows)==335 and {w['window_identity'] for w in windows}==expected\n    checks['lineage'] = sum(w['origin']=='V004' for w in windows)==164 and sum(w['origin']=='V006' for w in windows)==171\n    comparisons = json.loads((run/'replay-comparison.json').read_text())\n    checks['comparison'] = comparisons['equal'] and comparisons['passes'][0]==comparisons['passes'][1]\n    for ordinal, item in enumerate(windows, 1):\n        paths = [Path(item['artifact_path']), run/'cases/replay-002'/item['expected_filename']]\n        hashes = []\n        for repetition, path in enumerate(paths, 1):\n            try:\n                with gzip.open(path,'rb') as stream:\n                    payload=json.loads(stream.read())\n                if (payload['start_ns'],payload['cutoff_ns'])!=(item['start_ns'],item['fault_ns']):\n                    raise ValueError('incorrect window bounds')\n                if projection_violations(payload):\n                    raise ValueError('unsupported projection evidence')\n                failures, graph = verify_projection(payload)\n                if failures:\n                    raise ValueError('independent semantic verification: ' + str(failures[:10]))\n                graph_records.append({'handle':item['window_identity'],'repetition':repetition,\n                    'nodes':graph.number_of_nodes(),'edges':graph.number_of_edges()})\n                hashes.append(digest(payload))\n                if repetition==1 and sha(path)!=item['artifact_sha256']:\n                    raise ValueError('artifact byte hash mismatch')\n                if digest(payload)!=comparisons['passes'][repetition-1][ordinal-1]['canonical_sha256']:\n                    raise ValueError('comparison canonical hash mismatch')\n            except Exception as error:\n                errors.append({'path':str(path),'error':str(error)})\n        if hashes!=[item['canonical_sha256']]*2:\n            errors.append({'window':item['window_identity'],'error':'independent replay hashes differ'})\n        if ordinal%10==0:\n            print(json.dumps({'independent_windows_checked':ordinal}),flush=True)\n    checks['artifact_integrity_and_equality']=not errors\n    replay2 = list((run/'cases/replay-002').glob('*'))\n    checks['replay2_coverage']=len(replay2)==335 and {p.name for p in replay2}=={w['expected_filename'] for w in windows}\n    checks['reconstructed_only']=len(list((run/'cases/replay-001').glob('*')))==171\n    profiles=list((run/'profiles').glob('file-*.json'))\n    checks['profile_inheritance']=len(profiles)==162 and all(sha(p)==preflight['parent_fingerprints']['V004'][p.name]['sha256'] for p in profiles)\n    unexpected = {p.name for p in run.iterdir()} - {'profiles','cases','logs','preflight.json','source-snapshot.zip',\n        'evaluation-labels.json','evaluation-queries.json','evaluation-query-associations.json',\n        'evaluation-incident-coverage.json','metric-qualification-registry.json','continuation-provenance.json',\n        'context-reference.json','parent-replay1-inventory.json','reconstruction-set.json','replay1-inventory.json','replay-comparison.json'}\n    unexpected -= {'verification-amendment.json'}\n    checks['no_unexpected_run_files']=not unexpected\n    amendment=json.loads((run/'verification-amendment.json').read_text())\n    checks['recorded_verifier_version']=sha(Path(__file__))==amendment['auditor_after_sha256']\n    write_new(run/'independent-audit.json',{'run_id':'E003-AM002-V006','passed':all(checks.values()),\n        'checks':checks,'errors':errors,'independent_graph_records':graph_records,\n        'semantic_verifier_source_sha256':sha(Path('scripts/validate_e003_am002.py'))})\n    if not all(checks.values()):\n        raise SystemExit(1)\n\n\nif __name__=='__main__':\n    main()\n",
+    "PSPath": "C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\scripts\\audit_e003_v006.py",
+    "PSParentPath": "C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\scripts",
+    "PSChildName": "audit_e003_v006.py",
+    "PSDrive": {
+      "CurrentLocation": "Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine",
+      "Name": "C",
+      "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+      "Root": "C:\\",
+      "Description": "Windows-SSD",
+      "MaximumSize": null,
+      "Credential": "System.Management.Automation.PSCredential",
+      "DisplayRoot": null
+    },
+    "PSProvider": {
+      "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+      "HelpFile": "System.Management.Automation.dll-Help.xml",
+      "Name": "FileSystem",
+      "PSSnapIn": "Microsoft.PowerShell.Core",
+      "ModuleName": "Microsoft.PowerShell.Core",
+      "Module": null,
+      "Description": "",
+      "Capabilities": 52,
+      "Home": "C:\\Users\\bhavv",
+      "Drives": "C G"
+    },
+    "ReadCount": 1
+  },
+  "preserved_runs_edited": false
+}

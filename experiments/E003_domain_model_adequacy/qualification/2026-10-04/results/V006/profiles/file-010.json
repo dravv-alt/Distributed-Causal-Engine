@@ -1,0 +1,50 @@
+{
+  "candidate_date_support": {
+    "s": 13916
+  },
+  "candidate_epoch_support": {
+    "s": 13916
+  },
+  "compressed_bytes": 109107,
+  "counts": {
+    "in_window": 13905,
+    "out_of_order": 1,
+    "out_of_window": 11,
+    "rows_seen": 13916
+  },
+  "crc_eof_verified": true,
+  "decision": "QUALIFIED",
+  "decompressed_sha256": "883ec49b01c12a464064dc055e6ab7e0dfd2943d55f7f8b1d1fe512961969776",
+  "elapsed_seconds": 0.3338248000072781,
+  "expanded_bytes": 639422,
+  "header": [
+    "timestamp",
+    "rr",
+    "sr",
+    "cnt",
+    "mrt",
+    "tc"
+  ],
+  "max_timestamp_ns": 1615046280000000000,
+  "metric_counts": {
+    "cnt": 13916,
+    "mrt": 13916,
+    "rr": 13916,
+    "sr": 13916
+  },
+  "min_timestamp_ns": 1614959940000000000,
+  "path": "Bank/telemetry/2021_03_06/metric/metric_app.csv",
+  "row_conservation": true,
+  "scenario": "Bank",
+  "selected_scale": "s",
+  "selection_counts": {
+    "mapped": 1088
+  },
+  "selection_evidence": "entire-file unique candidate + directory date + neighbour ordering; no magnitude-only selection",
+  "source_day_ns": [
+    1614960000000000000,
+    1615046400000000000
+  ],
+  "source_identifier_cue_counts": {},
+  "source_key": "6cd699e723945663127e8ad87944940fcd518659a27d21112495346afca4145b"
+}

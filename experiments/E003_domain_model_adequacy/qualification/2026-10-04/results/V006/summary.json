@@ -1,0 +1,51 @@
+{
+  "before_only_root_observed_cases": 284,
+  "dataset_rescanned": false,
+  "elapsed_seconds": 9631.765667800002,
+  "free_disk_bytes": 30887235584,
+  "gates": {
+    "A": "PASS",
+    "B": "NOT RETESTED; inherited V004 timestamp census",
+    "C": "PASS",
+    "D": "NOT RETESTED; inherited source/projection provenance",
+    "E": "PASS",
+    "F": "PASS",
+    "G": "PASS",
+    "H": "PASS"
+  },
+  "independent_audit_passed": true,
+  "inherited_profiles": 162,
+  "inherited_v002_profiles": 77,
+  "parent_run": "V004",
+  "peak_memory_bytes": 1389498368,
+  "qualified_query_associations": 333,
+  "recovery_status": "Completed",
+  "repeatable": true,
+  "replay1": {
+    "inherited_valid": 164,
+    "reconstructed": 171,
+    "verified": 335
+  },
+  "replay2": {
+    "completed": 335,
+    "verified": 335
+  },
+  "review_required": true,
+  "root_observed_cases": 285,
+  "run_id": "E003-AM002-V006",
+  "scenario_profile_counts": {
+    "Bank": 40,
+    "Market/cloudbed-1": 16,
+    "Market/cloudbed-2": 16,
+    "Telecom": 90
+  },
+  "scientific_decision_proposal": "REVISE / restricted downstream readiness; review pending",
+  "total_source_rows": 523947689,
+  "unknown_metric_entries": 7956,
+  "unknown_query_associations": 2,
+  "v002_modified": false,
+  "v004_modified": false,
+  "v004_status": "Interrupted during Replay 1; preserved unchanged.",
+  "v005_modified": false,
+  "validation_id": "V006"
+}
