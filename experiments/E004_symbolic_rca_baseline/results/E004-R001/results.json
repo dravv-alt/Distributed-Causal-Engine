@@ -1,0 +1,408 @@
+{
+  "case_results_file": "case-results.json",
+  "per_system": {
+    "ALL": {
+      "cases": 335,
+      "cases_with_inter_component_calls": 335,
+      "methods": {
+        "activity_reference_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.04776119402985075,
+          "top1_tie_aware": 0.04776119402985075,
+          "top3_deterministic": 0.14925373134328357,
+          "top3_tie_aware": 0.14925373134328357
+        },
+        "graph_disabled_uniform_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.05970149253731343,
+          "top1_tie_aware": 0.018043289107391496,
+          "top3_deterministic": 0.05970149253731343,
+          "top3_tie_aware": 0.05412986732217449
+        },
+        "symbolic_topology_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.05970149253731343,
+          "top1_tie_aware": 0.030845771144278607,
+          "top3_deterministic": 0.08955223880597014,
+          "top3_tie_aware": 0.08930348258706468
+        }
+      },
+      "paired_deltas": {
+        "activity_reference_v1_top1": {
+          "descriptive_95_interval": [
+            -0.0424852926044255,
+            0.008654446833281218
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": -0.01691542288557214
+        },
+        "activity_reference_v1_top3": {
+          "descriptive_95_interval": [
+            -0.1091239545329774,
+            -0.010776542979460416
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": -0.059950248756218905
+        },
+        "graph_disabled_uniform_v1_top1": {
+          "descriptive_95_interval": [
+            0.0031894751672066016,
+            0.022415488906567617
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.01280248203688711
+        },
+        "graph_disabled_uniform_v1_top3": {
+          "descriptive_95_interval": [
+            0.010356474732143784,
+            0.0599907557976366
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.03517361526489019
+        }
+      },
+      "root_absent": 51,
+      "root_present": 284
+    },
+    "Bank": {
+      "cases": 136,
+      "cases_with_inter_component_calls": 136,
+      "methods": {
+        "activity_reference_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.0661764705882353,
+          "top1_tie_aware": 0.0661764705882353,
+          "top3_deterministic": 0.2647058823529412,
+          "top3_tie_aware": 0.2647058823529412
+        },
+        "graph_disabled_uniform_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.125,
+          "top1_tie_aware": 0.03509527572234415,
+          "top3_deterministic": 0.125,
+          "top3_tie_aware": 0.10528582716703246
+        },
+        "symbolic_topology_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.11764705882352941,
+          "top1_tie_aware": 0.053921568627450976,
+          "top3_deterministic": 0.13970588235294118,
+          "top3_tie_aware": 0.1488970588235294
+        }
+      },
+      "paired_deltas": {
+        "activity_reference_v1_top1": {
+          "descriptive_95_interval": [
+            -0.06066807966493852,
+            0.0361582757433699
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": -0.012254901960784315
+        },
+        "activity_reference_v1_top3": {
+          "descriptive_95_interval": [
+            -0.2150958417189458,
+            -0.01652180533987775
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": -0.11580882352941177
+        },
+        "graph_disabled_uniform_v1_top1": {
+          "descriptive_95_interval": [
+            -0.0007771243734681493,
+            0.038429710183681805
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.018826292905106828
+        },
+        "graph_disabled_uniform_v1_top3": {
+          "descriptive_95_interval": [
+            -0.0020470828521248277,
+            0.08926954616511873
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.043611231656496954
+        }
+      },
+      "root_absent": 0,
+      "root_present": 136
+    },
+    "Market/cloudbed-1": {
+      "cases": 70,
+      "cases_with_inter_component_calls": 70,
+      "methods": {
+        "activity_reference_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.014285714285714285,
+          "top1_tie_aware": 0.014285714285714285,
+          "top3_deterministic": 0.02857142857142857,
+          "top3_tie_aware": 0.02857142857142857
+        },
+        "graph_disabled_uniform_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0022711748377130772,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.006813524513139231
+        },
+        "symbolic_topology_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.009523809523809523,
+          "top3_deterministic": 0.02857142857142857,
+          "top3_tie_aware": 0.02857142857142857
+        }
+      },
+      "paired_deltas": {
+        "activity_reference_v1_top1": {
+          "descriptive_95_interval": [
+            -0.035920322901052605,
+            0.02639651337724308
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": -0.004761904761904762
+        },
+        "activity_reference_v1_top3": {
+          "descriptive_95_interval": [
+            -0.05640433738075751,
+            0.05640433738075751
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.0
+        },
+        "graph_disabled_uniform_v1_top1": {
+          "descriptive_95_interval": [
+            -0.005800442463328302,
+            0.020305711835521194
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.007252634686096446
+        },
+        "graph_disabled_uniform_v1_top3": {
+          "descriptive_95_interval": [
+            -0.017401327389984907,
+            0.06091713550656359
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.02175790405828934
+        }
+      },
+      "root_absent": 26,
+      "root_present": 44
+    },
+    "Market/cloudbed-2": {
+      "cases": 78,
+      "cases_with_inter_component_calls": 78,
+      "methods": {
+        "activity_reference_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.01282051282051282,
+          "top1_tie_aware": 0.01282051282051282,
+          "top3_deterministic": 0.038461538461538464,
+          "top3_tie_aware": 0.038461538461538464
+        },
+        "graph_disabled_uniform_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0025562780847659286,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.007668834254297786
+        },
+        "symbolic_topology_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.01282051282051282,
+          "top1_tie_aware": 0.008547008547008546,
+          "top3_deterministic": 0.02564102564102564,
+          "top3_tie_aware": 0.02564102564102564
+        }
+      },
+      "paired_deltas": {
+        "activity_reference_v1_top1": {
+          "descriptive_95_interval": [
+            -0.0322172912777255,
+            0.023670282730716953
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": -0.004273504273504274
+        },
+        "activity_reference_v1_top3": {
+          "descriptive_95_interval": [
+            -0.06930002106441763,
+            0.043658995423391994
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": -0.01282051282051282
+        },
+        "graph_disabled_uniform_v1_top1": {
+          "descriptive_95_interval": [
+            -0.005741925420312985,
+            0.017723386344798222
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.005990730462242618
+        },
+        "graph_disabled_uniform_v1_top3": {
+          "descriptive_95_interval": [
+            -0.017225776260938963,
+            0.053170159034394676
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.017972191386727857
+        }
+      },
+      "root_absent": 24,
+      "root_present": 54
+    },
+    "Telecom": {
+      "cases": 51,
+      "cases_with_inter_component_calls": 51,
+      "methods": {
+        "activity_reference_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.09803921568627451,
+          "top1_tie_aware": 0.09803921568627451,
+          "top3_deterministic": 0.17647058823529413,
+          "top3_tie_aware": 0.17647058823529413
+        },
+        "graph_disabled_uniform_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.058823529411764705,
+          "top1_tie_aware": 0.017905341636974284,
+          "top3_deterministic": 0.058823529411764705,
+          "top3_tie_aware": 0.05371602491092286
+        },
+        "symbolic_topology_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.058823529411764705,
+          "top1_tie_aware": 0.032679738562091505,
+          "top3_deterministic": 0.13725490196078433,
+          "top3_tie_aware": 0.1111111111111111
+        }
+      },
+      "paired_deltas": {
+        "activity_reference_v1_top1": {
+          "descriptive_95_interval": [
+            -0.15432992605785623,
+            0.02361097180949019
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": -0.06535947712418301
+        },
+        "activity_reference_v1_top3": {
+          "descriptive_95_interval": [
+            -0.2078466666229548,
+            0.0771277123745888
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": -0.06535947712418301
+        },
+        "graph_disabled_uniform_v1_top1": {
+          "descriptive_95_interval": [
+            -0.010215751831246164,
+            0.0397645456814806
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.014774396925117218
+        },
+        "graph_disabled_uniform_v1_top3": {
+          "descriptive_95_interval": [
+            -0.020616654888871336,
+            0.13540682728924786
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.05739508620018825
+        }
+      },
+      "root_absent": 1,
+      "root_present": 50
+    }
+  },
+  "predictions_file": "predictions.jsonl",
+  "repeatability_file": "repeatability.json",
+  "summary": {
+    "cases": 335,
+    "dataset_rescanned": false,
+    "disk_free_bytes": 30471569408,
+    "elapsed_seconds": 1399.8559786999976,
+    "independent_audit_passed": true,
+    "methods": [
+      "symbolic_topology_v1",
+      "activity_reference_v1",
+      "graph_disabled_uniform_v1"
+    ],
+    "official_openrca_score": false,
+    "online_detection_tested": false,
+    "overall": {
+      "cases": 335,
+      "cases_with_inter_component_calls": 335,
+      "methods": {
+        "activity_reference_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.04776119402985075,
+          "top1_tie_aware": 0.04776119402985075,
+          "top3_deterministic": 0.14925373134328357,
+          "top3_tie_aware": 0.14925373134328357
+        },
+        "graph_disabled_uniform_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.05970149253731343,
+          "top1_tie_aware": 0.018043289107391496,
+          "top3_deterministic": 0.05970149253731343,
+          "top3_tie_aware": 0.05412986732217449
+        },
+        "symbolic_topology_v1": {
+          "abstentions": 0,
+          "top1_deterministic": 0.05970149253731343,
+          "top1_tie_aware": 0.030845771144278607,
+          "top3_deterministic": 0.08955223880597014,
+          "top3_tie_aware": 0.08930348258706468
+        }
+      },
+      "paired_deltas": {
+        "activity_reference_v1_top1": {
+          "descriptive_95_interval": [
+            -0.0424852926044255,
+            0.008654446833281218
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": -0.01691542288557214
+        },
+        "activity_reference_v1_top3": {
+          "descriptive_95_interval": [
+            -0.1091239545329774,
+            -0.010776542979460416
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": -0.059950248756218905
+        },
+        "graph_disabled_uniform_v1_top1": {
+          "descriptive_95_interval": [
+            0.0031894751672066016,
+            0.022415488906567617
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.01280248203688711
+        },
+        "graph_disabled_uniform_v1_top3": {
+          "descriptive_95_interval": [
+            0.010356474732143784,
+            0.0599907557976366
+          ],
+          "not_valid_significance_under_dependent_windows": true,
+          "paired_mean": 0.03517361526489019
+        }
+      },
+      "root_absent": 51,
+      "root_present": 284
+    },
+    "repeatability_cases": 335,
+    "repetitions": 2,
+    "run_id": "E004-R001",
+    "scientific_decision_proposal": "REVISE / structural prior only; human review pending",
+    "status": "Completed",
+    "successor_started": false,
+    "superiority_established": false,
+    "symptom_detector": "NONE",
+    "technical_gate": "PASS"
+  }
+}

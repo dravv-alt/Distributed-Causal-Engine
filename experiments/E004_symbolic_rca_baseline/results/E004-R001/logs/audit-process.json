@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\.venv-e002\\Scripts\\python.exe",
+    "-s",
+    "scripts/audit_e004.py",
+    "--run",
+    "C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\experiments\\E004_symbolic_rca_baseline\\results\\E004-R001"
+  ],
+  "exit_code": 0,
+  "stderr": "",
+  "stdout": "{\"run_id\": \"E004-R001\", \"passed\": true, \"cases_checked\": 335, \"errors\": [], \"independent_algorithm\": \"forward transitive closure versus reverse BFS\", \"evaluator_recomputed\": true, \"production_rank_module_imported\": false, \"raw_projection_extraction_totals_checked_against_E003\": true, \"limitation\": \"Certificate audit is not a second raw-source scan; E003 canonical hashes underpin input identity.\"}\n"
+}
