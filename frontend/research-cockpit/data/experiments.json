@@ -1,0 +1,792 @@
+{
+  "schema_version": "dce.research-cockpit.v2",
+  "generated_from": "read-only local experiment artifacts",
+  "current_stage": {
+    "title": "First real-data ranking test complete",
+    "status": "REVIEW",
+    "plain": "Replay works consistently. The graph ranking scored below the simpler observation-count method. Reliable diagnosis and automatic fixing are not established."
+  },
+  "experiments": [
+    {
+      "experiment_id": "E001",
+      "run_id": "E001-R001",
+      "status": "ACCEPTED",
+      "decision": "REVISE",
+      "question": "Can we repeat the original simulated DCE demo?",
+      "what_we_did": "Ran the original synthetic-data recipe again in a new folder and compared its five result tables with the delivered report.",
+      "result": "PASS: the five comparable result tables matched the delivered report.",
+      "blocking": "Review accepted; E002 subsequently executed.",
+      "meaning": "The old simulated demo is repeatable once on this machine.",
+      "not_established": "It does not prove DCE works on real outages, and it does not prove the hybrid approach is better than its simpler alternatives.",
+      "waiting": "Retain R0 as a baseline, not proof of hybrid superiority.",
+      "facts": [
+        "Reproduction CLI completed: yes.",
+        "Five comparable tables had zero mismatches after output-path normalization.",
+        "47 repository tests passed in the reviewed workspace check."
+      ],
+      "artifacts": [
+        {
+          "label": "Run summary",
+          "path": "experiments/E001/results/E001-R001/SUMMARY.md",
+          "sha256": "3b80e27686c0f577d61bb90b3599400d5c432507f223f1fb572e08dde4a1c43e"
+        },
+        {
+          "label": "Execution record",
+          "path": "experiments/E001/logs/E001-R001.md",
+          "sha256": "0a1acdcd8dbe61c6ea95d298cd9afbd7abd0e827339b0ace189f8d2da3acb1fa"
+        },
+        {
+          "label": "Raw report",
+          "path": "experiments/E001/results/E001-R001/report.json",
+          "sha256": "a0ef00babb8163b0e6ec0b7bfe792ae209296ad3b28d4007dbdd0c155a2486c5"
+        },
+        {
+          "label": "Comparison and hashes",
+          "path": "experiments/E001/results/E001-R001/artifact-manifest.json",
+          "sha256": "f8f0d50f3e67c81641475dc20ba4244030c737aa92c5eca995301ed7c6c8f188"
+        }
+      ],
+      "execution_status": "Reproduction completed",
+      "review_status": "User accepted R001 REVISE"
+    },
+    {
+      "experiment_id": "E002",
+      "run_id": "E002-R002",
+      "status": "REVIEW",
+      "decision": "REVISE",
+      "question": "Does using consistent timing sources improve which component is ranked as the likely root cause?",
+      "what_we_did": "Reran the frozen synthetic timing experiment in a qualified environment: three repeats and five fixed held-out seeds, comparing mixed, same-source and disabled timing.",
+      "result": "Three repeats agree. Clean-environment qualification passed. The timing change still gave no ranking improvement.",
+      "blocking": "The environment issue is fixed for R002. Its proposal remains pending; E003 infrastructure was accepted separately.",
+      "meaning": "The tied result survived the environment fix. The old dependency warning does not explain away the lack of improvement.",
+      "not_established": "It does not prove timing is useless, the hybrid is useless, or that a differently controlled timing method can never help.",
+      "waiting": "Review R002\u2019s REVISE proposal separately from the accepted R001.",
+      "facts": [
+        "Top-1 difference: 0.000 across 237 events.",
+        "Mixed timing used 306 cross-source pairs; same-source timing used zero.",
+        "Preflight and postflight qualified; 49 tests passed. Raw results byte-identical to R001.",
+        "Downloaded hash-pinned clean-room reconstruction was not established."
+      ],
+      "gates": [
+        {
+          "name": "repeatability",
+          "status": "PASS"
+        },
+        {
+          "name": "treatment integrity",
+          "status": "PASS"
+        },
+        {
+          "name": "superiority",
+          "status": "FAIL"
+        },
+        {
+          "name": "environment qualification",
+          "status": "PASS"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "Results",
+          "path": "experiments/E002/results/E002-R002/summary.json",
+          "sha256": "a15fa8ffa07059fd31c2ecd59f624e7e89697f3ccc1e93a772a1361ad0c319ad"
+        },
+        {
+          "label": "Environment / tests",
+          "path": "experiments/E002/results/E002-R002/validation.json",
+          "sha256": "f43f686595d1b8d5c1d3dd77d1f44e9148312b8b335110096baf331ab333eb04"
+        },
+        {
+          "label": "Decision proposal",
+          "path": "experiments/E002/results/E002-R002/decision-proposal.md",
+          "sha256": "683e2b2ea76149ae6c398de587620d984d3b4d941c058b93ba4cfec6ced0f32b"
+        },
+        {
+          "label": "R001 comparison",
+          "path": "experiments/E002/results/E002-R002/comparison-r001-r002.md",
+          "sha256": "da13c6fcd1f19020e48f3b8636f6290e5c66cec3575bbc80d5972584a4cb8958"
+        }
+      ],
+      "technical": {
+        "summary": {
+          "configuration_sha256": "056eedeecb380d65eff6ab4880bf1b3dc78c98d1e3bda68678d4e8343871c1a9",
+          "repeatability_hashes": [
+            "75dac86f78573fac799f0e90103ba2501bf44e6863afe47d7f7117f7bc5f5c58",
+            "75dac86f78573fac799f0e90103ba2501bf44e6863afe47d7f7117f7bc5f5c58",
+            "75dac86f78573fac799f0e90103ba2501bf44e6863afe47d7f7117f7bc5f5c58"
+          ],
+          "paired_top1_same_source_minus_mixed": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_events": 237
+          },
+          "aggregate_cross_source_pairs_observed": {
+            "mixed_current": 306,
+            "same_source_only": 306,
+            "timing_disabled": 344
+          },
+          "aggregate_cross_source_pairs_used": {
+            "mixed_current": 306,
+            "same_source_only": 0,
+            "timing_disabled": 344
+          },
+          "aggregate_false_positives": {
+            "mixed_current": 0,
+            "same_source_only": 0,
+            "timing_disabled": 0
+          },
+          "gates": {
+            "repeatability": true,
+            "treatment_integrity": true,
+            "superiority": false
+          },
+          "overall_gate": true
+        },
+        "validation": {
+          "schema_version": "dce.e002.r002.validation.v1",
+          "run_id": "E002-R002",
+          "outcome": "completed",
+          "protocol_changed": false,
+          "environment": {
+            "preflight_qualified": true,
+            "postflight_qualified": true,
+            "preflight_record": "experiments/E002/environment/E002-R002-preflight-qualified-2026-10-03.json",
+            "postflight_record": "experiments/E002/environment/E002-R002-postflight-qualified-2026-10-03.json"
+          },
+          "test_suite": {
+            "command": ".venv-e002\\Scripts\\python.exe -m pytest -q",
+            "result": "49 passed in 1.43s"
+          },
+          "gates": {
+            "repeatability": true,
+            "treatment_integrity": true,
+            "superiority": false,
+            "environment_qualification": true
+          },
+          "r001_comparison": {
+            "raw_results_byte_identical": true,
+            "repeatability_hashes_identical": true,
+            "derived_metrics_identical": true,
+            "summary_byte_identical": false,
+            "summary_difference_explained_by": "The embedded configuration SHA-256 differs because R002 records additional execution-context provenance."
+          },
+          "scope_boundary": "R002 does not change E002-R001, E003, or downstream RCA work."
+        }
+      },
+      "execution_status": "completed",
+      "review_status": "R001 accepted; R002 proposal pending review",
+      "history": [
+        "R001: accepted REVISE; environment qualification failed.",
+        "R002: qualified environment; unchanged performance; proposal pending."
+      ]
+    },
+    {
+      "experiment_id": "E003",
+      "run_id": "E003-AM002-V006",
+      "status": "ACCEPTED",
+      "decision": "REVISE",
+      "question": "Can DCE preserve and replay real OpenRCA telemetry consistently?",
+      "what_we_did": "Recovered saved profiles, reused 164 valid windows, reconstructed 171, then replayed all 335 again and compared hashes.",
+      "result": "162/162 profiles; both replays verified 335/335 windows. Independent audit passed.",
+      "blocking": "No for the approved restricted E004 baseline. Unknown metric meanings and coverage still restrict stronger claims.",
+      "meaning": "The representation/replay foundation is accepted. Preserving measurements is not the same as understanding them or finding faults.",
+      "not_established": "It does not prove full scientific adequacy, diagnosis accuracy, causal relationships or production readiness. Conditions B and D were inherited, not retested.",
+      "waiting": "Infrastructure accepted; scientific disposition remains REVISE. E004 has used this foundation.",
+      "facts": [
+        "7,956 metric meanings remain UNKNOWN.",
+        "Before-only root coverage: 284/335; coverage is not accuracy.",
+        "Supplied fault times define retrospective windows, not online detection.",
+        "Launcher status 1 with environment warning; completed artifacts independently verified."
+      ],
+      "artifacts": [
+        {
+          "label": "Summary",
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/summary.json",
+          "sha256": "309fe91d9bc8d93d2d9c80d1969d4dc660e7f22bf8dd704e1ed59ff76038bf39"
+        },
+        {
+          "label": "Audit",
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/independent-audit.json",
+          "sha256": "921f763983f5f5d062891d15a45761e9e3db48d1e39779776b1a048768d0c7d8"
+        },
+        {
+          "label": "Results",
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/results.json",
+          "sha256": "47aa00d0909c7e3b8786286d8957cbe0f4ef5240705f5b6d5ddbf3c3e4249af1"
+        },
+        {
+          "label": "Scientific decision",
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/decision.md",
+          "sha256": "7a4a7f524157b44767fd40e9662b159bcba76e1640d49faab69419bc5e2c4edb"
+        },
+        {
+          "label": "Hashes",
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/artifact-manifest.json",
+          "sha256": "3f4f4465c1efe3a563a16891a08b3cc23167059a61cfdd27365f209ba3c60887"
+        },
+        {
+          "label": "Limited acceptance",
+          "path": "docs/governance/amendments/2026-10-06-E003-V006-acceptance-and-E004-scope.md",
+          "sha256": "860b325cc688afcdc936a14c674bae8c53a24bdd31187c270f269e957da1ca3f"
+        }
+      ],
+      "execution_status": "Completed",
+      "review_status": "Accepted only as representation/replay infrastructure",
+      "gates": [
+        {
+          "name": "Condition A",
+          "status": "PASS"
+        },
+        {
+          "name": "Condition B",
+          "status": "NOT RETESTED"
+        },
+        {
+          "name": "Condition C",
+          "status": "PASS"
+        },
+        {
+          "name": "Condition D",
+          "status": "NOT RETESTED"
+        },
+        {
+          "name": "Condition E",
+          "status": "PASS"
+        },
+        {
+          "name": "Condition F",
+          "status": "PASS"
+        },
+        {
+          "name": "Condition G",
+          "status": "PASS"
+        },
+        {
+          "name": "Condition H",
+          "status": "PASS"
+        }
+      ],
+      "technical": {
+        "before_only_root_observed_cases": 284,
+        "dataset_rescanned": false,
+        "elapsed_seconds": 9631.765667800002,
+        "free_disk_bytes": 30887235584,
+        "gates": {
+          "A": "PASS",
+          "B": "NOT RETESTED; inherited V004 timestamp census",
+          "C": "PASS",
+          "D": "NOT RETESTED; inherited source/projection provenance",
+          "E": "PASS",
+          "F": "PASS",
+          "G": "PASS",
+          "H": "PASS"
+        },
+        "independent_audit_passed": true,
+        "inherited_profiles": 162,
+        "inherited_v002_profiles": 77,
+        "parent_run": "V004",
+        "peak_memory_bytes": 1389498368,
+        "qualified_query_associations": 333,
+        "recovery_status": "Completed",
+        "repeatable": true,
+        "replay1": {
+          "inherited_valid": 164,
+          "reconstructed": 171,
+          "verified": 335
+        },
+        "replay2": {
+          "completed": 335,
+          "verified": 335
+        },
+        "review_required": true,
+        "root_observed_cases": 285,
+        "run_id": "E003-AM002-V006",
+        "scenario_profile_counts": {
+          "Bank": 40,
+          "Market/cloudbed-1": 16,
+          "Market/cloudbed-2": 16,
+          "Telecom": 90
+        },
+        "scientific_decision_proposal": "REVISE / restricted downstream readiness; review pending",
+        "total_source_rows": 523947689,
+        "unknown_metric_entries": 7956,
+        "unknown_query_associations": 2,
+        "v002_modified": false,
+        "v004_modified": false,
+        "v004_status": "Interrupted during Replay 1; preserved unchanged.",
+        "v005_modified": false,
+        "validation_id": "V006"
+      },
+      "history": [
+        "R001: bounded audit; adequacy not established.",
+        "V002: 77/162 partial checkpoint, preserved.",
+        "V004: interrupted checkpoint, preserved.",
+        "V005: failed engineering attempt, preserved.",
+        "V006: completed; accepted for representation/replay only."
+      ]
+    },
+    {
+      "experiment_id": "E004",
+      "run_id": "E004-R001",
+      "status": "REVIEW",
+      "decision": "REVISE",
+      "execution_status": "Completed",
+      "review_status": "Decision proposal pending human review",
+      "question": "Does knowing who calls whom help locate the faulty component?",
+      "what_we_did": "Ranked the same 335 windows by shared dependencies, observation counts and uniform chance. Recomputed each ranking twice, then independently audited it.",
+      "result": "The graph method scored above chance, but below the simpler observation-count ranking.",
+      "meaning": "This heuristic contains descriptive localization signal. Dependency structure alone did not give reliable localization in this benchmark.",
+      "not_established": "No statistically established superiority, causality, operational RCA, online detection, hybrid advantage or safe remediation. Not official OpenRCA scoring.",
+      "blocking": "Human review required before any successor. No successor started.",
+      "waiting": "Review REVISE / structural-prior-only. Technical PASS does not mean diagnostic success.",
+      "facts": [
+        "All 335 windows retained; 335 repeat computations agreed; audit passed.",
+        "Root present: 284/335; all 51 absent-root cases remain in the denominator.",
+        "No qualified symptom detector: a shared dependency is not necessarily broken.",
+        "Fault time was supplied. Overlapping windows prevent significance claims from descriptive intervals."
+      ],
+      "gates": [
+        {
+          "name": "Execution / audit",
+          "status": "PASS"
+        },
+        {
+          "name": "Superiority",
+          "status": "NOT ESTABLISHED"
+        }
+      ],
+      "comparison": [
+        {
+          "method_id": "symbolic_topology_v1",
+          "label": "Graph: shared dependencies",
+          "abstentions": 0,
+          "top1_deterministic": 0.05970149253731343,
+          "top1_tie_aware": 0.030845771144278607,
+          "top3_deterministic": 0.08955223880597014,
+          "top3_tie_aware": 0.08930348258706468
+        },
+        {
+          "method_id": "activity_reference_v1",
+          "label": "Simple: observation counts",
+          "abstentions": 0,
+          "top1_deterministic": 0.04776119402985075,
+          "top1_tie_aware": 0.04776119402985075,
+          "top3_deterministic": 0.14925373134328357,
+          "top3_tie_aware": 0.14925373134328357
+        },
+        {
+          "method_id": "graph_disabled_uniform_v1",
+          "label": "Reference: uniform chance",
+          "abstentions": 0,
+          "top1_deterministic": 0.05970149253731343,
+          "top1_tie_aware": 0.018043289107391496,
+          "top3_deterministic": 0.05970149253731343,
+          "top3_tie_aware": 0.05412986732217449
+        }
+      ],
+      "per_system": [
+        {
+          "system": "Bank",
+          "cases": 136,
+          "cases_with_inter_component_calls": 136,
+          "methods": {
+            "activity_reference_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.0661764705882353,
+              "top1_tie_aware": 0.0661764705882353,
+              "top3_deterministic": 0.2647058823529412,
+              "top3_tie_aware": 0.2647058823529412
+            },
+            "graph_disabled_uniform_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.125,
+              "top1_tie_aware": 0.03509527572234415,
+              "top3_deterministic": 0.125,
+              "top3_tie_aware": 0.10528582716703246
+            },
+            "symbolic_topology_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.11764705882352941,
+              "top1_tie_aware": 0.053921568627450976,
+              "top3_deterministic": 0.13970588235294118,
+              "top3_tie_aware": 0.1488970588235294
+            }
+          },
+          "paired_deltas": {
+            "activity_reference_v1_top1": {
+              "descriptive_95_interval": [
+                -0.06066807966493852,
+                0.0361582757433699
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.012254901960784315
+            },
+            "activity_reference_v1_top3": {
+              "descriptive_95_interval": [
+                -0.2150958417189458,
+                -0.01652180533987775
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.11580882352941177
+            },
+            "graph_disabled_uniform_v1_top1": {
+              "descriptive_95_interval": [
+                -0.0007771243734681493,
+                0.038429710183681805
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.018826292905106828
+            },
+            "graph_disabled_uniform_v1_top3": {
+              "descriptive_95_interval": [
+                -0.0020470828521248277,
+                0.08926954616511873
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.043611231656496954
+            }
+          },
+          "root_absent": 0,
+          "root_present": 136
+        },
+        {
+          "system": "Market/cloudbed-1",
+          "cases": 70,
+          "cases_with_inter_component_calls": 70,
+          "methods": {
+            "activity_reference_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.014285714285714285,
+              "top1_tie_aware": 0.014285714285714285,
+              "top3_deterministic": 0.02857142857142857,
+              "top3_tie_aware": 0.02857142857142857
+            },
+            "graph_disabled_uniform_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0,
+              "top1_tie_aware": 0.0022711748377130772,
+              "top3_deterministic": 0,
+              "top3_tie_aware": 0.006813524513139231
+            },
+            "symbolic_topology_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0,
+              "top1_tie_aware": 0.009523809523809523,
+              "top3_deterministic": 0.02857142857142857,
+              "top3_tie_aware": 0.02857142857142857
+            }
+          },
+          "paired_deltas": {
+            "activity_reference_v1_top1": {
+              "descriptive_95_interval": [
+                -0.035920322901052605,
+                0.02639651337724308
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.004761904761904762
+            },
+            "activity_reference_v1_top3": {
+              "descriptive_95_interval": [
+                -0.05640433738075751,
+                0.05640433738075751
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.0
+            },
+            "graph_disabled_uniform_v1_top1": {
+              "descriptive_95_interval": [
+                -0.005800442463328302,
+                0.020305711835521194
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.007252634686096446
+            },
+            "graph_disabled_uniform_v1_top3": {
+              "descriptive_95_interval": [
+                -0.017401327389984907,
+                0.06091713550656359
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.02175790405828934
+            }
+          },
+          "root_absent": 26,
+          "root_present": 44
+        },
+        {
+          "system": "Market/cloudbed-2",
+          "cases": 78,
+          "cases_with_inter_component_calls": 78,
+          "methods": {
+            "activity_reference_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.01282051282051282,
+              "top1_tie_aware": 0.01282051282051282,
+              "top3_deterministic": 0.038461538461538464,
+              "top3_tie_aware": 0.038461538461538464
+            },
+            "graph_disabled_uniform_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0,
+              "top1_tie_aware": 0.0025562780847659286,
+              "top3_deterministic": 0,
+              "top3_tie_aware": 0.007668834254297786
+            },
+            "symbolic_topology_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.01282051282051282,
+              "top1_tie_aware": 0.008547008547008546,
+              "top3_deterministic": 0.02564102564102564,
+              "top3_tie_aware": 0.02564102564102564
+            }
+          },
+          "paired_deltas": {
+            "activity_reference_v1_top1": {
+              "descriptive_95_interval": [
+                -0.0322172912777255,
+                0.023670282730716953
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.004273504273504274
+            },
+            "activity_reference_v1_top3": {
+              "descriptive_95_interval": [
+                -0.06930002106441763,
+                0.043658995423391994
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.01282051282051282
+            },
+            "graph_disabled_uniform_v1_top1": {
+              "descriptive_95_interval": [
+                -0.005741925420312985,
+                0.017723386344798222
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.005990730462242618
+            },
+            "graph_disabled_uniform_v1_top3": {
+              "descriptive_95_interval": [
+                -0.017225776260938963,
+                0.053170159034394676
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.017972191386727857
+            }
+          },
+          "root_absent": 24,
+          "root_present": 54
+        },
+        {
+          "system": "Telecom",
+          "cases": 51,
+          "cases_with_inter_component_calls": 51,
+          "methods": {
+            "activity_reference_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.09803921568627451,
+              "top1_tie_aware": 0.09803921568627451,
+              "top3_deterministic": 0.17647058823529413,
+              "top3_tie_aware": 0.17647058823529413
+            },
+            "graph_disabled_uniform_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.058823529411764705,
+              "top1_tie_aware": 0.017905341636974284,
+              "top3_deterministic": 0.058823529411764705,
+              "top3_tie_aware": 0.05371602491092286
+            },
+            "symbolic_topology_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.058823529411764705,
+              "top1_tie_aware": 0.032679738562091505,
+              "top3_deterministic": 0.13725490196078433,
+              "top3_tie_aware": 0.1111111111111111
+            }
+          },
+          "paired_deltas": {
+            "activity_reference_v1_top1": {
+              "descriptive_95_interval": [
+                -0.15432992605785623,
+                0.02361097180949019
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.06535947712418301
+            },
+            "activity_reference_v1_top3": {
+              "descriptive_95_interval": [
+                -0.2078466666229548,
+                0.0771277123745888
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.06535947712418301
+            },
+            "graph_disabled_uniform_v1_top1": {
+              "descriptive_95_interval": [
+                -0.010215751831246164,
+                0.0397645456814806
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.014774396925117218
+            },
+            "graph_disabled_uniform_v1_top3": {
+              "descriptive_95_interval": [
+                -0.020616654888871336,
+                0.13540682728924786
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.05739508620018825
+            }
+          },
+          "root_absent": 1,
+          "root_present": 50
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "Plain decision",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/decision.md",
+          "sha256": "42e7a257befd1e79f2fe40d6d2daef31cb29793ebf0b6ae72423a710be05689c"
+        },
+        {
+          "label": "Summary",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/summary.json",
+          "sha256": "4859f523607d9e0ae71c77dc2998210bd8add2604d411941a02b8fd97c0a09ee"
+        },
+        {
+          "label": "Per-system results",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/results.json",
+          "sha256": "ed5ea37b0ce9196e619fd4cd00d58f8f85ea8bd63c5874b9a88610c507f72659"
+        },
+        {
+          "label": "Audit",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/independent-audit.json",
+          "sha256": "91ff312cfe5c22b6aa2a5d9ca021ee0e046fec5f84a619f62bbc2c5a6ba37681"
+        },
+        {
+          "label": "Prediction seal",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/prediction-seal.json",
+          "sha256": "26f1f528b60417191e51d45513cb0472f0bbbe41584193dbc89c3d69e4491a94"
+        },
+        {
+          "label": "Hashes",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/artifact-manifest.json",
+          "sha256": "a13b38296715707e51228bd78d5273654b33076150fa856170c05ef4e4c7fdd9"
+        }
+      ],
+      "technical": {
+        "cases": 335,
+        "dataset_rescanned": false,
+        "disk_free_bytes": 30471569408,
+        "elapsed_seconds": 1399.8559786999976,
+        "independent_audit_passed": true,
+        "methods": [
+          "symbolic_topology_v1",
+          "activity_reference_v1",
+          "graph_disabled_uniform_v1"
+        ],
+        "official_openrca_score": false,
+        "online_detection_tested": false,
+        "overall": {
+          "cases": 335,
+          "cases_with_inter_component_calls": 335,
+          "methods": {
+            "activity_reference_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.04776119402985075,
+              "top1_tie_aware": 0.04776119402985075,
+              "top3_deterministic": 0.14925373134328357,
+              "top3_tie_aware": 0.14925373134328357
+            },
+            "graph_disabled_uniform_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.05970149253731343,
+              "top1_tie_aware": 0.018043289107391496,
+              "top3_deterministic": 0.05970149253731343,
+              "top3_tie_aware": 0.05412986732217449
+            },
+            "symbolic_topology_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.05970149253731343,
+              "top1_tie_aware": 0.030845771144278607,
+              "top3_deterministic": 0.08955223880597014,
+              "top3_tie_aware": 0.08930348258706468
+            }
+          },
+          "paired_deltas": {
+            "activity_reference_v1_top1": {
+              "descriptive_95_interval": [
+                -0.0424852926044255,
+                0.008654446833281218
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.01691542288557214
+            },
+            "activity_reference_v1_top3": {
+              "descriptive_95_interval": [
+                -0.1091239545329774,
+                -0.010776542979460416
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.059950248756218905
+            },
+            "graph_disabled_uniform_v1_top1": {
+              "descriptive_95_interval": [
+                0.0031894751672066016,
+                0.022415488906567617
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.01280248203688711
+            },
+            "graph_disabled_uniform_v1_top3": {
+              "descriptive_95_interval": [
+                0.010356474732143784,
+                0.0599907557976366
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.03517361526489019
+            }
+          },
+          "root_absent": 51,
+          "root_present": 284
+        },
+        "repeatability_cases": 335,
+        "repetitions": 2,
+        "run_id": "E004-R001",
+        "scientific_decision_proposal": "REVISE / structural prior only; human review pending",
+        "status": "Completed",
+        "successor_started": false,
+        "superiority_established": false,
+        "symptom_detector": "NONE",
+        "technical_gate": "PASS"
+      }
+    }
+  ],
+  "incident_example": {
+    "observed": [
+      "1,000 requests arrive.",
+      "The database receives too much work.",
+      "Database latency rises.",
+      "The application server begins failing requests."
+    ],
+    "possible_causes": [
+      "Normal traffic spike",
+      "Slow database query",
+      "Database capacity limit",
+      "Many requests from one suspicious IP"
+    ],
+    "possible_actions": [
+      "Add caching",
+      "Scale the database",
+      "Improve the slow query",
+      "Rate-limit requests",
+      "Investigate suspicious IPs"
+    ],
+    "warning": "This is an educational example. DCE must show evidence before a human chooses an action; it must not automatically declare one action correct."
+  },
+  "generated_at": "2026-10-06T17:02:14.883926+00:00",
+  "next_action": "Review E004\u2019s proposed REVISE decision. No successor experiment or automatic fixing has been approved."
+}
