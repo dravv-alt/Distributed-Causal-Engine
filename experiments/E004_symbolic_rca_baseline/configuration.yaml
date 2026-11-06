@@ -1,0 +1,19 @@
+{
+  "experiment_id": "E004",
+  "run_id": "E004-R001",
+  "protocol_version": 1,
+  "parent_run": "E003-AM002-V006",
+  "input_root": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006",
+  "expected_windows": 335,
+  "methods": ["symbolic_topology_v1", "activity_reference_v1", "graph_disabled_uniform_v1"],
+  "repetitions": 2,
+  "random_seed": null,
+  "top_k": [1, 3],
+  "primary_tie_policy": "uniform_expected_credit",
+  "secondary_tie_policy": "opaque_lexical",
+  "symptom_detector": "NONE; structural prior only",
+  "evaluation_scope": "oracle_time_conditioned_exact_component",
+  "tuning_budget": 0,
+  "minimum_free_disk_bytes": 6442450944,
+  "next_action": "human_review"
+}
