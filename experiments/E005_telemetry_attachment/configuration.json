@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "experiment_id": "E005",
+  "run_id": "E005-R001",
+  "protocol": "v1",
+  "execution_mode": "local_loopback_only",
+  "dataset": "synthetic_deterministic_fixtures",
+  "random_seed": null,
+  "signals": ["metrics", "traces", "logs"],
+  "valid_delivery_repetitions": 3,
+  "malformed_requests_per_signal": 1,
+  "transient_rejections": 1,
+  "receiver_restart_durability_check": true,
+  "storage_failure_injection": true,
+  "collector_required_for_full_gate": true,
+  "external_network": false,
+  "acceptance": {
+    "field_fidelity": "100% exact match for preregistered fields",
+    "malformed_rejection": "all 3 requests return 4xx and persist 0 records",
+    "acknowledgment_safety": "every 2xx has a committed record; storage failure has no 2xx",
+    "transient_retry": "eventual retention; report attempts and duplicates",
+    "restart_durability": "all acknowledged expected records retained"
+  }
+}
