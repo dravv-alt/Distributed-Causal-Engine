@@ -1,0 +1,48 @@
+{
+  "experiment_id": "E002",
+  "run_id": "E002-R001",
+  "frozen_at_utc": "2026-10-03T08:15:04Z",
+  "question": "Does consistent neural/SLO onset provenance improve timing-based root ranking?",
+  "scope": "Synthetic R0 timing/provenance analysis only. No OpenRCA, RCAEval, E003 remediation, or downstream RCA work.",
+  "source": {
+    "archive": "dce-r0.zip",
+    "archive_sha256": "d521692acc25df69a0898896497cc1aaa65cc18c7b1110c5021389e2c89b7c35",
+    "source_tree_sha256": "1442a5343674c0c6113a9d8f1d1388a7d0db29ab207c7f03f8cb700b6c9e4e8b",
+    "git_commit": null,
+    "git_status": "not a Git checkout"
+  },
+  "experiment_runner": {
+    "path": "scripts/e002_timing_analysis.py",
+    "sha256": "aa3500836bbbd3b43d58b557b2b66019e5f68e20d9a2c098a1f38e6723a5e696"
+  },
+  "data_generation": {
+    "topology": "reference",
+    "train": {"seed": 11, "env_seed": 11, "duration_s": 40000},
+    "heldout": {"seeds": [31, 32, 33, 34, 35], "env_seed": 11, "duration_s": 30000, "mean_gap_s": 700, "p_concurrent": 0.1},
+    "repeatability": {"repetitions": 3, "heldout_seed": 12, "env_seed": 11, "duration_s": 30000, "mean_gap_s": 700, "p_concurrent": 0.1},
+    "model_training_seed": 0
+  },
+  "treatments": {
+    "mixed_current": "Current R0 hybrid: SLO onsets are preferred; neural onsets fill services without an SLO onset; timing may compare sources.",
+    "same_source_only": "Same detector/candidate set and weights as current R0, but temporal explanation/ranking uses a cause-effect pair only when both onsets have the same provenance source (SLO/SLO or neural/neural).",
+    "timing_disabled": "Same detector/candidate set and weights as current R0, with temporal ordering disabled."
+  },
+  "controls": {
+    "candidate_generation": "Identical union of SLO breaches and neural flags for all treatments.",
+    "neural_threshold": "Bundle validation-selected threshold; no retuning per treatment or seed.",
+    "topology": "Identical R0 reference topology.",
+    "evaluation": "Same one-to-one incident matching and event-level Top-1 logic for all treatments."
+  },
+  "metrics": {
+    "primary": "paired event-level Top-1 difference: same_source_only minus mixed_current",
+    "secondary": ["incident_precision", "event_recall", "detection_delay_s", "false_alerts", "cross_source_temporal_pair_count"],
+    "uncertainty": "2,000 deterministic paired bootstrap resamples over all evaluated event IDs, seed 909"
+  },
+  "predefined_gates": {
+    "repeatability": "PASS only if all three end-to-end repetitions produce an identical canonical metrics SHA-256 and each command exits 0.",
+    "treatment_integrity": "PASS only if same_source_only records zero cross-source temporal pairs and mixed_current records the candidate/onset provenance needed for audit.",
+    "superiority": "A superiority claim is permitted only if same_source_only minus mixed_current is at least +0.050 Top-1 and the two-sided 95% paired-bootstrap lower bound is greater than 0, while aggregate false alerts are not higher. Otherwise no superiority claim is permitted.",
+    "overall": "PASS only if repeatability and treatment_integrity pass. The performance/superiority gate is reported separately; its failure makes the hypothesis unsupported, not a failed reproduction."
+  },
+  "selection_rule": "All listed repetitions, held-out seeds, treatments, metrics, and bootstrap seed will be reported. No run, event, metric, seed, subset, or configuration may be selected after results are known."
+}

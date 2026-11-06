@@ -1,0 +1,17 @@
+{
+  "run_id": "E002-R001",
+  "frozen_configuration_sha256": "0db42f63f5b139f823419d5d896cc428919caf2ccf003b07040c941dbf7b49b3",
+  "runner_sha256": "aa3500836bbbd3b43d58b557b2b66019e5f68e20d9a2c098a1f38e6723a5e696",
+  "raw_results_sha256": "592171d8dbaa7ce57934ec546d74b0d7fb733109b4f2ab7c24e27c1c9d49269f",
+  "summary_sha256": "39f1996364413d94c7716e3a183deb9766551d7046ad11d888d5400c570c00f3",
+  "output_tree_before_documentation": {
+    "sha256": "a8b5114ff49aea7a7d9b9ea832be92cabfaf57fe9b8e4d6e7ccd10bcf2707a61",
+    "files": 35,
+    "bytes": 47780550
+  },
+  "raw_artifacts": {
+    "repetition_directories": ["repeat-001", "repeat-002", "repeat-003"],
+    "performance_directory": "performance",
+    "retention": "Local experiment artifact directory; raw synthetic telemetry and trained bundles are retained here and are not published by this record."
+  }
+}
