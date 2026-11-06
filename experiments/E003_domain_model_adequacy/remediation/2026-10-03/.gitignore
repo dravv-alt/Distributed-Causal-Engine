@@ -1,0 +1,5 @@
+# Local raw telemetry/evaluation artifacts; retain in place, avoid accidental publication.
+results/**/operational-*.sqlite*
+results/**/evaluation-only.sqlite*
+results/**/ground-truth.json
+results/**/source-snapshot.zip

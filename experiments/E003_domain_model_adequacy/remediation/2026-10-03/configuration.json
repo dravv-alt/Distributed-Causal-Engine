@@ -1,0 +1,20 @@
+{
+  "amendment_id": "E003-AM001",
+  "validation_id": "V001",
+  "dataset_root": "data/dataset",
+  "dataset_manifest": "data/manifests/openrca.json",
+  "dataset_version": "local ZIP snapshot; upstream commit UNKNOWN",
+  "scenarios": ["Bank", "Market/cloudbed-1", "Market/cloudbed-2", "Telecom"],
+  "rows_per_telemetry_file": 512,
+  "timestamp_candidates": ["s", "ms", "us", "ns"],
+  "timestamp_minimum_support": 0.99,
+  "profiling_boundary_allowance_seconds": 3600,
+  "source_day_timezone": "+08:00",
+  "repetitions": 2,
+  "random_seed": null,
+  "metrics_registry": "source-backed entries only; empty initially",
+  "ground_truth": "separate evaluator-only database",
+  "full_population_claim": false,
+  "rcaeval_gate": "all A-H PASS",
+  "gate_change_policy": "no post-result changes"
+}
