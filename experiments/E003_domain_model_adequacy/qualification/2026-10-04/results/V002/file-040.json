@@ -1,0 +1,45 @@
+{
+  "candidate_date_support": {
+    "s": 25699839
+  },
+  "candidate_epoch_support": {
+    "s": 25699839
+  },
+  "compressed_bytes": 216145677,
+  "counts": {
+    "in_window": 25699837,
+    "out_of_order": 2190966,
+    "out_of_window": 2,
+    "rows_seen": 25699839
+  },
+  "crc_eof_verified": true,
+  "decision": "QUALIFIED",
+  "decompressed_sha256": "e4b98cd140223edcad4311c71bbf9a70dc5f95d528a3ff6ca9ab8b35fe98581b",
+  "elapsed_seconds": 1119.6759388000064,
+  "expanded_bytes": 2578501342,
+  "header": [
+    "timestamp",
+    "cmdb_id",
+    "parent_id",
+    "span_id",
+    "trace_id",
+    "duration"
+  ],
+  "max_timestamp_ns": 1616687999000000000,
+  "metric_counts": {},
+  "min_timestamp_ns": 1616601599000000000,
+  "path": "Bank/telemetry/2021_03_25/trace/trace_span.csv",
+  "row_conservation": true,
+  "scenario": "Bank",
+  "selected_scale": "s",
+  "selection_counts": {
+    "mapped": 3525189
+  },
+  "selection_evidence": "entire-file unique candidate + directory date + neighbour ordering; no magnitude-only selection",
+  "source_day_ns": [
+    1616601600000000000,
+    1616688000000000000
+  ],
+  "source_identifier_cue_counts": {},
+  "source_key": "a8de6fdf2568498bfdb251540254ee4ca7afd618d9fe46b16d6fb2cb3bb73e11"
+}
