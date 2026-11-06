@@ -1,0 +1,13 @@
+{
+  "evaluation_storage": "evaluation-only.sqlite; not opened by telemetry_pass",
+  "future_policy": "observation event_ns must be in supplied QueryWindow; duration/end UNKNOWN",
+  "labels_in_operational_database": false,
+  "projection_policy": "allowlist; excludes source paths, raw fields, row order, fault/query metadata and log messages",
+  "result": "PARTIAL",
+  "untested": [
+    "benchmark cues within metric/resource/trace names",
+    "complete trace-edge query-time filtering",
+    "official evaluator query-to-fault association",
+    "complete incident content audit"
+  ]
+}
