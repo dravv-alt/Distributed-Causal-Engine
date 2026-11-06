@@ -1,0 +1,36 @@
+# Protocol metadata. Current R0 CLI does not load this file.
+experiment_id: E002
+status: reserved
+protocol_version: 1
+question: "Does consistent neural/SLO onset provenance improve timing-based root ranking?"
+code:
+  git_commit: null
+  dirty: null
+  source_snapshot_uri: null
+  source_tree_sha256: null
+dataset:
+  manifest_uri: null
+  manifest_sha256: null
+configuration_resolved: false
+random_seeds:
+  training: null
+  environment: null
+hardware:
+  os: null
+  cpu: null
+  memory_gib: null
+  accelerator: null
+  thread_settings: null
+software:
+  python: null
+  dependency_lock_sha256: null
+analysis:
+  metrics: [incident_precision, incident_recall, root_top1, detection_delay, false_alert_rate]
+  acceptance_tolerance: null
+  alert_budget: null
+  independent_baseline_audit_complete: false
+execution:
+  run_id: null
+  started_at: null
+  finished_at: null
+  result_manifest_uri: null
