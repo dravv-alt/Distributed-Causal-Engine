@@ -1,0 +1,90 @@
+{
+  "candidate_date_support": {
+    "ms": 165939
+  },
+  "candidate_epoch_support": {
+    "ms": 165939
+  },
+  "compressed_bytes": 1350731,
+  "counts": {
+    "in_window": 165939,
+    "rows_seen": 165939
+  },
+  "crc_eof_verified": true,
+  "decision": "QUALIFIED",
+  "decompressed_sha256": "2a38e49df439cd716986da5174c1309c39b4c2a4adf07a1b63ba96763dcab6f9",
+  "elapsed_seconds": 10.691188999975566,
+  "expanded_bytes": 11347923,
+  "header": [
+    "itemid",
+    "name",
+    "bomc_id",
+    "timestamp",
+    "value",
+    "cmdb_id"
+  ],
+  "max_timestamp_ns": 1590530399000000000,
+  "metric_counts": {
+    "ACS": 4507,
+    "AIOS": 4507,
+    "AWS": 4507,
+    "Asm_Free_Tb": 910,
+    "CPU_Used_Pct": 3729,
+    "CPU_free_pct": 4523,
+    "Call_Per_Sec": 4510,
+    "DFParaWrite_Per_Sec": 4496,
+    "DbTime": 4510,
+    "Exec_Per_Sec": 4510,
+    "Hang": 4509,
+    "LFParaWrite_Per_Sec": 4509,
+    "LFSync_Per_Sec": 4509,
+    "Logic_Read_Per_Sec": 4510,
+    "Login_Per_Sec": 4510,
+    "MEM_Total": 4522,
+    "MEM_Used": 4522,
+    "MEM_Used_Pct": 4522,
+    "MEM_real_util": 4521,
+    "New_Tbs_Free_Gb": 4655,
+    "New_Tbs_Used_Pct": 4655,
+    "On_Off_State": 4511,
+    "PGA_Used_Pct": 2367,
+    "PGA_used_total": 2367,
+    "Physical_Read_Per_Sec": 4510,
+    "Proc_Used_Pct": 4509,
+    "Proc_User_Used_Pct": 4509,
+    "Redo_Per_Sec": 4510,
+    "Row_Lock": 4509,
+    "SEQ_Used_Pct": 26,
+    "SctRead_Per_Sec": 4496,
+    "SeqRead_Per_Sec": 4496,
+    "Sess_Active": 4510,
+    "Sess_Connect": 4510,
+    "Sess_Used_Temp": 2261,
+    "Sess_Used_Undo": 2261,
+    "Session_pct": 4507,
+    "TPS_Per_Sec": 4510,
+    "Tbs_Free_Gb": 156,
+    "Tbs_Used_Pct": 156,
+    "TempTbs_Pct": 2261,
+    "Total_Tbs_Size": 78,
+    "UndoTbs_Pct": 156,
+    "Used_Tbs_Size": 78,
+    "User_Commit": 4510,
+    "tnsping_result_time": 4522
+  },
+  "min_timestamp_ns": 1590508800000000000,
+  "path": "Telecom/telemetry/2020_05_27/metric/metric_service.csv",
+  "row_conservation": true,
+  "scenario": "Telecom",
+  "selected_scale": "ms",
+  "selection_counts": {
+    "mapped": 34756
+  },
+  "selection_evidence": "entire-file unique candidate + directory date + neighbour ordering; no magnitude-only selection",
+  "source_day_ns": [
+    1590508800000000000,
+    1590595200000000000
+  ],
+  "source_identifier_cue_counts": {},
+  "source_key": "51e3a5e51df4886188b57643706d353c61c6509e0841600a0715110f7d63f662"
+}

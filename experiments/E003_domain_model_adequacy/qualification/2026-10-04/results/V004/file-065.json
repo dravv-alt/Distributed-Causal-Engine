@@ -1,0 +1,43 @@
+{
+  "candidate_date_support": {
+    "s": 7666269
+  },
+  "candidate_epoch_support": {
+    "s": 7666269
+  },
+  "compressed_bytes": 296152905,
+  "counts": {
+    "in_window": 7666269,
+    "out_of_order": 181245,
+    "rows_seen": 7666269
+  },
+  "crc_eof_verified": true,
+  "decision": "QUALIFIED",
+  "decompressed_sha256": "a0094b1d0b976f80318da63234ebbbd5875b0eff0e3db5e8b6d6038fe6b92781",
+  "elapsed_seconds": 1112.6794353000005,
+  "expanded_bytes": 3073840849,
+  "header": [
+    "log_id",
+    "timestamp",
+    "cmdb_id",
+    "log_name",
+    "value"
+  ],
+  "max_timestamp_ns": 1647878399000000000,
+  "metric_counts": {},
+  "min_timestamp_ns": 1647792001000000000,
+  "path": "Market/cloudbed-2/telemetry/2022_03_21/log/log_proxy.csv",
+  "row_conservation": true,
+  "scenario": "Market/cloudbed-2",
+  "selected_scale": "s",
+  "selection_counts": {
+    "mapped": 2435925
+  },
+  "selection_evidence": "entire-file unique candidate + directory date + neighbour ordering; no magnitude-only selection",
+  "source_day_ns": [
+    1647792000000000000,
+    1647878400000000000
+  ],
+  "source_identifier_cue_counts": {},
+  "source_key": "8455cb60d3423277a9ca605b7ef9b28d4e2cbf8efede5d80d926dd35758b823e"
+}

@@ -1,0 +1,48 @@
+{
+  "candidate_date_support": {
+    "ms": 374
+  },
+  "candidate_epoch_support": {
+    "ms": 374
+  },
+  "compressed_bytes": 3521,
+  "counts": {
+    "in_window": 374,
+    "rows_seen": 374
+  },
+  "crc_eof_verified": true,
+  "decision": "QUALIFIED",
+  "decompressed_sha256": "77d9775eb0c716091c4578d177ed686df48ef541580592142036065ad4ad28b1",
+  "elapsed_seconds": 0.017091300047468394,
+  "expanded_bytes": 15770,
+  "header": [
+    "serviceName",
+    "startTime",
+    "avg_time",
+    "num",
+    "succee_num",
+    "succee_rate"
+  ],
+  "max_timestamp_ns": 1590271140000000000,
+  "metric_counts": {
+    "avg_time": 374,
+    "num": 374,
+    "succee_num": 374,
+    "succee_rate": 374
+  },
+  "min_timestamp_ns": 1590249600000000000,
+  "path": "Telecom/telemetry/2020_05_24/metric/metric_app.csv",
+  "row_conservation": true,
+  "scenario": "Telecom",
+  "selected_scale": "ms",
+  "selection_counts": {
+    "mapped": 39
+  },
+  "selection_evidence": "entire-file unique candidate + directory date + neighbour ordering; no magnitude-only selection",
+  "source_day_ns": [
+    1590249600000000000,
+    1590336000000000000
+  ],
+  "source_identifier_cue_counts": {},
+  "source_key": "7a159d483ff3dcdf24b6f4d4a6643cfe7e97a33533aae84225c0df62c21175b0"
+}
