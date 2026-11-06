@@ -1,0 +1,5 @@
+# Minimal runtime for the local OTLP intake slice. Pin in a future reviewed lock file.
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+protobuf>=5,<7
+opentelemetry-proto>=1.30,<2
