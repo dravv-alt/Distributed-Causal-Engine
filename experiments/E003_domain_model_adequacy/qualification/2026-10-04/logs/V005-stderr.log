@@ -1,0 +1,17 @@
+warning: could not open directory '.pytest_cache/': Permission denied
+warning: could not open directory 'pytest-cache-files-3mj5bp4a/': Permission denied
+warning: could not open directory 'pytest-cache-files-qlsas223/': Permission denied
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\bhavv\OneDrive\Desktop\Dravvya(4th Sem)\Projects\Distributed-Causal-Engine\src\dce_foundation\qualification\recovery_run.py", line 334, in <module>
+    main()
+  File "C:\Users\bhavv\OneDrive\Desktop\Dravvya(4th Sem)\Projects\Distributed-Causal-Engine\src\dce_foundation\qualification\recovery_run.py", line 180, in main
+    write_new(output / 'profiles' / f'file-{index:03d}.json', profile)
+  File "C:\Users\bhavv\OneDrive\Desktop\Dravvya(4th Sem)\Projects\Distributed-Causal-Engine\src\dce_foundation\representation_v2\audit.py", line 32, in write_new
+    with Path(path).open("x", encoding="utf-8", newline="\n") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\experiments\\E003_domain_model_adequacy\\qualification\\2026-10-04\\results\\V005\\profiles\\file-001.json'
