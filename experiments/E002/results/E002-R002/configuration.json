@@ -1,0 +1,25 @@
+{
+  "experiment_id": "E002",
+  "run_id": "E002-R002",
+  "purpose": "Clean-environment rerun of E002-R001; assess whether the historical finding survives qualified execution.",
+  "protocol": {
+    "source_configuration": "experiments/E002/results/E002-R001/frozen-configuration.json",
+    "source_configuration_sha256": "0db42f63f5b139f823419d5d896cc428919caf2ccf003b07040c941dbf7b49b3",
+    "changed": false,
+    "statement": "Dataset generation, seeds, treatments, controls, metrics, bootstrap procedure, and gates are unchanged from E002-R001."
+  },
+  "implementation": {
+    "runner": "scripts/e002_timing_analysis.py",
+    "runner_sha256": "aa3500836bbbd3b43d58b557b2b66019e5f68e20d9a2c098a1f38e6723a5e696",
+    "source_archive": "dce-r0.zip",
+    "source_archive_sha256": "d521692acc25df69a0898896497cc1aaa65cc18c7b1110c5021389e2c89b7c35",
+    "source_tree_sha256": "1442a5343674c0c6113a9d8f1d1388a7d0db29ab207c7f03f8cb700b6c9e4e8b"
+  },
+  "environment": {
+    "preflight": "experiments/E002/environment/E002-R002-preflight-qualified-2026-10-03.json",
+    "preflight_qualified": true,
+    "interpreter": ".venv-e002/Scripts/python.exe",
+    "installation_method": "fresh venv with system-site-packages; exact locked packages inherited from verified local C:\\Python312 user site packages after package-index DNS failure"
+  },
+  "output": "experiments/E002/results/E002-R002"
+}

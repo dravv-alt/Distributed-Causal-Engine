@@ -1,0 +1,37 @@
+{
+  "configuration_sha256": "056eedeecb380d65eff6ab4880bf1b3dc78c98d1e3bda68678d4e8343871c1a9",
+  "repeatability_hashes": [
+    "75dac86f78573fac799f0e90103ba2501bf44e6863afe47d7f7117f7bc5f5c58",
+    "75dac86f78573fac799f0e90103ba2501bf44e6863afe47d7f7117f7bc5f5c58",
+    "75dac86f78573fac799f0e90103ba2501bf44e6863afe47d7f7117f7bc5f5c58"
+  ],
+  "paired_top1_same_source_minus_mixed": {
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "n_events": 237
+  },
+  "aggregate_cross_source_pairs_observed": {
+    "mixed_current": 306,
+    "same_source_only": 306,
+    "timing_disabled": 344
+  },
+  "aggregate_cross_source_pairs_used": {
+    "mixed_current": 306,
+    "same_source_only": 0,
+    "timing_disabled": 344
+  },
+  "aggregate_false_positives": {
+    "mixed_current": 0,
+    "same_source_only": 0,
+    "timing_disabled": 0
+  },
+  "gates": {
+    "repeatability": true,
+    "treatment_integrity": true,
+    "superiority": false
+  },
+  "overall_gate": true
+}

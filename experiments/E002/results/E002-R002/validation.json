@@ -1,0 +1,30 @@
+{
+  "schema_version": "dce.e002.r002.validation.v1",
+  "run_id": "E002-R002",
+  "outcome": "completed",
+  "protocol_changed": false,
+  "environment": {
+    "preflight_qualified": true,
+    "postflight_qualified": true,
+    "preflight_record": "experiments/E002/environment/E002-R002-preflight-qualified-2026-10-03.json",
+    "postflight_record": "experiments/E002/environment/E002-R002-postflight-qualified-2026-10-03.json"
+  },
+  "test_suite": {
+    "command": ".venv-e002\\Scripts\\python.exe -m pytest -q",
+    "result": "49 passed in 1.43s"
+  },
+  "gates": {
+    "repeatability": true,
+    "treatment_integrity": true,
+    "superiority": false,
+    "environment_qualification": true
+  },
+  "r001_comparison": {
+    "raw_results_byte_identical": true,
+    "repeatability_hashes_identical": true,
+    "derived_metrics_identical": true,
+    "summary_byte_identical": false,
+    "summary_difference_explained_by": "The embedded configuration SHA-256 differs because R002 records additional execution-context provenance."
+  },
+  "scope_boundary": "R002 does not change E002-R001, E003, or downstream RCA work."
+}

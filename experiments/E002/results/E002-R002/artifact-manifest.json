@@ -1,0 +1,26 @@
+{
+  "run_id": "E002-R002",
+  "runner_sha256": "aa3500836bbbd3b43d58b557b2b66019e5f68e20d9a2c098a1f38e6723a5e696",
+  "requirements_lock_sha256": "694071fa9d6850d9cab412f1c135879427f5846a166eec7fc7d6e411f1309320",
+  "files": {
+    "configuration_metadata": {"path": "configuration.json", "sha256": "efaafa4250fffe678e2e262d2e8e2daaa968971920f6313a8d6e605b8932a3b0"},
+    "configuration_resolved": {"path": "configuration-resolved.json", "sha256": "056eedeecb380d65eff6ab4880bf1b3dc78c98d1e3bda68678d4e8343871c1a9"},
+    "raw_results": {"path": "raw-results.json", "sha256": "592171d8dbaa7ce57934ec546d74b0d7fb733109b4f2ab7c24e27c1c9d49269f"},
+    "summary": {"path": "summary.json", "sha256": "a15fa8ffa07059fd31c2ecd59f624e7e89697f3ccc1e93a772a1361ad0c319ad"},
+    "execution_stdout": {"path": "execution-stdout.log", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    "execution_stderr": {"path": "execution-stderr.log", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    "preflight": {"path": "../../environment/E002-R002-preflight-qualified-2026-10-03.json", "sha256": "771cc7230cf9e263ced90a9637754148d58cf4541648a44aad0d6638df7f8ad3"},
+    "postflight": {"path": "../../environment/E002-R002-postflight-qualified-2026-10-03.json", "sha256": "1d2cfc168ff252734df542bc1911e67d92d1fe678560af5261e650c4686188a2"}
+  },
+  "failed_initial_attempt": {
+    "status": "preserved",
+    "reason": "The metadata-only configuration lacked runner-required data_generation fields.",
+    "stderr_path": "stderr.log",
+    "stderr_sha256": "b88bd122279f7a630ee51e46c56f59187f185ab034bfc9c8e0700fc441addfdd"
+  },
+  "raw_artifacts": {
+    "repetition_directories": ["repeat-001", "repeat-002", "repeat-003"],
+    "performance_directory": "performance",
+    "retention": "Local experiment artifact directory; generated telemetry and trained bundles are retained here."
+  }
+}
