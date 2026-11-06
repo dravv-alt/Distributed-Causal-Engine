@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>graphify - graphify-out/graph.html</title>
+<script src="https://unpkg.com/vis-network@9.1.6/standalone/umd/vis-network.min.js"
+        integrity="sha384-Ux6phic9PEHJ38YtrijhkzyJ8yQlH8i/+buBR8s3mAZOJrP1gwyvAcIYl3GWtpX1"
+        crossorigin="anonymous"></script>
+<style>
+  :root {
+    --bg: #0f0f1a; --panel: #1a1a2e; --border: #2a2a4e; --input-border: #3a3a5e;
+    --text: #e0e0e0; --text-2: #aaa; --text-3: #ccc; --muted: #555; --count: #666;
+    --neighbor-border: #333; --node-label: #ffffff;
+  }
+  [data-theme="light"] {
+    --bg: #ffffff; --panel: #f8f9fa; --border: #d9dee5; --input-border: #c3cad4;
+    --text: #222222; --text-2: #666666; --text-3: #333333; --muted: #888888; --count: #777777;
+    --neighbor-border: #ccc; --node-label: #222222;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; display: flex; height: 100vh; overflow: hidden; }
+  #graph { flex: 1; }
+  #sidebar { width: 280px; background: var(--panel); border-left: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; }
+  #search-wrap { padding: 12px; border-bottom: 1px solid var(--border); }
+  #search { width: 100%; background: var(--bg); border: 1px solid var(--input-border); color: var(--text); padding: 7px 10px; border-radius: 6px; font-size: 13px; outline: none; }
+  #search:focus { border-color: #4E79A7; }
+  #search-results { max-height: 140px; overflow-y: auto; padding: 4px 12px; border-bottom: 1px solid var(--border); display: none; }
+  .search-item { padding: 4px 6px; cursor: pointer; border-radius: 4px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .search-item:hover { background: var(--border); }
+  #info-panel { padding: 14px; border-bottom: 1px solid var(--border); min-height: 140px; }
+  #info-panel h3 { font-size: 13px; color: var(--text-2); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+  #info-content { font-size: 13px; color: var(--text-3); line-height: 1.6; }
+  #info-content .field { margin-bottom: 5px; }
+  #info-content .field b { color: var(--text); }
+  #info-content .empty { color: var(--muted); font-style: italic; }
+  .neighbor-link { display: block; padding: 2px 6px; margin: 2px 0; border-radius: 3px; cursor: pointer; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-left: 3px solid var(--neighbor-border); }
+  .neighbor-link:hover { background: var(--border); }
+  #neighbors-list { max-height: 160px; overflow-y: auto; margin-top: 4px; }
+  #legend-wrap { flex: 1; overflow-y: auto; padding: 12px; }
+  #legend-wrap h3 { font-size: 13px; color: var(--text-2); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .legend-item { display: flex; align-items: center; gap: 8px; padding: 4px 0; cursor: pointer; border-radius: 4px; font-size: 12px; }
+  .legend-item:hover { background: var(--border); padding-left: 4px; }
+  .legend-item.dimmed { opacity: 0.35; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .legend-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .legend-count { color: var(--count); font-size: 11px; }
+  #stats { padding: 10px 14px; border-top: 1px solid var(--border); font-size: 11px; color: var(--muted); }
+  #legend-controls { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; padding: 4px 0; }
+  #legend-controls label { display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px; color: var(--text-2); user-select: none; }
+  #legend-controls label:hover { color: var(--text); }
+  .legend-cb, #select-all-cb { appearance: none; -webkit-appearance: none; width: 14px; height: 14px; border: 1.5px solid var(--input-border); border-radius: 3px; background: var(--bg); cursor: pointer; position: relative; flex-shrink: 0; }
+  .legend-cb:checked, #select-all-cb:checked { background: #4E79A7; border-color: #4E79A7; }
+  .legend-cb:checked::after, #select-all-cb:checked::after { content: ''; position: absolute; left: 3.5px; top: 1px; width: 4px; height: 7px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  #select-all-cb:indeterminate { background: #4E79A7; border-color: #4E79A7; }
+  #select-all-cb:indeterminate::after { content: ''; position: absolute; left: 2px; top: 5px; width: 8px; height: 2px; background: #fff; border: none; transform: none; }
+  #theme-wrap { display: flex; gap: 4px; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  #theme-wrap button { flex: 1; background: var(--bg); color: var(--text-2); border: 1px solid var(--input-border); border-radius: 4px; padding: 3px 0; font-size: 11px; cursor: pointer; }
+  #theme-wrap button:hover { color: var(--text); }
+  #theme-wrap button[aria-pressed="true"] { background: #4E79A7; border-color: #4E79A7; color: #fff; }
+</style>
+<script id="graphify-theme-init">
+// Apply the saved theme before first paint (#3894). No saved choice keeps the
+// historical dark look; "system" follows prefers-color-scheme.
+(function () {
+  var pref = null;
+  try { pref = localStorage.getItem('graphify-theme'); } catch (e) {}
+  var t = pref === 'light' ? 'light'
+    : pref === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light'
+    : 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+</head>
+<body>
+<div id="graph"></div>
+<div id="sidebar">
+  <div id="theme-wrap" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light">Light</button>
+    <button type="button" data-theme-choice="dark">Dark</button>
+    <button type="button" data-theme-choice="system">System</button>
+  </div>
+  <div id="search-wrap">
+    <input id="search" type="text" placeholder="Search nodes..." autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+  <div id="info-panel">
+    <h3>Node Info</h3>
+    <div id="info-content"><span class="empty">Click a node to inspect it</span></div>
+  </div>
+  <div id="legend-wrap">
+    <h3>Communities</h3>
+    <div id="legend-controls">
+      <label><input type="checkbox" id="select-all-cb" checked onchange="toggleAllCommunities(!this.checked)">Select All</label>
+    </div>
+    <div id="legend"></div>
+  </div>
+  <div id="stats">75 nodes &middot; 32 edges &middot; 46 communities</div>
+</div>
+<script>
+const RAW_NODES = [{"id": "docs_domain_model_domain_model", "label": "Domain Model", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Domain Model", "community": 0, "community_name": "Evidence and Data Foundations", "source_file": "domain-model.md", "file_type": "concept", "degree": 2}, {"id": "docs_event_time_model_event_time_model", "label": "Event Time Model", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Event Time Model", "community": 0, "community_name": "Evidence and Data Foundations", "source_file": "event-time-model.md", "file_type": "concept", "degree": 2}, {"id": "docs_graph_ontology_graph_ontology", "label": "Graph Ontology", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 28.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Graph Ontology", "community": 0, "community_name": "Evidence and Data Foundations", "source_file": "graph-ontology.md", "file_type": "concept", "degree": 3}, {"id": "docs_e003_implementation_report_e003_implementation_report", "label": "E003 Implementation Report", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "E003 Implementation Report", "community": 0, "community_name": "Evidence and Data Foundations", "source_file": "E003-implementation-report.md", "file_type": "document", "degree": 2}, {"id": "docs_engineering_otlp_intake_implementation_otlp_intake_implementation", "label": "Otlp Intake Implementation", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Otlp Intake Implementation", "community": 0, "community_name": "Evidence and Data Foundations", "source_file": "engineering/otlp-intake-implementation.md", "file_type": "document", "degree": 1}, {"id": "docs_implementation_plan_implementation_plan", "label": "Implementation Plan", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 40.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Implementation Plan", "community": 0, "community_name": "Evidence and Data Foundations", "source_file": "IMPLEMENTATION_PLAN.md", "file_type": "document", "degree": 5}, {"id": "docs_openrca_dataset_analysis_openrca_dataset_analysis", "label": "Openrca Dataset Analysis", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Openrca Dataset Analysis", "community": 0, "community_name": "Evidence and Data Foundations", "source_file": "openrca-dataset-analysis.md", "file_type": "document", "degree": 1}, {"id": "docs_workspace_map_2026_11_05_workspace_map_2026_11_05", "label": "Workspace Map 2026 11 05", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 28.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Workspace Map 2026 11 05", "community": 0, "community_name": "Evidence and Data Foundations", "source_file": "WORKSPACE_MAP_2026-11-05.md", "file_type": "document", "degree": 3}, {"id": "docs_causal_model_causal_model", "label": "Causal Model", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Causal Model", "community": 0, "community_name": "Evidence and Data Foundations", "source_file": "causal-model.md", "file_type": "rationale", "degree": 2}, {"id": "docs_evaluation_protocol_evaluation_protocol", "label": "Evaluation Protocol", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Evaluation Protocol", "community": 0, "community_name": "Evidence and Data Foundations", "source_file": "evaluation-protocol.md", "file_type": "rationale", "degree": 1}, {"id": "docs_governance_stages_xp030_cascading_self_healing_failure_cascading_failure_recovery", "label": "XP030 Cascading Self Healing Failure", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP030 Cascading Self Healing Failure", "community": 1, "community_name": "Future Integration and Reliability", "source_file": "governance/stages/XP030-cascading-self-healing-failure.md", "file_type": "rationale", "degree": 2}, {"id": "docs_governance_stages_xp033_neural_symbolic_event_extraction_neural_symbolic_event_extraction", "label": "XP033 Neural Symbolic Event Extraction", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP033 Neural Symbolic Event Extraction", "community": 1, "community_name": "Future Integration and Reliability", "source_file": "governance/stages/XP033-neural-symbolic-event-extraction.md", "file_type": "rationale", "degree": 2}, {"id": "docs_governance_stages_xp034_neural_hypothesis_generation_neural_hypothesis_generation", "label": "XP034 Neural Hypothesis Generation", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP034 Neural Hypothesis Generation", "community": 1, "community_name": "Future Integration and Reliability", "source_file": "governance/stages/XP034-neural-hypothesis-generation.md", "file_type": "rationale", "degree": 2}, {"id": "docs_governance_stages_xp035_neural_hallucination_rejection_neural_hallucination_rejection", "label": "XP035 Neural Hallucination Rejection", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP035 Neural Hallucination Rejection", "community": 1, "community_name": "Future Integration and Reliability", "source_file": "governance/stages/XP035-neural-hallucination-rejection.md", "file_type": "rationale", "degree": 2}, {"id": "docs_governance_stages_xp036_crash_safe_persistence_crash_safe_persistence", "label": "XP036 Crash Safe Persistence", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP036 Crash Safe Persistence", "community": 1, "community_name": "Future Integration and Reliability", "source_file": "governance/stages/XP036-crash-safe-persistence.md", "file_type": "rationale", "degree": 2}, {"id": "docs_governance_stages_xp037_concurrent_workers_concurrent_worker_ownership", "label": "XP037 Concurrent Workers", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP037 Concurrent Workers", "community": 1, "community_name": "Future Integration and Reliability", "source_file": "governance/stages/XP037-concurrent-workers.md", "file_type": "rationale", "degree": 2}, {"id": "docs_governance_stages_xp038_kafka_transition_qualification_kafka_transition_qualification", "label": "XP038 Kafka Transition Qualification", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP038 Kafka Transition Qualification", "community": 1, "community_name": "Future Integration and Reliability", "source_file": "governance/stages/XP038-kafka-transition-qualification.md", "file_type": "rationale", "degree": 1}, {"id": "docs_frontend_audit_2026_10_08_frontend_audit_2026_10_08", "label": "Frontend Audit 2026 10 08", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Frontend Audit 2026 10 08", "community": 10, "community_name": "Frontend Evidence Audit", "source_file": "FRONTEND_AUDIT_2026-10-08.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_amendments_2026_10_06_e003_v006_acceptance_and_e004_scope_2026_10_06_e003_v006_acceptance_and_e004_scope", "label": "2026 10 06 E003 V006 Acceptance And E004 Scope", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "2026 10 06 E003 V006 Acceptance And E004 Scope", "community": 11, "community_name": "E003 Acceptance Scope", "source_file": "governance/amendments/2026-10-06-E003-V006-acceptance-and-E004-scope.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_amendments_2026_10_08_e002_r002_revise_approval_2026_10_08_e002_r002_revise_approval", "label": "2026 10 08 E002 R002 Revise Approval", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "2026 10 08 E002 R002 Revise Approval", "community": 12, "community_name": "E002 Review Record", "source_file": "governance/amendments/2026-10-08-E002-R002-REVISE-approval.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_amendments_2026_10_08_e004_r001_execution_acceptance_2026_10_08_e004_r001_execution_acceptance", "label": "2026 10 08 E004 R001 Execution Acceptance", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "2026 10 08 E004 R001 Execution Acceptance", "community": 13, "community_name": "E004 Review Record", "source_file": "governance/amendments/2026-10-08-E004-R001-execution-acceptance.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_readme_readme", "label": "Readme", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Readme", "community": 14, "community_name": "Decision Record Index", "source_file": "governance/README.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp001_domain_model_adequacy", "label": "Xp001 Domain Model Adequacy", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp001 Domain Model Adequacy", "community": 15, "community_name": "XP001 Domain Model", "source_file": "governance/stages/XP001-domain-model-adequacy.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp002_telemetry_attachment", "label": "Xp002 Telemetry Attachment", "color": {"background": "#B07AA1", "border": "#B07AA1", "highlight": {"background": "#ffffff", "border": "#B07AA1"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp002 Telemetry Attachment", "community": 16, "community_name": "XP002 Telemetry Attachment", "source_file": "governance/stages/XP002-telemetry-attachment.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp003_real_feature_coverage", "label": "Xp003 Real Feature Coverage", "color": {"background": "#FF9DA7", "border": "#FF9DA7", "highlight": {"background": "#ffffff", "border": "#FF9DA7"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp003 Real Feature Coverage", "community": 17, "community_name": "XP003 Feature Coverage", "source_file": "governance/stages/XP003-real-feature-coverage.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp004_temporal_correctness", "label": "Xp004 Temporal Correctness", "color": {"background": "#9C755F", "border": "#9C755F", "highlight": {"background": "#ffffff", "border": "#9C755F"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp004 Temporal Correctness", "community": 18, "community_name": "XP004 Temporal Correctness", "source_file": "governance/stages/XP004-temporal-correctness.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp005_graph_correctness", "label": "Xp005 Graph Correctness", "color": {"background": "#BAB0AC", "border": "#BAB0AC", "highlight": {"background": "#ffffff", "border": "#BAB0AC"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp005 Graph Correctness", "community": 19, "community_name": "XP005 Graph Correctness", "source_file": "governance/stages/XP005-graph-correctness.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp026_recommendation_correctness_recommendation_correctness", "label": "XP026 Recommendation Correctness", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP026 Recommendation Correctness", "community": 2, "community_name": "Remediation and Safety Studies", "source_file": "governance/stages/XP026-recommendation-correctness.md", "file_type": "rationale", "degree": 1}, {"id": "docs_governance_stages_xp027_execution_correctness_execution_correctness", "label": "XP027 Execution Correctness", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP027 Execution Correctness", "community": 2, "community_name": "Remediation and Safety Studies", "source_file": "governance/stages/XP027-execution-correctness.md", "file_type": "rationale", "degree": 2}, {"id": "docs_governance_stages_xp028_failed_remediation_failed_remediation_detection", "label": "XP028 Failed Remediation", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP028 Failed Remediation", "community": 2, "community_name": "Remediation and Safety Studies", "source_file": "governance/stages/XP028-failed-remediation.md", "file_type": "rationale", "degree": 2}, {"id": "docs_governance_stages_xp029_single_fault_self_healing_single_fault_recovery", "label": "XP029 Single Fault Self Healing", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 34.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP029 Single Fault Self Healing", "community": 2, "community_name": "Remediation and Safety Studies", "source_file": "governance/stages/XP029-single-fault-self-healing.md", "file_type": "rationale", "degree": 4}, {"id": "docs_governance_stages_xp031_multiple_self_healing_faults_multiple_fault_recovery", "label": "XP031 Multiple Self Healing Faults", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP031 Multiple Self Healing Faults", "community": 2, "community_name": "Remediation and Safety Studies", "source_file": "governance/stages/XP031-multiple-self-healing-faults.md", "file_type": "rationale", "degree": 1}, {"id": "docs_governance_stages_xp032_unsafe_action_rejection_unsafe_action_rejection", "label": "XP032 Unsafe Action Rejection", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "XP032 Unsafe Action Rejection", "community": 2, "community_name": "Remediation and Safety Studies", "source_file": "governance/stages/XP032-unsafe-action-rejection.md", "file_type": "rationale", "degree": 1}, {"id": "docs_governance_stages_xp006_topology_only_baseline", "label": "Xp006 Topology Only Baseline", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp006 Topology Only Baseline", "community": 20, "community_name": "XP006 Topology Baseline", "source_file": "governance/stages/XP006-topology-only-baseline.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp007_topology_plus_temporal_reasoning", "label": "Xp007 Topology Plus Temporal Reasoning", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp007 Topology Plus Temporal Reasoning", "community": 21, "community_name": "XP007 Temporal Reasoning", "source_file": "governance/stages/XP007-topology-plus-temporal-reasoning.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp008_topology_temporal_domain_rules", "label": "Xp008 Topology Temporal Domain Rules", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp008 Topology Temporal Domain Rules", "community": 22, "community_name": "XP008 Domain Rules", "source_file": "governance/stages/XP008-topology-temporal-domain-rules.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp009_contradiction_handling", "label": "Xp009 Contradiction Handling", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp009 Contradiction Handling", "community": 23, "community_name": "XP009 Contradiction Handling", "source_file": "governance/stages/XP009-contradiction-handling.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp010_multiple_simultaneous_symbolic_faults", "label": "Xp010 Multiple Simultaneous Symbolic Faults", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp010 Multiple Simultaneous Symbolic Faults", "community": 24, "community_name": "XP010 Multiple Faults", "source_file": "governance/stages/XP010-multiple-simultaneous-symbolic-faults.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp011_neural_anomaly_baseline", "label": "Xp011 Neural Anomaly Baseline", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp011 Neural Anomaly Baseline", "community": 25, "community_name": "XP011 Neural Baseline", "source_file": "governance/stages/XP011-neural-anomaly-baseline.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp012_pytorch_onnx_parity", "label": "Xp012 Pytorch Onnx Parity", "color": {"background": "#B07AA1", "border": "#B07AA1", "highlight": {"background": "#ffffff", "border": "#B07AA1"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp012 Pytorch Onnx Parity", "community": 26, "community_name": "XP012 ONNX Parity", "source_file": "governance/stages/XP012-pytorch-onnx-parity.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp013_variable_service_membership", "label": "Xp013 Variable Service Membership", "color": {"background": "#FF9DA7", "border": "#FF9DA7", "highlight": {"background": "#ffffff", "border": "#FF9DA7"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp013 Variable Service Membership", "community": 27, "community_name": "XP013 Membership Changes", "source_file": "governance/stages/XP013-variable-service-membership.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp014_fusion_ablation", "label": "Xp014 Fusion Ablation", "color": {"background": "#9C755F", "border": "#9C755F", "highlight": {"background": "#ffffff", "border": "#9C755F"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp014 Fusion Ablation", "community": 28, "community_name": "XP014 Fusion Ablation", "source_file": "governance/stages/XP014-fusion-ablation.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp015_remove_neural_evidence", "label": "Xp015 Remove Neural Evidence", "color": {"background": "#BAB0AC", "border": "#BAB0AC", "highlight": {"background": "#ffffff", "border": "#BAB0AC"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp015 Remove Neural Evidence", "community": 29, "community_name": "XP015 Neural Ablation", "source_file": "governance/stages/XP015-remove-neural-evidence.md", "file_type": "document", "degree": 0}, {"id": "docs_research_design_2026_11_04_source_provenance_inventory_verification_source_inventory_verification", "label": "Source Provenance Verification", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Source Provenance Verification", "community": 3, "community_name": "Source Provenance Review", "source_file": "research-design/2026-11-04-source-provenance-inventory/verification.md", "file_type": "concept", "degree": 1}, {"id": "docs_research_design_2026_10_08_symptom_evidence_symptom_evidence_qualification_assessment_symptom_evidence_not_supported", "label": "Symptom Evidence Qualification Assessment", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Symptom Evidence Qualification Assessment", "community": 3, "community_name": "Source Provenance Review", "source_file": "research-design/2026-10-08-symptom-evidence/symptom-evidence-qualification-assessment.md", "file_type": "rationale", "degree": 1}, {"id": "docs_research_design_2026_11_04_source_provenance_inventory_report_source_provenance_prerequisites_not_established", "label": "Source Provenance Report", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 28.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Source Provenance Report", "community": 3, "community_name": "Source Provenance Review", "source_file": "research-design/2026-11-04-source-provenance-inventory/report.md", "file_type": "rationale", "degree": 3}, {"id": "docs_research_design_2026_11_04_source_provenance_inventory_scope_fixed_read_only_scope", "label": "Source Provenance Scope", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Source Provenance Scope", "community": 3, "community_name": "Source Provenance Review", "source_file": "research-design/2026-11-04-source-provenance-inventory/scope.md", "file_type": "rationale", "degree": 1}, {"id": "docs_governance_stages_xp016_remove_topology", "label": "Xp016 Remove Topology", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp016 Remove Topology", "community": 30, "community_name": "XP016 Topology Ablation", "source_file": "governance/stages/XP016-remove-topology.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp017_remove_temporal_evidence", "label": "Xp017 Remove Temporal Evidence", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp017 Remove Temporal Evidence", "community": 31, "community_name": "XP017 Temporal Ablation", "source_file": "governance/stages/XP017-remove-temporal-evidence.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp018_correlation_versus_causal_hypothesis", "label": "Xp018 Correlation Versus Causal Hypothesis", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp018 Correlation Versus Causal Hypothesis", "community": 32, "community_name": "XP018 Causal Claims", "source_file": "governance/stages/XP018-correlation-versus-causal-hypothesis.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp019_controlled_intervention", "label": "Xp019 Controlled Intervention", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp019 Controlled Intervention", "community": 33, "community_name": "XP019 Controlled Intervention", "source_file": "governance/stages/XP019-controlled-intervention.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp020_causal_model_comparison", "label": "Xp020 Causal Model Comparison", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp020 Causal Model Comparison", "community": 34, "community_name": "XP020 Causal Comparison", "source_file": "governance/stages/XP020-causal-model-comparison.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp021_counterfactual_root_cause_test", "label": "Xp021 Counterfactual Root Cause Test", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp021 Counterfactual Root Cause Test", "community": 35, "community_name": "XP021 Counterfactual Test", "source_file": "governance/stages/XP021-counterfactual-root-cause-test.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp022_alternative_intervention", "label": "Xp022 Alternative Intervention", "color": {"background": "#B07AA1", "border": "#B07AA1", "highlight": {"background": "#ffffff", "border": "#B07AA1"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp022 Alternative Intervention", "community": 36, "community_name": "XP022 Alternative Intervention", "source_file": "governance/stages/XP022-alternative-intervention.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp023_planning_validity", "label": "Xp023 Planning Validity", "color": {"background": "#FF9DA7", "border": "#FF9DA7", "highlight": {"background": "#ffffff", "border": "#FF9DA7"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp023 Planning Validity", "community": 37, "community_name": "XP023 Planning Validity", "source_file": "governance/stages/XP023-planning-validity.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp024_constraint_aware_planning", "label": "Xp024 Constraint Aware Planning", "color": {"background": "#9C755F", "border": "#9C755F", "highlight": {"background": "#ffffff", "border": "#9C755F"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp024 Constraint Aware Planning", "community": 38, "community_name": "XP024 Safety Constraints", "source_file": "governance/stages/XP024-constraint-aware-planning.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_stages_xp025_plan_optimality", "label": "Xp025 Plan Optimality", "color": {"background": "#BAB0AC", "border": "#BAB0AC", "highlight": {"background": "#ffffff", "border": "#BAB0AC"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Xp025 Plan Optimality", "community": 39, "community_name": "XP025 Plan Objectives", "source_file": "governance/stages/XP025-plan-optimality.md", "file_type": "document", "degree": 0}, {"id": "docs_governance_templates_amendment_amendment", "label": "Amendment", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Amendment", "community": 4, "community_name": "Governance Record Templates", "source_file": "governance/templates/amendment.md", "file_type": "document", "degree": 1}, {"id": "docs_governance_templates_decision_review_decision_review", "label": "Decision Review", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Decision Review", "community": 4, "community_name": "Governance Record Templates", "source_file": "governance/templates/decision-review.md", "file_type": "document", "degree": 1}, {"id": "docs_governance_execution_checklist_execution_checklist", "label": "Execution Checklist", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Execution Checklist", "community": 4, "community_name": "Governance Record Templates", "source_file": "governance/EXECUTION_CHECKLIST.md", "file_type": "rationale", "degree": 2}, {"id": "docs_otlp_intake_slice_otlp_intake_and_durable_acceptance", "label": "OTLP HTTP Intake Slice", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "OTLP HTTP Intake Slice", "community": 40, "community_name": "OTLP Intake Design", "source_file": "otlp-intake-slice.md", "file_type": "rationale", "degree": 0}, {"id": "docs_planning_model_recommendation_before_execution", "label": "Planning Model", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Planning Model", "community": 41, "community_name": "Action Planning Model", "source_file": "planning-model.md", "file_type": "rationale", "degree": 0}, {"id": "docs_prd_prd", "label": "Prd", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Prd", "community": 42, "community_name": "Product Requirements", "source_file": "PRD.md", "file_type": "document", "degree": 0}, {"id": "docs_research_design_2026_11_04_source_provenance_inventory_cadvisor_prometheus_cadvisor_prometheus_metric_reference", "label": "cAdvisor Prometheus Metrics", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "cAdvisor Prometheus Metrics", "community": 43, "community_name": "cAdvisor Provenance", "source_file": "research-design/2026-11-04-source-provenance-inventory/cadvisor-prometheus.md", "file_type": "concept", "degree": 0}, {"id": "docs_tech_stack_tech_stack", "label": "Tech Stack", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Tech Stack", "community": 44, "community_name": "Technology Stack Rationale", "source_file": "TECH_STACK.md", "file_type": "rationale", "degree": 0}, {"id": "docs_telemetry_contract_telemetry_measurement_semantics", "label": "Telemetry Contract", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Telemetry Contract", "community": 45, "community_name": "Telemetry Contract", "source_file": "telemetry-contract.md", "file_type": "rationale", "degree": 0}, {"id": "docs_governance_execution_program_original_execution_program_original", "label": "Execution Program Original", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Execution Program Original", "community": 5, "community_name": "Execution Governance", "source_file": "governance/EXECUTION_PROGRAM_ORIGINAL.md", "file_type": "document", "degree": 1}, {"id": "docs_governance_execution_roadmap_execution_roadmap", "label": "Execution Roadmap", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Execution Roadmap", "community": 5, "community_name": "Execution Governance", "source_file": "governance/EXECUTION_ROADMAP.md", "file_type": "document", "degree": 2}, {"id": "docs_governance_reconciliation_reconciliation", "label": "Reconciliation", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Reconciliation", "community": 5, "community_name": "Execution Governance", "source_file": "governance/RECONCILIATION.md", "file_type": "rationale", "degree": 1}, {"id": "docs_reasoning_semantics_evidence_bounded_reasoning", "label": "Reasoning Semantics", "color": {"background": "#B07AA1", "border": "#B07AA1", "highlight": {"background": "#ffffff", "border": "#B07AA1"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Reasoning Semantics", "community": 6, "community_name": "Reasoning and Safety Contracts", "source_file": "reasoning-semantics.md", "file_type": "rationale", "degree": 1}, {"id": "docs_safety_model_operator_review_and_unknown_status", "label": "Safety Model", "color": {"background": "#B07AA1", "border": "#B07AA1", "highlight": {"background": "#ffffff", "border": "#B07AA1"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Safety Model", "community": 6, "community_name": "Reasoning and Safety Contracts", "source_file": "safety-model.md", "file_type": "rationale", "degree": 1}, {"id": "docs_research_design_2026_10_08_bounded_acquisition_acquisition_scope_bounded_evidence_acquisition", "label": "Bounded Acquisition Scope", "color": {"background": "#FF9DA7", "border": "#FF9DA7", "highlight": {"background": "#ffffff", "border": "#FF9DA7"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Bounded Acquisition Scope", "community": 7, "community_name": "OpenRCA Acquisition Limits", "source_file": "research-design/2026-10-08-bounded-acquisition/acquisition-scope.md", "file_type": "rationale", "degree": 1}, {"id": "docs_research_design_2026_10_08_bounded_acquisition_evidence_acquisition_assessment_acquisition_findings_not_established", "label": "Evidence Acquisition Assessment", "color": {"background": "#FF9DA7", "border": "#FF9DA7", "highlight": {"background": "#ffffff", "border": "#FF9DA7"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Evidence Acquisition Assessment", "community": 7, "community_name": "OpenRCA Acquisition Limits", "source_file": "research-design/2026-10-08-bounded-acquisition/evidence-acquisition-assessment.md", "file_type": "rationale", "degree": 1}, {"id": "docs_decisions_adr_0001_permanent_experiment_record_adr_0001_permanent_experiment_record", "label": "Adr 0001 Permanent Experiment Record", "color": {"background": "#9C755F", "border": "#9C755F", "highlight": {"background": "#ffffff", "border": "#9C755F"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Adr 0001 Permanent Experiment Record", "community": 8, "community_name": "Permanent Experiment Records", "source_file": "decisions/ADR-0001-permanent-experiment-record.md", "file_type": "rationale", "degree": 0}, {"id": "docs_decisions_readme_readme", "label": "Readme", "color": {"background": "#BAB0AC", "border": "#BAB0AC", "highlight": {"background": "#ffffff", "border": "#BAB0AC"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Readme", "community": 9, "community_name": "Document Index", "source_file": "decisions/README.md", "file_type": "document", "degree": 0}];
+const RAW_EDGES = [{"from": "docs_domain_model_domain_model", "to": "docs_event_time_model_event_time_model", "label": "conceptually_related_to", "title": "conceptually_related_to [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "docs_domain_model_domain_model", "to": "docs_graph_ontology_graph_ontology", "label": "conceptually_related_to", "title": "conceptually_related_to [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "docs_implementation_plan_implementation_plan", "to": "docs_event_time_model_event_time_model", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_implementation_plan_implementation_plan", "to": "docs_graph_ontology_graph_ontology", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_workspace_map_2026_11_05_workspace_map_2026_11_05", "to": "docs_graph_ontology_graph_ontology", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_e003_implementation_report_e003_implementation_report", "to": "docs_openrca_dataset_analysis_openrca_dataset_analysis", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_workspace_map_2026_11_05_workspace_map_2026_11_05", "to": "docs_e003_implementation_report_e003_implementation_report", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_engineering_otlp_intake_implementation_otlp_intake_implementation", "to": "docs_implementation_plan_implementation_plan", "label": "implements", "title": "implements [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "docs_implementation_plan_implementation_plan", "to": "docs_evaluation_protocol_evaluation_protocol", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_implementation_plan_implementation_plan", "to": "docs_causal_model_causal_model", "label": "conceptually_related_to", "title": "conceptually_related_to [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "docs_workspace_map_2026_11_05_workspace_map_2026_11_05", "to": "docs_causal_model_causal_model", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp030_cascading_self_healing_failure_cascading_failure_recovery", "to": "docs_governance_stages_xp029_single_fault_self_healing_single_fault_recovery", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp033_neural_symbolic_event_extraction_neural_symbolic_event_extraction", "to": "docs_governance_stages_xp030_cascading_self_healing_failure_cascading_failure_recovery", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp034_neural_hypothesis_generation_neural_hypothesis_generation", "to": "docs_governance_stages_xp033_neural_symbolic_event_extraction_neural_symbolic_event_extraction", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp035_neural_hallucination_rejection_neural_hallucination_rejection", "to": "docs_governance_stages_xp034_neural_hypothesis_generation_neural_hypothesis_generation", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp036_crash_safe_persistence_crash_safe_persistence", "to": "docs_governance_stages_xp035_neural_hallucination_rejection_neural_hallucination_rejection", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp037_concurrent_workers_concurrent_worker_ownership", "to": "docs_governance_stages_xp036_crash_safe_persistence_crash_safe_persistence", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp038_kafka_transition_qualification_kafka_transition_qualification", "to": "docs_governance_stages_xp037_concurrent_workers_concurrent_worker_ownership", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp027_execution_correctness_execution_correctness", "to": "docs_governance_stages_xp026_recommendation_correctness_recommendation_correctness", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp028_failed_remediation_failed_remediation_detection", "to": "docs_governance_stages_xp027_execution_correctness_execution_correctness", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp029_single_fault_self_healing_single_fault_recovery", "to": "docs_governance_stages_xp028_failed_remediation_failed_remediation_detection", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp031_multiple_self_healing_faults_multiple_fault_recovery", "to": "docs_governance_stages_xp029_single_fault_self_healing_single_fault_recovery", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_stages_xp032_unsafe_action_rejection_unsafe_action_rejection", "to": "docs_governance_stages_xp029_single_fault_self_healing_single_fault_recovery", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_research_design_2026_11_04_source_provenance_inventory_report_source_provenance_prerequisites_not_established", "to": "docs_research_design_2026_11_04_source_provenance_inventory_verification_source_inventory_verification", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_research_design_2026_10_08_symptom_evidence_symptom_evidence_qualification_assessment_symptom_evidence_not_supported", "to": "docs_research_design_2026_11_04_source_provenance_inventory_report_source_provenance_prerequisites_not_established", "label": "semantically_similar_to", "title": "semantically_similar_to [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "docs_research_design_2026_11_04_source_provenance_inventory_report_source_provenance_prerequisites_not_established", "to": "docs_research_design_2026_11_04_source_provenance_inventory_scope_fixed_read_only_scope", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_execution_checklist_execution_checklist", "to": "docs_governance_templates_amendment_amendment", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_execution_checklist_execution_checklist", "to": "docs_governance_templates_decision_review_decision_review", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_execution_roadmap_execution_roadmap", "to": "docs_governance_execution_program_original_execution_program_original", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_governance_execution_roadmap_execution_roadmap", "to": "docs_governance_reconciliation_reconciliation", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "docs_reasoning_semantics_evidence_bounded_reasoning", "to": "docs_safety_model_operator_review_and_unknown_status", "label": "semantically_similar_to", "title": "semantically_similar_to [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "docs_research_design_2026_10_08_bounded_acquisition_evidence_acquisition_assessment_acquisition_findings_not_established", "to": "docs_research_design_2026_10_08_bounded_acquisition_acquisition_scope_bounded_evidence_acquisition", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}];
+const LEGEND = [{"cid": 0, "color": "#4E79A7", "label": "Evidence and Data Foundations", "count": 10}, {"cid": 1, "color": "#F28E2B", "label": "Future Integration and Reliability", "count": 7}, {"cid": 2, "color": "#E15759", "label": "Remediation and Safety Studies", "count": 6}, {"cid": 3, "color": "#76B7B2", "label": "Source Provenance Review", "count": 4}, {"cid": 4, "color": "#59A14F", "label": "Governance Record Templates", "count": 3}, {"cid": 5, "color": "#EDC948", "label": "Execution Governance", "count": 3}, {"cid": 6, "color": "#B07AA1", "label": "Reasoning and Safety Contracts", "count": 2}, {"cid": 7, "color": "#FF9DA7", "label": "OpenRCA Acquisition Limits", "count": 2}, {"cid": 8, "color": "#9C755F", "label": "Permanent Experiment Records", "count": 1}, {"cid": 9, "color": "#BAB0AC", "label": "Document Index", "count": 1}, {"cid": 10, "color": "#4E79A7", "label": "Frontend Evidence Audit", "count": 1}, {"cid": 11, "color": "#F28E2B", "label": "E003 Acceptance Scope", "count": 1}, {"cid": 12, "color": "#E15759", "label": "E002 Review Record", "count": 1}, {"cid": 13, "color": "#76B7B2", "label": "E004 Review Record", "count": 1}, {"cid": 14, "color": "#59A14F", "label": "Decision Record Index", "count": 1}, {"cid": 15, "color": "#EDC948", "label": "XP001 Domain Model", "count": 1}, {"cid": 16, "color": "#B07AA1", "label": "XP002 Telemetry Attachment", "count": 1}, {"cid": 17, "color": "#FF9DA7", "label": "XP003 Feature Coverage", "count": 1}, {"cid": 18, "color": "#9C755F", "label": "XP004 Temporal Correctness", "count": 1}, {"cid": 19, "color": "#BAB0AC", "label": "XP005 Graph Correctness", "count": 1}, {"cid": 20, "color": "#4E79A7", "label": "XP006 Topology Baseline", "count": 1}, {"cid": 21, "color": "#F28E2B", "label": "XP007 Temporal Reasoning", "count": 1}, {"cid": 22, "color": "#E15759", "label": "XP008 Domain Rules", "count": 1}, {"cid": 23, "color": "#76B7B2", "label": "XP009 Contradiction Handling", "count": 1}, {"cid": 24, "color": "#59A14F", "label": "XP010 Multiple Faults", "count": 1}, {"cid": 25, "color": "#EDC948", "label": "XP011 Neural Baseline", "count": 1}, {"cid": 26, "color": "#B07AA1", "label": "XP012 ONNX Parity", "count": 1}, {"cid": 27, "color": "#FF9DA7", "label": "XP013 Membership Changes", "count": 1}, {"cid": 28, "color": "#9C755F", "label": "XP014 Fusion Ablation", "count": 1}, {"cid": 29, "color": "#BAB0AC", "label": "XP015 Neural Ablation", "count": 1}, {"cid": 30, "color": "#4E79A7", "label": "XP016 Topology Ablation", "count": 1}, {"cid": 31, "color": "#F28E2B", "label": "XP017 Temporal Ablation", "count": 1}, {"cid": 32, "color": "#E15759", "label": "XP018 Causal Claims", "count": 1}, {"cid": 33, "color": "#76B7B2", "label": "XP019 Controlled Intervention", "count": 1}, {"cid": 34, "color": "#59A14F", "label": "XP020 Causal Comparison", "count": 1}, {"cid": 35, "color": "#EDC948", "label": "XP021 Counterfactual Test", "count": 1}, {"cid": 36, "color": "#B07AA1", "label": "XP022 Alternative Intervention", "count": 1}, {"cid": 37, "color": "#FF9DA7", "label": "XP023 Planning Validity", "count": 1}, {"cid": 38, "color": "#9C755F", "label": "XP024 Safety Constraints", "count": 1}, {"cid": 39, "color": "#BAB0AC", "label": "XP025 Plan Objectives", "count": 1}, {"cid": 40, "color": "#4E79A7", "label": "OTLP Intake Design", "count": 1}, {"cid": 41, "color": "#F28E2B", "label": "Action Planning Model", "count": 1}, {"cid": 42, "color": "#E15759", "label": "Product Requirements", "count": 1}, {"cid": 43, "color": "#76B7B2", "label": "cAdvisor Provenance", "count": 1}, {"cid": 44, "color": "#59A14F", "label": "Technology Stack Rationale", "count": 1}, {"cid": 45, "color": "#EDC948", "label": "Telemetry Contract", "count": 1}];
+
+// HTML-escape helper — prevents XSS when injecting graph data into innerHTML
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// Build vis datasets
+const nodesDS = new vis.DataSet(RAW_NODES.map((n, i) => ({
+  id: n.id, label: n.label, color: n.color, size: n.size,
+  font: n.font, title: n.title,
+  // Fermat/golden-angle spiral seed positions (#3699): spreading nodes out
+  // before physics runs keeps avoidOverlap from computing near-zero-distance
+  // repulsion that blows the BarnesHut recursion into a stack overflow on large
+  // graphs. `i` is the map index — physics still settles small graphs identically.
+  x: 30 * Math.sqrt(i) * Math.cos(i * 2.4),
+  y: 30 * Math.sqrt(i) * Math.sin(i * 2.4),
+  community: n.community, community_name: n.community_name,
+  source_file: n.source_file, file_type: n.file_type, degree: n.degree,
+  member_count: n.member_count,
+})));
+
+const edgesDS = new vis.DataSet(RAW_EDGES.map((e, i) => ({
+  id: i, from: e.from, to: e.to,
+  label: '',
+  title: e.title,
+  dashes: e.dashes,
+  width: e.width,
+  color: e.color,
+  arrows: { to: { enabled: true, scaleFactor: 0.5 } },
+})));
+
+const container = document.getElementById('graph');
+const network = new vis.Network(container, { nodes: nodesDS, edges: edgesDS }, {
+  physics: {
+    enabled: true,
+    solver: 'forceAtlas2Based',
+    forceAtlas2Based: {
+      gravitationalConstant: -60,
+      centralGravity: 0.005,
+      springLength: 120,
+      springConstant: 0.08,
+      damping: 0.4,
+      avoidOverlap: 0.8,
+    },
+    stabilization: { iterations: 200, fit: true },
+  },
+  interaction: {
+    hover: true,
+    tooltipDelay: 100,
+    hideEdgesOnDrag: true,
+    navigationButtons: false,
+    keyboard: false,
+  },
+  nodes: { shape: 'dot', borderWidth: 1.5 },
+  edges: { smooth: { type: 'continuous', roundness: 0.2 }, selectionWidth: 3 },
+});
+
+// Theme toggle (#3894): Light / Dark / System, persisted in localStorage.
+const THEME_KEY = 'graphify-theme';
+const themeMQ = window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)') : null;
+let themeLabelColor = '#ffffff';  // matches the per-node font color set in Python
+function themePref() {
+  let p = null;
+  try { p = localStorage.getItem(THEME_KEY); } catch (e) {}
+  return (p === 'light' || p === 'dark' || p === 'system') ? p : null;
+}
+function applyTheme(pref) {
+  const t = pref === 'light' ? 'light' : (pref === 'system' && themeMQ && themeMQ.matches) ? 'light' : 'dark';
+  const root = document.documentElement;
+  if (!root) return;
+  root.setAttribute('data-theme', t);
+  document.querySelectorAll('[data-theme-choice]').forEach(b => {
+    b.setAttribute('aria-pressed', String(b.dataset.themeChoice === (pref || 'dark')));
+  });
+  const labelColor = getComputedStyle(root).getPropertyValue('--node-label').trim();
+  if (labelColor && labelColor !== themeLabelColor) {
+    themeLabelColor = labelColor;
+    nodesDS.update(nodesDS.get().map(n => ({ id: n.id, font: Object.assign({}, n.font, { color: labelColor }) })));
+  }
+}
+document.querySelectorAll('[data-theme-choice]').forEach(b => {
+  b.addEventListener('click', () => {
+    const pref = b.dataset.themeChoice;
+    try { localStorage.setItem(THEME_KEY, pref); } catch (e) {}
+    applyTheme(pref);
+  });
+});
+if (themeMQ) {
+  const onSchemeChange = () => { if (themePref() === 'system') applyTheme('system'); };
+  if (themeMQ.addEventListener) themeMQ.addEventListener('change', onSchemeChange);
+  else if (themeMQ.addListener) themeMQ.addListener(onSchemeChange);
+}
+applyTheme(themePref());
+
+network.once('stabilizationIterationsDone', () => {
+  network.setOptions({ physics: { enabled: false } });
+});
+
+function showInfo(nodeId) {
+  const n = nodesDS.get(nodeId);
+  if (!n) return;
+  const neighborIds = network.getConnectedNodes(nodeId);
+  const neighborItems = neighborIds.map(nid => {
+    const nb = nodesDS.get(nid);
+    const color = nb ? nb.color.background : '#555';
+    return `<span class="neighbor-link" style="border-left-color:${esc(color)}" data-nid="${esc(nid)}">${esc(nb ? nb.label : nid)}</span>`;
+  }).join('');
+  const isMetaNode = !n.file_type && !n.source_file;
+  let html = `<div class="field"><b>${esc(n.label)}</b></div>`;
+  if (!isMetaNode) {
+    html += `<div class="field">Type: ${esc(n.file_type || 'unknown')}</div>`;
+  }
+  html += `<div class="field">Community: ${esc(n.community_name || '')}</div>`;
+  if (!isMetaNode) {
+    html += `<div class="field">Source: ${esc(n.source_file || '-')}</div>`;
+  } else if (n.member_count !== undefined && n.member_count !== null) {
+    html += `<div class="field">Members: ${esc(n.member_count)}</div>`;
+  }
+  html += `<div class="field">Degree: ${n.degree}</div>`;
+  if (neighborIds.length) {
+    html += `<div class="field" style="margin-top:8px;color:var(--text-2);font-size:11px">Neighbors (${neighborIds.length})</div><div id="neighbors-list">${neighborItems}</div>`;
+  }
+  document.getElementById('info-content').innerHTML = html;
+}
+
+function focusNode(nodeId) {
+  network.focus(nodeId, { scale: 1.4, animation: true });
+  network.selectNodes([nodeId]);
+  showInfo(nodeId);
+}
+
+// Neighbor links use a data attribute + one delegated listener rather than an
+// inline onclick. A node id/label sourced from a document or a scraped URL
+// (graphify add) can contain a double-quote; dropping the stringified id
+// unescaped into a quoted onclick both broke every link and allowed a hostile
+// source to inject an event handler into the local report (stored XSS, #1838).
+// esc() on data-nid keeps the value inside the attribute; the listener reads it
+// back verbatim. Bound to document so it survives the innerHTML rebuild that
+// recreates #neighbors-list on each showInfo().
+document.addEventListener('click', e => {
+  const el = e.target.closest('.neighbor-link');
+  if (el && el.dataset.nid !== undefined) focusNode(el.dataset.nid);
+});
+
+// Sidebar tooltips reuse vis-network's .vis-tooltip style and 100ms tooltipDelay.
+// Names get one only when CSS ellipsis truncates them (the full text is still in
+// the DOM); counts always get one, to say what the number is. Text is set with
+// textContent only (labels are untrusted). Delegated on document so rows rebuilt
+// later (search results, showInfo()) are covered.
+const sidebarTip = document.createElement('div');
+sidebarTip.className = 'vis-tooltip';
+sidebarTip.style.cssText = 'white-space: normal; max-width: 360px; overflow-wrap: break-word;';
+document.body.appendChild(sidebarTip);
+let sidebarTipTimer = null;
+let sidebarTipEl = null;    // element whose text the tooltip shows
+let sidebarTipZone = null;  // element the pointer must leave to hide it
+function hideSidebarTip() {
+  clearTimeout(sidebarTipTimer);
+  sidebarTip.style.visibility = 'hidden';
+  sidebarTip.textContent = '';
+  sidebarTipEl = sidebarTipZone = null;
+}
+document.addEventListener('mouseover', e => {
+  const zone = e.target.closest && e.target.closest('.legend-count, .legend-item, .search-item, .neighbor-link');
+  // Anywhere on a legend row except its count (dot, checkbox, gaps, padding)
+  // stands for the row's name, so moving within the row never re-triggers it.
+  const el = zone && zone.classList.contains('legend-item') ? zone.querySelector('.legend-label') : zone;
+  if (!el || el === sidebarTipEl) return;
+  hideSidebarTip();
+  const isCount = el.classList.contains('legend-count');
+  if (!isCount && el.scrollWidth <= el.clientWidth) return;
+  const text = isCount ? `${el.textContent} ${el.textContent === '1' ? 'node' : 'nodes'}` : el.textContent;
+  sidebarTipEl = el;
+  sidebarTipZone = zone;
+  const x = e.clientX, y = e.clientY;
+  sidebarTipTimer = setTimeout(() => {
+    sidebarTip.textContent = text;
+    sidebarTip.style.left = sidebarTip.style.top = '0px';  // measure at full max-width
+    sidebarTip.style.visibility = 'visible';
+    const w = sidebarTip.offsetWidth, h = sidebarTip.offsetHeight;
+    sidebarTip.style.left = Math.max(4, Math.min(x + 12, window.innerWidth - w - 4)) + 'px';
+    sidebarTip.style.top = (y + 16 + h > window.innerHeight ? Math.max(4, y - h - 8) : y + 16) + 'px';
+  }, 100);
+});
+document.addEventListener('mouseout', e => {
+  if (sidebarTipZone && !sidebarTipZone.contains(e.relatedTarget)) hideSidebarTip();
+});
+// A click rebuilds or hides the row (showInfo(), search pick) without a mouseout.
+document.addEventListener('mousedown', hideSidebarTip);
+
+// Track hovered node — hover detection is more reliable than click params
+let hoveredNodeId = null;
+network.on('hoverNode', params => {
+  hoveredNodeId = params.node;
+  container.style.cursor = 'pointer';
+});
+network.on('blurNode', () => {
+  hoveredNodeId = null;
+  container.style.cursor = 'default';
+});
+container.addEventListener('click', () => {
+  if (hoveredNodeId !== null) {
+    showInfo(hoveredNodeId);
+    network.selectNodes([hoveredNodeId]);
+  }
+});
+network.on('click', params => {
+  if (params.nodes.length > 0) {
+    showInfo(params.nodes[0]);
+  } else if (hoveredNodeId === null) {
+    document.getElementById('info-content').innerHTML = '<span class="empty">Click a node to inspect it</span>';
+  }
+});
+
+const searchInput = document.getElementById('search');
+const searchResults = document.getElementById('search-results');
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.toLowerCase().trim();
+  searchResults.innerHTML = '';
+  if (!q) { searchResults.style.display = 'none'; return; }
+  const matches = RAW_NODES.filter(n => n.label.toLowerCase().includes(q)).slice(0, 20);
+  if (!matches.length) { searchResults.style.display = 'none'; return; }
+  searchResults.style.display = 'block';
+  matches.forEach(n => {
+    const el = document.createElement('div');
+    el.className = 'search-item';
+    el.textContent = n.label;
+    el.style.borderLeft = `3px solid ${n.color.background}`;
+    el.style.paddingLeft = '8px';
+    el.onclick = () => {
+      network.focus(n.id, { scale: 1.5, animation: true });
+      network.selectNodes([n.id]);
+      showInfo(n.id);
+      searchResults.style.display = 'none';
+      searchInput.value = '';
+    };
+    searchResults.appendChild(el);
+  });
+});
+document.addEventListener('click', e => {
+  if (!searchResults.contains(e.target) && e.target !== searchInput)
+    searchResults.style.display = 'none';
+});
+
+const hiddenCommunities = new Set();
+
+const selectAllCb = document.getElementById('select-all-cb');
+
+function updateSelectAllState() {
+  const total = LEGEND.length;
+  const hidden = hiddenCommunities.size;
+  selectAllCb.checked = hidden === 0;
+  selectAllCb.indeterminate = hidden > 0 && hidden < total;
+}
+
+function toggleAllCommunities(hide) {
+  document.querySelectorAll('.legend-item').forEach(item => {
+    hide ? item.classList.add('dimmed') : item.classList.remove('dimmed');
+  });
+  document.querySelectorAll('.legend-cb').forEach(cb => {
+    cb.checked = !hide;
+  });
+  LEGEND.forEach(c => {
+    if (hide) hiddenCommunities.add(c.cid); else hiddenCommunities.delete(c.cid);
+  });
+  const updates = RAW_NODES.map(n => ({ id: n.id, hidden: hide }));
+  nodesDS.update(updates);
+  updateSelectAllState();
+}
+
+const legendEl = document.getElementById('legend');
+LEGEND.forEach(c => {
+  const item = document.createElement('div');
+  item.className = 'legend-item';
+  const cb = document.createElement('input');
+  cb.type = 'checkbox';
+  cb.className = 'legend-cb';
+  cb.checked = true;
+  cb.addEventListener('change', (e) => {
+    e.stopPropagation();
+    if (cb.checked) {
+      hiddenCommunities.delete(c.cid);
+      item.classList.remove('dimmed');
+    } else {
+      hiddenCommunities.add(c.cid);
+      item.classList.add('dimmed');
+    }
+    const updates = RAW_NODES
+      .filter(n => n.community === c.cid)
+      .map(n => ({ id: n.id, hidden: !cb.checked }));
+    nodesDS.update(updates);
+    updateSelectAllState();
+  });
+  item.innerHTML = `<div class="legend-dot" style="background:${c.color}"></div>
+    <span class="legend-label">${c.label}</span>
+    <span class="legend-count">${c.count}</span>`;
+  item.prepend(cb);
+  item.onclick = (e) => {
+    if (e.target === cb) return;
+    cb.checked = !cb.checked;
+    cb.dispatchEvent(new Event('change'));
+  };
+  legendEl.appendChild(item);
+});
+</script>
+<script>
+// Render hyperedges as shaded regions
+const hyperedges = [{"id": "research_instrument_decision_gates", "label": "Research instrument governed by decision gates", "nodes": ["docs_governance_execution_program_original_execution_program_original", "docs_governance_execution_roadmap_execution_roadmap", "docs_governance_execution_checklist_execution_checklist"], "relation": "form", "confidence": "EXTRACTED", "confidence_score": 0.95, "source_file": "governance/EXECUTION_ROADMAP.md"}, {"id": "e003_e004_review_chain", "label": "E003 representation evidence and E004 review", "nodes": ["docs_e003_implementation_report_e003_implementation_report", "docs_governance_amendments_2026_10_06_e003_v006_acceptance_and_e004_scope_2026_10_06_e003_v006_acceptance_and_e004_scope", "docs_governance_amendments_2026_10_08_e004_r001_execution_acceptance_2026_10_08_e004_r001_execution_acceptance"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "governance/amendments/2026-10-06-E003-V006-acceptance-and-E004-scope.md"}, {"id": "telemetry_representation_evaluation", "label": "Telemetry ingestion, representation and evaluation", "nodes": ["docs_engineering_otlp_intake_implementation_otlp_intake_implementation", "docs_domain_model_domain_model", "docs_evaluation_protocol_evaluation_protocol"], "relation": "form", "confidence": "INFERRED", "confidence_score": 0.75, "source_file": "engineering/otlp-intake-implementation.md"}];
+// afterDrawing passes ctx already transformed to network coordinate space.
+// Draw node positions raw — no manual pan/zoom/DPR math needed.
+
+// Andrew's monotone chain. Returns the hull in counter-clockwise order, which
+// is what the perimeter must be traced in. Collinear and duplicate points
+// collapse to the extremes, so degenerate member sets render as a segment
+// rather than a zero-area crossed path.
+function convexHull(pts) {
+    const p = pts.slice().sort((a, b) => (a.x - b.x) || (a.y - b.y));
+    if (p.length < 3) return p;
+    const cross = (o, a, b) => (a.x - o.x) * (b.y - o.y) - (a.y - o.y) * (b.x - o.x);
+    const build = seq => {
+        const out = [];
+        for (const q of seq) {
+            while (out.length >= 2 && cross(out[out.length - 2], out[out.length - 1], q) <= 0) out.pop();
+            out.push(q);
+        }
+        out.pop();
+        return out;
+    };
+    const hull = build(p).concat(build(p.slice().reverse()));
+    return hull.length >= 3 ? hull : p;
+}
+network.on('afterDrawing', function(ctx) {
+    hyperedges.forEach(h => {
+        const positions = h.nodes
+            .map(nid => network.getPositions([nid])[nid])
+            .filter(p => p !== undefined);
+        if (positions.length < 2) return;
+        ctx.save();
+        ctx.globalAlpha = 0.12;
+        ctx.fillStyle = '#6366f1';
+        ctx.strokeStyle = '#6366f1';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        // Centroid and expanded hull in network coordinates.
+        // The perimeter must follow hull order, not h.nodes order: tracing the
+        // raw member order self-intersects whenever the layout does not happen
+        // to place members in angular order, filling as crossed wedges.
+        const cx = positions.reduce((s, p) => s + p.x, 0) / positions.length;
+        const cy = positions.reduce((s, p) => s + p.y, 0) / positions.length;
+        const hull = convexHull(positions);
+        const expanded = hull.map(p => ({
+            x: cx + (p.x - cx) * 1.15,
+            y: cy + (p.y - cy) * 1.15
+        }));
+        ctx.moveTo(expanded[0].x, expanded[0].y);
+        expanded.slice(1).forEach(p => ctx.lineTo(p.x, p.y));
+        ctx.closePath();
+        ctx.fill();
+        ctx.globalAlpha = 0.4;
+        ctx.stroke();
+        // Label
+        ctx.globalAlpha = 0.8;
+        ctx.fillStyle = '#4f46e5';
+        ctx.font = 'bold 11px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(h.label, cx, cy - 5);
+        ctx.restore();
+    });
+});
+</script>
+</body>
+</html>
