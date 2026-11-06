@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\bhavv\\OneDrive\\Desktop\\Dravvya(4th Sem)\\Projects\\Distributed-Causal-Engine\\.venv-e002\\Scripts\\python.exe",
+    "-s",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_e004*.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stderr": "test_cross_trace_rejected (test_e004_independent.IndependentTests.test_cross_trace_rejected) ... ok\ntest_evidence_conservation (test_e004_independent.IndependentTests.test_evidence_conservation) ... ok\ntest_forward_and_reverse_reachability (test_e004_independent.IndependentTests.test_forward_and_reverse_reachability) ... ok\ntest_future_parent_rejected (test_e004_independent.IndependentTests.test_future_parent_rejected) ... ok\ntest_independent_ties (test_e004_independent.IndependentTests.test_independent_ties) ... ok\ntest_missing_parent_is_not_edge (test_e004_independent.IndependentTests.test_missing_parent_is_not_edge) ... ok\ntest_supported_trace_integration (test_e004_independent.IndependentTests.test_supported_trace_integration) ... ok\ntest_values_do_not_affect_rank (test_e004_independent.IndependentTests.test_values_do_not_affect_rank) ... ok\ntest_wrong_endpoint_rejected (test_e004_independent.IndependentTests.test_wrong_endpoint_rejected) ... ok\ntest_activity_independence (test_e004_symbolic.SymbolicTests.test_activity_independence) ... ok\ntest_answer_field_rejected (test_e004_symbolic.SymbolicTests.test_answer_field_rejected) ... ok\ntest_cycles (test_e004_symbolic.SymbolicTests.test_cycles) ... ok\ntest_direction (test_e004_symbolic.SymbolicTests.test_direction) ... ok\ntest_disconnected (test_e004_symbolic.SymbolicTests.test_disconnected) ... ok\ntest_duplicate_rejected (test_e004_symbolic.SymbolicTests.test_duplicate_rejected) ... ok\ntest_empty (test_e004_symbolic.SymbolicTests.test_empty) ... ok\ntest_extract (test_e004_symbolic.SymbolicTests.test_extract) ... ok\ntest_future_rejected (test_e004_symbolic.SymbolicTests.test_future_rejected) ... ok\ntest_labels_not_arguments (test_e004_symbolic.SymbolicTests.test_labels_not_arguments) ... ok\ntest_missing_endpoint (test_e004_symbolic.SymbolicTests.test_missing_endpoint) ... ok\ntest_parallel_edges (test_e004_symbolic.SymbolicTests.test_parallel_edges) ... ok\ntest_repeat_and_no_mutation (test_e004_symbolic.SymbolicTests.test_repeat_and_no_mutation) ... ok\ntest_root_absent (test_e004_symbolic.SymbolicTests.test_root_absent) ... ok\ntest_self_loop_abstention (test_e004_symbolic.SymbolicTests.test_self_loop_abstention) ... ok\ntest_tie_boundary (test_e004_symbolic.SymbolicTests.test_tie_boundary) ... ok\ntest_uniform (test_e004_symbolic.SymbolicTests.test_uniform) ... ok\ntest_unknown_not_healthy (test_e004_symbolic.SymbolicTests.test_unknown_not_healthy) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 0.002s\n\nOK\n",
+  "stdout": ""
+}
