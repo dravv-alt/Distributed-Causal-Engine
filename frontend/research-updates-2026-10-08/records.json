@@ -1,0 +1,1153 @@
+{
+  "schema_version": "dce.research-cockpit.v2",
+  "generated_from": "read-only local experiment artifacts",
+  "current_stage": {
+    "title": "Reviews recorded; evidence prerequisites still missing",
+    "status": "REVISE",
+    "plain": "E004 execution and E002-R002 REVISE are approved. Bounded acquisition is complete; qualified symptoms, healthy controls and an independent evaluation split remain unestablished."
+  },
+  "experiments": [
+    {
+      "experiment_id": "E001",
+      "run_id": "E001-R001",
+      "status": "ACCEPTED",
+      "decision": "REVISE",
+      "question": "Can we repeat the original simulated DCE demo?",
+      "what_we_did": "Ran the original synthetic-data recipe again in a new folder and compared its five result tables with the delivered report.",
+      "result": "PASS: the five comparable result tables matched the delivered report.",
+      "blocking": "Review accepted; E002 subsequently executed.",
+      "meaning": "The old simulated demo is repeatable once on this machine.",
+      "not_established": "It does not prove DCE works on real outages, and it does not prove the hybrid approach is better than its simpler alternatives.",
+      "waiting": "Retain R0 as a baseline, not proof of hybrid superiority.",
+      "facts": [
+        "Reproduction CLI completed: yes.",
+        "Five comparable tables had zero mismatches after output-path normalization.",
+        "Original R0 tests: 25 passed, 1 failed, 2 errored. CLI reproduction succeeded separately.",
+        "47 passing tests belong to a separate OTLP engineering workspace check; they do not erase the original R0 failures."
+      ],
+      "artifacts": [
+        {
+          "label": "Run summary",
+          "path": "experiments/E001/results/E001-R001/SUMMARY.md",
+          "sha256": "3b80e27686c0f577d61bb90b3599400d5c432507f223f1fb572e08dde4a1c43e"
+        },
+        {
+          "label": "Execution record",
+          "path": "experiments/E001/logs/E001-R001.md",
+          "sha256": "0a1acdcd8dbe61c6ea95d298cd9afbd7abd0e827339b0ace189f8d2da3acb1fa"
+        },
+        {
+          "label": "Raw report",
+          "path": "experiments/E001/results/E001-R001/report.json",
+          "sha256": "a0ef00babb8163b0e6ec0b7bfe792ae209296ad3b28d4007dbdd0c155a2486c5"
+        },
+        {
+          "label": "Comparison and hashes",
+          "path": "experiments/E001/results/E001-R001/artifact-manifest.json",
+          "sha256": "f8f0d50f3e67c81641475dc20ba4244030c737aa92c5eca995301ed7c6c8f188"
+        }
+      ],
+      "execution_status": "Reproduction completed",
+      "review_status": "User accepted R001 REVISE",
+      "population": "Synthetic simulation",
+      "rationale": "A reproducible baseline lets later comparisons start from a known reference.",
+      "documents": [
+        {
+          "path": "experiments/E001/hypothesis.md",
+          "sha256": "36f917c6eab09be9b255cb0d58c5048ff240d5f6e7f522ac63a9f2106c5067a9",
+          "text": "# E001 protocol\n\nStatus: Draft; not executed under E001.\n\n## Question\n\nCan the delivered R0 baseline be reproduced from a pinned source snapshot, and what do its comparisons actually establish?\n\n## Hypothesis\n\nPinned source, dependencies, configuration and seeds reproduce the delivered metrics within a tolerance chosen before execution. Reproduction alone does not demonstrate hybrid superiority.\n\n## Independent variables\n\nReported method variants; sparse/concurrent faults; workload scaling; missingness; controlled seed.\n\n## Dependent variables\n\nIncident precision/recall, event coverage, root ranking, detection delay, false-alert exposure and paired gain; preregister exact definitions.\n\n## Controls\n\nFixed environment seed/service mapping, feature schema, chronological split/embargo and training seed. Audit shared reasoning in method variants before interpreting ablations.\n\n## Dataset/version\n\nPending: pin each manifest and telemetry checksum; do not identify data by folder name alone.\n\n## Code version\n\nPending: Git commit plus dirty status and source-tree checksum/archive. Current R0 delivery is untracked and not represented by the repository HEAD.\n\n## Configuration\n\nconfiguration.yaml is protocol metadata; it is not consumed by the current R0 CLI. Record resolved CLI arguments/configuration per run.\n\n## Random seeds\n\nProposed: environment 11; training dataset 11; held-out dense 12, sparse 21, load 13, missing 15, fault-free 14; model 0.\n\n## Hardware\n\nPending execution: CPU model/core count, RAM, OS, architecture, accelerators, dependency/thread settings.\n\n## Results\n\nPending. No experiment execution or new benchmark results.\n\n## Failure cases\n\nPending collection. Record crashes, mismatches, unavailable inputs and weak/negative results.\n\n## Interpretation\n\nPending evidence review; distinguish observations from hypotheses and scope limitations.\n\n## Decision\n\nPending. Do not promote a model or claim an improvement from a draft.\n\n## Next experiment\n\nE002 reserved for onset/timing provenance; freeze its protocol only after E001 review.\n\n## Freeze and amendments\n\nProtocol commit: pending. Owner/reviewer: pending. Freeze date: pending.\nChoose numerical tolerances and analysis before executing. Append dated amendments after freeze; changed hypotheses receive new IDs.\n"
+        },
+        {
+          "path": "experiments/E001/configuration.yaml",
+          "sha256": "d27b6c788b09cdfa6b6949ff7eda9ee7190e9baf4ea15cbcb3ceebeaf4827106",
+          "text": "# Protocol metadata. Current R0 CLI does not load this file.\nexperiment_id: E001\nstatus: draft\nprotocol_version: 1\nquestion: \"Can the delivered R0 baseline be reproduced from a pinned source snapshot, and what do its comparisons actually establish?\"\ncode:\n  git_commit: null\n  dirty: null\n  source_snapshot_uri: null\n  source_tree_sha256: null\ndataset:\n  manifest_uri: null\n  manifest_sha256: null\nconfiguration_resolved: false\nrandom_seeds:\n  training: 0\n  environment: 11\nhardware:\n  os: null\n  cpu: null\n  memory_gib: null\n  accelerator: null\n  thread_settings: null\nsoftware:\n  python: null\n  dependency_lock_sha256: null\nanalysis:\n  metrics: [incident_precision, incident_recall, root_top1, detection_delay, false_alert_rate]\n  acceptance_tolerance: null\n  alert_budget: null\n  independent_baseline_audit_complete: false\nproposed_datasets:\n  - {name: train, seed: 11, duration_s: 40000}\n  - {name: dense, seed: 12, duration_s: 30000}\n  - {name: sparse, seed: 21, duration_s: 100000, mean_gap_s: 2500, p_concurrent: 0}\n  - {name: load, seed: 13, duration_s: 30000, load_scale: 1.5}\n  - {name: missing, seed: 15, duration_s: 30000, missing_rate: 0.03}\n  - {name: faultfree, seed: 14, duration_s: 30000, no_faults: true}\nexecution:\n  run_id: null\n  started_at: null\n  finished_at: null\n  result_manifest_uri: null\n"
+        },
+        {
+          "path": "experiments/E001/run.md",
+          "sha256": "5f00df1a266957df89a03b5474676bd22b07f06b00baf2f42f1989a7e31ec28b",
+          "text": "# E001 execution ledger\n\nNo runs recorded. No execution is implied by creation of this file.\n\nBefore running: freeze protocol/configuration; pin source and data; record dependencies, hardware and seeds;\nconfirm controls and acceptance criteria; create a new run record such as logs/E001-R001.md.\n\nEach run entry records run ID, operator, UTC timestamps, code/source hash, dataset/version/checksum,\nconfiguration hash, exact commands/working directory, resolved environment, hardware, exit status,\nresult/figure/log URIs and hashes, failure cases, interpretation, decision and next experiment.\n\nExisting reproduction entry point: ../../dce-r0/dce/scripts/reproduce_r0_baseline.sh (requires Bash and installed dce package). Review its relative paths and isolated output directory before execution; record exact commands here. No benchmark was run during scaffolding.\n\nAppend entries; never replace an earlier run or overwrite its artifacts.\n"
+        },
+        {
+          "path": "experiments/E001/logs/E001-R001.md",
+          "sha256": "0a1acdcd8dbe61c6ea95d298cd9afbd7abd0e827339b0ace189f8d2da3acb1fa",
+          "text": "# E001-R001 execution record\n\n- **Run ID:** E001-R001\n- **Operator:** Codex (user-authorized execution)\n- **Started/finished:** 2026-10-03 UTC; full CLI reproduction completed successfully.\n- **Working directory:** repository root; R0 commands executed from `dce-r0/dce`.\n- **Source snapshot:** unpacked `dce-r0/` delivery; archive SHA-256 `d521692acc25df69a0898896497cc1aaa65cc18c7b1110c5021389e2c89b7c35`; source-tree SHA-256 `1442a5343674c0c6113a9d8f1d1388a7d0db29ab207c7f03f8cb700b6c9e4e8b` over 19 versioned source files. The source is not a Git checkout, so no commit identifier exists.\n- **Configuration:** `experiments/E001/configuration.yaml`, SHA-256 `d27b6c788b09cdfa6b6949ff7eda9ee7190e9baf4ea15cbcb3ceebeaf4827106`. Runner SHA-256 `a86e2f299ede2b8a1d8654184d535b4dfb66653005e316e381bb1b5369bb4e6c`.\n- **Resolved execution:** `powershell -NoProfile -ExecutionPolicy Bypass -File .\\\\scripts\\\\run_e001_r001.ps1`. The bypass was process-local; it did not alter machine execution policy. The runner is an explicit PowerShell equivalent of the delivered Bash script.\n- **Seeds:** environment 11; train 11; held-out dense 12; sparse 21; load 13; missing 15; fault-free 14; model 0.\n- **Software:** Python 3.12.6; NumPy 1.26.4; scikit-learn 1.6.1; NetworkX 3.4.2; pytest 9.0.2.\n- **Hardware:** Windows host; CPU/RAM query was denied by the sandbox. Hardware is therefore unknown, not inferred.\n- **Exit status:** 0 for the reproduction CLI.\n\n## Produced datasets\n\n| Dataset | Steps | Fault events |\n|---|---:|---:|\n| train | 40,000 | 65 |\n| heldout_seed | 30,000 | 63 |\n| heldout_sparse | 100,000 | 41 |\n| heldout_load | 30,000 | 47 |\n| missing | 30,000 | 44 |\n| faultfree | 30,000 | 0 |\n\n## Verification\n\n`report.json` SHA-256: `a0ef00babb8163b0e6ec0b7bfe792ae209296ad3b28d4007dbdd0c155a2486c5`.\nThe five comparable result tables exactly match `dce-r0/dce/docs/baseline-report-r0.json` after normalizing the dataset path keys. The model versions differ (`tmlp-aa608e913bd7` delivered versus `tmlp-48790ca718ef` reproduced), which is expected because a new bundle was trained; matching output metrics, not a matching model checksum, is the reproduction criterion tested here.\n\n## Failures and caveats\n\n- The initial direct PowerShell invocation was blocked by the local execution policy before code execution. The process-local bypass above resolved that environment limitation.\n- The R0 pytest suite did **not** pass: 25 passed, 1 failed, and 2 errored. `test_end_to_end_smoke` fails with `KeyError: 'model_version'` because it evaluates an in-memory bundle before `ModelBundle.save()` adds that field. The CLI path saves then reloads its bundle and completed successfully, so this is a test/in-memory API defect, not evidence that the reproduced CLI report is invalid.\n- The two remaining test errors are Windows ACL failures for pytest temporary directories. A rerun with `--basetemp` under E001 artifacts also failed during pytest cleanup because that directory was access-denied. They are environment failures, not passing tests.\n- This is one deterministic run, not a multi-host or repeated-run reproducibility estimate.\n\n## Result locations\n\n- `experiments/E001/results/E001-R001/report.json`\n- `experiments/E001/results/E001-R001/artifact-manifest.json`\n- `experiments/E001/results/E001-R001/bundle/`\n"
+        },
+        {
+          "path": "docs/engineering/otlp-intake-implementation.md",
+          "sha256": "a4c8a9baed5f457ec52b0c23ae90d16ebc98d9c8a69a5dd67058b53cd9cb6fbd",
+          "text": "# OTLP intake implementation note\n\nDate: 2026-10-03. Scope: local engineering attachment slice. This is a new implementation note and does not change any E003 experiment record or gate.\n\n## Delivered capability\n\n`dce_foundation.ingest` now exposes an OTLP/HTTP binary protobuf receiver for metrics and traces. It writes each accepted request to a local SQLite append log before returning success. The log keeps payload bytes, SHA-256, receipt time, original event-time range, source `service.name`, signal type and counts. Receipt sequence provides deterministic replay order.\n\nThe replay CLI renders a bounded source view. In the verified direct path it displayed the original metric `dce.demo.requests`, unit `{request}`, service `dce-demo-service`, trace ID, span ID and source event timestamps. The raw protobuf remains the durable source of truth; this view makes no feature, unit or topology inference.\n\n## Verified locally\n\n- `python -m pytest -q -p no:cacheprovider tests/test_otlp_intake.py`: 8 passed.\n- Full suite: 47 passed.\n- A real OpenTelemetry Python SDK emitter sent a metric and request span to Uvicorn on `127.0.0.1:4318`.\n- The server was stopped before the replay command ran. SQLite retained and replayed the three new receipt rows after restart: two metric exports and one trace export. The periodic metric exporter can emit more than one batch for one counter update; each accepted delivery is retained.\n- Tests cover binary success responses, event/source metadata, receipt replay, duplicates, malformed protobuf, unsupported content type, payload limit, unavailable storage and health reporting.\n\n## Pending qualification\n\nThe local environment has the OpenTelemetry Python SDK/exporter packages but no `otelcol-contrib` command. `examples/otlp-intake/collector.yaml` and `collector_emitter.py` are ready for the Collector path, but that path has not been executed here. TLS, authentication, OTLP JSON/gzip, logs/profiles, partial success, Collector retry behavior, throughput, disk exhaustion recovery, PostgreSQL and deployment packaging are also unqualified.\n\n## Run commands\n\nSee [the demo README](../../examples/otlp-intake/README.md) for the direct and Collector commands. The default local database is `data/raw/intake/dce-intake.sqlite3`, which is ignored as raw derived data. Use `DCE_INTAKE_DB` for a different local path.\n\n## Current product boundary\n\nThis creates a usable local attachment point and durable replay log. It does not start feature extraction, a graph, anomaly detection, root-cause analysis, planning or remediation. E003 remains pending human review.\n"
+        }
+      ],
+      "review_provenance": "User acceptance is reported by the supplied handoff and CURRENT_RESULTS.md; the linked E001 decision file is an older pending record. No dedicated E001 approval record was located in this audit."
+    },
+    {
+      "experiment_id": "E002",
+      "run_id": "E002-R002",
+      "status": "REVISE",
+      "decision": "REVISE",
+      "question": "Does using consistent timing sources improve which component is ranked as the likely root cause?",
+      "what_we_did": "Reran the frozen synthetic timing experiment in a qualified environment: three repeats and five fixed held-out seeds, comparing mixed, same-source and disabled timing.",
+      "result": "Three repeats agree. Clean-environment qualification passed. The timing change still gave no ranking improvement.",
+      "blocking": "No successor experiment is authorized. Detector development and E005 registration/execution remain unauthorized.",
+      "meaning": "The tied result survived the environment fix. The old dependency warning does not explain away the lack of improvement.",
+      "not_established": "It does not prove timing is useless, the hybrid is useless, or that a differently controlled timing method can never help.",
+      "waiting": "Qualified environment and repeatable reproduction; no improvement from the tested timing policy. This does not rule out temporal methods generally.",
+      "facts": [
+        "Top-1 difference: 0.000 across 237 events.",
+        "Mixed timing used 306 cross-source pairs; same-source timing used zero.",
+        "Preflight and postflight qualified; 49 tests passed. Raw results byte-identical to R001.",
+        "Downloaded hash-pinned clean-room reconstruction was not established."
+      ],
+      "gates": [
+        {
+          "name": "repeatability",
+          "status": "PASS"
+        },
+        {
+          "name": "treatment integrity",
+          "status": "PASS"
+        },
+        {
+          "name": "superiority",
+          "status": "FAIL"
+        },
+        {
+          "name": "environment qualification",
+          "status": "PASS"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "Results",
+          "path": "experiments/E002/results/E002-R002/summary.json",
+          "sha256": "a15fa8ffa07059fd31c2ecd59f624e7e89697f3ccc1e93a772a1361ad0c319ad"
+        },
+        {
+          "label": "Environment / tests",
+          "path": "experiments/E002/results/E002-R002/validation.json",
+          "sha256": "f43f686595d1b8d5c1d3dd77d1f44e9148312b8b335110096baf331ab333eb04"
+        },
+        {
+          "label": "Decision proposal",
+          "path": "experiments/E002/results/E002-R002/decision-proposal.md",
+          "sha256": "683e2b2ea76149ae6c398de587620d984d3b4d941c058b93ba4cfec6ced0f32b"
+        },
+        {
+          "label": "R001 comparison",
+          "path": "experiments/E002/results/E002-R002/comparison-r001-r002.md",
+          "sha256": "da13c6fcd1f19020e48f3b8636f6290e5c66cec3575bbc80d5972584a4cb8958"
+        },
+        {
+          "path": "docs/governance/amendments/2026-10-08-E002-R002-REVISE-approval.md",
+          "label": "Human approval: 8 October 2026",
+          "sha256": "b4c561666a1e40b1fed50bf45aaae5cb62e46c077a0c796ed6b12093df558c06"
+        }
+      ],
+      "technical": {
+        "summary": {
+          "configuration_sha256": "056eedeecb380d65eff6ab4880bf1b3dc78c98d1e3bda68678d4e8343871c1a9",
+          "repeatability_hashes": [
+            "75dac86f78573fac799f0e90103ba2501bf44e6863afe47d7f7117f7bc5f5c58",
+            "75dac86f78573fac799f0e90103ba2501bf44e6863afe47d7f7117f7bc5f5c58",
+            "75dac86f78573fac799f0e90103ba2501bf44e6863afe47d7f7117f7bc5f5c58"
+          ],
+          "paired_top1_same_source_minus_mixed": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_events": 237
+          },
+          "aggregate_cross_source_pairs_observed": {
+            "mixed_current": 306,
+            "same_source_only": 306,
+            "timing_disabled": 344
+          },
+          "aggregate_cross_source_pairs_used": {
+            "mixed_current": 306,
+            "same_source_only": 0,
+            "timing_disabled": 344
+          },
+          "aggregate_false_positives": {
+            "mixed_current": 0,
+            "same_source_only": 0,
+            "timing_disabled": 0
+          },
+          "gates": {
+            "repeatability": true,
+            "treatment_integrity": true,
+            "superiority": false
+          },
+          "overall_gate": true
+        },
+        "validation": {
+          "schema_version": "dce.e002.r002.validation.v1",
+          "run_id": "E002-R002",
+          "outcome": "completed",
+          "protocol_changed": false,
+          "environment": {
+            "preflight_qualified": true,
+            "postflight_qualified": true,
+            "preflight_record": "experiments/E002/environment/E002-R002-preflight-qualified-2026-10-03.json",
+            "postflight_record": "experiments/E002/environment/E002-R002-postflight-qualified-2026-10-03.json"
+          },
+          "test_suite": {
+            "command": ".venv-e002\\Scripts\\python.exe -m pytest -q",
+            "result": "49 passed in 1.43s"
+          },
+          "gates": {
+            "repeatability": true,
+            "treatment_integrity": true,
+            "superiority": false,
+            "environment_qualification": true
+          },
+          "r001_comparison": {
+            "raw_results_byte_identical": true,
+            "repeatability_hashes_identical": true,
+            "derived_metrics_identical": true,
+            "summary_byte_identical": false,
+            "summary_difference_explained_by": "The embedded configuration SHA-256 differs because R002 records additional execution-context provenance."
+          },
+          "scope_boundary": "R002 does not change E002-R001, E003, or downstream RCA work."
+        }
+      },
+      "execution_status": "completed",
+      "review_status": "R002 REVISE approved separately on 8 October 2026; R001 acceptance retained",
+      "history": [
+        "R001: accepted REVISE; environment qualification failed.",
+        "R002: qualified environment; unchanged performance; separate REVISE approved on 8 October 2026."
+      ],
+      "population": "Synthetic simulation",
+      "rationale": "Test whether keeping onset sources consistent improves component ranking while other inputs stay fixed.",
+      "documents": [
+        {
+          "path": "experiments/E002/hypothesis.md",
+          "sha256": "d3cf1833ca394db938c596b3217c3ffddc42af04175f63e8477fd0e9950b562a",
+          "text": "# E002 protocol\n\nStatus: Reserved; not executed; protocol depends on E001 review.\n\n## Question\n\nDoes consistent neural/SLO onset provenance improve timing-based root ranking?\n\n## Hypothesis\n\nPreserving onset source and comparing uncertainty intervals reduces false temporal explanations at a matched alert budget.\n\n## Independent variables\n\nTODO: preregister treatments and levels.\n\n## Dependent variables\n\nIncident precision/recall, event coverage, root ranking, detection delay, false-alert exposure and paired gain; preregister exact definitions.\n\n## Controls\n\nTODO: specify unchanged baseline and negative controls.\n\n## Dataset/version\n\nPending: pin each manifest and telemetry checksum; do not identify data by folder name alone.\n\n## Code version\n\nPending: Git commit plus dirty status and source-tree checksum/archive. Current R0 delivery is untracked and not represented by the repository HEAD.\n\n## Configuration\n\nconfiguration.yaml is protocol metadata; it is not consumed by the current R0 CLI. Record resolved CLI arguments/configuration per run.\n\n## Random seeds\n\nPending.\n\n## Hardware\n\nPending execution: CPU model/core count, RAM, OS, architecture, accelerators, dependency/thread settings.\n\n## Results\n\nPending. No experiment execution or new benchmark results.\n\n## Failure cases\n\nPending collection. Record crashes, mismatches, unavailable inputs and weak/negative results.\n\n## Interpretation\n\nPending evidence review; distinguish observations from hypotheses and scope limitations.\n\n## Decision\n\nPending. Do not promote a model or claim an improvement from a draft.\n\n## Next experiment\n\nAllocate a new ID after evidence review.\n\n## Freeze and amendments\n\nProtocol commit: pending. Owner/reviewer: pending. Freeze date: pending.\nChoose numerical tolerances and analysis before executing. Append dated amendments after freeze; changed hypotheses receive new IDs.\n"
+        },
+        {
+          "path": "experiments/E002/configuration.yaml",
+          "sha256": "8686677c00984ccba3ef48272cab61a905956a6be15ca6ab22a80ba6e3c3ef8a",
+          "text": "# Protocol metadata. Current R0 CLI does not load this file.\nexperiment_id: E002\nstatus: reserved\nprotocol_version: 1\nquestion: \"Does consistent neural/SLO onset provenance improve timing-based root ranking?\"\ncode:\n  git_commit: null\n  dirty: null\n  source_snapshot_uri: null\n  source_tree_sha256: null\ndataset:\n  manifest_uri: null\n  manifest_sha256: null\nconfiguration_resolved: false\nrandom_seeds:\n  training: null\n  environment: null\nhardware:\n  os: null\n  cpu: null\n  memory_gib: null\n  accelerator: null\n  thread_settings: null\nsoftware:\n  python: null\n  dependency_lock_sha256: null\nanalysis:\n  metrics: [incident_precision, incident_recall, root_top1, detection_delay, false_alert_rate]\n  acceptance_tolerance: null\n  alert_budget: null\n  independent_baseline_audit_complete: false\nexecution:\n  run_id: null\n  started_at: null\n  finished_at: null\n  result_manifest_uri: null\n"
+        },
+        {
+          "path": "experiments/E002/run.md",
+          "sha256": "a06474372bf855e9b0bfd11990fb5d4b4fd3f911d93e0d7e65c167cc4de26ee9",
+          "text": "# E002 execution ledger\n\nNo runs recorded. No execution is implied by creation of this file.\n\nBefore running: freeze protocol/configuration; pin source and data; record dependencies, hardware and seeds;\nconfirm controls and acceptance criteria; create a new run record such as logs/E002-R001.md.\n\nEach run entry records run ID, operator, UTC timestamps, code/source hash, dataset/version/checksum,\nconfiguration hash, exact commands/working directory, resolved environment, hardware, exit status,\nresult/figure/log URIs and hashes, failure cases, interpretation, decision and next experiment.\n\n\nAppend entries; never replace an earlier run or overwrite its artifacts.\n"
+        },
+        {
+          "path": "experiments/E002/results/E002-R001/frozen-configuration.json",
+          "sha256": "0db42f63f5b139f823419d5d896cc428919caf2ccf003b07040c941dbf7b49b3",
+          "text": "{\n  \"experiment_id\": \"E002\",\n  \"run_id\": \"E002-R001\",\n  \"frozen_at_utc\": \"2026-10-03T08:15:04Z\",\n  \"question\": \"Does consistent neural/SLO onset provenance improve timing-based root ranking?\",\n  \"scope\": \"Synthetic R0 timing/provenance analysis only. No OpenRCA, RCAEval, E003 remediation, or downstream RCA work.\",\n  \"source\": {\n    \"archive\": \"dce-r0.zip\",\n    \"archive_sha256\": \"d521692acc25df69a0898896497cc1aaa65cc18c7b1110c5021389e2c89b7c35\",\n    \"source_tree_sha256\": \"1442a5343674c0c6113a9d8f1d1388a7d0db29ab207c7f03f8cb700b6c9e4e8b\",\n    \"git_commit\": null,\n    \"git_status\": \"not a Git checkout\"\n  },\n  \"experiment_runner\": {\n    \"path\": \"scripts/e002_timing_analysis.py\",\n    \"sha256\": \"aa3500836bbbd3b43d58b557b2b66019e5f68e20d9a2c098a1f38e6723a5e696\"\n  },\n  \"data_generation\": {\n    \"topology\": \"reference\",\n    \"train\": {\"seed\": 11, \"env_seed\": 11, \"duration_s\": 40000},\n    \"heldout\": {\"seeds\": [31, 32, 33, 34, 35], \"env_seed\": 11, \"duration_s\": 30000, \"mean_gap_s\": 700, \"p_concurrent\": 0.1},\n    \"repeatability\": {\"repetitions\": 3, \"heldout_seed\": 12, \"env_seed\": 11, \"duration_s\": 30000, \"mean_gap_s\": 700, \"p_concurrent\": 0.1},\n    \"model_training_seed\": 0\n  },\n  \"treatments\": {\n    \"mixed_current\": \"Current R0 hybrid: SLO onsets are preferred; neural onsets fill services without an SLO onset; timing may compare sources.\",\n    \"same_source_only\": \"Same detector/candidate set and weights as current R0, but temporal explanation/ranking uses a cause-effect pair only when both onsets have the same provenance source (SLO/SLO or neural/neural).\",\n    \"timing_disabled\": \"Same detector/candidate set and weights as current R0, with temporal ordering disabled.\"\n  },\n  \"controls\": {\n    \"candidate_generation\": \"Identical union of SLO breaches and neural flags for all treatments.\",\n    \"neural_threshold\": \"Bundle validation-selected threshold; no retuning per treatment or seed.\",\n    \"topology\": \"Identical R0 reference topology.\",\n    \"evaluation\": \"Same one-to-one incident matching and event-level Top-1 logic for all treatments.\"\n  },\n  \"metrics\": {\n    \"primary\": \"paired event-level Top-1 difference: same_source_only minus mixed_current\",\n    \"secondary\": [\"incident_precision\", \"event_recall\", \"detection_delay_s\", \"false_alerts\", \"cross_source_temporal_pair_count\"],\n    \"uncertainty\": \"2,000 deterministic paired bootstrap resamples over all evaluated event IDs, seed 909\"\n  },\n  \"predefined_gates\": {\n    \"repeatability\": \"PASS only if all three end-to-end repetitions produce an identical canonical metrics SHA-256 and each command exits 0.\",\n    \"treatment_integrity\": \"PASS only if same_source_only records zero cross-source temporal pairs and mixed_current records the candidate/onset provenance needed for audit.\",\n    \"superiority\": \"A superiority claim is permitted only if same_source_only minus mixed_current is at least +0.050 Top-1 and the two-sided 95% paired-bootstrap lower bound is greater than 0, while aggregate false alerts are not higher. Otherwise no superiority claim is permitted.\",\n    \"overall\": \"PASS only if repeatability and treatment_integrity pass. The performance/superiority gate is reported separately; its failure makes the hypothesis unsupported, not a failed reproduction.\"\n  },\n  \"selection_rule\": \"All listed repetitions, held-out seeds, treatments, metrics, and bootstrap seed will be reported. No run, event, metric, seed, subset, or configuration may be selected after results are known.\"\n}\n"
+        },
+        {
+          "path": "experiments/E002/results/E002-R001/decision-proposal.md",
+          "sha256": "f608f950da9e1c67828f7abf260b8150a5d2c46b72469f1064c384fe194797af",
+          "text": "# E002-R001 decision proposal\n\n**Review status:** pending human review. This is a new run artifact; existing E002 records are unchanged.\n\n## Proposed decision: REVISE\n\nE002-R001 passes its deterministic repeatability and source-policy integrity gates. It does not pass the preregistered superiority gate: paired Top-1 difference is 0.000 with a 95% CI of `[0.000, 0.000]` across 237 events. No hybrid, timing, or provenance-superiority claim is justified.\n\nThe run also has a protocol-environment qualification failure: dependency versions and hardware were not frozen before execution, and the active NumPy/SciPy combination warned of incompatibility. This makes the performance result exploratory despite exact repetition within that active environment.\n\n## Required revision before any repeat\n\n1. Create a separately reviewed experiment/run configuration that pins Python, NumPy, SciPy, scikit-learn, NetworkX, OS/hardware, thread settings, and a dependency lock hash before execution.\n2. Resolve the incompatible NumPy/SciPy environment rather than suppressing its warning.\n3. Keep the three E002-R001 policies and seed sets intact if repeating this protocol; a changed treatment, metric, seed set, topology, or analysis requires newly reviewed scope under the register policy.\n4. Do not begin E003 remediation or downstream RCA work from E002-R001.\n\n**Next permitted action:** human review of this proposal. No automatic successor is authorized.\n\n"
+        },
+        {
+          "path": "experiments/E002/results/E002-R002/comparison-r001-r002.md",
+          "sha256": "da13c6fcd1f19020e48f3b8636f6290e5c66cec3575bbc80d5972584a4cb8958",
+          "text": "# E002-R001 and E002-R002 comparison\n\nR002 is a clean-environment rerun, not a new experimental variant. E002-R001 remains unchanged.\n\n| Item | E002-R001 | E002-R002 | Comparison |\n|---|---|---|---|\n| Runner SHA-256 | `aa3500836bbbd3b43d58b557b2b66019e5f68e20d9a2c098a1f38e6723a5e696` | same | Same implementation |\n| Raw-result SHA-256 | `592171d8dbaa7ce57934ec546d74b0d7fb733109b4f2ab7c24e27c1c9d49269f` | same | Byte-identical raw results |\n| Repetition hashes | all `75dac…5c58` | all `75dac…5c58` | Exact match |\n| Paired Top-1 difference | `0.000`, CI `[0.000, 0.000]`, n=237 | same | Exact match |\n| Mixed / same-source cross-source pairs used | 306 / 0 | 306 / 0 | Exact match |\n| Environment qualification | failed / incomplete | passed before and after execution | R002 resolves the recorded environment issue |\n| Raw `summary.json` SHA-256 | `39f199…00f3` | `a15fa8…19ad` | Expected difference: summary embeds the resolved configuration hash |\n\nThe two raw-results files are byte-identical. The summaries differ only because each records the hash of its own configuration file; R002's resolved configuration includes the required R002 execution-context provenance.\n\n## Important limitation\n\nR002 used a freshly created virtual environment with `--system-site-packages` after the package index could not be reached due to DNS failure. The environment verifier confirmed the active interpreter and every locked version. This is sufficient for this host's qualified rerun, but it is not a wheel-hash-backed installation record that another machine can recreate without access to equivalent package artifacts.\n\n"
+        },
+        {
+          "path": "docs/governance/amendments/2026-10-08-E002-R002-REVISE-approval.md",
+          "label": "Human approval: 8 October 2026",
+          "sha256": "b4c561666a1e40b1fed50bf45aaae5cb62e46c077a0c796ed6b12093df558c06",
+          "text": "# E002-R002 human review: separate REVISE approved\n\nReview date: 8 October 2026 (Asia/Calcutta). Reviewer/authority: project user, by explicit instruction in this conversation. Recorded by the coding agent as a new additive amendment.\n\n## Explicit approval\n\nThe user approved the separate R002 decision: **“REVISE — qualified environment, repeatable reproduction, but no improvement from the tested timing policy.”**\n\nReview status: **APPROVED**. Scientific outcome: **REVISE**. Approval applies to E002-R002 independently of E002-R001 and does not modify either run.\n\n## Evidence reviewed\n\nR002's recorded preflight/postflight environment qualification passed; 49 tests passed. Three repeatability hashes agreed; raw results were byte-identical to R001 and derived metrics agreed. The paired same-source-minus-mixed Top-1 difference is 0.000 across 237 events. Treatment integrity passed; superiority failed.\n\nThis qualifies the frozen synthetic computation on the recorded host and supports that its null ranking difference was not explained by the earlier incompatible environment. It does not establish that temporal reasoning generally cannot help, real-data performance, hybrid superiority, causal identification or production readiness. Portable downloaded-wheel reconstruction remains unestablished.\n\n- `experiments/E002/results/E002-R002/summary.json`: SHA-256 `a15fa8ffa07059fd31c2ecd59f624e7e89697f3ccc1e93a772a1361ad0c319ad`.\n- `experiments/E002/results/E002-R002/validation.json`: SHA-256 `f43f686595d1b8d5c1d3dd77d1f44e9148312b8b335110096baf331ab333eb04`.\n- `experiments/E002/results/E002-R002/decision-proposal.md`: SHA-256 `683e2b2ea76149ae6c398de587620d984d3b4d941c058b93ba4cfec6ced0f32b`.\n\n## Authority boundary\n\nNo successor, rerun, repair, detector development, registration or execution is authorized by this approval. Separately authorized bounded evidence acquisition does not change this scope. The original R002 decision remains a preserved proposal; this dated review records the subsequent approval.\n\nNo existing record/source modification, commit/push or raw dataset operation is authorized.\n\n"
+        }
+      ],
+      "review_provenance": "Explicit project-user approval recorded in the separate dated amendment; original proposal remains unchanged."
+    },
+    {
+      "experiment_id": "E003",
+      "run_id": "E003-AM002-V006",
+      "status": "ACCEPTED",
+      "decision": "REVISE",
+      "question": "Can DCE preserve and replay real OpenRCA telemetry consistently?",
+      "what_we_did": "Recovered saved profiles, reused 164 valid windows, reconstructed 171, then replayed all 335 again and compared hashes.",
+      "result": "162/162 profiles; both replays verified 335/335 windows. Independent audit passed.",
+      "blocking": "No for the approved restricted E004 baseline. Unknown metric meanings and coverage still restrict stronger claims.",
+      "meaning": "The representation/replay foundation is accepted. Preserving measurements is not the same as understanding them or finding faults.",
+      "not_established": "It does not prove full scientific adequacy, diagnosis accuracy, causal relationships or production readiness. Conditions B and D were inherited, not retested.",
+      "waiting": "Infrastructure accepted; scientific disposition remains REVISE. E004 has used this foundation.",
+      "facts": [
+        "7,956 metric meanings remain UNKNOWN.",
+        "Before-only root coverage: 284/335; coverage is not accuracy.",
+        "Supplied fault times define retrospective windows, not online detection.",
+        "Launcher status 1 with environment warning; completed artifacts independently verified."
+      ],
+      "artifacts": [
+        {
+          "label": "Summary",
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/summary.json",
+          "sha256": "309fe91d9bc8d93d2d9c80d1969d4dc660e7f22bf8dd704e1ed59ff76038bf39"
+        },
+        {
+          "label": "Audit",
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/independent-audit.json",
+          "sha256": "921f763983f5f5d062891d15a45761e9e3db48d1e39779776b1a048768d0c7d8"
+        },
+        {
+          "label": "Results",
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/results.json",
+          "sha256": "47aa00d0909c7e3b8786286d8957cbe0f4ef5240705f5b6d5ddbf3c3e4249af1"
+        },
+        {
+          "label": "Scientific decision",
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/decision.md",
+          "sha256": "7a4a7f524157b44767fd40e9662b159bcba76e1640d49faab69419bc5e2c4edb"
+        },
+        {
+          "label": "Hashes",
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/artifact-manifest.json",
+          "sha256": "3f4f4465c1efe3a563a16891a08b3cc23167059a61cfdd27365f209ba3c60887"
+        },
+        {
+          "label": "Limited acceptance",
+          "path": "docs/governance/amendments/2026-10-06-E003-V006-acceptance-and-E004-scope.md",
+          "sha256": "860b325cc688afcdc936a14c674bae8c53a24bdd31187c270f269e957da1ca3f"
+        }
+      ],
+      "execution_status": "Completed",
+      "review_status": "Accepted only as representation/replay infrastructure",
+      "gates": [
+        {
+          "name": "Condition A",
+          "status": "PASS"
+        },
+        {
+          "name": "Condition B",
+          "status": "NOT RETESTED"
+        },
+        {
+          "name": "Condition C",
+          "status": "PASS"
+        },
+        {
+          "name": "Condition D",
+          "status": "NOT RETESTED"
+        },
+        {
+          "name": "Condition E",
+          "status": "PASS"
+        },
+        {
+          "name": "Condition F",
+          "status": "PASS"
+        },
+        {
+          "name": "Condition G",
+          "status": "PASS"
+        },
+        {
+          "name": "Condition H",
+          "status": "PASS"
+        }
+      ],
+      "technical": {
+        "before_only_root_observed_cases": 284,
+        "dataset_rescanned": false,
+        "elapsed_seconds": 9631.765667800002,
+        "free_disk_bytes": 30887235584,
+        "gates": {
+          "A": "PASS",
+          "B": "NOT RETESTED; inherited V004 timestamp census",
+          "C": "PASS",
+          "D": "NOT RETESTED; inherited source/projection provenance",
+          "E": "PASS",
+          "F": "PASS",
+          "G": "PASS",
+          "H": "PASS"
+        },
+        "independent_audit_passed": true,
+        "inherited_profiles": 162,
+        "inherited_v002_profiles": 77,
+        "parent_run": "V004",
+        "peak_memory_bytes": 1389498368,
+        "qualified_query_associations": 333,
+        "recovery_status": "Completed",
+        "repeatable": true,
+        "replay1": {
+          "inherited_valid": 164,
+          "reconstructed": 171,
+          "verified": 335
+        },
+        "replay2": {
+          "completed": 335,
+          "verified": 335
+        },
+        "review_required": true,
+        "root_observed_cases": 285,
+        "run_id": "E003-AM002-V006",
+        "scenario_profile_counts": {
+          "Bank": 40,
+          "Market/cloudbed-1": 16,
+          "Market/cloudbed-2": 16,
+          "Telecom": 90
+        },
+        "scientific_decision_proposal": "REVISE / restricted downstream readiness; review pending",
+        "total_source_rows": 523947689,
+        "unknown_metric_entries": 7956,
+        "unknown_query_associations": 2,
+        "v002_modified": false,
+        "v004_modified": false,
+        "v004_status": "Interrupted during Replay 1; preserved unchanged.",
+        "v005_modified": false,
+        "validation_id": "V006"
+      },
+      "history": [
+        "R001: bounded audit; adequacy not established.",
+        "V002: 77/162 partial checkpoint, preserved.",
+        "V004: interrupted checkpoint, preserved.",
+        "V005: failed engineering attempt, preserved.",
+        "V006: completed; accepted for representation/replay only."
+      ],
+      "population": "Real OpenRCA telemetry; representation/replay",
+      "rationale": "Check that real evidence survives representation before interpreting it as diagnostic information.",
+      "documents": [
+        {
+          "path": "experiments/E003_domain_model_adequacy/hypothesis.md",
+          "sha256": "297dab310ddf9189cb3de3fabc72f422210db98a4010b615d59a73196340347a",
+          "text": "# Preregistered hypothesis\n\nQuestion: Can a dataset-independent domain model preserve RCA-relevant OpenRCA evidence across Bank, Market/cloudbed-1, Market/cloudbed-2 and Telecom?\n\nHypothesis: Typed observations plus lossless source attributes, explicit event times, evidence-backed edges and isolated labels can represent each scenario without incident-specific branches. Unknown semantics and unresolved references may prevent downstream adequacy even when serialization succeeds.\n\nIndependent variables: system/scenario, source file schema, modality.\n\nDependent variables: source/mapped/rejected records; canonical observations; unknown units; missing values; duplicates; parent resolution; labels observed in telemetry; timestamp/date consistency; deterministic digest.\n\nControls: fixed adapter/model version, deterministic selection and ordering, no root-cause inference, no unit inference from names, raw files read-only, labels isolated.\n\nDataset/version: local OpenRCA ZIP archives; upstream commit UNKNOWN; inventory and SHA-256 in data/manifests/openrca.json.\n\nCode version: run-manifest source-file hashes plus Git HEAD and dirty status; source snapshot identifies uncommitted implementation.\n\nConfiguration: configuration.yaml and recorded exact command.\n\nRandom seeds: none; deterministic selection, no sampling randomness.\n\nHardware: recorded at execution.\n\nResults: see results; not presumed successful.\n\nFailure cases: unknown units, aliases, missing parents, invalid timestamps/values, unsupported fields, incomplete scan.\n\nInterpretation: parsing is necessary but not sufficient for downstream RCA.\n\nDecision: see decision.md; human review required.\n\nNext experiment: not authorized pending E003 review.\n"
+        },
+        {
+          "path": "experiments/E003_domain_model_adequacy/configuration.yaml",
+          "sha256": "720107e61cc97adffbb81ec082b1970141ab288f64c1bd049685c60943bdb862",
+          "text": "experiment_id: E003\nprotocol_version: 1\ndataset_root: data/dataset\nscenarios: [Bank, Market/cloudbed-1, Market/cloudbed-2, Telecom]\nselection: earliest_and_latest_label_timestamp_then_source_row\nwindow: UTC_plus_8_source_local_day_containing_label\nmax_rows_per_file: 2000\nduplicate_policy: preserve_and_flag\nunknown_unit_policy: null_and_report\nlabel_access: evaluator_only\nrandom_seed: null\ndownstream_gate: human_review_required\n"
+        },
+        {
+          "path": "experiments/E003_domain_model_adequacy/run.md",
+          "sha256": "2928931789f0912f80a08ed5ee17b233b4c845901c808bb22cb7e62d9e527a9d",
+          "text": "# Execution ledger\n\nE003-R001 is reserved for the initial bounded cross-system representation run. Execution evidence will record exact commands, source hashes, hardware, dependency versions, dataset hashes, limits and failures. No results are claimed at registration.\n\n## E003-R001 — executed 2026-10-03\n\nRegistration above is retained as the pre-execution entry. The run is now executed, with an unsuccessful downstream-adequacy gate.\n\nCommands, from repository root:\n\n```powershell\n$env:PYTHONPATH = 'src'\n$env:PYTHONDONTWRITEBYTECODE = '1'\npython -m dce_foundation.evaluation --inspect\npython -m pytest -q -p no:cacheprovider tests\npython -m dce_foundation.evaluation\n```\n\nThe first pytest attempt additionally used `--basetemp .test-tmp-e003` inside the sandbox and failed on temporary-directory permissions. The successful test command ran with approved escalation; 39 tests passed, including four real-data integration samples. The failed scratch directory is ignored and retained; no recursive deletion was performed.\n\nRun parameters: four scenarios; earliest/latest label selections; source-local day scope; 2,000-row cap per telemetry file; no random seed. Python 3.12, NetworkX 3.4.2, pytest 9.0.2. Platform/processor, actual Python build, Git HEAD/dirty status, dataset-manifest hash and source hashes are recorded in [run-manifest.json](results/E003-R001/run-manifest.json). RAM availability/peak utilization were not measured. Protocol/configuration were hashed, not committed or protected before execution: this is not a claimed immutable hosted freeze.\n\nThe [source snapshot](results/E003-R001/source-snapshot.zip) preserves the executed implementation/tests/configuration, with its SHA-256 in the manifest. Raw data is not inside that snapshot. Result hashes identify [adequacy.json](results/E003-R001/adequacy.json). Samples contain raw attributes and are ignored by Git; inspect locally under the result directory.\n\nOutcome: eight deterministic repeated replays, 100,763 rows scanned, 98,736 mapped, 2,000 rejected, 27 outside the day scope. The Bank March 25 trace seconds/milliseconds inconsistency is preserved as a failure. No model/adapter patch was made to turn that result into success. Decision gate remains blocked pending review.\n\nRead-only follow-up audit inspected the first trace row for all 29 trace files: Bank March 23–25 use seconds-scale values, unlike Bank March 4–12 and all inspected Market/Telecom first rows. This is first-row evidence, not a proof of uniform units within each entire file. The initial manifest does not include these later interpretation notes; documentation is a dated amendment, not a replacement run.\n\n## Post-run implementation checks (not a new adequacy experiment)\n\n- Code/test/protocol/configuration files still match R001 source hashes; snapshot entry hashes and result/snapshot SHA-256 match the run manifest.\n- CLI `--incident Bank@135 --max-rows-per-file 50 --output data/processed/openrca/E003-cli-smoke` exited successfully and wrote five separate files: operational representation, ground truth, operational graph, evaluation graph and validation.\n- JSON checks confirmed operational/evaluation separation and source-record conservation. A second invocation targeting the same directory raised FileExistsError; hashes of all five files remained unchanged.\n- CLI `--incident Bank@134 --max-rows-per-file 1` produced explicit rejected-row evidence and a nonzero status, confirming failure is not hidden by a successful process exit.\n- `git diff --check` passed; raw archives, serialized processed telemetry and raw sample JSONs are ignored. No Git commit or push occurred. E001/E002 files were not edited.\n\nThe CLI smoke output is local ignored processed data, not additional support for a full-incident adequacy claim. No model/adapter/validator changes were made after R001. Documentation amendments do not replace the frozen snapshot.\n"
+        },
+        {
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/protocol.md",
+          "sha256": "986a21dfa42b1036e3994d85907382d69c8ecd53e86ccd1ff700b87cd964e9fe",
+          "text": "# E003-AM002 preregistered protocol\n\nQuestion: can complete file time profiles, explicit metric qualification states, incident-centered retrieval and isolated temporal projections establish a trustworthy representation for subsequent RCA experiments?\n\nReference: original ZIP CSV rows, source-local UTC+08 day, exact label epoch/datetime agreement, explicit workbook cells, current official OpenRCA evaluator/generator source and independent semantic fixtures. Hypothesis: representation integrity can pass with UNKNOWN semantic entries, while inadequate incident evidence or ambiguous query associations can still restrict evaluator readiness. No accuracy/causal claim is measured.\n\nIndependent variables: four scenarios and every telemetry file/schema. Controls: all files and all nonblank labels/queries, no incident selection by root presence, no schema/name-based metric unit guesses, no future evidence at query cutoff, exact string preservation, original files read-only. Random seed null. Freeze configuration/source/environment before execution. Artifacts are new directories only.\n\nTimestamp census: read each complete CSV sequentially, verify shape/header, test s/ms/us/ns against directory day plus fixed 3600-second profile allowance. Select a unique observed scale; mixed scales/ambiguous and malformed rows remain auditable, never repaired by magnitude guessing. Strict source-day mapping separately counts boundary rows. For values supporting no directory interpretation, record precision/invalid/range evidence and source pointers. Full-file status QUALIFIED requires unique scale and explicit conservation; unsupported or ambiguous files block A. Hash decompressed source bytes and retain ZIP CRC EOF verification evidence. Neighbour ordering/min/max/counts accumulated without storing whole files.\n\nIncident audit: all 335 current annotations (actual count verified). Fixed closed retrieval window [fault-300s,fault+300s], separately report before, exactly-at, and after. Telemetry selection depends only on scenario/time windows, never root component; root presence is checked only in an evaluator pass. The after segment is retrospective coverage only. Inference at fault time permits only [fault-300s,fault], with no post-fault observations. Missing sampled points exactly at fault are not failures alone. Full scan retrieves all available rows in these windows; overlapping windows share one stored source row. Resolve trace parents only from context available within the permitted query window; never pull future spans. Explicit unresolved states permitted. Workbook relations with unknown temporal validity are retained for audit but excluded from time-qualified inference.\n\nQuery association: inspect the official evaluator/generator, preserve their source version/hash/reference. Match scoring-point elements against label fields plus explicit query date/window only where uniquely supported. Do not join by row count/order, invent an incident interval, or feed scoring points into inference. UNKNOWN associations are recorded and block claims about official query scoring; do not turn coverage completeness into RCA task readiness.\n\nMetrics: inventory every source metric, scenario/schema and count. Registry status QUALIFIED requires explicit documented evidence for each asserted semantic; otherwise UNKNOWN with null evidence and zero confidence. UNKNOWN is acceptable to E if no fabricated semantics occur. Numerical transformations requiring known units/temporality remain unavailable. Distinguish representation qualification from feature qualification.\n\nLeakage: allowlist projection omits all raw text, source paths, incident/fault/query IDs, injection metadata and answer-bearing attributes. Source resource/metric/trace identities remain in provenance but are replaced with deterministic opaque tokens for inference. Audit source identifier cues and report removals. Actual metric values/raw span durations may be available only at observation time; unknown duration unit does not generate an end time. Every trace edge requires both supporting spans within the observation window. Window identifiers are evaluator-owned handles, not features. Label mutation must not change inference evidence for a fixed window. Log text excluded pending separate policy.\n\nCoverage gate F measures complete incident coverage records and source conservation, with adequacy statuses per case. It does not require every label to be observable. Overall representation PASS may coexist with cases unsuitable for RCA; report denominator and exclusions without selecting favorable incidents. G requires operational projections label-isolated, bounded by cutoff and source cues removed, with query association reported honestly. If unresolved associations prevent the proposed next task, report restricted readiness rather than an unconditional all-purpose PASS.\n\nH: build two independent projected replays from retained incident-centered source rows; compare per-case canonical/graph hashes. Full-file timestamp census executes once with byte hashes/CRC; deterministic projection is replayed twice. Separate census integrity from replay equality. Measure runtime, throughput, peak process memory and disk. Stop on disk safety limit; checkpoint completed file profiles and retain partial evidence. No full canonical expansion of 64 GiB data.\n\nGate decisions A-H use the user's revised table. PASS requires all conditions for the declared scope; FAIL/PARTIAL/NOT TESTED remain distinct. Stop after report/decision for human review. No RCAEval or raw-data deletion automatically follows a mechanical pass.\n"
+        },
+        {
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/configuration.json",
+          "sha256": "e271acdc63b7cd8bc47714cea9caef18be17a5f1557775956ea074081b5ed84a",
+          "text": "{\n  \"amendment_id\": \"E003-AM002\",\n  \"dataset_root\": \"data/dataset\",\n  \"scenarios\": [\"Bank\", \"Market/cloudbed-1\", \"Market/cloudbed-2\", \"Telecom\"],\n  \"timestamp_candidates\": [\"s\", \"ms\", \"us\", \"ns\"],\n  \"profiling_boundary_allowance_seconds\": 3600,\n  \"incident_before_seconds\": 300,\n  \"incident_after_seconds\": 300,\n  \"inference_cutoff\": \"fault annotation point; after segment audit-only\",\n  \"metric_unknown_policy\": \"acceptable representation state; no unsupported assignment\",\n  \"query_association_policy\": \"unique source-supported match; otherwise UNKNOWN\",\n  \"temporal_topology_policy\": \"exclude workbook edges with UNKNOWN validity from inference\",\n  \"identity_projection\": \"opaque deterministic tokens; raw names retained only in provenance\",\n  \"log_text_projection\": \"exclude\",\n  \"replay_repetitions\": 2,\n  \"random_seed\": null,\n  \"minimum_free_disk_bytes\": 6442450944,\n  \"maximum_context_store_bytes\": 6442450944,\n  \"csv_field_limit_bytes\": 16777216,\n  \"next_stage\": \"human review; no automatic RCAEval/deletion\"\n}\n"
+        },
+        {
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/run-ledger.md",
+          "sha256": "0107a18a165b12f9c29557d2c86cc1caaf3e32d58c6c8a2589a09d43478d0837",
+          "text": "# Append-only execution ledger\n\n## V001 — full census with individual compressed rows\n\nCommand: `.venv-e002/Scripts/python.exe -m dce_foundation.qualification.run --config experiments/E003_domain_model_adequacy/qualification/2026-10-04/configuration.json --output experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V001` with `PYTHONPATH=src`.\n\nEleven CSV profiles completed through EOF. The run was intentionally interrupted during the next Bank trace file after storage overhead was observed. No overall scientific gate result was produced. Partial context, profiles, source snapshot, provenance and stdout/stderr remain preserved. The interrupted file is not inherited as complete.\n\n## V002 — lossless compressed-block continuation\n\nCommand: `.venv-e002/Scripts/python.exe -m dce_foundation.qualification.compact_run --config experiments/E003_domain_model_adequacy/qualification/2026-10-04/configuration.json --inherit-completed-from experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V001 --output experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V002` with `PYTHONPATH=src`.\n\nstdout: `logs/V002-stdout.log`; stderr: `logs/V002-stderr.log`.\n\nThe physical storage revision is described in `storage-amendment.md`. It retains exact selected field strings and unchanged temporal selection rules. Completed profiles are reused only with a transfer manifest and row-count checks. The unfinished file is scanned again from its beginning. The new implementation and configuration are frozen in the V002 source snapshot before its execution. No existing experiment record was overwritten.\n\nFinal completion/failure and gate evidence will be written as separate new records after execution; this entry does not claim that V002 has finished.\n"
+        },
+        {
+          "path": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/V006-recovery.md",
+          "sha256": "da6d72113f494242c55920a35a239c354eb1915fc96daa9668815997eb6eb2f9",
+          "text": "# E003-AM002 V006 single recovery pass\n\nUser authorized one controlled pass to finish the preserved V004 checkpoint. V002, V004 and V005 remain immutable source evidence. This is execution recovery under E003; no new experiment identity is allocated.\n\nResearch question and scientific protocol remain the AM002 qualification question and protocol.md. Canonical projection, timestamp interpretation, 300-second pre-fault windows, filtering, units, topology and serialization remain the frozen V004 configuration/source. Existing dated governance recovery documents are preserved; later explicit authorization permits this bounded execution but does not pass a scientific gate.\n\nBefore execution: create profiles/, cases/replay-001/, cases/replay-002/, logs/. Hash all preserved run files before/after. Freeze implementation/environment/configuration/source snapshot. Open V004 context.sqlite in SQLite mode=ro. Validate profiles against catalog/row counts/EOF and 77 inherited V002 hashes. No original dataset access.\n\nDerive 335 distinct windows from preserved labels. Read the 165 existing replay artifacts; validate gzip/JSON/bounds/projected fields/evidence. Reuse 164 by immutable path and hash reference without repeating their Replay-1 projections. Record the corrupt and missing windows and reconstruct only 171. Validate the whole referenced/generated 335-window union. Replay 2 independently regenerates all 335 projections from the same read-only context; compare canonical and graph hashes. Independent artifact reader verifies both runs. No inherited artifact is considered repeatable until Replay 2 hash equality succeeds.\n\nSafety: 6 GiB free floor retained; reserve estimated 12 GiB output before start; additional guards before writes. No context copy, extraction, deletion, migration, or source census. Ordinary initialization issues may be repaired in this same authorized run with recorded provenance. Scientifically unsafe conditions produce failure.json; no automatic V007.\n\nFinal evidence: summary.json, artifact-manifest.json, independent-audit.json, results.json, decision.md, inventories, source snapshot, parent integrity and execution logs. Technical replay completion is separated from semantic/evaluator readiness and requires human scientific review. Unknown metric semantics and unresolved associations stay explicit. Untested scientific conditions remain NOT RETESTED.\n\nCommand: PYTHONPATH=src; .venv-e002/Scripts/python.exe -m dce_foundation.qualification.recovery_v006 --output experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006\n"
+        }
+      ],
+      "review_provenance": "Dated 2026-10-06 approval accepts representation/replay infrastructure only; scientific REVISE remains."
+    },
+    {
+      "experiment_id": "E004",
+      "run_id": "E004-R001",
+      "status": "REVISE",
+      "decision": "REVISE",
+      "execution_status": "Completed",
+      "review_status": "Execution accepted on 8 October 2026; REVISE / structural prior only retained",
+      "question": "Does knowing who calls whom help locate the faulty component?",
+      "what_we_did": "Ranked the same 335 windows by shared dependencies, observation counts and uniform chance. Recomputed each ranking twice, then independently audited it.",
+      "result": "The graph method scored above chance, but below the simpler observation-count ranking.",
+      "meaning": "This heuristic contains descriptive localization signal. Dependency structure alone did not give reliable localization in this benchmark.",
+      "not_established": "No statistically established superiority, causality, operational RCA, online detection, hybrid advantage or safe remediation. Not official OpenRCA scoring.",
+      "blocking": "No successor experiment is authorized. Detector development and E005 registration/execution remain unauthorized.",
+      "waiting": "Execution accepted. Graph ranking did not beat observation counts; no successful RCA or causal interpretation is approved.",
+      "facts": [
+        "All 335 windows retained; 335 repeat computations agreed; audit passed.",
+        "Root present: 284/335; all 51 absent-root cases remain in the denominator.",
+        "No qualified symptom detector: a shared dependency is not necessarily broken.",
+        "Fault time was supplied. Overlapping windows prevent significance claims from descriptive intervals."
+      ],
+      "gates": [
+        {
+          "name": "Execution / audit",
+          "status": "PASS"
+        },
+        {
+          "name": "Superiority",
+          "status": "NOT ESTABLISHED"
+        }
+      ],
+      "comparison": [
+        {
+          "method_id": "symbolic_topology_v1",
+          "label": "Graph: shared dependencies",
+          "abstentions": 0,
+          "top1_deterministic": 0.05970149253731343,
+          "top1_tie_aware": 0.030845771144278607,
+          "top3_deterministic": 0.08955223880597014,
+          "top3_tie_aware": 0.08930348258706468
+        },
+        {
+          "method_id": "activity_reference_v1",
+          "label": "Simple: observation counts",
+          "abstentions": 0,
+          "top1_deterministic": 0.04776119402985075,
+          "top1_tie_aware": 0.04776119402985075,
+          "top3_deterministic": 0.14925373134328357,
+          "top3_tie_aware": 0.14925373134328357
+        },
+        {
+          "method_id": "graph_disabled_uniform_v1",
+          "label": "Reference: uniform chance",
+          "abstentions": 0,
+          "top1_deterministic": 0.05970149253731343,
+          "top1_tie_aware": 0.018043289107391496,
+          "top3_deterministic": 0.05970149253731343,
+          "top3_tie_aware": 0.05412986732217449
+        }
+      ],
+      "per_system": [
+        {
+          "system": "Bank",
+          "cases": 136,
+          "cases_with_inter_component_calls": 136,
+          "methods": {
+            "activity_reference_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.0661764705882353,
+              "top1_tie_aware": 0.0661764705882353,
+              "top3_deterministic": 0.2647058823529412,
+              "top3_tie_aware": 0.2647058823529412
+            },
+            "graph_disabled_uniform_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.125,
+              "top1_tie_aware": 0.03509527572234415,
+              "top3_deterministic": 0.125,
+              "top3_tie_aware": 0.10528582716703246
+            },
+            "symbolic_topology_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.11764705882352941,
+              "top1_tie_aware": 0.053921568627450976,
+              "top3_deterministic": 0.13970588235294118,
+              "top3_tie_aware": 0.1488970588235294
+            }
+          },
+          "paired_deltas": {
+            "activity_reference_v1_top1": {
+              "descriptive_95_interval": [
+                -0.06066807966493852,
+                0.0361582757433699
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.012254901960784315
+            },
+            "activity_reference_v1_top3": {
+              "descriptive_95_interval": [
+                -0.2150958417189458,
+                -0.01652180533987775
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.11580882352941177
+            },
+            "graph_disabled_uniform_v1_top1": {
+              "descriptive_95_interval": [
+                -0.0007771243734681493,
+                0.038429710183681805
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.018826292905106828
+            },
+            "graph_disabled_uniform_v1_top3": {
+              "descriptive_95_interval": [
+                -0.0020470828521248277,
+                0.08926954616511873
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.043611231656496954
+            }
+          },
+          "root_absent": 0,
+          "root_present": 136
+        },
+        {
+          "system": "Market/cloudbed-1",
+          "cases": 70,
+          "cases_with_inter_component_calls": 70,
+          "methods": {
+            "activity_reference_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.014285714285714285,
+              "top1_tie_aware": 0.014285714285714285,
+              "top3_deterministic": 0.02857142857142857,
+              "top3_tie_aware": 0.02857142857142857
+            },
+            "graph_disabled_uniform_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0,
+              "top1_tie_aware": 0.0022711748377130772,
+              "top3_deterministic": 0,
+              "top3_tie_aware": 0.006813524513139231
+            },
+            "symbolic_topology_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0,
+              "top1_tie_aware": 0.009523809523809523,
+              "top3_deterministic": 0.02857142857142857,
+              "top3_tie_aware": 0.02857142857142857
+            }
+          },
+          "paired_deltas": {
+            "activity_reference_v1_top1": {
+              "descriptive_95_interval": [
+                -0.035920322901052605,
+                0.02639651337724308
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.004761904761904762
+            },
+            "activity_reference_v1_top3": {
+              "descriptive_95_interval": [
+                -0.05640433738075751,
+                0.05640433738075751
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.0
+            },
+            "graph_disabled_uniform_v1_top1": {
+              "descriptive_95_interval": [
+                -0.005800442463328302,
+                0.020305711835521194
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.007252634686096446
+            },
+            "graph_disabled_uniform_v1_top3": {
+              "descriptive_95_interval": [
+                -0.017401327389984907,
+                0.06091713550656359
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.02175790405828934
+            }
+          },
+          "root_absent": 26,
+          "root_present": 44
+        },
+        {
+          "system": "Market/cloudbed-2",
+          "cases": 78,
+          "cases_with_inter_component_calls": 78,
+          "methods": {
+            "activity_reference_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.01282051282051282,
+              "top1_tie_aware": 0.01282051282051282,
+              "top3_deterministic": 0.038461538461538464,
+              "top3_tie_aware": 0.038461538461538464
+            },
+            "graph_disabled_uniform_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0,
+              "top1_tie_aware": 0.0025562780847659286,
+              "top3_deterministic": 0,
+              "top3_tie_aware": 0.007668834254297786
+            },
+            "symbolic_topology_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.01282051282051282,
+              "top1_tie_aware": 0.008547008547008546,
+              "top3_deterministic": 0.02564102564102564,
+              "top3_tie_aware": 0.02564102564102564
+            }
+          },
+          "paired_deltas": {
+            "activity_reference_v1_top1": {
+              "descriptive_95_interval": [
+                -0.0322172912777255,
+                0.023670282730716953
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.004273504273504274
+            },
+            "activity_reference_v1_top3": {
+              "descriptive_95_interval": [
+                -0.06930002106441763,
+                0.043658995423391994
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.01282051282051282
+            },
+            "graph_disabled_uniform_v1_top1": {
+              "descriptive_95_interval": [
+                -0.005741925420312985,
+                0.017723386344798222
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.005990730462242618
+            },
+            "graph_disabled_uniform_v1_top3": {
+              "descriptive_95_interval": [
+                -0.017225776260938963,
+                0.053170159034394676
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.017972191386727857
+            }
+          },
+          "root_absent": 24,
+          "root_present": 54
+        },
+        {
+          "system": "Telecom",
+          "cases": 51,
+          "cases_with_inter_component_calls": 51,
+          "methods": {
+            "activity_reference_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.09803921568627451,
+              "top1_tie_aware": 0.09803921568627451,
+              "top3_deterministic": 0.17647058823529413,
+              "top3_tie_aware": 0.17647058823529413
+            },
+            "graph_disabled_uniform_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.058823529411764705,
+              "top1_tie_aware": 0.017905341636974284,
+              "top3_deterministic": 0.058823529411764705,
+              "top3_tie_aware": 0.05371602491092286
+            },
+            "symbolic_topology_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.058823529411764705,
+              "top1_tie_aware": 0.032679738562091505,
+              "top3_deterministic": 0.13725490196078433,
+              "top3_tie_aware": 0.1111111111111111
+            }
+          },
+          "paired_deltas": {
+            "activity_reference_v1_top1": {
+              "descriptive_95_interval": [
+                -0.15432992605785623,
+                0.02361097180949019
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.06535947712418301
+            },
+            "activity_reference_v1_top3": {
+              "descriptive_95_interval": [
+                -0.2078466666229548,
+                0.0771277123745888
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.06535947712418301
+            },
+            "graph_disabled_uniform_v1_top1": {
+              "descriptive_95_interval": [
+                -0.010215751831246164,
+                0.0397645456814806
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.014774396925117218
+            },
+            "graph_disabled_uniform_v1_top3": {
+              "descriptive_95_interval": [
+                -0.020616654888871336,
+                0.13540682728924786
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.05739508620018825
+            }
+          },
+          "root_absent": 1,
+          "root_present": 50
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "Plain decision",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/decision.md",
+          "sha256": "42e7a257befd1e79f2fe40d6d2daef31cb29793ebf0b6ae72423a710be05689c"
+        },
+        {
+          "label": "Summary",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/summary.json",
+          "sha256": "4859f523607d9e0ae71c77dc2998210bd8add2604d411941a02b8fd97c0a09ee"
+        },
+        {
+          "label": "Per-system results",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/results.json",
+          "sha256": "ed5ea37b0ce9196e619fd4cd00d58f8f85ea8bd63c5874b9a88610c507f72659"
+        },
+        {
+          "label": "Audit",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/independent-audit.json",
+          "sha256": "91ff312cfe5c22b6aa2a5d9ca021ee0e046fec5f84a619f62bbc2c5a6ba37681"
+        },
+        {
+          "label": "Prediction seal",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/prediction-seal.json",
+          "sha256": "26f1f528b60417191e51d45513cb0472f0bbbe41584193dbc89c3d69e4491a94"
+        },
+        {
+          "label": "Hashes",
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/artifact-manifest.json",
+          "sha256": "a13b38296715707e51228bd78d5273654b33076150fa856170c05ef4e4c7fdd9"
+        },
+        {
+          "path": "docs/governance/amendments/2026-10-08-E004-R001-execution-acceptance.md",
+          "label": "Human approval: 8 October 2026",
+          "sha256": "f40e174d1241feda45e10a87bb8af8e475d2cfef84c386b71a4a5bdef6782787"
+        }
+      ],
+      "technical": {
+        "cases": 335,
+        "dataset_rescanned": false,
+        "disk_free_bytes": 30471569408,
+        "elapsed_seconds": 1399.8559786999976,
+        "independent_audit_passed": true,
+        "methods": [
+          "symbolic_topology_v1",
+          "activity_reference_v1",
+          "graph_disabled_uniform_v1"
+        ],
+        "official_openrca_score": false,
+        "online_detection_tested": false,
+        "overall": {
+          "cases": 335,
+          "cases_with_inter_component_calls": 335,
+          "methods": {
+            "activity_reference_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.04776119402985075,
+              "top1_tie_aware": 0.04776119402985075,
+              "top3_deterministic": 0.14925373134328357,
+              "top3_tie_aware": 0.14925373134328357
+            },
+            "graph_disabled_uniform_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.05970149253731343,
+              "top1_tie_aware": 0.018043289107391496,
+              "top3_deterministic": 0.05970149253731343,
+              "top3_tie_aware": 0.05412986732217449
+            },
+            "symbolic_topology_v1": {
+              "abstentions": 0,
+              "top1_deterministic": 0.05970149253731343,
+              "top1_tie_aware": 0.030845771144278607,
+              "top3_deterministic": 0.08955223880597014,
+              "top3_tie_aware": 0.08930348258706468
+            }
+          },
+          "paired_deltas": {
+            "activity_reference_v1_top1": {
+              "descriptive_95_interval": [
+                -0.0424852926044255,
+                0.008654446833281218
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.01691542288557214
+            },
+            "activity_reference_v1_top3": {
+              "descriptive_95_interval": [
+                -0.1091239545329774,
+                -0.010776542979460416
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": -0.059950248756218905
+            },
+            "graph_disabled_uniform_v1_top1": {
+              "descriptive_95_interval": [
+                0.0031894751672066016,
+                0.022415488906567617
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.01280248203688711
+            },
+            "graph_disabled_uniform_v1_top3": {
+              "descriptive_95_interval": [
+                0.010356474732143784,
+                0.0599907557976366
+              ],
+              "not_valid_significance_under_dependent_windows": true,
+              "paired_mean": 0.03517361526489019
+            }
+          },
+          "root_absent": 51,
+          "root_present": 284
+        },
+        "repeatability_cases": 335,
+        "repetitions": 2,
+        "run_id": "E004-R001",
+        "scientific_decision_proposal": "REVISE / structural prior only; human review pending",
+        "status": "Completed",
+        "successor_started": false,
+        "superiority_established": false,
+        "symptom_detector": "NONE",
+        "technical_gate": "PASS"
+      },
+      "population": "Real OpenRCA replay; retrospective ranking",
+      "rationale": "Compare graph structure with independent count and chance references before assuming graph reasoning helps.",
+      "documents": [
+        {
+          "path": "experiments/E004_symbolic_rca_baseline/hypothesis.md",
+          "sha256": "a046fabcaa93e7cab70800fedac5aab13a710b5101f195925dda913fd618276e",
+          "text": "# Preregistered hypothesis\n\nQuestion: does dependency structure give useful exact-component localization information beyond matched non-graph references on the accepted E003 replay?\n\nHypothesis: a structural shared-dependency ranking can improve exploratory component localization. Improvement is not assumed and a negative result is useful. Lack of symptom evidence limits this to a topology prior, not an operational RCA diagnosis.\n\nIndependent variables: topology ranking, observation-volume reference, graph-disabled uniform reference; system/scenario.\nDependent variables: tie-aware Top-1/Top-3, deterministic Top-1/Top-3, candidate coverage, abstention, case-level differences, runtime and explanation evidence.\nControls: all 335 saved windows, exact opaque component identities, same candidate universe, no root-based case selection, no metric values/units/status/duration interpretation, no tuning, no future observations.\nDataset/version: E003-AM002 V006 Replay-1 inventory and canonical hashes, including referenced V004 artifacts; original dataset manifest inherited only.\nCode version: source hashes/snapshot and Git commit/dirty status in preflight before execution.\nConfiguration: configuration.yaml, parsed as JSON-compatible YAML.\nRandom seeds: null; deterministic algorithms, no random sampling or bootstrap.\nHardware/environment: actual runtime recorded; standard-library-only Python with user-site disabled, no claim of a fully isolated virtualenv.\nRepetitions: two independent rank computations on each input (second uses reversed iteration order), before evaluator access.\nResults/failures/interpretation: generated under E004-R001; never presumed favorable.\nDecision: technical gate separate from exploratory performance; human review required. No superiority conclusion from this experiment.\nNext experiment: none authorized.\n"
+        },
+        {
+          "path": "experiments/E004_symbolic_rca_baseline/configuration.yaml",
+          "sha256": "a3826a3b2a0b7e03639b6718a3b4bb27dcff79cbd2691c008c598bf39873fd70",
+          "text": "{\n  \"experiment_id\": \"E004\",\n  \"run_id\": \"E004-R001\",\n  \"protocol_version\": 1,\n  \"parent_run\": \"E003-AM002-V006\",\n  \"input_root\": \"experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006\",\n  \"expected_windows\": 335,\n  \"methods\": [\"symbolic_topology_v1\", \"activity_reference_v1\", \"graph_disabled_uniform_v1\"],\n  \"repetitions\": 2,\n  \"random_seed\": null,\n  \"top_k\": [1, 3],\n  \"primary_tie_policy\": \"uniform_expected_credit\",\n  \"secondary_tie_policy\": \"opaque_lexical\",\n  \"symptom_detector\": \"NONE; structural prior only\",\n  \"evaluation_scope\": \"oracle_time_conditioned_exact_component\",\n  \"tuning_budget\": 0,\n  \"minimum_free_disk_bytes\": 6442450944,\n  \"next_action\": \"human_review\"\n}\n"
+        },
+        {
+          "path": "experiments/E004_symbolic_rca_baseline/run.md",
+          "sha256": "406edf345c912616e25d6d0024d9c252e705e2567763bb32bd52cc3f7c7ac6d3",
+          "text": "# E004 execution ledger\n\nE004-R001 is reserved for the fixed v1 protocol. Commands and actual outcomes are recorded in its new result directory; this registration entry is not a completion claim.\n\nRun qualification/tests first, freeze preflight/source/configuration before predictions, finish all predictions before opening evaluator labels, then independently audit and report. Never overwrite an existing run directory. No E004-R002 or other experiment starts automatically.\n"
+        },
+        {
+          "path": "experiments/E004_symbolic_rca_baseline/protocol.md",
+          "sha256": "52b87be77261c2541230334988da71363d83d35ca41135c3cb9b54bf1ec55632",
+          "text": "# E004 protocol v1: restricted structural baseline\n\nRegistered before substantial code or E004 predictions. User authorizes E004 execution; the agent defines this bounded, untuned design. Numeric correctness gates below are preregistered engineering criteria, not a separately user-approved accuracy target.\n\n## Inputs and population\n\nConsume exactly 335 Replay-1 artifacts from V006's frozen inventory, including its 164 V004 references and 171 V006 files. Verify byte and canonical hashes, timestamp bounds and edge evidence before ranking. No raw archive scan or context-DB query. Read operational inputs only; fault labels are opened by the evaluator after all predictions are durably written and their hash recorded.\n\nAll observed resource tokens form the same candidate universe for all methods. Retain all cases, including missing-root and disconnected cases. Candidate presence is evaluated afterwards and never used for input selection. No identity aliases or service aggregation. Scores are not probabilities. Unknown source units, durations, log messages and metric values are unused.\n\n## Fixed methods and symptom boundary\n\nThere is no qualified symptom detector in this scope. Structural candidates are not claims of observed failure. The restricted baseline is intentionally weak.\n\n- **symbolic_topology_v1**: caller-to-callee CALLS edges, supported by same-trace parent evidence within the window. Collapse parallel edges and omit self loops for reachability. Score each observed node by the count of distinct OTHER observed nodes that can reach it along CALLS. This is an explicit shared-dependency heuristic, not a causal edge. Cycles terminate with a visited set. Abstain if no non-self CALLS edges, otherwise rank all observed nodes, including isolated zero-score nodes.\n- **activity_reference_v1**: rank by the count of observations per resource across available modalities. Independent function accepts counts only, never graph inputs. Observation volume is not abnormality; differing instrumentation rates are a confounder.\n- **graph_disabled_uniform_v1**: all observed nodes receive zero; no graph/count-based score. It is both an independent chance reference and the genuinely graph-disabled topology ablation. Abstain only for an empty candidate universe.\n\nOpaque lexical token order breaks ties for deterministic display only. Primary scoring gives expected credit for uniform ordering WITHIN each equal-score group: if the root has h strictly higher-scored candidates and t tied candidates, Top-k credit is max(0,min(1,(k-h)/t)). Root absent or abstention gives zero. Secondary deterministic metrics use the displayed order. Do not select whichever tie rule performs better.\n\nStore compact operational feature certificates: all nodes, observation counts, collapsed edges and one actual edge/evidence reference per collapsed relation plus multiplicity. Explain scores with reachable-caller lists and the full compact relation certificate; label explanations as structural hypotheses, not mechanisms. No healthy/contradicting-state inference from absence.\n\n## Separation, reproducibility and evaluation\n\nThe reasoner receives only opaque nodes, edges or counts. Scenario/time/incident identifiers remain orchestration/evaluator metadata and are not scoring inputs. Exact input metadata and labels are separate records. Fault time supplied the inherited window: explicitly an ORACLE-TIME-CONDITIONED retrospective component benchmark, not online detection. Prediction process does not inspect labels. Evaluator hashes labels before and after and joins by scenario/start/cutoff digest; no row-order join or fuzzy root matching. Score component only, not fault type, onset, duration or official query answer.\n\nTwo independent algorithm computations per case must give identical scores, rankings, abstention and explanation; second receives reversed node/edge/count insertion order. Zero randomness or tuning. There is no learned split; all results are descriptive benchmarks, not held-out model-training results. Overlapping windows and shared environments make incident independence questionable.\n\nReport overall 335-case and per-system Top-1/Top-3 (both tie policies), candidate coverage, abstention, edge availability, candidate count, root-absent cases and paired deltas. Report descriptive paired 95% normal-approximation intervals from case-level score differences, explicitly NOT valid significance claims under dependent windows. No favorable subset, post-hoc seeds, thresholds or accuracy gate. RCAEval and official evaluator integration remain outside scope.\n\n## Technical gate and decision\n\nPASS only if all 335 inputs accounted for, zero hash/schema/evidence/leakage violations, 335/335 repeat computations equal, baseline graph independence verified, fixtures and independent certificate/score/evaluation audit pass, predictions persisted before label access, and all predecessor evidence remains unchanged. Independent audit recomputes scores and metrics without importing the ranking implementation. Preserve failures; do not repair scientific controls post-results.\n\nTechnical PASS does not prove symbolic superiority or satisfy E003's unknown semantics. Decision proposal remains REVISE/restricted diagnostic readiness unless new evidence justifies a narrower statement; no downstream approval is automatic. Stop for human review after final reports.\n\nMinimum free C: space: 6 GiB. No telemetry copying or large new database. Retain preflight configuration/source/environment, full per-case predictions, evaluator tables, compact certificates, tests, logs, input/source/output hashes, independent audit, summary and plain-language decision. Use a source snapshot rather than claiming committed freeze; commit/push not authorized.\n"
+        },
+        {
+          "path": "experiments/E004_symbolic_rca_baseline/results/E004-R001/run.md",
+          "sha256": "bb4c3629e31ecae75024525350f6a1da5a3d5d6417e5a0678f4cd4fc228a10d0",
+          "text": "# E004-R001 execution\n\nStarted with frozen v1 protocol; completed 2026-10-06T14:59:36.969721+00:00 UTC.\n\nInvocation: python -s scripts/run_e004.py (PYTHONPATH=src, PYTHONDONTWRITEBYTECODE=1). Preflight records exact interpreter, code/configuration hashes, source snapshot, Git dirty state, hardware, parent files and input inventory. Fixtures and subprocess stdout/stderr are in logs/. Predictions were sealed before evaluator label parsing. Independent audit and predecessor preservation passed. No raw data read, old record edited, commit or push. Human review pending.\n\n"
+        },
+        {
+          "path": "docs/governance/amendments/2026-10-08-E004-R001-execution-acceptance.md",
+          "label": "Human approval: 8 October 2026",
+          "sha256": "f40e174d1241feda45e10a87bb8af8e475d2cfef84c386b71a4a5bdef6782787",
+          "text": "# E004-R001 human review: execution accepted; scientific REVISE retained\n\nReview date: 8 October 2026 (Asia/Calcutta). Reviewer/authority: project user, by explicit instruction in this conversation. Recorded by the coding agent as a new additive amendment.\n\n## Explicit approval\n\nThe user approved: **“Accept that E004-R001 was executed correctly”**, while retaining **“REVISE / structural prior only.”** The user explicitly prohibited promotion to successful RCA, causal interpretation and authorization of a successor.\n\nReview status: **APPROVED for acceptance of execution and retention of the restricted scientific conclusion.** Scientific outcome: **REVISE / structural prior only**. This does not replace the original decision proposal or change any result.\n\n## Evidence reviewed\n\nAll 335 windows were processed; two rank computations agreed for each case; stored independent audit passed. Primary tie-aware Top-1/Top-3: graph 3.08%/8.93%, observation counts 4.78%/14.93%, uniform 1.80%/5.41%. The graph rule had descriptive signal above uniform but did not outperform observation counts. All 51 root-absent cases remain in the 335-case denominator.\n\nNo qualified symptom detector was used. Supplied fault times define retrospective windows. Shared dependence is not observed faulty behavior or causal evidence. Dependence/overlap among windows prevents valid significance claims from the descriptive intervals.\n\n- `experiments/E004_symbolic_rca_baseline/results/E004-R001/summary.json`: SHA-256 `4859f523607d9e0ae71c77dc2998210bd8add2604d411941a02b8fd97c0a09ee`.\n- `experiments/E004_symbolic_rca_baseline/results/E004-R001/decision.md`: SHA-256 `42e7a257befd1e79f2fe40d6d2daef31cb29793ebf0b6ae72423a710be05689c`.\n- `experiments/E004_symbolic_rca_baseline/results/E004-R001/independent-audit.json`: SHA-256 `91ff312cfe5c22b6aa2a5d9ca021ee0e046fec5f84a619f62bbc2c5a6ba37681`.\n- `experiments/E004_symbolic_rca_baseline/protocol.md`: SHA-256 `52b87be77261c2541230334988da71363d83d35ca41135c3cb9b54bf1ec55632`.\n- `experiments/E004_symbolic_rca_baseline/configuration.yaml`: SHA-256 `a3826a3b2a0b7e03639b6718a3b4bb27dcff79cbd2691c008c598bf39873fd70`.\n\n## Authority boundary\n\nNo successor experiment, E005 registration, detector, neural work, causal inference or remediation is authorized by this review. Separately, the same user message authorizes bounded read-only documentation and retained-telemetry evidence acquisition; see the new acquisition scope.\n\nExisting E004 records, executed source, historical proposals and artifacts remain unchanged. No commit/push or dataset operation is authorized. The historical “review pending” proposal remains valid as the original record; this dated amendment provides the later explicit decision.\n\n"
+        }
+      ],
+      "review_provenance": "Explicit project-user approval recorded in the separate dated amendment; original proposal remains unchanged."
+    }
+  ],
+  "incident_example": {
+    "observed": [
+      "1,000 requests arrive.",
+      "The database receives too much work.",
+      "Database latency rises.",
+      "The application server begins failing requests."
+    ],
+    "possible_causes": [
+      "Normal traffic spike",
+      "Slow database query",
+      "Database capacity limit",
+      "Many requests from one suspicious IP"
+    ],
+    "possible_actions": [
+      "Add caching",
+      "Scale the database",
+      "Improve the slow query",
+      "Rate-limit requests",
+      "Investigate suspicious IPs"
+    ],
+    "warning": "This is an educational example. DCE must show evidence before a human chooses an action; it must not automatically declare one action correct."
+  },
+  "generated_at": "2026-10-07T22:14:35.367127+00:00",
+  "next_action": "Review whether to authorize source-owner metric definitions/exporter configuration, documented healthy controls and a separate evaluation population. Acquisition has stopped. No detector development, successor experiment or E005 registration/execution is authorized.",
+  "reader_version": 1,
+  "verified_at": "2026-10-07T22:14:35.367127+00:00",
+  "review_queue": [],
+  "existing_snapshot_matches_builder": true,
+  "source_hashes": {
+    "experiments/E001/results/E001-R001/SUMMARY.md": "3b80e27686c0f577d61bb90b3599400d5c432507f223f1fb572e08dde4a1c43e",
+    "experiments/E001/logs/E001-R001.md": "0a1acdcd8dbe61c6ea95d298cd9afbd7abd0e827339b0ace189f8d2da3acb1fa",
+    "experiments/E001/results/E001-R001/report.json": "a0ef00babb8163b0e6ec0b7bfe792ae209296ad3b28d4007dbdd0c155a2486c5",
+    "experiments/E001/results/E001-R001/artifact-manifest.json": "f8f0d50f3e67c81641475dc20ba4244030c737aa92c5eca995301ed7c6c8f188",
+    "experiments/E001/hypothesis.md": "36f917c6eab09be9b255cb0d58c5048ff240d5f6e7f522ac63a9f2106c5067a9",
+    "experiments/E001/configuration.yaml": "d27b6c788b09cdfa6b6949ff7eda9ee7190e9baf4ea15cbcb3ceebeaf4827106",
+    "experiments/E001/run.md": "5f00df1a266957df89a03b5474676bd22b07f06b00baf2f42f1989a7e31ec28b",
+    "docs/engineering/otlp-intake-implementation.md": "a4c8a9baed5f457ec52b0c23ae90d16ebc98d9c8a69a5dd67058b53cd9cb6fbd",
+    "experiments/E002/results/E002-R002/summary.json": "a15fa8ffa07059fd31c2ecd59f624e7e89697f3ccc1e93a772a1361ad0c319ad",
+    "experiments/E002/results/E002-R002/validation.json": "f43f686595d1b8d5c1d3dd77d1f44e9148312b8b335110096baf331ab333eb04",
+    "experiments/E002/results/E002-R002/decision-proposal.md": "683e2b2ea76149ae6c398de587620d984d3b4d941c058b93ba4cfec6ced0f32b",
+    "experiments/E002/results/E002-R002/comparison-r001-r002.md": "da13c6fcd1f19020e48f3b8636f6290e5c66cec3575bbc80d5972584a4cb8958",
+    "experiments/E002/hypothesis.md": "d3cf1833ca394db938c596b3217c3ffddc42af04175f63e8477fd0e9950b562a",
+    "experiments/E002/configuration.yaml": "8686677c00984ccba3ef48272cab61a905956a6be15ca6ab22a80ba6e3c3ef8a",
+    "experiments/E002/run.md": "a06474372bf855e9b0bfd11990fb5d4b4fd3f911d93e0d7e65c167cc4de26ee9",
+    "experiments/E002/results/E002-R001/frozen-configuration.json": "0db42f63f5b139f823419d5d896cc428919caf2ccf003b07040c941dbf7b49b3",
+    "experiments/E002/results/E002-R001/decision-proposal.md": "f608f950da9e1c67828f7abf260b8150a5d2c46b72469f1064c384fe194797af",
+    "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/summary.json": "309fe91d9bc8d93d2d9c80d1969d4dc660e7f22bf8dd704e1ed59ff76038bf39",
+    "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/independent-audit.json": "921f763983f5f5d062891d15a45761e9e3db48d1e39779776b1a048768d0c7d8",
+    "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/results.json": "47aa00d0909c7e3b8786286d8957cbe0f4ef5240705f5b6d5ddbf3c3e4249af1",
+    "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/decision.md": "7a4a7f524157b44767fd40e9662b159bcba76e1640d49faab69419bc5e2c4edb",
+    "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V006/artifact-manifest.json": "3f4f4465c1efe3a563a16891a08b3cc23167059a61cfdd27365f209ba3c60887",
+    "docs/governance/amendments/2026-10-06-E003-V006-acceptance-and-E004-scope.md": "860b325cc688afcdc936a14c674bae8c53a24bdd31187c270f269e957da1ca3f",
+    "experiments/E003_domain_model_adequacy/hypothesis.md": "297dab310ddf9189cb3de3fabc72f422210db98a4010b615d59a73196340347a",
+    "experiments/E003_domain_model_adequacy/configuration.yaml": "720107e61cc97adffbb81ec082b1970141ab288f64c1bd049685c60943bdb862",
+    "experiments/E003_domain_model_adequacy/run.md": "2928931789f0912f80a08ed5ee17b233b4c845901c808bb22cb7e62d9e527a9d",
+    "experiments/E003_domain_model_adequacy/qualification/2026-10-04/protocol.md": "986a21dfa42b1036e3994d85907382d69c8ecd53e86ccd1ff700b87cd964e9fe",
+    "experiments/E003_domain_model_adequacy/qualification/2026-10-04/configuration.json": "e271acdc63b7cd8bc47714cea9caef18be17a5f1557775956ea074081b5ed84a",
+    "experiments/E003_domain_model_adequacy/qualification/2026-10-04/run-ledger.md": "0107a18a165b12f9c29557d2c86cc1caaf3e32d58c6c8a2589a09d43478d0837",
+    "experiments/E003_domain_model_adequacy/qualification/2026-10-04/V006-recovery.md": "da6d72113f494242c55920a35a239c354eb1915fc96daa9668815997eb6eb2f9",
+    "experiments/E004_symbolic_rca_baseline/results/E004-R001/decision.md": "42e7a257befd1e79f2fe40d6d2daef31cb29793ebf0b6ae72423a710be05689c",
+    "experiments/E004_symbolic_rca_baseline/results/E004-R001/summary.json": "4859f523607d9e0ae71c77dc2998210bd8add2604d411941a02b8fd97c0a09ee",
+    "experiments/E004_symbolic_rca_baseline/results/E004-R001/results.json": "ed5ea37b0ce9196e619fd4cd00d58f8f85ea8bd63c5874b9a88610c507f72659",
+    "experiments/E004_symbolic_rca_baseline/results/E004-R001/independent-audit.json": "91ff312cfe5c22b6aa2a5d9ca021ee0e046fec5f84a619f62bbc2c5a6ba37681",
+    "experiments/E004_symbolic_rca_baseline/results/E004-R001/prediction-seal.json": "26f1f528b60417191e51d45513cb0472f0bbbe41584193dbc89c3d69e4491a94",
+    "experiments/E004_symbolic_rca_baseline/results/E004-R001/artifact-manifest.json": "a13b38296715707e51228bd78d5273654b33076150fa856170c05ef4e4c7fdd9",
+    "experiments/E004_symbolic_rca_baseline/hypothesis.md": "a046fabcaa93e7cab70800fedac5aab13a710b5101f195925dda913fd618276e",
+    "experiments/E004_symbolic_rca_baseline/configuration.yaml": "a3826a3b2a0b7e03639b6718a3b4bb27dcff79cbd2691c008c598bf39873fd70",
+    "experiments/E004_symbolic_rca_baseline/run.md": "406edf345c912616e25d6d0024d9c252e705e2567763bb32bd52cc3f7c7ac6d3",
+    "experiments/E004_symbolic_rca_baseline/protocol.md": "52b87be77261c2541230334988da71363d83d35ca41135c3cb9b54bf1ec55632",
+    "experiments/E004_symbolic_rca_baseline/results/E004-R001/run.md": "bb4c3629e31ecae75024525350f6a1da5a3d5d6417e5a0678f4cd4fc228a10d0",
+    "frontend/research-reader-2026-10-08/records.json": "ce121457b6ef20fa331213158d503ebbe77c124d54d51d364c6b0e470a408dfc",
+    "docs/governance/amendments/2026-10-08-E002-R002-REVISE-approval.md": "b4c561666a1e40b1fed50bf45aaae5cb62e46c077a0c796ed6b12093df558c06",
+    "docs/governance/amendments/2026-10-08-E004-R001-execution-acceptance.md": "f40e174d1241feda45e10a87bb8af8e475d2cfef84c386b71a4a5bdef6782787",
+    "docs/research-design/2026-10-08-bounded-acquisition/review-summary.json": "e9b2116e0877f8c7233ce12b1eccd4c1923d848e0c0ca49817030856fc52e107",
+    "docs/research-design/2026-10-08-bounded-acquisition/retained-sample-summary.json": "d7b95323efcc69c4ccdeb76280b9c606f047a755365808256fd5c315ce1b28b9",
+    "docs/research-design/2026-10-08-bounded-acquisition/sample-plan.json": "dc4e3ded1f28cc0206202a1f00c549c304384832635f1851dc91b4659f9a4c25",
+    "docs/research-design/2026-10-08-bounded-acquisition/acquisition-scope.md": "2a99ac21c0c70838ef02faa7b7a96680cb988acb401361c91d31503fc7727cc0",
+    "docs/research-design/2026-10-08-bounded-acquisition/evidence-acquisition-assessment.md": "918ba4fdf51b0593deb4c51f58ee7914078716e325d48629c5be54c164764a06",
+    "docs/research-design/2026-10-08-bounded-acquisition/official-reference.json": "90dd491faefe915bd0c3afe14a6780c848f25b200770551690a584eaad2dfa40",
+    "docs/research-design/2026-10-08-bounded-acquisition/verification.json": "d5e267c7b28491a4ed446aabda8cde3e6291716685d3ce75d980667e298cf581"
+  },
+  "acquisition": {
+    "title": "Bounded evidence acquisition complete",
+    "date": "2026-10-08",
+    "totals": {
+      "selected_sources": 8,
+      "blocks_read": 8,
+      "decoded_rows": 7245,
+      "inspected_rows": 1869,
+      "series_summarized": 56
+    },
+    "varying_series": 27,
+    "answers": [
+      {
+        "question": "Sufficiently qualified metric subset?",
+        "answer": "NOT ESTABLISHED",
+        "reason": "Local units, meaning, temporality, aggregation and reset behavior remain unsupported."
+      },
+      {
+        "question": "Defensible healthy controls?",
+        "answer": "NOT ESTABLISHED",
+        "reason": "Fault-centered retained windows do not certify healthy variation."
+      },
+      {
+        "question": "Independent evaluation split?",
+        "answer": "NOT ESTABLISHED",
+        "reason": "No untouched exposure population was identified within this scope."
+      }
+    ],
+    "sources": [
+      {
+        "scenario": "Bank",
+        "path": "Bank/telemetry/2021_03_04/metric/metric_app.csv",
+        "rows": 256,
+        "series": 33,
+        "observed_names": [
+          "cnt",
+          "mrt",
+          "rr"
+        ]
+      },
+      {
+        "scenario": "Bank",
+        "path": "Bank/telemetry/2021_03_04/metric/metric_container.csv",
+        "rows": 256,
+        "series": 0,
+        "observed_names": []
+      },
+      {
+        "scenario": "Market/cloudbed-1",
+        "path": "Market/cloudbed-1/telemetry/2022_03_20/metric/metric_container.csv",
+        "rows": 256,
+        "series": 0,
+        "observed_names": []
+      },
+      {
+        "scenario": "Market/cloudbed-1",
+        "path": "Market/cloudbed-1/telemetry/2022_03_20/metric/metric_mesh.csv",
+        "rows": 256,
+        "series": 0,
+        "observed_names": []
+      },
+      {
+        "scenario": "Market/cloudbed-2",
+        "path": "Market/cloudbed-2/telemetry/2022_03_20/metric/metric_container.csv",
+        "rows": 256,
+        "series": 0,
+        "observed_names": []
+      },
+      {
+        "scenario": "Market/cloudbed-2",
+        "path": "Market/cloudbed-2/telemetry/2022_03_20/metric/metric_mesh.csv",
+        "rows": 256,
+        "series": 0,
+        "observed_names": []
+      },
+      {
+        "scenario": "Telecom",
+        "path": "Telecom/telemetry/2020_04_11/metric/metric_app.csv",
+        "rows": 77,
+        "series": 3,
+        "observed_names": [
+          "avg_time",
+          "num",
+          "succee_num"
+        ]
+      },
+      {
+        "scenario": "Telecom",
+        "path": "Telecom/telemetry/2020_04_11/metric/metric_container.csv",
+        "rows": 256,
+        "series": 20,
+        "observed_names": [
+          "container_cpu_used",
+          "container_fgc",
+          "container_fgct"
+        ]
+      }
+    ],
+    "artifacts": [
+      {
+        "path": "docs/research-design/2026-10-08-bounded-acquisition/review-summary.json",
+        "label": "Acquisition stopping decision",
+        "sha256": "e9b2116e0877f8c7233ce12b1eccd4c1923d848e0c0ca49817030856fc52e107"
+      },
+      {
+        "path": "docs/research-design/2026-10-08-bounded-acquisition/retained-sample-summary.json",
+        "label": "Measured sample aggregates",
+        "sha256": "d7b95323efcc69c4ccdeb76280b9c606f047a755365808256fd5c315ce1b28b9"
+      },
+      {
+        "path": "docs/research-design/2026-10-08-bounded-acquisition/sample-plan.json",
+        "label": "Selection frozen before inspection",
+        "sha256": "dc4e3ded1f28cc0206202a1f00c549c304384832635f1851dc91b4659f9a4c25"
+      },
+      {
+        "path": "docs/research-design/2026-10-08-bounded-acquisition/acquisition-scope.md",
+        "label": "Authorized scope and bounds",
+        "sha256": "2a99ac21c0c70838ef02faa7b7a96680cb988acb401361c91d31503fc7727cc0"
+      },
+      {
+        "path": "docs/research-design/2026-10-08-bounded-acquisition/evidence-acquisition-assessment.md",
+        "label": "Complete acquisition report",
+        "sha256": "918ba4fdf51b0593deb4c51f58ee7914078716e325d48629c5be54c164764a06"
+      },
+      {
+        "path": "docs/research-design/2026-10-08-bounded-acquisition/official-reference.json",
+        "label": "Pinned official documentation",
+        "sha256": "90dd491faefe915bd0c3afe14a6780c848f25b200770551690a584eaad2dfa40"
+      },
+      {
+        "path": "docs/research-design/2026-10-08-bounded-acquisition/verification.json",
+        "label": "Preservation and safety verification",
+        "sha256": "d5e267c7b28491a4ed446aabda8cde3e6291716685d3ce75d980667e298cf581"
+      }
+    ],
+    "limitations": [
+      "27 varying series are descriptive observations, not healthy controls or detector performance.",
+      "Five prefixes did not contain their preselected metric names; no replacement was made. This does not establish absence from the full files.",
+      "Official Bank trace millisecond descriptions conflict with inherited March 23–25 seconds-scale profiles. Neither record was changed.",
+      "The upstream code revision is not proved to match the local dataset version. Metric-name resemblance does not establish semantics.",
+      "Sampled hashes and database size/mtime were checked. The historical full database checksum was not reverified."
+    ],
+    "next": "Review whether to authorize source-owner metric definitions/exporter configuration, documented healthy controls and a separate evaluation population. Acquisition has stopped.",
+    "boundary": "No detector development, successor experiment or E005 registration/execution is authorized."
+  },
+  "frontend_update_version": 1
+}
