@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DCE Experiment Control Room</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="decision-box" aria-label="Historical snapshot notice">
+        <h2>This is the older E001–E003 snapshot.</h2>
+        <p>Its statuses are historical, not current. E002’s environment rerun and E003/V006 recovery have since completed, and E004 has results.</p>
+        <a href="../research-cockpit/">Open current E001–E004 results</a>
+      </section>
+      <header class="hero">
+        <p class="eyebrow">Distributed Causal Engine · decision dashboard</p>
+        <h1>What do we actually know?</h1>
+        <p class="lead">This page turns the experiment files into plain-language answers. It is a decision aid, not a claim that DCE can diagnose or fix a live outage yet.</p>
+      </header>
+
+      <section class="now" aria-labelledby="now-title">
+        <div>
+          <p class="eyebrow">Right now</p>
+          <h2 id="now-title">Do not build an automatic fixer yet.</h2>
+          <p>DCE can repeat its small simulated demo. It can also read part of the real OpenRCA data. But it has not proved that it can correctly find the root cause of real outages.</p>
+        </div>
+        <div class="status status-stop"><span>■</span> Real-world RCA: blocked</div>
+      </section>
+
+      <section class="story" aria-labelledby="story-title">
+        <div>
+          <p class="eyebrow">The idea in your words</p>
+          <h2 id="story-title">When a website slows down, ask: “Which part started the problem?”</h2>
+          <p>A request may go through an API to a database. A cache or rate limiter may be the right fix—but only after we have evidence that the database load or abusive traffic was really the cause. DCE’s future job is to show that evidence. It must not guess and automatically make infrastructure changes.</p>
+        </div>
+        <div class="flow" aria-label="Simple request flow example">
+          <span>User requests</span><b>→</b><span>API server</span><b>→</b><span>Database</span>
+          <small>Possible protections: cache · rate limit · alert · human review</small>
+        </div>
+      </section>
+
+      <section aria-labelledby="experiments-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Experiment status</p>
+            <h2 id="experiments-title">Three questions, three honest answers</h2>
+          </div>
+          <button id="expand-all" class="quiet-button" type="button">Show all details</button>
+        </div>
+        <div id="experiment-cards" class="experiment-grid"></div>
+      </section>
+
+      <section class="decision-box" aria-labelledby="decision-title">
+        <p class="eyebrow">Your next decision</p>
+        <h2 id="decision-title">Approve a clean rerun of E002—or pause and fix its environment first.</h2>
+        <p>E002’s comparison was repeatable, but the software environment was not frozen properly. The right next move is to pin the exact versions and rerun only after reviewing that plan. E003 must remain separate and blocked until its real-data problems are fixed.</p>
+        <div class="checklist">
+          <span>1. Pin the E002 software environment</span>
+          <span>2. Review the E002 rerun plan</span>
+          <span>3. Keep E003 blocked until data gaps are resolved</span>
+        </div>
+      </section>
+
+      <section class="dictionary" aria-labelledby="dictionary-title">
+        <p class="eyebrow">Tiny dictionary</p>
+        <h2 id="dictionary-title">Words you only need when you want more detail</h2>
+        <dl>
+          <div><dt>Experiment</dt><dd>A controlled question, not a product feature.</dd></div>
+          <div><dt>Repeatable</dt><dd>Running the same recipe gives the same answer again.</dd></div>
+          <div><dt>Root cause</dt><dd>The component that began the problem, not every component that became slow.</dd></div>
+          <div><dt>Blocked</dt><dd>We found a gap serious enough that building the next layer would be misleading.</dd></div>
+        </dl>
+      </section>
+    </main>
+    <footer>Evidence snapshot: E001-R001, E002-R001, and E003-R001. Open the evidence links only when you need to audit a claim.</footer>
+    <script src="app.js"></script>
+  </body>
+</html>
