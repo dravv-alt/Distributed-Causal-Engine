@@ -1,0 +1,18 @@
+{
+  "run_id": "E003-AM002-V006",
+  "parent_run": "V004",
+  "preserved_runs": ["V002", "V004", "V005"],
+  "inherited_profiles": 162,
+  "inherited_v002_profiles": 77,
+  "replay1_expected": 335,
+  "inherited_replay1": 164,
+  "reconstructed_replay1": 171,
+  "replay2_expected": 335,
+  "raw_dataset_rescan": false,
+  "protocol_reference": "../protocol.md",
+  "configuration_reference": "../results/V004/preflight.json#configuration",
+  "minimum_free_disk_bytes": 6442450944,
+  "estimated_output_growth_bytes": 12884901888,
+  "random_seed": null,
+  "stop_after": "final technical artifacts and human review; no automatic successor"
+}

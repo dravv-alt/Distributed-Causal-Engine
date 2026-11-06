@@ -1,0 +1,21 @@
+{
+  "amendment_id": "E003-AM002",
+  "dataset_root": "G:/My Drive/DCE/data/dataset",
+  "scenarios": ["Bank", "Market/cloudbed-1", "Market/cloudbed-2", "Telecom"],
+  "timestamp_candidates": ["s", "ms", "us", "ns"],
+  "profiling_boundary_allowance_seconds": 3600,
+  "incident_before_seconds": 300,
+  "incident_after_seconds": 300,
+  "inference_cutoff": "fault annotation point; after segment audit-only",
+  "metric_unknown_policy": "acceptable representation state; no unsupported assignment",
+  "query_association_policy": "unique source-supported match; otherwise UNKNOWN",
+  "temporal_topology_policy": "exclude workbook edges with UNKNOWN validity from inference",
+  "identity_projection": "opaque deterministic tokens; raw names retained only in provenance",
+  "log_text_projection": "exclude",
+  "replay_repetitions": 2,
+  "random_seed": null,
+  "minimum_free_disk_bytes": 6442450944,
+  "maximum_context_store_bytes": 6442450944,
+  "csv_field_limit_bytes": 16777216,
+  "next_stage": "human review; no automatic RCAEval/deletion"
+}

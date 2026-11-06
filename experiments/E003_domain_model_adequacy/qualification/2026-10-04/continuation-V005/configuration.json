@@ -1,0 +1,18 @@
+{
+  "amendment_id": "E003-AM002",
+  "parent_results": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V004",
+  "v002_results": "experiments/E003_domain_model_adequacy/qualification/2026-10-04/results/V002",
+  "incident_before_seconds": 300,
+  "replay_repetitions": 2,
+  "expected_replay1_windows": 335,
+  "inherited_profiles": 162,
+  "inherited_v002_profiles": 77,
+  "inherited_valid_replay1": 164,
+  "corrupt_replay1": 1,
+  "missing_replay1": 170,
+  "replay1_to_reconstruct": 171,
+  "minimum_free_disk_bytes": 6442450944,
+  "estimated_recovery_growth_bytes": 12884901888,
+  "raw_dataset_access": false,
+  "next_stage": "independent audit and human review; no automatic RCA work"
+}
