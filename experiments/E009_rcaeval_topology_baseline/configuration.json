@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "experiment_id": "E009",
+  "run_id": "E009-R001",
+  "planning_stage": "XP006",
+  "protocol_version": 1,
+  "dataset": "RCAEval",
+  "revision": "afeacb11bcc94dadfd1c8f483ee4377b2b8b614e",
+  "blind_case_ids": [
+    "RE2-TT-case-0001",
+    "blind-case-0002",
+    "blind-case-0003",
+    "blind-case-0004",
+    "blind-case-0005",
+    "blind-case-0006",
+    "blind-case-0007",
+    "blind-case-0008",
+    "blind-case-0009"
+  ],
+  "methods": ["topology_shared_callers_v1", "graph_disabled_uniform_v1"],
+  "random_seed": null,
+  "network_access": false,
+  "prediction_input_allowlist": ["traces.parquet"],
+  "prediction_forbidden_inputs": ["metrics.parquet", "logs.parquet", "field-audit.json", "evaluator-only/*"],
+  "evaluator_label_column": "root_cause_service",
+  "evaluator_case_column": "case",
+  "matching_policy": "exact string only; no aliases or fuzzy matching",
+  "tie_policy_primary": "uniform expected credit within equal-score groups",
+  "tie_policy_secondary": "opaque lexical order"
+}
