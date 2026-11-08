@@ -1,0 +1,3 @@
+# E039-R001 protocol (2026-11-07)
+
+XP036 synthetic engineering experiment. Use SQLite tables for durable inputs, unique decisions, transactional outbox, unique delivery, and fencing-token leases. Run 12 unique cases at each of six crash points: before commit, after commit, before notification, after notification, during lease, and after lease expiry (72 total). Close/reopen the database to simulate process restart. Replay unfinished work; require one decision and one notification per case and SQLite integrity `ok`. For lease cases, expire the old lease and require a higher fencing token; reject the stale owner's write. No DCE operational database, service, network, or external action is touched. Metrics descriptive; no threshold was approved.
