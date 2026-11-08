@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "experiment_id": "E010",
+  "run_id": "E010-R001",
+  "planning_stage": "XP007",
+  "protocol_version": 1,
+  "dataset": "RCAEval",
+  "revision": "afeacb11bcc94dadfd1c8f483ee4377b2b8b614e",
+  "blind_case_ids": [
+    "RE2-TT-case-0001",
+    "blind-case-0002",
+    "blind-case-0003",
+    "blind-case-0004",
+    "blind-case-0005",
+    "blind-case-0006",
+    "blind-case-0007",
+    "blind-case-0008",
+    "blind-case-0009"
+  ],
+  "temporal_timestamp_field": "startTimeMillis",
+  "timestamp_interpretation": "raw numeric ordering only; physical unit and timezone UNKNOWN",
+  "relative_delay_bounds": [0.01, 0.05, 0.10],
+  "temporal_edge_support_threshold": 0.5,
+  "score_combination": "min-max normalize topology and temporal scores separately; unweighted sum",
+  "tie_policy_primary": "uniform expected credit within equal-score groups",
+  "tie_policy_secondary": "opaque lexical order",
+  "random_seed": null,
+  "network_access": false,
+  "prediction_inputs": ["traces.parquet", "sealed E009 predictions"],
+  "evaluator_labels_in_inference": false
+}
