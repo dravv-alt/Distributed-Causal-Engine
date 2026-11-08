@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "experiment_id": "E008",
+  "run_id": "E008-R001",
+  "planning_stage": "XP005",
+  "protocol_version": 1,
+  "dataset": "deterministic synthetic topology fixture",
+  "random_seed": null,
+  "network_access": false,
+  "openresearch_required": false,
+  "nodes": [
+    {"id": "frontend-a", "name": "frontend", "environment": "staging"},
+    {"id": "frontend-b", "name": "frontend-b", "environment": "staging"},
+    {"id": "frontend-prod", "name": "frontend", "environment": "production"},
+    {"id": "inventory", "name": "inventory", "environment": "staging"},
+    {"id": "database", "name": "database", "environment": "staging"},
+    {"id": "cache", "name": "cache", "environment": "staging"},
+    {"id": "isolated", "name": "isolated", "environment": "staging"}
+  ],
+  "edges": [
+    {"id": "e1", "source": "frontend-a", "target": "inventory", "relation": "CALLS", "evidence": ["fixture:row:1"]},
+    {"id": "e2", "source": "frontend-b", "target": "inventory", "relation": "CALLS", "evidence": ["fixture:row:2"]},
+    {"id": "e3", "source": "inventory", "target": "database", "relation": "CALLS", "evidence": ["fixture:row:3"]},
+    {"id": "e4", "source": "database", "target": "cache", "relation": "DEPENDS_ON", "evidence": ["fixture:row:4"]},
+    {"id": "e5", "source": "cache", "target": "database", "relation": "DEPENDS_ON", "evidence": ["fixture:row:5"]},
+    {"id": "e6", "source": "frontend-a", "target": "inventory", "relation": "CALLS", "evidence": ["fixture:row:6"]}
+  ],
+  "expected_reachability": {
+    "frontend-a": ["cache", "database", "inventory"],
+    "frontend-b": ["cache", "database", "inventory"],
+    "inventory": ["cache", "database"],
+    "database": ["cache"],
+    "cache": ["database"],
+    "isolated": [],
+    "frontend-prod": []
+  }
+}
