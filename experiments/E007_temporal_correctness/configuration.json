@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "experiment_id": "E007",
+  "run_id": "E007-R001",
+  "planning_stage": "XP004",
+  "protocol_version": 1,
+  "input": "deterministic synthetic event records; no external dataset",
+  "start_ns": 0,
+  "end_ns": 2000000000,
+  "window_ns": 1000000000,
+  "allowed_lateness_ns": 100000000,
+  "event_count_in_window": 20,
+  "event_spacing_ns": 100000000,
+  "missing_event_id": "e005",
+  "reset_at_event_id": "e010",
+  "out_of_window_event_ns": 2000000000,
+  "random_seed": null,
+  "network_access": false,
+  "openresearch_required": false,
+  "label_access": "not applicable; synthetic records contain no labels"
+}
