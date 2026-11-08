@@ -1,0 +1,27 @@
+{
+  "run_id": "E011-R001",
+  "dataset_revision": "afeacb11bcc94dadfd1c8f483ee4377b2b8b614e",
+  "cases": [
+    "RE2-TT-case-0001",
+    "blind-case-0002",
+    "blind-case-0003",
+    "blind-case-0004",
+    "blind-case-0005",
+    "blind-case-0006",
+    "blind-case-0007",
+    "blind-case-0008",
+    "blind-case-0009"
+  ],
+  "input_root": "data/rcaeval/inference",
+  "excluded_root": "data/rcaeval/evaluator-only",
+  "rule_predicate_families": {
+    "database_saturation_or_overload": ["database", "db", "saturat", "overload"],
+    "connection_pool_saturation_or_exhaustion": ["pool", "saturat", "exhaust"],
+    "latency": ["latency"]
+  },
+  "log_terms": ["database", "db", "pool", "saturat", "overload", "exhaust", "latency", "service"],
+  "random_seed": null,
+  "network_access": false,
+  "evaluator_labels_in_inference": false,
+  "interpretation": "literal keyword availability only; no semantics or causal meaning inferred"
+}
