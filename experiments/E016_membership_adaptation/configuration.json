@@ -1,0 +1,15 @@
+{
+  "run_id": "E016-R001",
+  "dataset": "synthetic_variable_membership_v1",
+  "train_cases": 300,
+  "train_membership_size": 8,
+  "test_cases_per_size": 100,
+  "test_membership_sizes": [8, 12, 20],
+  "permutation_cases": 100,
+  "generator_seeds": {"train": 16013, "test_8": 18008, "test_12": 18012, "test_20": 18020},
+  "training": {"epochs": 60, "learning_rate": 0.005, "seed": 16013, "device": "cpu"},
+  "models": ["fixed_eight_mlp_v1", "shared_topology_mlp_v1"],
+  "network_access": false,
+  "remote_compute": false,
+  "test_labels_in_inference": false
+}
