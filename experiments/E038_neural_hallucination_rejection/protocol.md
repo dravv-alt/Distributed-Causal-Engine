@@ -1,0 +1,3 @@
+# E038-R001 protocol (2026-11-07)
+
+Planning reference XP035. Generate 300 candidate proposals: 100 fully supported, 100 deliberately unsupported, 100 with one missing modality. Each proposal carries candidate index and feature evidence only; evaluator class labels are stored separately. The verifier accepts iff metric support >=0.55 and topology and temporal flags are true; otherwise it abstains. Report false acceptance of unsupported candidates, valid retention, and abstention by class. Thresholds are not specified or approved, so results are descriptive. Proposals are hand-constructed fixtures, not neural model outputs; no real causal or application evidence is assessed.
