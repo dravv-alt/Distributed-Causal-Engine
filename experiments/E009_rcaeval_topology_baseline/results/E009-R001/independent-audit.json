@@ -1,0 +1,24 @@
+{
+  "all_cases_match": true,
+  "audit": "independent label-blind adjacency-list recomputation",
+  "checks": {
+    "RE2-TT-case-0001": true,
+    "blind-case-0002": true,
+    "blind-case-0003": true,
+    "blind-case-0004": true,
+    "blind-case-0005": true,
+    "blind-case-0006": true,
+    "blind-case-0007": true,
+    "blind-case-0008": true,
+    "blind-case-0009": true
+  },
+  "differences": {},
+  "input_hashes": {
+    "RE2-TT-case-0001": "27004088d2172421fb6ba40da73b66b9161d922b7b20110411eb0d64105c9cf9",
+    "blind-case-0005": "f833e959286b706b60307fc3beca2980f26a0dda62782362dbcb34e7f696b3d1",
+    "blind-case-0007": "4fe4f35bd2560ff05a410aa78a2cc4f664299f8dd47eef9035a354f768ae23a8",
+    "blind-case-0009": "06dd9fe84aa894a6c536fb15fa6f4e5a7c8e9f1dd895f784fa5dc8fc773e5240"
+  },
+  "labels_opened": false,
+  "prediction_sha256": "36ec3964ce888b50001a70a3f02c23d33d81e4c5a7d0fa3ea62395795e5a9545"
+}

@@ -1,0 +1,7 @@
+﻿{
+    "attempt":  "independent-metric-audit-001",
+    "outcome":  "FAIL",
+    "cause":  "The audit divided the abstention count by case count although evaluation.json stores abstentions as an absolute count. All other aggregate fields matched.",
+    "effect":  "Audit-formatting defect; not a prediction or label-score change.",
+    "prior_audit_sha256":  "36ec3964ce888b50001a70a3f02c23d33d81e4c5a7d0fa3ea62395795e5a9545"
+}

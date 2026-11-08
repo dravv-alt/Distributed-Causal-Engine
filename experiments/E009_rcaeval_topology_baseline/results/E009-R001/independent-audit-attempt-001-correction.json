@@ -1,0 +1,6 @@
+﻿{
+    "corrects":  "independent-audit-attempt-001-note.json",
+    "issue":  "Its prior_audit_sha256 field contains the sealed prediction hash, not the hash of independent-evaluation-audit.json.",
+    "actual_audit_sha256":  "ccf61bcaa6d295d87e639e8b49272c9f56e581243e0003ee1abb89394c6c1583",
+    "preserved_attempt001_script_sha256":  "66ccd8884339733a2f2678d70db1c199859c3b67a6988bdbf5d2ad9316387dbf"
+}

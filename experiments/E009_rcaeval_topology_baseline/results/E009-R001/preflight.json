@@ -1,0 +1,55 @@
+{
+  "dataset_revision": "afeacb11bcc94dadfd1c8f483ee4377b2b8b614e",
+  "execution_mode": "standalone local; no network",
+  "git_head": "4dfd94c0e2674b36f8e0fe2b7e5d7709e1f43d71",
+  "git_status_excerpt": [
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E006.md",
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E007.md",
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E008.md",
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E009.md",
+    "?? docs/research-design/2026-11-06-rcaeval-system-field-map.md",
+    "?? docs/research-design/2026-11-07-rcaeval-case-coverage-audit.md",
+    "?? docs/research-design/2026-11-07-rcaeval-index-coverage.md",
+    "?? docs/research-design/2026-11-07-rcaeval-nine-group-audit.md",
+    "?? experiments/E005_telemetry_attachment/results/E005-R002/",
+    "?? experiments/E006_rcaeval_feature_coverage/",
+    "?? experiments/E007_temporal_correctness/",
+    "?? experiments/E008_graph_correctness/",
+    "?? experiments/E009_rcaeval_topology_baseline/",
+    "?? scrap/",
+    "?? scripts/audit_rcaeval_case.py",
+    "?? scripts/audit_rcaeval_case_index.py",
+    "?? src/dce_foundation/representation_v2/temporal.py",
+    "?? tools/"
+  ],
+  "model_input_allowlist": [
+    "traceID",
+    "spanID",
+    "serviceName",
+    "parentSpanID"
+  ],
+  "model_input_hashes": {
+    "data/rcaeval/inference/RE2-TT-case-0001/traces.parquet": "27004088d2172421fb6ba40da73b66b9161d922b7b20110411eb0d64105c9cf9",
+    "data/rcaeval/inference/blind-case-0005/traces.parquet": "f833e959286b706b60307fc3beca2980f26a0dda62782362dbcb34e7f696b3d1",
+    "data/rcaeval/inference/blind-case-0007/traces.parquet": "4fe4f35bd2560ff05a410aa78a2cc4f664299f8dd47eef9035a354f768ae23a8",
+    "data/rcaeval/inference/blind-case-0009/traces.parquet": "06dd9fe84aa894a6c536fb15fa6f4e5a7c8e9f1dd895f784fa5dc8fc773e5240"
+  },
+  "networkx_version": "3.4.2",
+  "orx": "unavailable on PATH",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "polars_version": "1.43.2",
+  "prediction_rows": 9,
+  "prediction_sha256": "36ec3964ce888b50001a70a3f02c23d33d81e4c5a7d0fa3ea62395795e5a9545",
+  "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+  "run_id": "E009-R001",
+  "source_hashes": {
+    "experiments/E009_rcaeval_topology_baseline/README.md": "32b42d10dbf33a58db9dbd44ecb13c832c25bfcd5b4cc6cebeb8b278ea3bfe58",
+    "experiments/E009_rcaeval_topology_baseline/configuration.json": "51f692162484bd81199d548557a932db82f2c0fe7ad4844b54e236b11345eff5",
+    "experiments/E009_rcaeval_topology_baseline/hypothesis.md": "07f1396344481a1167ae21602b447090947033eba322f262168c5d21ba0f5fcc",
+    "experiments/E009_rcaeval_topology_baseline/protocol.md": "6a8943df87bd59dd6d089b6de9db1a1f1ee835479166243a6ed170a0997b0f93",
+    "experiments/E009_rcaeval_topology_baseline/scripts/evaluate_labels.py": "fc187a0718b6d0ead58ee93eb010a145448a88287e245509ad9a944b8053bc50",
+    "experiments/E009_rcaeval_topology_baseline/scripts/independent_audit.py": "fdc3b9b177b2360d60b275013cf2e171079a4ede63b06ae978acc9b42aae0508",
+    "experiments/E009_rcaeval_topology_baseline/scripts/run_predictions.py": "b666c6675a1b5e3b69082f78602bd6f87dcbedb49d30c640d026a7c18aabea1c"
+  },
+  "source_snapshot_sha256": "68051d410fe0510e455a7a0bdbf2f82e83c67b8410fecae5d63338d9f09963d3"
+}
