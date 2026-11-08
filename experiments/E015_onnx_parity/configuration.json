@@ -1,0 +1,15 @@
+{
+  "run_id": "E015-R001",
+  "source_run": "E014-R001",
+  "cases": ["blind-case-0002", "blind-case-0003", "blind-case-0004", "blind-case-0005", "blind-case-0006", "blind-case-0007", "blind-case-0008", "blind-case-0009", "RE2-TT-case-0001"],
+  "opset": 17,
+  "dynamic_axes": {"input": {"0": "batch"}, "output": {"0": "batch"}},
+  "atol": 0.00001,
+  "rtol": 0.0001,
+  "decision_thresholds": "frozen E014-R001 per-case neural thresholds",
+  "latency_batch_sizes": [1, 16],
+  "device": "CPUExecutionProvider and PyTorch CPU",
+  "network_access": false,
+  "remote_compute": false,
+  "labels_opened": false
+}
