@@ -1,0 +1,84 @@
+{
+  "run_id": "E005-R002",
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "valid-1",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "SUCCESS"
+      }
+    },
+    {
+      "case": "valid-2",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "SUCCESS"
+      }
+    },
+    {
+      "case": "valid-3",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "SUCCESS"
+      }
+    },
+    {
+      "case": "malformed",
+      "statuses": {
+        "traces": 400,
+        "metrics": 400,
+        "logs": 400
+      },
+      "counts_unchanged": true
+    },
+    {
+      "case": "transient-rejection-retry",
+      "export_results": {
+        "traces": "SUCCESS",
+        "metrics": "SUCCESS",
+        "logs": "SUCCESS"
+      }
+    },
+    {
+      "case": "storage-failure",
+      "http_status": 503
+    }
+  ],
+  "metric_source_points": [
+    {
+      "name": "dce.e005.requests",
+      "unit": "1",
+      "value": "7",
+      "time_unix_nano": "1793992276407655400"
+    },
+    {
+      "name": "dce.e005.requests",
+      "unit": "1",
+      "value": "7",
+      "time_unix_nano": "1793992276783378700"
+    },
+    {
+      "name": "dce.e005.requests",
+      "unit": "1",
+      "value": "7",
+      "time_unix_nano": "1793992277128597900"
+    },
+    {
+      "name": "dce.e005.requests",
+      "unit": "1",
+      "value": "7",
+      "time_unix_nano": "1793992277747225300"
+    }
+  ],
+  "metric_timestamp_source_sink_match": true,
+  "counts": {
+    "logs": 4,
+    "metrics": 4,
+    "traces": 8
+  },
+  "durable_records": 16
+}

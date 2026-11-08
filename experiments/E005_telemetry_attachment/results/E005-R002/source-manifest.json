@@ -1,0 +1,46 @@
+{
+  "captured_at_utc": "2026-11-06T19:16:16.359138+00:00",
+  "execution_command": "python experiments/E005_telemetry_attachment/run_e005_r002.py",
+  "execution_mode": "standalone local process; OpenResearch unavailable",
+  "files": {
+    "experiments/E005_telemetry_attachment/collector.yaml": {
+      "bytes": 777,
+      "sha256": "9fbd939e853a71cf27649747f07d55aeae1f21d080d7303afad66619278a9960"
+    },
+    "experiments/E005_telemetry_attachment/configuration-r002.json": {
+      "bytes": 1132,
+      "sha256": "93e7190a4c4245e1e52bb1c003c5c2bc04fbccb0e3e320e863d09d9865a3b971"
+    },
+    "experiments/E005_telemetry_attachment/protocol-r002.md": {
+      "bytes": 5764,
+      "sha256": "8b7112523125992864e0f36e5477eac989ce77a8c7b4992a68beb12a826b1254"
+    },
+    "experiments/E005_telemetry_attachment/receiver.py": {
+      "bytes": 5918,
+      "sha256": "682576a6c97d9e2bf558d6d1c1421c9bacabfebfaa7c8be4a60b38b2a3d57729"
+    },
+    "experiments/E005_telemetry_attachment/run_e005_r002.py": {
+      "bytes": 16610,
+      "sha256": "4a06dfbe0059be3b4313e17a67447d2b147636484c0eeaa8c7a104eb2f4bed7b"
+    },
+    "tools/e005/otelcol.exe": {
+      "bytes": 187862528,
+      "sha256": "20aa55b613207c37f6b65df555b16001ec3f965d7218bf619742cb8579f0daa1"
+    }
+  },
+  "git_head": "4dfd94c0e2674b36f8e0fe2b7e5d7709e1f43d71",
+  "network_scope": "loopback only; synthetic fixtures",
+  "packages": {
+    "opentelemetry_api": "1.31.1",
+    "opentelemetry_sdk": "1.31.1",
+    "protobuf": "7.36.2",
+    "requests": "2.34.2"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "proxy_environment": "HTTP_PROXY, HTTPS_PROXY, ALL_PROXY cleared; NO_PROXY=127.0.0.1,localhost",
+  "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+  "relevant_source_worktree_status": [
+    "?? tools/e005/otelcol.exe"
+  ],
+  "run_id": "E005-R002"
+}

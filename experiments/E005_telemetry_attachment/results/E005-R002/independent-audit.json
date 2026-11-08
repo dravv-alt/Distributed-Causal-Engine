@@ -1,0 +1,83 @@
+{
+  "all_local_checks_pass": true,
+  "audit_type": "post-run read-only artifact audit; not an independent human review",
+  "checks": {
+    "log_fields": true,
+    "malformed_requests_rejected": true,
+    "metric_source_sink_exact": true,
+    "payload_count": true,
+    "resource_identity": true,
+    "runner_reported_pass": true,
+    "signal_counts": true,
+    "sqlite_integrity": true,
+    "storage_failure_rejected": true,
+    "trace_names": true
+  },
+  "counts": {
+    "logs": 4,
+    "metrics": 4,
+    "traces": 8
+  },
+  "execution_boundary": "loopback only; synthetic fixtures; no external requests",
+  "interpretation": "Local technical checks passed. This standalone run is not OpenResearch-managed and does not establish full XP002 completion or RCA effectiveness.",
+  "metric_sink_points": [
+    [
+      "dce.e005.requests",
+      "1",
+      "7",
+      "1793992276407655400"
+    ],
+    [
+      "dce.e005.requests",
+      "1",
+      "7",
+      "1793992276783378700"
+    ],
+    [
+      "dce.e005.requests",
+      "1",
+      "7",
+      "1793992277128597900"
+    ],
+    [
+      "dce.e005.requests",
+      "1",
+      "7",
+      "1793992277747225300"
+    ]
+  ],
+  "metric_source_points": [
+    [
+      "dce.e005.requests",
+      "1",
+      "7",
+      "1793992276407655400"
+    ],
+    [
+      "dce.e005.requests",
+      "1",
+      "7",
+      "1793992276783378700"
+    ],
+    [
+      "dce.e005.requests",
+      "1",
+      "7",
+      "1793992277128597900"
+    ],
+    [
+      "dce.e005.requests",
+      "1",
+      "7",
+      "1793992277747225300"
+    ]
+  ],
+  "orx_commit": "UNAVAILABLE",
+  "protocol_complete": false,
+  "run_id": "E005-R002",
+  "sha256": {
+    "preflight.json": "4891fdaaa8c82afb72363eecc1e66fdbea23a2cea25747abca9b31f30cd35315",
+    "summary.json": "e992a59d9fbbe243b9167c5d41ab943887487e0b5574e58ec4292c19ee65b027",
+    "telemetry.sqlite": "538123873e4f681462aa3feb4cf7a774350d06259dbdb19ad90949d9e9c972db"
+  }
+}
