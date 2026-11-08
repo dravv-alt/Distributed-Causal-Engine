@@ -1,0 +1,13 @@
+{
+  "experiment_id":"E022",
+  "run_id":"E022-R001",
+  "planning_stage":"XP019",
+  "application":"src/dce_foundation/ingest/app.py",
+  "storage":"SQLite WAL, synchronous FULL, 5-second writer connection timeout",
+  "matched_trials":5,
+  "transport":"in-process ASGITransport",
+  "device":"local CPU",
+  "network_access":false,
+  "remote_compute":false,
+  "database_path":"experiments/E022_database_saturation/results/E022-R001/intake.sqlite3"
+}
