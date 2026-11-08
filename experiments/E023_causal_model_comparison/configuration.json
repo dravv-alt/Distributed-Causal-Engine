@@ -1,0 +1,16 @@
+{
+  "experiment_id":"E023",
+  "run_id":"E023-R001",
+  "planning_stage":"XP020",
+  "dataset":"synthetic_linear_structural_models_v1",
+  "cases":600,
+  "cases_per_mechanism":300,
+  "observations_per_case":100,
+  "intervention_contexts_per_case":40,
+  "generator_seed":22020,
+  "link_threshold":0.5,
+  "device":"cpu",
+  "network_access":false,
+  "remote_compute":false,
+  "labels_and_interventions_in_inference":false
+}
