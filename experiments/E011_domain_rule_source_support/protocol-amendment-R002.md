@@ -1,0 +1,3 @@
+# E011-R002 protocol amendment — token-boundary audit
+
+This amendment was frozen after R001 showed that raw substring counts can inflate terms (for example, `db` inside longer unrelated words). R001 remains unchanged and retained as a failed lexical measurement attempt. R002 reruns the same label-blind nine-case inventory, but tokenizes field names and log text on every non-alphanumeric character before counting whole tokens. It reports per-message co-occurrence for the illustrative predicate families and counts latency tokens in metric field names. No thresholds, diagnosis, labels, or semantics are inferred. Code and this amendment are written before R002 execution.
