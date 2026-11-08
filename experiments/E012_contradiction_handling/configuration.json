@@ -1,0 +1,13 @@
+{
+  "run_id": "E012-R001",
+  "dataset": "frozen_synthetic_contradiction_fixture_v1",
+  "case_count": 6,
+  "methods": ["support_only_v1", "contradiction_aware_v1"],
+  "support_weight": 1,
+  "contradiction_weight": 1,
+  "selection": "unique positive maximum; otherwise abstain",
+  "random_seed": null,
+  "network_access": false,
+  "remote_compute": false,
+  "labels_in_inference": false
+}
