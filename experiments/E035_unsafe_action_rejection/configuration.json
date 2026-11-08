@@ -1,0 +1,18 @@
+{
+  "experiment": "E035",
+  "run": "E035-R001",
+  "planning_stage": "XP032",
+  "case_count": 500,
+  "groups": {
+    "valid": 100,
+    "availability_violation": 100,
+    "replica_violation": 100,
+    "risk_violation": 100,
+    "combined_violation": 100
+  },
+  "policy": "reject if availability < minimum OR replicas < minimum OR risk > maximum",
+  "seed": null,
+  "execution": "offline static validation only",
+  "labels_available_to_checker": false,
+  "thresholds": "not specified or approved; descriptive results only"
+}
