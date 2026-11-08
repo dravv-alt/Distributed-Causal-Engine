@@ -1,0 +1,40 @@
+{
+  "configuration_sha256": "9a77b0e81e7b788d79a63f5d3b6eb4044f4164ee5363a1f86c046730eb09a84f",
+  "experiment_id": "E008",
+  "git_head": "4dfd94c0e2674b36f8e0fe2b7e5d7709e1f43d71",
+  "git_status_excerpt": [
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E006.md",
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E007.md",
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E008.md",
+    "?? docs/research-design/2026-11-06-rcaeval-system-field-map.md",
+    "?? docs/research-design/2026-11-07-rcaeval-case-coverage-audit.md",
+    "?? docs/research-design/2026-11-07-rcaeval-index-coverage.md",
+    "?? docs/research-design/2026-11-07-rcaeval-nine-group-audit.md",
+    "?? experiments/E005_telemetry_attachment/results/E005-R002/",
+    "?? experiments/E006_rcaeval_feature_coverage/",
+    "?? experiments/E007_temporal_correctness/",
+    "?? experiments/E008_graph_correctness/",
+    "?? scrap/",
+    "?? scripts/audit_rcaeval_case.py",
+    "?? scripts/audit_rcaeval_case_index.py",
+    "?? src/dce_foundation/representation_v2/temporal.py",
+    "?? tools/"
+  ],
+  "network_access": "none",
+  "networkx_version": "3.4.2",
+  "openresearch": "orx unavailable; standalone local runner",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "protocol_sha256": "a8ebff0b80fd6bec89dce3906a6001b7a682aac55bae1fc02b17e01e90aaa4cd",
+  "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+  "run_id": "E008-R001",
+  "source_hashes": {
+    "experiments/E008_graph_correctness/README.md": "82fec6a202cdb858c37b5bc44b575cb5cc22f5b5c92cb5b1700cdc9ac67e38c8",
+    "experiments/E008_graph_correctness/configuration.json": "9a77b0e81e7b788d79a63f5d3b6eb4044f4164ee5363a1f86c046730eb09a84f",
+    "experiments/E008_graph_correctness/hypothesis.md": "1e19ee234c60b097015946e7f0451839cd24f45cbadaa323a284c3066741b312",
+    "experiments/E008_graph_correctness/protocol.md": "a8ebff0b80fd6bec89dce3906a6001b7a682aac55bae1fc02b17e01e90aaa4cd",
+    "experiments/E008_graph_correctness/run_experiment.py": "4be5d4e6ecc756dcae48318c9d3521225264b414390ff381a3d86547022092d1",
+    "src/dce_foundation/representation_v2/model.py": "bf7e4c64cc6e2195168bf573633acfd4a297c95d0c6234de16ac91747dc6d4db",
+    "src/dce_foundation/representation_v2/topology.py": "08d94cc7bc5336e63f8ffdeb3c79d724195bcfc1f81ea3a6fea5c0a0662b1e63"
+  },
+  "source_snapshot_sha256": "641b407e1a1211fb9aed5c83b6e8ec54402144f98e3e53eaabfc3b1d5864042b"
+}

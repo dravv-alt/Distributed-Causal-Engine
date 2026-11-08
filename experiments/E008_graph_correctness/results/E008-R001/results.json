@@ -1,0 +1,189 @@
+{
+  "actual_edges": [
+    [
+      "e1",
+      "frontend-a",
+      "inventory",
+      "CALLS",
+      [
+        "fixture:row:1"
+      ]
+    ],
+    [
+      "e2",
+      "frontend-b",
+      "inventory",
+      "CALLS",
+      [
+        "fixture:row:2"
+      ]
+    ],
+    [
+      "e3",
+      "inventory",
+      "database",
+      "CALLS",
+      [
+        "fixture:row:3"
+      ]
+    ],
+    [
+      "e4",
+      "database",
+      "cache",
+      "DEPENDS_ON",
+      [
+        "fixture:row:4"
+      ]
+    ],
+    [
+      "e5",
+      "cache",
+      "database",
+      "DEPENDS_ON",
+      [
+        "fixture:row:5"
+      ]
+    ],
+    [
+      "e6",
+      "frontend-a",
+      "inventory",
+      "CALLS",
+      [
+        "fixture:row:6"
+      ]
+    ]
+  ],
+  "actual_reachability": {
+    "cache": [
+      "database"
+    ],
+    "database": [
+      "cache"
+    ],
+    "frontend-a": [
+      "cache",
+      "database",
+      "inventory"
+    ],
+    "frontend-b": [
+      "cache",
+      "database",
+      "inventory"
+    ],
+    "frontend-prod": [],
+    "inventory": [
+      "cache",
+      "database"
+    ],
+    "isolated": []
+  },
+  "assertions": {
+    "all_seven_nodes_preserved": true,
+    "all_six_keyed_edges_and_evidence_preserved": true,
+    "both_frontends_share_expected_downstream": true,
+    "database_cache_cycle_is_mutually_reachable": true,
+    "edge_direction_and_relation_fidelity": true,
+    "environment_scoped_same_name_ids_distinct": true,
+    "invalid_endpoint_rejected": true,
+    "isolated_and_production_nodes_have_no_impact_paths": true,
+    "missing_evidence_rejected": true,
+    "reachability_matches_independent_bfs": true
+  },
+  "edge_count": 6,
+  "expected_edges": [
+    [
+      "e1",
+      "frontend-a",
+      "inventory",
+      "CALLS",
+      [
+        "fixture:row:1"
+      ]
+    ],
+    [
+      "e2",
+      "frontend-b",
+      "inventory",
+      "CALLS",
+      [
+        "fixture:row:2"
+      ]
+    ],
+    [
+      "e3",
+      "inventory",
+      "database",
+      "CALLS",
+      [
+        "fixture:row:3"
+      ]
+    ],
+    [
+      "e4",
+      "database",
+      "cache",
+      "DEPENDS_ON",
+      [
+        "fixture:row:4"
+      ]
+    ],
+    [
+      "e5",
+      "cache",
+      "database",
+      "DEPENDS_ON",
+      [
+        "fixture:row:5"
+      ]
+    ],
+    [
+      "e6",
+      "frontend-a",
+      "inventory",
+      "CALLS",
+      [
+        "fixture:row:6"
+      ]
+    ]
+  ],
+  "expected_reachability": {
+    "cache": [
+      "database"
+    ],
+    "database": [
+      "cache"
+    ],
+    "frontend-a": [
+      "cache",
+      "database",
+      "inventory"
+    ],
+    "frontend-b": [
+      "cache",
+      "database",
+      "inventory"
+    ],
+    "frontend-prod": [],
+    "inventory": [
+      "cache",
+      "database"
+    ],
+    "isolated": []
+  },
+  "experiment_id": "E008",
+  "limitations": [
+    "Synthetic structural fixture only; no real deployment topology was read.",
+    "Reachability is not a causal or fault-propagation claim.",
+    "No RCA metric, fault label, or diagnosis was evaluated."
+  ],
+  "node_count": 7,
+  "run_id": "E008-R001",
+  "shared_downstream": [
+    "cache",
+    "database",
+    "inventory"
+  ],
+  "status": "PASS"
+}
