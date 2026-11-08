@@ -1,0 +1,11 @@
+{
+  "experiment_id":"E028",
+  "run_id":"E028-R001",
+  "planning_stage":"XP025",
+  "cases":400,
+  "generator_seed":28025,
+  "minimum_healthy_replicas":2,
+  "objective_weights":{"expected_recovery":0.45,"normalized_cost":-0.15,"risk":-0.15,"normalized_disruption":-0.15,"reversibility":0.10},
+  "execution_performed":false,
+  "network_access":false
+}
