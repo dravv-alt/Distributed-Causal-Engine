@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "experiment_id": "E006",
+  "run_id": "E006-R002",
+  "planning_stage": "XP003",
+  "protocol_version": "1+amendment-r002",
+  "dataset": "RCAEval local inference snapshot",
+  "revision": "afeacb11bcc94dadfd1c8f483ee4377b2b8b614e",
+  "scope": "all locally present direct metric/trace/log Parquet files under nine fixed blind-case inference directories; expected 19 files",
+  "expected_parquet_file_count": 19,
+  "blind_case_ids": [
+    "RE2-TT-case-0001",
+    "blind-case-0002",
+    "blind-case-0003",
+    "blind-case-0004",
+    "blind-case-0005",
+    "blind-case-0006",
+    "blind-case-0007",
+    "blind-case-0008",
+    "blind-case-0009"
+  ],
+  "allowed_modalities": ["metrics", "traces", "logs"],
+  "expected_modalities_by_case": {
+    "RE2-TT-case-0001": ["logs", "metrics", "traces"],
+    "blind-case-0002": ["metrics"],
+    "blind-case-0003": ["metrics"],
+    "blind-case-0004": ["metrics"],
+    "blind-case-0005": ["logs", "metrics", "traces"],
+    "blind-case-0006": ["logs", "metrics"],
+    "blind-case-0007": ["logs", "metrics", "traces"],
+    "blind-case-0008": ["logs", "metrics"],
+    "blind-case-0009": ["logs", "metrics", "traces"]
+  },
+  "input_root": "data/rcaeval/inference",
+  "evaluator_only_access": false,
+  "labels_in_analysis": false,
+  "network_access": false,
+  "remote_compute": false,
+  "random_seed": null,
+  "measurements": [
+    "per-file hashes, bytes, rows, columns, Arrow types, top-level null counts",
+    "raw timestamp-like field ranges, distinct/null/duplicate counts, source-order monotonicity where supported",
+    "per-case metric feature union/intersection and missing-cell totals",
+    "exact raw timestamp value intersections only for same-name, same-type scalar fields"
+  ],
+  "semantic_policy": "units, temporality, aggregation, resets, meanings, and service identity remain UNKNOWN without independent metadata",
+  "openresearch_required": false,
+  "run_mode": "standalone local audit; not OpenResearch-managed"
+}
