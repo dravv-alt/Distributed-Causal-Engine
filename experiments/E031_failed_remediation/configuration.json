@@ -1,0 +1,13 @@
+{
+  "experiment_id":"E031",
+  "run_id":"E031-R001",
+  "planning_stage":"XP028",
+  "cases":240,
+  "actions":["restart","scale","reroute"],
+  "successes_per_action":40,
+  "injected_failures_per_action":40,
+  "generator_seed":31028,
+  "execution_mode":"in-memory simulated environment",
+  "external_actions":false,
+  "network_access":false
+}
