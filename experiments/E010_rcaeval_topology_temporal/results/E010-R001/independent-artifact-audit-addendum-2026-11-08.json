@@ -1,0 +1,107 @@
+{
+  "audit": "E010-R001 manifest, sealed inference, baseline and evaluator chain",
+  "audit_date": "2026-11-08",
+  "checks": {
+    "E009_baseline_hash_matches": true,
+    "all_nine_cases_retained": true,
+    "all_ten_manifest_entries_match": true,
+    "independent_evaluator_audit_passed": true,
+    "label_blind_audit_passed_without_labels": true,
+    "nine_predictions_match_seal_and_preflight": true,
+    "saturated_temporal_feature_explicit": true,
+    "trace_input_hashes_match": true
+  },
+  "e009_baseline_sha256": "36ec3964ce888b50001a70a3f02c23d33d81e4c5a7d0fa3ea62395795e5a9545",
+  "interpretation_limit": "This verifies the saved nine-case local run. The raw timestamp units are unknown; the saturated proxy does not establish temporal causality or RCA effectiveness.",
+  "manifest_entries": 10,
+  "manifest_failures": [],
+  "metrics": {
+    "graph_disabled_uniform_e009": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.04285714285714285,
+      "top3_deterministic": 0.2222222222222222,
+      "top3_tie_aware": 0.12857142857142856,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "temporal_only_0.01": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.05555555555555555,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "temporal_only_0.05": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.05555555555555555,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "temporal_only_0.10": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.05555555555555555,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "topology_only_e009": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.0,
+      "top1_tie_aware": 0.0,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.07407407407407407,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "topology_temporal_0.01": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.1111111111111111,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.1111111111111111
+    },
+    "topology_temporal_0.05": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.1111111111111111,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.1111111111111111
+    },
+    "topology_temporal_0.10": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.1111111111111111,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.1111111111111111
+    }
+  },
+  "passed": 8,
+  "prediction_sha256": "1772fed05eef5ffcbb5e463f467ce65c24bd8691a7093a4412f1dc9009f866f3",
+  "scope": "Read-only saved-artifact verification; no inference rerun",
+  "total": 8,
+  "trace_input_hash_failures": [],
+  "verifier": "docs/research-design/audit_e010_r001_artifacts_20261108.py",
+  "verifier_sha256": "026e896c1437c084f91c748292d0c866b1eda416e81aec55997e74da6070ca44"
+}
