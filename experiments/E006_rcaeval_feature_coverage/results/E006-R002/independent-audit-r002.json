@@ -1,0 +1,28 @@
+{
+  "audit_type": "independent read-only Parquet metadata/hash recomputation; not human review",
+  "cases_recomputed": 9,
+  "checks": {
+    "evaluator_only_not_read": true,
+    "exact_frozen_case_set": true,
+    "expected_case_count": true,
+    "expected_file_count": true,
+    "expected_local_file_set": true,
+    "feature_intersection_recomputed": true,
+    "feature_presence_recomputed": true,
+    "feature_union_recomputed": true,
+    "file_metadata_and_null_counts_match": true,
+    "no_network": true,
+    "only_inference_paths": true,
+    "source_hashes_match": true,
+    "summary_complete_status": true
+  },
+  "feature_intersection_count": 0,
+  "feature_union_count": 560,
+  "files_recomputed": 19,
+  "limitations": [
+    "This verifies the local nine-case scan only, not the full RCAEval corpus.",
+    "It verifies structural coverage, not field semantics, units, alignment validity, or RCA quality."
+  ],
+  "pass": true,
+  "run_id": "E006-R002"
+}

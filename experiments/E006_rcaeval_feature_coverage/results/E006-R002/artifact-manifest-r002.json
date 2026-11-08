@@ -1,0 +1,57 @@
+{
+  "record": "E006-R002 artifact manifest",
+  "generated_by": "scripts/create_artifact_manifest_r002.py",
+  "manifest_self_hash": "omitted; self-referential hash is undefined",
+  "files": [
+    {
+      "path": "experiments/E006_rcaeval_feature_coverage/protocol-amendment-r002.md",
+      "bytes": 3589,
+      "sha256": "61830501c15c0ef9dacd1babb1a8a4f67bf861c34ef82df7ead5c3bea464eb89"
+    },
+    {
+      "path": "experiments/E006_rcaeval_feature_coverage/configuration-r002.json",
+      "bytes": 1983,
+      "sha256": "6562c343e1c2e7c63e3f91428dc4d116bb849ef8efb69a32b622ea0dc229972e"
+    },
+    {
+      "path": "experiments/E006_rcaeval_feature_coverage/scripts/run_local_corpus_r002.py",
+      "bytes": 14686,
+      "sha256": "a84010c991a2fafa33e87d31d870fa1f30f5be97152aa83fa047fd04ae1a3f77"
+    },
+    {
+      "path": "experiments/E006_rcaeval_feature_coverage/scripts/audit_local_corpus_r002.py",
+      "bytes": 6497,
+      "sha256": "708152dcb69ee9e1356a75468d0f3b8500f41617cd218aa4a4a4f56b89b22589"
+    },
+    {
+      "path": "experiments/E006_rcaeval_feature_coverage/scripts/create_artifact_manifest_r002.py",
+      "bytes": 2137,
+      "sha256": "5e10a595022318f685655a9f9400a22d294f16f806092453b0dcae96630d8185"
+    },
+    {
+      "path": "experiments/E006_rcaeval_feature_coverage/results/E006-R002/run.md",
+      "bytes": 2889,
+      "sha256": "3d28c7793ad58e16163772caef6f7082ad11e92c3743b34e8285b031ef3951ed"
+    },
+    {
+      "path": "experiments/E006_rcaeval_feature_coverage/results/E006-R002/decision.md",
+      "bytes": 1001,
+      "sha256": "a96ba54b43c5504a746fb133df8be91767b86af6f09474103cfea77cbd6eaca6"
+    },
+    {
+      "path": "experiments/E006_rcaeval_feature_coverage/results/E006-R002/feature-scan.json",
+      "bytes": 289008,
+      "sha256": "1f32e444a664fa2a118b28163238e3d4ad421d54009c838cf1c235e977ceb6fb"
+    },
+    {
+      "path": "experiments/E006_rcaeval_feature_coverage/results/E006-R002/source-manifest-r002.json",
+      "bytes": 8646,
+      "sha256": "2adf408541788c9bd533a48422a6e47b5e9c3611367587b9f0a0f7732eb827f3"
+    },
+    {
+      "path": "experiments/E006_rcaeval_feature_coverage/results/E006-R002/independent-audit-r002.json",
+      "bytes": 957,
+      "sha256": "2ab0bcda655fc8ae62606c09a9654fcb6b278a08df34aba356155ccc0609f3df"
+    }
+  ]
+}
