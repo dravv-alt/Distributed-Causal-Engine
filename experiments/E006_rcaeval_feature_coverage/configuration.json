@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "experiment_id": "E006",
+  "run_id": "E006-R001",
+  "planning_stage": "XP003",
+  "protocol_version": 1,
+  "dataset": "RCAEval",
+  "revision": "afeacb11bcc94dadfd1c8f483ee4377b2b8b614e",
+  "scope": "nine preselected blind cases; saved field-audit.json only",
+  "blind_case_ids": [
+    "RE2-TT-case-0001",
+    "blind-case-0002",
+    "blind-case-0003",
+    "blind-case-0004",
+    "blind-case-0005",
+    "blind-case-0006",
+    "blind-case-0007",
+    "blind-case-0008",
+    "blind-case-0009"
+  ],
+  "label_access": "forbidden",
+  "random_seed": null,
+  "network_access": false,
+  "openresearch_required": false,
+  "metrics": ["feature_union_intersection", "per_case_missingness", "modality_availability", "exact_metric_log_timestamp_overlap"],
+  "semantic_policy": "UNKNOWN unless independently sourced; no inference from names or numeric values"
+}
