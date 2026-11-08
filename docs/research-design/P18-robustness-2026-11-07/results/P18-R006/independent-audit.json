@@ -1,0 +1,26 @@
+{
+  "audit": "P18-R006 independent output/provenance audit",
+  "passed": true,
+  "checks": {
+    "run_identity": true,
+    "local_only": true,
+    "complete_invalid_input_matrix": true,
+    "comparison_reproduces_poisoning": true,
+    "package_candidate_is_transactional": true,
+    "candidate_preserves_watermark": true,
+    "runner_assertions_reproduced": true,
+    "source_hashes_match": true
+  },
+  "source_hash_checks": {
+    "protocol": true,
+    "configuration": true,
+    "runner": true,
+    "baseline": true,
+    "candidate": true
+  },
+  "cases_per_invalid_value": 4,
+  "limitations": [
+    "Package-level deterministic fixture only; ingest path is not wired to the candidate.",
+    "Does not establish real telemetry semantics, temporal validity, RCA quality, or production robustness."
+  ]
+}

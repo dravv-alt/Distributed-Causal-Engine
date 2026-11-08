@@ -1,0 +1,10 @@
+{
+  "run_id": "P18-R006",
+  "attempt": 1,
+  "status": "audit_failed_before_checks_completed",
+  "command": "python docs/research-design/P18-robustness-2026-11-07/audit_r006.py",
+  "error": "FileNotFoundError: provenance key 'protocol' was treated as a repository-relative path",
+  "cause": "The run stores provenance hashes keyed by artifact role, while the first audit draft treated keys as file paths.",
+  "experiment_result_modified": false,
+  "remediation": "Added an explicit artifact-role-to-path map in the independent auditor."
+}

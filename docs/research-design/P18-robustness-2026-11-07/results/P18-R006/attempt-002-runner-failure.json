@@ -1,0 +1,11 @@
+{
+  "run_id": "P18-R006",
+  "attempt": 2,
+  "status": "failed_while_persisting_results",
+  "command": "python docs/research-design/P18-robustness-2026-11-07/run_r006.py",
+  "error": "FileExistsError: results/P18-R006 already exists",
+  "cause": "The preserved attempt-001 record had already created the directory; runner directory creation required a nonexistent folder.",
+  "cases_computed_in_memory": true,
+  "result_artifacts_written": false,
+  "remediation": "Changed output-directory creation to exist_ok=True while retaining a guard against overwriting results.json."
+}

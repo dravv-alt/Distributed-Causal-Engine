@@ -1,0 +1,659 @@
+{
+  "run_id": "P18-R006",
+  "planning_phase": "P18 robustness follow-up",
+  "network_access": false,
+  "external_services": false,
+  "invalid_values": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "not-a-number"
+  ],
+  "base_retry_cases": [
+    {
+      "invalid_value": "NaN",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": false,
+      "retry_accepted": false,
+      "retry_rejected": [
+        {
+          "event_id": "repair",
+          "reason": "duplicate_event_id"
+        }
+      ],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline",
+          "repair"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "Infinity",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": false,
+      "retry_accepted": false,
+      "retry_rejected": [
+        {
+          "event_id": "repair",
+          "reason": "duplicate_event_id"
+        }
+      ],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline",
+          "repair"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "-1",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": false,
+      "retry_accepted": false,
+      "retry_rejected": [
+        {
+          "event_id": "repair",
+          "reason": "duplicate_event_id"
+        }
+      ],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline",
+          "repair"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "not-a-number",
+      "error": "counter value is not numeric",
+      "state_unchanged_after_error": false,
+      "retry_accepted": false,
+      "retry_rejected": [
+        {
+          "event_id": "repair",
+          "reason": "duplicate_event_id"
+        }
+      ],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline",
+          "repair"
+        ],
+        "max_seen_ns": 2
+      }
+    }
+  ],
+  "candidate_retry_cases": [
+    {
+      "invalid_value": "NaN",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": true,
+      "retry_accepted": true,
+      "retry_rejected": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "Infinity",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": true,
+      "retry_accepted": true,
+      "retry_rejected": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "-1",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": true,
+      "retry_accepted": true,
+      "retry_rejected": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "not-a-number",
+      "error": "counter value is not numeric",
+      "state_unchanged_after_error": true,
+      "retry_accepted": true,
+      "retry_rejected": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      }
+    }
+  ],
+  "base_watermark_cases": [
+    {
+      "invalid_value": "NaN",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": false,
+      "probe_accepted": true,
+      "probe_rejection_reasons": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline",
+          "repair"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "Infinity",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": false,
+      "probe_accepted": true,
+      "probe_rejection_reasons": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline",
+          "repair"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "-1",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": false,
+      "probe_accepted": true,
+      "probe_rejection_reasons": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline",
+          "repair"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "not-a-number",
+      "error": "counter value is not numeric",
+      "state_unchanged_after_error": false,
+      "probe_accepted": true,
+      "probe_rejection_reasons": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline",
+          "repair"
+        ],
+        "max_seen_ns": 2
+      }
+    }
+  ],
+  "candidate_watermark_cases": [
+    {
+      "invalid_value": "NaN",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": true,
+      "probe_accepted": true,
+      "probe_rejection_reasons": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "Infinity",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": true,
+      "probe_accepted": true,
+      "probe_rejection_reasons": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "-1",
+      "error": "counter value must be finite and nonnegative",
+      "state_unchanged_after_error": true,
+      "probe_accepted": true,
+      "probe_rejection_reasons": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      }
+    },
+    {
+      "invalid_value": "not-a-number",
+      "error": "counter value is not numeric",
+      "state_unchanged_after_error": true,
+      "probe_accepted": true,
+      "probe_rejection_reasons": [],
+      "before": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      },
+      "after_error": {
+        "accepted": [
+          {
+            "event_id": "baseline",
+            "series_id": "series",
+            "event_ns": 2,
+            "value": "1"
+          }
+        ],
+        "rejected": [],
+        "seen_ids": [
+          "baseline"
+        ],
+        "max_seen_ns": 2
+      }
+    }
+  ],
+  "assertions": {
+    "base_reproduces_seen_id_poisoning": true,
+    "candidate_errors_are_transactional": true,
+    "candidate_preserves_watermark": true,
+    "all_error_classes_observed": true
+  },
+  "candidate_contract_pass": true,
+  "source_sha256": {
+    "protocol": "2ca40029d96bba3dd5c62a21fa71fa48e0131ce8721d9dd42cca9fcf6cc6d552",
+    "configuration": "95dc1dfacd1abef21e81eea100b89d4dfb75886e2d76eaaaacbacf0b05777bcb",
+    "runner": "07196c25a139de051664f37ae66a6b9a5f407e7352038f73e3290b6724bace36",
+    "baseline": "aee684d939aa875bbb3174b5ebe656a884043a523dcf0fb07cf99fcf64d9ed75",
+    "candidate": "bee2e0aaa7857fca3168db53e21cbf80044dac4c5d65abfa3076a4bf4cbab1d4"
+  },
+  "environment": {
+    "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "interpretation_limit": "package behavior on deterministic local fixtures; ingest path not wired"
+}

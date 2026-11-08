@@ -1,0 +1,11 @@
+{
+  "run_id": "P18-R006",
+  "attempt": 1,
+  "status": "failed_before_execution",
+  "command": "python docs/research-design/P18-robustness-2026-11-07/run_r006.py",
+  "error": "ModuleNotFoundError: No module named 'dce_foundation'",
+  "cause": "The runner computed the repository root one directory too high when adding src to sys.path.",
+  "inputs_processed": false,
+  "result_artifacts_written": false,
+  "remediation": "Corrected repository-root resolution from HERE.parents[3] to HERE.parents[2] before retrying."
+}
