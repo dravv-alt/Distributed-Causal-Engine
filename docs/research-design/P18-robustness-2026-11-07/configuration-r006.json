@@ -1,0 +1,17 @@
+{
+  "run_id": "P18-R006",
+  "protocol": "protocol-amendment-r006.md",
+  "comparison_implementation": "src/dce_foundation/representation_v2/temporal.py:EventTimeWindowAccumulator",
+  "candidate_implementation": "src/dce_foundation/representation_v2/temporal_transactional.py:TransactionalEventTimeWindowAccumulator",
+  "invalid_values": ["NaN", "Infinity", "-1", "not-a-number"],
+  "start_ns": 0,
+  "end_ns": 20,
+  "window_ns": 10,
+  "allowed_lateness_ns": 0,
+  "baseline_sample_ns": 2,
+  "invalid_sample_ns": 15,
+  "watermark_probe_ns": 3,
+  "network_access": false,
+  "external_services": false,
+  "result_path": "results/P18-R006"
+}
