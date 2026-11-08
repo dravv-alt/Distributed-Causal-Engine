@@ -1,0 +1,29 @@
+{
+  "audit": "E008-R001 saved-output, fixture, and independent BFS consistency",
+  "audit_date": "2026-11-08",
+  "checks": {
+    "all_frozen_source_hashes_match": true,
+    "all_original_assertions_true": true,
+    "edge_inventory_matches_fixture": true,
+    "node_count_matches_fixture": true,
+    "preflight_hash_matches_manifest": true,
+    "result_hash_matches_manifest": true,
+    "saved_reachability_matches_config": true,
+    "saved_reachability_matches_independent_bfs": true,
+    "snapshot_hash_matches_both_records": true,
+    "synthetic_scope_and_limits_recorded": true
+  },
+  "interpretation_limit": "This audits the saved seven-node synthetic fixture result only. It does not establish real topology completeness, causal propagation, or root-cause localization.",
+  "passed": 10,
+  "scope": "Read-only verification of saved files; no graph experiment rerun",
+  "source_files": {
+    "experiments/E008_graph_correctness/configuration.json": "9a77b0e81e7b788d79a63f5d3b6eb4044f4164ee5363a1f86c046730eb09a84f",
+    "experiments/E008_graph_correctness/results/E008-R001/preflight.json": "999f77221c02386ef9efa8a48ce7c7322b5f5fcd871dc3322e029075bf0b33fe",
+    "experiments/E008_graph_correctness/results/E008-R001/results.json": "2a465ea483c4eab6a7e36e979cd845ffc5df87c8f3b16d7445bc553fce85bf09",
+    "experiments/E008_graph_correctness/results/E008-R001/source-manifest.json": "71888b4555e115194fec5944e19a905b88572951bc79a3bdd5377f36c5e9811e",
+    "experiments/E008_graph_correctness/results/E008-R001/source-snapshot.zip": "641b407e1a1211fb9aed5c83b6e8ec54402144f98e3e53eaabfc3b1d5864042b"
+  },
+  "total": 10,
+  "verifier": "docs/research-design/audit_e008_r001_20261108.py",
+  "verifier_sha256": "a70f473a06d1279cda360879ec5bb1918eb0cb61738af35a275404c126eb9782"
+}
