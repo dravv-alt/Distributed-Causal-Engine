@@ -1,0 +1,15 @@
+{
+  "experiment_id":"E024",
+  "run_id":"E024-R001",
+  "planning_stage":"XP021",
+  "dataset":"synthetic_linear_counterfactual_v1",
+  "training_observations":1000,
+  "heldout_contexts":400,
+  "training_seed":24021,
+  "bootstrap_replicates":10000,
+  "bootstrap_seed":24022,
+  "device":"cpu",
+  "network_access":false,
+  "remote_compute":false,
+  "intervention_outcomes_in_inference":false
+}
