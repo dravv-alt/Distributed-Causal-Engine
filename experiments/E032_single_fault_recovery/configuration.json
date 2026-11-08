@@ -1,0 +1,12 @@
+{
+  "experiment_id":"E032",
+  "run_id":"E032-R001",
+  "planning_stage":"XP029",
+  "cases":300,
+  "mechanisms":["cpu","database","network"],
+  "generator_seed":32029,
+  "simulated_approval_rate":0.8,
+  "logical_time_ticks":{"detection":2,"planning":1,"action_and_verification":3},
+  "external_actions":false,
+  "network_access":false
+}
