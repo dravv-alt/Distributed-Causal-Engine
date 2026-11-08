@@ -1,0 +1,379 @@
+{
+  "assertions": {
+    "all_three_match_offline_oracle": true,
+    "counter_delta_total_is_18": true,
+    "exclusive_end_boundary_rejected": true,
+    "late_schedule_has_explicit_rejection": true,
+    "missing_value_preserved_without_imputation": true,
+    "oldest_event_rejected_beyond_bound": true,
+    "one_reset_in_second_window": true,
+    "ordered_equals_bounded_disorder": true
+  },
+  "experiment_id": "E007",
+  "input_event_count": 20,
+  "limitations": [
+    "Synthetic algorithm prototype only; no production/application integration.",
+    "One series and two windows do not characterize real telemetry.",
+    "Bounded lateness policy necessarily rejects sufficiently old arrivals.",
+    "No RCA diagnosis or detector quality is evaluated."
+  ],
+  "run_id": "E007-R001",
+  "schedules": [
+    {
+      "exact_match": true,
+      "name": "ordered-control",
+      "offline_oracle": {
+        "accepted_ids": [
+          "e000",
+          "e001",
+          "e002",
+          "e003",
+          "e004",
+          "e005",
+          "e006",
+          "e007",
+          "e008",
+          "e009",
+          "e010",
+          "e011",
+          "e012",
+          "e013",
+          "e014",
+          "e015",
+          "e016",
+          "e017",
+          "e018",
+          "e019"
+        ],
+        "rejected": [
+          {
+            "event_id": "boundary-end",
+            "reason": "out_of_window"
+          }
+        ],
+        "windows": [
+          {
+            "counter_delta_count": 8,
+            "counter_delta_total": "9",
+            "end_ns": 1000000000,
+            "missing_value_count": 1,
+            "observation_mask": 1,
+            "reset_count": 0,
+            "sample_count": 10,
+            "start_ns": 0,
+            "valid_value_count": 9,
+            "value_mask": 1
+          },
+          {
+            "counter_delta_count": 10,
+            "counter_delta_total": "9",
+            "end_ns": 2000000000,
+            "missing_value_count": 0,
+            "observation_mask": 1,
+            "reset_count": 1,
+            "sample_count": 10,
+            "start_ns": 1000000000,
+            "valid_value_count": 10,
+            "value_mask": 1
+          }
+        ]
+      },
+      "online": {
+        "accepted_ids": [
+          "e000",
+          "e001",
+          "e002",
+          "e003",
+          "e004",
+          "e005",
+          "e006",
+          "e007",
+          "e008",
+          "e009",
+          "e010",
+          "e011",
+          "e012",
+          "e013",
+          "e014",
+          "e015",
+          "e016",
+          "e017",
+          "e018",
+          "e019"
+        ],
+        "rejected": [
+          {
+            "event_id": "boundary-end",
+            "reason": "out_of_window"
+          }
+        ],
+        "windows": [
+          {
+            "counter_delta_count": 8,
+            "counter_delta_total": "9",
+            "end_ns": 1000000000,
+            "missing_value_count": 1,
+            "observation_mask": 1,
+            "reset_count": 0,
+            "sample_count": 10,
+            "start_ns": 0,
+            "valid_value_count": 9,
+            "value_mask": 1
+          },
+          {
+            "counter_delta_count": 10,
+            "counter_delta_total": "9",
+            "end_ns": 2000000000,
+            "missing_value_count": 0,
+            "observation_mask": 1,
+            "reset_count": 1,
+            "sample_count": 10,
+            "start_ns": 1000000000,
+            "valid_value_count": 10,
+            "value_mask": 1
+          }
+        ]
+      }
+    },
+    {
+      "exact_match": true,
+      "name": "bounded-adjacent-reordering",
+      "offline_oracle": {
+        "accepted_ids": [
+          "e000",
+          "e001",
+          "e002",
+          "e003",
+          "e004",
+          "e005",
+          "e006",
+          "e007",
+          "e008",
+          "e009",
+          "e010",
+          "e011",
+          "e012",
+          "e013",
+          "e014",
+          "e015",
+          "e016",
+          "e017",
+          "e018",
+          "e019"
+        ],
+        "rejected": [
+          {
+            "event_id": "boundary-end",
+            "reason": "out_of_window"
+          }
+        ],
+        "windows": [
+          {
+            "counter_delta_count": 8,
+            "counter_delta_total": "9",
+            "end_ns": 1000000000,
+            "missing_value_count": 1,
+            "observation_mask": 1,
+            "reset_count": 0,
+            "sample_count": 10,
+            "start_ns": 0,
+            "valid_value_count": 9,
+            "value_mask": 1
+          },
+          {
+            "counter_delta_count": 10,
+            "counter_delta_total": "9",
+            "end_ns": 2000000000,
+            "missing_value_count": 0,
+            "observation_mask": 1,
+            "reset_count": 1,
+            "sample_count": 10,
+            "start_ns": 1000000000,
+            "valid_value_count": 10,
+            "value_mask": 1
+          }
+        ]
+      },
+      "online": {
+        "accepted_ids": [
+          "e000",
+          "e001",
+          "e002",
+          "e003",
+          "e004",
+          "e005",
+          "e006",
+          "e007",
+          "e008",
+          "e009",
+          "e010",
+          "e011",
+          "e012",
+          "e013",
+          "e014",
+          "e015",
+          "e016",
+          "e017",
+          "e018",
+          "e019"
+        ],
+        "rejected": [
+          {
+            "event_id": "boundary-end",
+            "reason": "out_of_window"
+          }
+        ],
+        "windows": [
+          {
+            "counter_delta_count": 8,
+            "counter_delta_total": "9",
+            "end_ns": 1000000000,
+            "missing_value_count": 1,
+            "observation_mask": 1,
+            "reset_count": 0,
+            "sample_count": 10,
+            "start_ns": 0,
+            "valid_value_count": 9,
+            "value_mask": 1
+          },
+          {
+            "counter_delta_count": 10,
+            "counter_delta_total": "9",
+            "end_ns": 2000000000,
+            "missing_value_count": 0,
+            "observation_mask": 1,
+            "reset_count": 1,
+            "sample_count": 10,
+            "start_ns": 1000000000,
+            "valid_value_count": 10,
+            "value_mask": 1
+          }
+        ]
+      }
+    },
+    {
+      "exact_match": true,
+      "name": "beyond-bound-late-event",
+      "offline_oracle": {
+        "accepted_ids": [
+          "e001",
+          "e002",
+          "e003",
+          "e004",
+          "e005",
+          "e006",
+          "e007",
+          "e008",
+          "e009",
+          "e010",
+          "e011",
+          "e012",
+          "e013",
+          "e014",
+          "e015",
+          "e016",
+          "e017",
+          "e018",
+          "e019"
+        ],
+        "rejected": [
+          {
+            "event_id": "e000",
+            "reason": "beyond_allowed_lateness"
+          },
+          {
+            "event_id": "boundary-end",
+            "reason": "out_of_window"
+          }
+        ],
+        "windows": [
+          {
+            "counter_delta_count": 7,
+            "counter_delta_total": "8",
+            "end_ns": 1000000000,
+            "missing_value_count": 1,
+            "observation_mask": 1,
+            "reset_count": 0,
+            "sample_count": 9,
+            "start_ns": 0,
+            "valid_value_count": 8,
+            "value_mask": 1
+          },
+          {
+            "counter_delta_count": 10,
+            "counter_delta_total": "9",
+            "end_ns": 2000000000,
+            "missing_value_count": 0,
+            "observation_mask": 1,
+            "reset_count": 1,
+            "sample_count": 10,
+            "start_ns": 1000000000,
+            "valid_value_count": 10,
+            "value_mask": 1
+          }
+        ]
+      },
+      "online": {
+        "accepted_ids": [
+          "e001",
+          "e002",
+          "e003",
+          "e004",
+          "e005",
+          "e006",
+          "e007",
+          "e008",
+          "e009",
+          "e010",
+          "e011",
+          "e012",
+          "e013",
+          "e014",
+          "e015",
+          "e016",
+          "e017",
+          "e018",
+          "e019"
+        ],
+        "rejected": [
+          {
+            "event_id": "e000",
+            "reason": "beyond_allowed_lateness"
+          },
+          {
+            "event_id": "boundary-end",
+            "reason": "out_of_window"
+          }
+        ],
+        "windows": [
+          {
+            "counter_delta_count": 7,
+            "counter_delta_total": "8",
+            "end_ns": 1000000000,
+            "missing_value_count": 1,
+            "observation_mask": 1,
+            "reset_count": 0,
+            "sample_count": 9,
+            "start_ns": 0,
+            "valid_value_count": 8,
+            "value_mask": 1
+          },
+          {
+            "counter_delta_count": 10,
+            "counter_delta_total": "9",
+            "end_ns": 2000000000,
+            "missing_value_count": 0,
+            "observation_mask": 1,
+            "reset_count": 1,
+            "sample_count": 10,
+            "start_ns": 1000000000,
+            "valid_value_count": 10,
+            "value_mask": 1
+          }
+        ]
+      }
+    }
+  ],
+  "status": "PASS",
+  "synthetic_counter_semantics": "explicitly defined in protocol"
+}

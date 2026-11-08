@@ -1,0 +1,36 @@
+{
+  "configuration_sha256": "fc2a5e2f615e6011cba72c587920e091bb850243e818f74ef95d752769e97338",
+  "experiment_id": "E007",
+  "git_head": "4dfd94c0e2674b36f8e0fe2b7e5d7709e1f43d71",
+  "git_status_excerpt": [
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E006.md",
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E007.md",
+    "?? docs/research-design/2026-11-06-rcaeval-system-field-map.md",
+    "?? docs/research-design/2026-11-07-rcaeval-case-coverage-audit.md",
+    "?? docs/research-design/2026-11-07-rcaeval-index-coverage.md",
+    "?? docs/research-design/2026-11-07-rcaeval-nine-group-audit.md",
+    "?? experiments/E005_telemetry_attachment/results/E005-R002/",
+    "?? experiments/E006_rcaeval_feature_coverage/",
+    "?? experiments/E007_temporal_correctness/",
+    "?? scrap/",
+    "?? scripts/audit_rcaeval_case.py",
+    "?? scripts/audit_rcaeval_case_index.py",
+    "?? src/dce_foundation/representation_v2/temporal.py",
+    "?? tools/"
+  ],
+  "network_access": "none",
+  "openresearch": "orx unavailable; local runner",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "protocol_sha256": "ed6727e720fb116749e2df227be1fd5252b32d739f03e71a616d26bacb8e4ef3",
+  "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+  "run_id": "E007-R001",
+  "source_hashes": {
+    "experiments/E007_temporal_correctness/README.md": "2026ad4be1c2f152b46faa95bc829a751c5a04f8c610b8d03e75a2a934c49b69",
+    "experiments/E007_temporal_correctness/configuration.json": "fc2a5e2f615e6011cba72c587920e091bb850243e818f74ef95d752769e97338",
+    "experiments/E007_temporal_correctness/hypothesis.md": "7345b332f1d9b74ed6405658aedd7ad1d2148d7024ae97be8b74483bd9c5b031",
+    "experiments/E007_temporal_correctness/protocol.md": "ed6727e720fb116749e2df227be1fd5252b32d739f03e71a616d26bacb8e4ef3",
+    "experiments/E007_temporal_correctness/run_experiment.py": "7c64abd9c04922411b2e9d1597d459818e47691280f057de2c15ecbff387a6d2",
+    "src/dce_foundation/representation_v2/temporal.py": "aee684d939aa875bbb3174b5ebe656a884043a523dcf0fb07cf99fcf64d9ed75"
+  },
+  "source_snapshot_sha256": "18215b1100a2de00eff141089c4397792182728c2cabb042346cbf5f97f7b194"
+}
