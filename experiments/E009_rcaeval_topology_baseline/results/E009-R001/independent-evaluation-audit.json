@@ -1,0 +1,38 @@
+{
+  "aggregates_recomputed": {
+    "graph_disabled_uniform_v1": {
+      "abstentions": 0.5555555555555556,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "root_explanation_coverage": 0.0,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.04285714285714285,
+      "top3_deterministic": 0.2222222222222222,
+      "top3_tie_aware": 0.12857142857142856,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "topology_shared_callers_v1": {
+      "abstentions": 0.5555555555555556,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "root_explanation_coverage": 0.3333333333333333,
+      "top1_deterministic": 0.0,
+      "top1_tie_aware": 0.0,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.07407407407407407,
+      "top_score_set_exact_accuracy": 0.0
+    }
+  },
+  "audit": "independent evaluator-side recomputation",
+  "case_join_count": 9,
+  "case_result_count": 9,
+  "prediction_sha256": "36ec3964ce888b50001a70a3f02c23d33d81e4c5a7d0fa3ea62395795e5a9545",
+  "report_contains_root_service_labels": false,
+  "saved_aggregate_match": false,
+  "selection_and_label_index_hashes": {
+    "case_index": "c49a288920dbba2e8e724679a14636d5c7eb2b45426bba14007ef79a6c0ab1bb",
+    "sample_selection": "bab706bdc571016c808b0da6367b5fcff94ca04c6fa82e1d3dddea694c9ee349",
+    "selection_manifest": "e9a7f6340b29acece307e80120bb9cdb90928c5a0b0788dd4ef76fe1067600a7"
+  },
+  "status": "FAIL"
+}

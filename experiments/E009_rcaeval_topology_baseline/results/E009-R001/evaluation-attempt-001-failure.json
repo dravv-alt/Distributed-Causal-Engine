@@ -1,0 +1,9 @@
+﻿{
+    "attempt":  "evaluation-attempt-001",
+    "stage":  "pre-label-join-validation",
+    "outcome":  "FAILED",
+    "error":  "selection mapping did not cover the frozen blind case IDs",
+    "evaluator_label_index_opened":  false,
+    "prediction_sha256":  "36ec3964ce888b50001a70a3f02c23d33d81e4c5a7d0fa3ea62395795e5a9545",
+    "reason":  "The saved sample-selection manifest lacks RE2-TT-case-0001 although that blind case is in the frozen E009 population."
+}

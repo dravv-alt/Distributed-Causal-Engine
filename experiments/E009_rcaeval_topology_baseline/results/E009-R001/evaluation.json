@@ -1,0 +1,305 @@
+{
+  "aggregate": {
+    "graph_disabled_uniform_v1": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "root_explanation_coverage": 0.0,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.04285714285714285,
+      "top3_deterministic": 0.2222222222222222,
+      "top3_tie_aware": 0.12857142857142856,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "topology_shared_callers_v1": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "root_explanation_coverage": 0.3333333333333333,
+      "top1_deterministic": 0.0,
+      "top1_tie_aware": 0.0,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.07407407407407407,
+      "top_score_set_exact_accuracy": 0.0
+    }
+  },
+  "case_count": 9,
+  "dataset_revision": "afeacb11bcc94dadfd1c8f483ee4377b2b8b614e",
+  "evaluation_attempt": 2,
+  "experiment_id": "E009",
+  "label_access_order": "after prediction seal and independent blind audit",
+  "label_index_sha256": "c49a288920dbba2e8e724679a14636d5c7eb2b45426bba14007ef79a6c0ab1bb",
+  "label_strings_written_to_report": false,
+  "limitations": [
+    "Nine selected cases are not a probability sample.",
+    "No significance test or population confidence interval is reported.",
+    "Topology is structural evidence only, not a fault symptom or causal edge.",
+    "Exact service-name matching can treat naming differences as absent candidates.",
+    "This retrospective sample result does not establish online detection."
+  ],
+  "per_blind_case": [
+    {
+      "blind_case_id": "RE2-TT-case-0001",
+      "candidate_count": 20,
+      "dataset_group": "RE2-TT",
+      "method_metrics": {
+        "graph_disabled_uniform_v1": {
+          "root_candidate_present": true,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.05,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.15,
+          "top_score_set_exact": 0
+        },
+        "topology_shared_callers_v1": {
+          "root_candidate_present": true,
+          "root_explanation_present": true,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "root_candidate_present": true,
+      "topology_abstained": false,
+      "trace_available": true
+    },
+    {
+      "blind_case_id": "blind-case-0002",
+      "candidate_count": 0,
+      "dataset_group": "RE1-OB",
+      "method_metrics": {
+        "graph_disabled_uniform_v1": {
+          "root_candidate_present": false,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_shared_callers_v1": {
+          "root_candidate_present": false,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "root_candidate_present": false,
+      "topology_abstained": true,
+      "trace_available": false
+    },
+    {
+      "blind_case_id": "blind-case-0003",
+      "candidate_count": 0,
+      "dataset_group": "RE1-SS",
+      "method_metrics": {
+        "graph_disabled_uniform_v1": {
+          "root_candidate_present": false,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_shared_callers_v1": {
+          "root_candidate_present": false,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "root_candidate_present": false,
+      "topology_abstained": true,
+      "trace_available": false
+    },
+    {
+      "blind_case_id": "blind-case-0004",
+      "candidate_count": 0,
+      "dataset_group": "RE1-TT",
+      "method_metrics": {
+        "graph_disabled_uniform_v1": {
+          "root_candidate_present": false,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_shared_callers_v1": {
+          "root_candidate_present": false,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "root_candidate_present": false,
+      "topology_abstained": true,
+      "trace_available": false
+    },
+    {
+      "blind_case_id": "blind-case-0005",
+      "candidate_count": 7,
+      "dataset_group": "RE2-OB",
+      "method_metrics": {
+        "graph_disabled_uniform_v1": {
+          "root_candidate_present": true,
+          "root_explanation_present": false,
+          "top1_deterministic": 1,
+          "top1_tie_aware": 0.14285714285714285,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 0.42857142857142855,
+          "top_score_set_exact": 0
+        },
+        "topology_shared_callers_v1": {
+          "root_candidate_present": true,
+          "root_explanation_present": true,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "root_candidate_present": true,
+      "topology_abstained": false,
+      "trace_available": true
+    },
+    {
+      "blind_case_id": "blind-case-0006",
+      "candidate_count": 0,
+      "dataset_group": "RE2-SS",
+      "method_metrics": {
+        "graph_disabled_uniform_v1": {
+          "root_candidate_present": false,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_shared_callers_v1": {
+          "root_candidate_present": false,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "root_candidate_present": false,
+      "topology_abstained": true,
+      "trace_available": false
+    },
+    {
+      "blind_case_id": "blind-case-0007",
+      "candidate_count": 7,
+      "dataset_group": "RE3-OB",
+      "method_metrics": {
+        "graph_disabled_uniform_v1": {
+          "root_candidate_present": true,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.14285714285714285,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 0.42857142857142855,
+          "top_score_set_exact": 0
+        },
+        "topology_shared_callers_v1": {
+          "root_candidate_present": true,
+          "root_explanation_present": true,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 0.6666666666666666,
+          "top_score_set_exact": 0
+        }
+      },
+      "root_candidate_present": true,
+      "topology_abstained": false,
+      "trace_available": true
+    },
+    {
+      "blind_case_id": "blind-case-0008",
+      "candidate_count": 0,
+      "dataset_group": "RE3-SS",
+      "method_metrics": {
+        "graph_disabled_uniform_v1": {
+          "root_candidate_present": false,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_shared_callers_v1": {
+          "root_candidate_present": false,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "root_candidate_present": false,
+      "topology_abstained": true,
+      "trace_available": false
+    },
+    {
+      "blind_case_id": "blind-case-0009",
+      "candidate_count": 20,
+      "dataset_group": "RE3-TT",
+      "method_metrics": {
+        "graph_disabled_uniform_v1": {
+          "root_candidate_present": true,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.05,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.15,
+          "top_score_set_exact": 0
+        },
+        "topology_shared_callers_v1": {
+          "root_candidate_present": true,
+          "root_explanation_present": false,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "root_candidate_present": true,
+      "topology_abstained": false,
+      "trace_available": true
+    }
+  ],
+  "run_id": "E009-R001",
+  "selection_sources_sha256": {
+    "first_case": "e9a7f6340b29acece307e80120bb9cdb90928c5a0b0788dd4ef76fe1067600a7",
+    "remaining_cases": "bab706bdc571016c808b0da6367b5fcff94ca04c6fa82e1d3dddea694c9ee349"
+  },
+  "topology_minus_uniform": {
+    "top1_deterministic": -0.1111111111111111,
+    "top1_tie_aware": -0.04285714285714285,
+    "top3_deterministic": -0.1111111111111111,
+    "top3_tie_aware": -0.05449735449735449
+  }
+}

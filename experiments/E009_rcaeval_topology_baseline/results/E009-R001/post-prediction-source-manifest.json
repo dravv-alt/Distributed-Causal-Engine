@@ -1,0 +1,13 @@
+{
+  "failed_evaluator_script_sha256": "fc187a0718b6d0ead58ee93eb010a145448a88287e245509ad9a944b8053bc50",
+  "independent_audit_script_sha256": "66ccd8884339733a2f2678d70db1c199859c3b67a6988bdbf5d2ad9316387dbf",
+  "label_index_sha256": "c49a288920dbba2e8e724679a14636d5c7eb2b45426bba14007ef79a6c0ab1bb",
+  "labels_opened_only_after_prediction_seal": true,
+  "mapping_recovery": "Evaluator attempt 1 stopped before label-index read because it used only the 8-case map. This retry combined the exact original one-case selection manifest with that 8-case map; scope and scoring unchanged.",
+  "mapping_sources_sha256": {
+    "sample_selection": "bab706bdc571016c808b0da6367b5fcff94ca04c6fa82e1d3dddea694c9ee349",
+    "selection_manifest": "e9a7f6340b29acece307e80120bb9cdb90928c5a0b0788dd4ef76fe1067600a7"
+  },
+  "prediction_sha256": "36ec3964ce888b50001a70a3f02c23d33d81e4c5a7d0fa3ea62395795e5a9545",
+  "successful_evaluator_script_sha256": "73a6a4674a96d9900eabb1a2f8b9a9a27428171f50274c48850e39f9a4fbcef5"
+}
