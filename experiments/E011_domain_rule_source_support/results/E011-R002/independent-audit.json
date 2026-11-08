@@ -1,0 +1,44 @@
+{
+  "run_id": "E011-R002",
+  "status": "PASS",
+  "input_hashes_match": true,
+  "term_counts_match": true,
+  "rule_family_counts_match": true,
+  "independent_tokenizer": "ASCII punctuation translated to spaces; Python set membership",
+  "evaluator_root_accessed": false,
+  "recomputed_term_counts": {
+    "database": {
+      "field_names": 0,
+      "log_messages": 13
+    },
+    "db": {
+      "field_names": 50,
+      "log_messages": 33
+    },
+    "pool": {
+      "field_names": 0,
+      "log_messages": 2019
+    },
+    "saturat": {
+      "field_names": 0,
+      "log_messages": 0
+    },
+    "overload": {
+      "field_names": 0,
+      "log_messages": 0
+    },
+    "exhaust": {
+      "field_names": 0,
+      "log_messages": 0
+    },
+    "latency": {
+      "field_names": 238,
+      "log_messages": 0
+    }
+  },
+  "recomputed_rule_family_counts": {
+    "database_and_saturation_or_overload_same_message": 0,
+    "pool_and_saturation_or_exhaustion_same_message": 0,
+    "metric_fields_with_latency_token": 238
+  }
+}

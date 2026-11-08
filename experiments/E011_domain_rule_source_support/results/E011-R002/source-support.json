@@ -1,0 +1,745 @@
+{
+  "run_id": "E011-R002",
+  "protocol_amendment": "protocol-amendment-R002.md",
+  "scope": "label-blind token-boundary source-support audit; not rule validation",
+  "dataset_revision": "afeacb11bcc94dadfd1c8f483ee4377b2b8b614e",
+  "evaluator_root_accessed": false,
+  "network_access": false,
+  "case_count": 9,
+  "total_rows": {
+    "metrics": 9886,
+    "logs": 345991,
+    "traces": 477674
+  },
+  "literal_term_counts": {
+    "database": {
+      "field_names": 0,
+      "log_messages": 13
+    },
+    "db": {
+      "field_names": 50,
+      "log_messages": 33
+    },
+    "pool": {
+      "field_names": 0,
+      "log_messages": 2019
+    },
+    "saturat": {
+      "field_names": 0,
+      "log_messages": 0
+    },
+    "overload": {
+      "field_names": 0,
+      "log_messages": 0
+    },
+    "exhaust": {
+      "field_names": 0,
+      "log_messages": 0
+    },
+    "latency": {
+      "field_names": 238,
+      "log_messages": 0
+    }
+  },
+  "rule_family_availability_counts": {
+    "database_and_saturation_or_overload_same_message": 0,
+    "pool_and_saturation_or_exhaustion_same_message": 0,
+    "metric_fields_with_latency_token": 238
+  },
+  "cases": [
+    {
+      "case_id": "RE2-TT-case-0001",
+      "modalities": {
+        "metrics": {
+          "rows": 1441,
+          "field_count": 346,
+          "latency_field_names": [
+            "ts-admin-basic-info-service_latency-50",
+            "ts-admin-travel-service_latency-50",
+            "ts-assurance-service_latency-50",
+            "ts-auth-service_latency-50",
+            "ts-basic-service_latency-50",
+            "ts-config-service_latency-50",
+            "ts-consign-price-service_latency-50",
+            "ts-consign-service_latency-50",
+            "ts-food-map-service_latency-50",
+            "ts-food-service_latency-50",
+            "ts-inside-payment-service_latency-50",
+            "ts-order-other-service_latency-50",
+            "ts-order-service_latency-50",
+            "ts-payment-service_latency-50",
+            "ts-price-service_latency-50",
+            "ts-route-service_latency-50",
+            "ts-station-service_latency-50",
+            "ts-ticketinfo-service_latency-50",
+            "ts-train-service_latency-50",
+            "ts-travel-service_latency-50",
+            "ts-travel2-service_latency-50",
+            "ts-ui-dashboard_latency-50",
+            "ts-admin-basic-info-service_latency-90",
+            "ts-admin-travel-service_latency-90",
+            "ts-assurance-service_latency-90",
+            "ts-auth-service_latency-90",
+            "ts-basic-service_latency-90",
+            "ts-config-service_latency-90",
+            "ts-consign-price-service_latency-90",
+            "ts-consign-service_latency-90",
+            "ts-food-map-service_latency-90",
+            "ts-food-service_latency-90",
+            "ts-inside-payment-service_latency-90",
+            "ts-order-other-service_latency-90",
+            "ts-order-service_latency-90",
+            "ts-payment-service_latency-90",
+            "ts-price-service_latency-90",
+            "ts-route-service_latency-90",
+            "ts-station-service_latency-90",
+            "ts-ticketinfo-service_latency-90",
+            "ts-train-service_latency-90",
+            "ts-travel-service_latency-90",
+            "ts-travel2-service_latency-90",
+            "ts-ui-dashboard_latency-90"
+          ]
+        },
+        "logs": {
+          "rows": 57359,
+          "field_count": 3,
+          "messages_with_database_saturation_terms": 0,
+          "messages_with_pool_saturation_terms": 0
+        },
+        "traces": {
+          "rows": 122969,
+          "field_count": 11
+        }
+      },
+      "literal_counts": {
+        "database": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "db": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "pool": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "saturat": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "overload": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "exhaust": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "latency": {
+          "field_names": 44,
+          "log_messages": 0
+        }
+      }
+    },
+    {
+      "case_id": "blind-case-0002",
+      "modalities": {
+        "metrics": {
+          "rows": 63,
+          "field_count": 59,
+          "latency_field_names": [
+            "adservice_latency",
+            "cartservice_latency",
+            "checkoutservice_latency",
+            "currencyservice_latency",
+            "emailservice_latency",
+            "frontend_latency",
+            "paymentservice_latency",
+            "productcatalogservice_latency",
+            "recommendationservice_latency",
+            "shippingservice_latency"
+          ]
+        }
+      },
+      "literal_counts": {
+        "database": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "db": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "pool": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "saturat": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "overload": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "exhaust": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "latency": {
+          "field_names": 10,
+          "log_messages": 0
+        }
+      }
+    },
+    {
+      "case_id": "blind-case-0003",
+      "modalities": {
+        "metrics": {
+          "rows": 607,
+          "field_count": 61,
+          "latency_field_names": [
+            "carts_latency-50",
+            "catalogue_latency-50",
+            "front-end_latency-50",
+            "orders_latency-50",
+            "payment_latency-50",
+            "queue-master_latency-50",
+            "shipping_latency-50",
+            "user_latency-50",
+            "carts_latency-90",
+            "catalogue_latency-90",
+            "front-end_latency-90",
+            "orders_latency-90",
+            "payment_latency-90",
+            "queue-master_latency-90",
+            "shipping_latency-90",
+            "user_latency-90"
+          ]
+        }
+      },
+      "literal_counts": {
+        "database": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "db": {
+          "field_names": 10,
+          "log_messages": 0
+        },
+        "pool": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "saturat": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "overload": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "exhaust": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "latency": {
+          "field_names": 16,
+          "log_messages": 0
+        }
+      }
+    },
+    {
+      "case_id": "blind-case-0004",
+      "modalities": {
+        "metrics": {
+          "rows": 721,
+          "field_count": 222,
+          "latency_field_names": [
+            "ts-admin-basic-info-service_latency-50",
+            "ts-admin-travel-service_latency-50",
+            "ts-assurance-service_latency-50",
+            "ts-auth-service_latency-50",
+            "ts-basic-service_latency-50",
+            "ts-config-service_latency-50",
+            "ts-consign-price-service_latency-50",
+            "ts-consign-service_latency-50",
+            "ts-contacts-service_latency-50",
+            "ts-food-map-service_latency-50",
+            "ts-food-service_latency-50",
+            "ts-inside-payment-service_latency-50",
+            "ts-notification-service_latency-50",
+            "ts-order-other-service_latency-50",
+            "ts-order-service_latency-50",
+            "ts-payment-service_latency-50",
+            "ts-preserve-other-service_latency-50",
+            "ts-preserve-service_latency-50",
+            "ts-price-service_latency-50",
+            "ts-route-service_latency-50",
+            "ts-seat-service_latency-50",
+            "ts-security-service_latency-50",
+            "ts-station-service_latency-50",
+            "ts-ticketinfo-service_latency-50",
+            "ts-train-service_latency-50",
+            "ts-travel-service_latency-50",
+            "ts-travel2-service_latency-50",
+            "ts-ui-dashboard_latency-50",
+            "ts-user-service_latency-50",
+            "ts-admin-basic-info-service_latency-90",
+            "ts-admin-travel-service_latency-90",
+            "ts-assurance-service_latency-90",
+            "ts-auth-service_latency-90",
+            "ts-basic-service_latency-90",
+            "ts-config-service_latency-90",
+            "ts-consign-price-service_latency-90",
+            "ts-consign-service_latency-90",
+            "ts-contacts-service_latency-90",
+            "ts-food-map-service_latency-90",
+            "ts-food-service_latency-90",
+            "ts-inside-payment-service_latency-90",
+            "ts-notification-service_latency-90",
+            "ts-order-other-service_latency-90",
+            "ts-order-service_latency-90",
+            "ts-payment-service_latency-90",
+            "ts-preserve-other-service_latency-90",
+            "ts-preserve-service_latency-90",
+            "ts-price-service_latency-90",
+            "ts-route-service_latency-90",
+            "ts-seat-service_latency-90",
+            "ts-security-service_latency-90",
+            "ts-station-service_latency-90",
+            "ts-ticketinfo-service_latency-90",
+            "ts-train-service_latency-90",
+            "ts-travel-service_latency-90",
+            "ts-travel2-service_latency-90",
+            "ts-ui-dashboard_latency-90",
+            "ts-user-service_latency-90"
+          ]
+        }
+      },
+      "literal_counts": {
+        "database": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "db": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "pool": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "saturat": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "overload": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "exhaust": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "latency": {
+          "field_names": 58,
+          "log_messages": 0
+        }
+      }
+    },
+    {
+      "case_id": "blind-case-0005",
+      "modalities": {
+        "metrics": {
+          "rows": 930,
+          "field_count": 75,
+          "latency_field_names": [
+            "adservice_latency-50",
+            "cartservice_latency-50",
+            "checkoutservice_latency-50",
+            "currencyservice_latency-50",
+            "emailservice_latency-50",
+            "frontend_latency-50",
+            "paymentservice_latency-50",
+            "productcatalogservice_latency-50",
+            "recommendationservice_latency-50",
+            "shippingservice_latency-50",
+            "adservice_latency-90",
+            "cartservice_latency-90",
+            "checkoutservice_latency-90",
+            "currencyservice_latency-90",
+            "emailservice_latency-90",
+            "frontend_latency-90",
+            "paymentservice_latency-90",
+            "productcatalogservice_latency-90",
+            "recommendationservice_latency-90",
+            "shippingservice_latency-90"
+          ]
+        },
+        "logs": {
+          "rows": 110067,
+          "field_count": 3,
+          "messages_with_database_saturation_terms": 0,
+          "messages_with_pool_saturation_terms": 0
+        },
+        "traces": {
+          "rows": 199960,
+          "field_count": 11
+        }
+      },
+      "literal_counts": {
+        "database": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "db": {
+          "field_names": 0,
+          "log_messages": 4
+        },
+        "pool": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "saturat": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "overload": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "exhaust": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "latency": {
+          "field_names": 20,
+          "log_messages": 0
+        }
+      }
+    },
+    {
+      "case_id": "blind-case-0006",
+      "modalities": {
+        "metrics": {
+          "rows": 1441,
+          "field_count": 77,
+          "latency_field_names": [
+            "carts_latency-50",
+            "catalogue_latency-50",
+            "front-end_latency-50",
+            "orders_latency-50",
+            "payment_latency-50",
+            "shipping_latency-50",
+            "user_latency-50",
+            "carts_latency-90",
+            "catalogue_latency-90",
+            "front-end_latency-90",
+            "orders_latency-90",
+            "payment_latency-90",
+            "shipping_latency-90",
+            "user_latency-90"
+          ]
+        },
+        "logs": {
+          "rows": 57320,
+          "field_count": 3,
+          "messages_with_database_saturation_terms": 0,
+          "messages_with_pool_saturation_terms": 0
+        }
+      },
+      "literal_counts": {
+        "database": {
+          "field_names": 0,
+          "log_messages": 13
+        },
+        "db": {
+          "field_names": 20,
+          "log_messages": 8
+        },
+        "pool": {
+          "field_names": 0,
+          "log_messages": 1296
+        },
+        "saturat": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "overload": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "exhaust": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "latency": {
+          "field_names": 14,
+          "log_messages": 0
+        }
+      }
+    },
+    {
+      "case_id": "blind-case-0007",
+      "modalities": {
+        "metrics": {
+          "rows": 1441,
+          "field_count": 69,
+          "latency_field_names": [
+            "adservice_latency-50",
+            "cartservice_latency-50",
+            "checkoutservice_latency-50",
+            "currencyservice_latency-50",
+            "emailservice_latency-50",
+            "frontend_latency-50",
+            "paymentservice_latency-50",
+            "productcatalogservice_latency-50",
+            "recommendationservice_latency-50",
+            "shippingservice_latency-50",
+            "adservice_latency-90",
+            "cartservice_latency-90",
+            "checkoutservice_latency-90",
+            "currencyservice_latency-90",
+            "emailservice_latency-90",
+            "frontend_latency-90",
+            "paymentservice_latency-90",
+            "productcatalogservice_latency-90",
+            "recommendationservice_latency-90",
+            "shippingservice_latency-90"
+          ]
+        },
+        "logs": {
+          "rows": 61828,
+          "field_count": 3,
+          "messages_with_database_saturation_terms": 0,
+          "messages_with_pool_saturation_terms": 0
+        },
+        "traces": {
+          "rows": 116809,
+          "field_count": 11
+        }
+      },
+      "literal_counts": {
+        "database": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "db": {
+          "field_names": 0,
+          "log_messages": 4
+        },
+        "pool": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "saturat": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "overload": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "exhaust": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "latency": {
+          "field_names": 20,
+          "log_messages": 0
+        }
+      }
+    },
+    {
+      "case_id": "blind-case-0008",
+      "modalities": {
+        "metrics": {
+          "rows": 1441,
+          "field_count": 82,
+          "latency_field_names": [
+            "carts_latency-50",
+            "catalogue_latency-50",
+            "front-end_latency-50",
+            "orders_latency-50",
+            "payment_latency-50",
+            "queue-master_latency-50",
+            "shipping_latency-50",
+            "user_latency-50",
+            "carts_latency-90",
+            "catalogue_latency-90",
+            "front-end_latency-90",
+            "orders_latency-90",
+            "payment_latency-90",
+            "queue-master_latency-90",
+            "shipping_latency-90",
+            "user_latency-90"
+          ]
+        },
+        "logs": {
+          "rows": 41777,
+          "field_count": 3,
+          "messages_with_database_saturation_terms": 0,
+          "messages_with_pool_saturation_terms": 0
+        }
+      },
+      "literal_counts": {
+        "database": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "db": {
+          "field_names": 20,
+          "log_messages": 17
+        },
+        "pool": {
+          "field_names": 0,
+          "log_messages": 720
+        },
+        "saturat": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "overload": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "exhaust": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "latency": {
+          "field_names": 16,
+          "log_messages": 0
+        }
+      }
+    },
+    {
+      "case_id": "blind-case-0009",
+      "modalities": {
+        "metrics": {
+          "rows": 1801,
+          "field_count": 295,
+          "latency_field_names": [
+            "ts-admin-basic-info-service_latency-50",
+            "ts-admin-travel-service_latency-50",
+            "ts-assurance-service_latency-50",
+            "ts-auth-service_latency-50",
+            "ts-basic-service_latency-50",
+            "ts-config-service_latency-50",
+            "ts-consign-price-service_latency-50",
+            "ts-consign-service_latency-50",
+            "ts-food-map-service_latency-50",
+            "ts-food-service_latency-50",
+            "ts-inside-payment-service_latency-50",
+            "ts-order-other-service_latency-50",
+            "ts-order-service_latency-50",
+            "ts-price-service_latency-50",
+            "ts-route-service_latency-50",
+            "ts-station-service_latency-50",
+            "ts-ticketinfo-service_latency-50",
+            "ts-train-service_latency-50",
+            "ts-travel-service_latency-50",
+            "ts-travel2-service_latency-50",
+            "ts-admin-basic-info-service_latency-90",
+            "ts-admin-travel-service_latency-90",
+            "ts-assurance-service_latency-90",
+            "ts-auth-service_latency-90",
+            "ts-basic-service_latency-90",
+            "ts-config-service_latency-90",
+            "ts-consign-price-service_latency-90",
+            "ts-consign-service_latency-90",
+            "ts-food-map-service_latency-90",
+            "ts-food-service_latency-90",
+            "ts-inside-payment-service_latency-90",
+            "ts-order-other-service_latency-90",
+            "ts-order-service_latency-90",
+            "ts-price-service_latency-90",
+            "ts-route-service_latency-90",
+            "ts-station-service_latency-90",
+            "ts-ticketinfo-service_latency-90",
+            "ts-train-service_latency-90",
+            "ts-travel-service_latency-90",
+            "ts-travel2-service_latency-90"
+          ]
+        },
+        "logs": {
+          "rows": 17640,
+          "field_count": 3,
+          "messages_with_database_saturation_terms": 0,
+          "messages_with_pool_saturation_terms": 0
+        },
+        "traces": {
+          "rows": 37936,
+          "field_count": 11
+        }
+      },
+      "literal_counts": {
+        "database": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "db": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "pool": {
+          "field_names": 0,
+          "log_messages": 3
+        },
+        "saturat": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "overload": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "exhaust": {
+          "field_names": 0,
+          "log_messages": 0
+        },
+        "latency": {
+          "field_names": 40,
+          "log_messages": 0
+        }
+      }
+    }
+  ],
+  "input_hashes": {
+    "data/rcaeval/inference/RE2-TT-case-0001/logs.parquet": "a769be23b323f895904c6be1fffeb112272ae3155cc30e541e05c981fee48fb1",
+    "data/rcaeval/inference/RE2-TT-case-0001/metrics.parquet": "be0b6f65d3989208b9aae0d3ca3e0ad5acb8955fd8ba27e104f80f46f7b11625",
+    "data/rcaeval/inference/RE2-TT-case-0001/traces.parquet": "27004088d2172421fb6ba40da73b66b9161d922b7b20110411eb0d64105c9cf9",
+    "data/rcaeval/inference/blind-case-0002/metrics.parquet": "b05a5a4d5e05ba6ba77836f242e0f5f794048e346c9bd4a69b9e716fef2423aa",
+    "data/rcaeval/inference/blind-case-0003/metrics.parquet": "9f64528e70250d3be1c20aabae441ae937786de4cebcc5dee4b993790647995f",
+    "data/rcaeval/inference/blind-case-0004/metrics.parquet": "052c7f9c906ebb414627011cb411856d2399ee4625922af8c803fcbfd4858f7a",
+    "data/rcaeval/inference/blind-case-0005/logs.parquet": "36fd5701f2d6e1f2d93131985d6feae5e284bdcbb21828ef9f3e90271a79f6b7",
+    "data/rcaeval/inference/blind-case-0005/metrics.parquet": "11f2df96b6b2b60a9600bacd8d3163b2f31a614aa756c19adfc51a41bcbebfc7",
+    "data/rcaeval/inference/blind-case-0005/traces.parquet": "f833e959286b706b60307fc3beca2980f26a0dda62782362dbcb34e7f696b3d1",
+    "data/rcaeval/inference/blind-case-0006/logs.parquet": "799a11372e63e42b95f23f4819c7976c220e04081ce4ab9cae82776d6b5f2627",
+    "data/rcaeval/inference/blind-case-0006/metrics.parquet": "8d94a9276ef819cb6b6c09fc7efad007ae44e1ca2c753d437b37a35cb5890948",
+    "data/rcaeval/inference/blind-case-0007/logs.parquet": "ee8ab1e09786ce9e6f917f1e847f395918f101a10af505b3da05d2f3f37b2662",
+    "data/rcaeval/inference/blind-case-0007/metrics.parquet": "098251f8162ff109e401a04ab231e97ad3f42c31df859b654e74e8019e4b1ed4",
+    "data/rcaeval/inference/blind-case-0007/traces.parquet": "4fe4f35bd2560ff05a410aa78a2cc4f664299f8dd47eef9035a354f768ae23a8",
+    "data/rcaeval/inference/blind-case-0008/logs.parquet": "c8ba2540b6d37c8c407d530b47d4dcecd53f86a71b61992f7fefe1f767885cc9",
+    "data/rcaeval/inference/blind-case-0008/metrics.parquet": "476b6547a3edb9b13ee3d6916bf0f20800aacd2f0baeb32d6f82219db6faf278",
+    "data/rcaeval/inference/blind-case-0009/logs.parquet": "3305db7b2332b7a85a4526002883c774c5a67e921eb32dcdd74744c27ae94743",
+    "data/rcaeval/inference/blind-case-0009/metrics.parquet": "5fbb13acf53b8bc73cd30b7fdb1054f1e55fb4f7a3209bbc1992a83a03aaeba8",
+    "data/rcaeval/inference/blind-case-0009/traces.parquet": "06dd9fe84aa894a6c536fb15fa6f4e5a7c8e9f1dd895f784fa5dc8fc773e5240",
+    "src/dce_foundation/domain.py": "307f43ef0306caf45fbc1405e41377afd6892c152cae2b12cb6bc77e311f23c5"
+  },
+  "environment": {
+    "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "polars": "1.43.2"
+  },
+  "random_seed": null,
+  "limitations": [
+    "Token presence does not establish signal semantics, truth, or identity.",
+    "The log co-occurrence checks are lexical only and are not rule firing evidence.",
+    "Latency field names do not establish units, aggregation, health bounds, or an anomaly.",
+    "No localization delta or rule/path accuracy can be estimated from this run.",
+    "The selected cases are reused from E010 and are not held out."
+  ]
+}
