@@ -1,0 +1,919 @@
+{
+  "aggregate": {
+    "graph_disabled_uniform_e009": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.04285714285714285,
+      "top3_deterministic": 0.2222222222222222,
+      "top3_tie_aware": 0.12857142857142856,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "temporal_only_0.01": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.05555555555555555,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "temporal_only_0.05": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.05555555555555555,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "temporal_only_0.10": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.05555555555555555,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "topology_only_e009": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.0,
+      "top1_tie_aware": 0.0,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.07407407407407407,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "topology_temporal_0.01": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.1111111111111111,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.1111111111111111
+    },
+    "topology_temporal_0.05": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.1111111111111111,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.1111111111111111
+    },
+    "topology_temporal_0.10": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.1111111111111111,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.1111111111111111,
+      "top_score_set_exact_accuracy": 0.1111111111111111
+    }
+  },
+  "all_temporal_orders_invariant": true,
+  "case_count": 9,
+  "dataset_revision": "afeacb11bcc94dadfd1c8f483ee4377b2b8b614e",
+  "evaluator_source_hashes": {
+    "label_index": "c49a288920dbba2e8e724679a14636d5c7eb2b45426bba14007ef79a6c0ab1bb",
+    "sample_selection": "bab706bdc571016c808b0da6367b5fcff94ca04c6fa82e1d3dddea694c9ee349",
+    "selection_manifest": "e9a7f6340b29acece307e80120bb9cdb90928c5a0b0788dd4ef76fe1067600a7"
+  },
+  "experiment_id": "E010",
+  "limits": [
+    "The nine cases are selected, not a probability sample.",
+    "Timestamp units, timezone, clock synchronization, fault onset, and delay semantics are UNKNOWN.",
+    "Relative bounds are sensitivity settings, not physical propagation latency limits.",
+    "Span frequency/order is instrumentation-dependent; no symptom detector is evaluated.",
+    "This retrospective sample is not held-out or online evaluation."
+  ],
+  "localization_delta_vs_topology": {
+    "temporal_only_0.01": {
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.05555555555555555,
+      "top3_deterministic": 0.0,
+      "top3_tie_aware": 0.037037037037037035
+    },
+    "temporal_only_0.05": {
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.05555555555555555,
+      "top3_deterministic": 0.0,
+      "top3_tie_aware": 0.037037037037037035
+    },
+    "temporal_only_0.10": {
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.05555555555555555,
+      "top3_deterministic": 0.0,
+      "top3_tie_aware": 0.037037037037037035
+    },
+    "topology_temporal_0.01": {
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.1111111111111111,
+      "top3_deterministic": 0.0,
+      "top3_tie_aware": 0.037037037037037035
+    },
+    "topology_temporal_0.05": {
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.1111111111111111,
+      "top3_deterministic": 0.0,
+      "top3_tie_aware": 0.037037037037037035
+    },
+    "topology_temporal_0.10": {
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.1111111111111111,
+      "top3_deterministic": 0.0,
+      "top3_tie_aware": 0.037037037037037035
+    }
+  },
+  "per_blind_case": [
+    {
+      "abstained": false,
+      "blind_case_id": "RE2-TT-case-0001",
+      "candidate_count": 20,
+      "dataset_group": "RE2-TT",
+      "method_metrics": {
+        "graph_disabled_uniform_e009": {
+          "root_candidate_present": true,
+          "root_score": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.05,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.15,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.01": {
+          "root_candidate_present": true,
+          "root_score": 1,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.05": {
+          "root_candidate_present": true,
+          "root_score": 1,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.10": {
+          "root_candidate_present": true,
+          "root_score": 1,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_only_e009": {
+          "root_candidate_present": true,
+          "root_score": 1,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.01": {
+          "root_candidate_present": true,
+          "root_score": 0.4444444444444444,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.05": {
+          "root_candidate_present": true,
+          "root_score": 0.4444444444444444,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.10": {
+          "root_candidate_present": true,
+          "root_score": 0.4444444444444444,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "temporal_consistency": {
+        "0.01": 1.0,
+        "0.05": 1.0,
+        "0.10": 1.0
+      },
+      "temporal_order_invariant": true,
+      "trace_available": true
+    },
+    {
+      "abstained": true,
+      "blind_case_id": "blind-case-0002",
+      "candidate_count": 0,
+      "dataset_group": "RE1-OB",
+      "method_metrics": {
+        "graph_disabled_uniform_e009": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.01": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.05": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.10": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_only_e009": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.01": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.05": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.10": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "temporal_consistency": {},
+      "temporal_order_invariant": true,
+      "trace_available": false
+    },
+    {
+      "abstained": true,
+      "blind_case_id": "blind-case-0003",
+      "candidate_count": 0,
+      "dataset_group": "RE1-SS",
+      "method_metrics": {
+        "graph_disabled_uniform_e009": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.01": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.05": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.10": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_only_e009": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.01": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.05": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.10": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "temporal_consistency": {},
+      "temporal_order_invariant": true,
+      "trace_available": false
+    },
+    {
+      "abstained": true,
+      "blind_case_id": "blind-case-0004",
+      "candidate_count": 0,
+      "dataset_group": "RE1-TT",
+      "method_metrics": {
+        "graph_disabled_uniform_e009": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.01": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.05": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.10": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_only_e009": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.01": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.05": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.10": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "temporal_consistency": {},
+      "temporal_order_invariant": true,
+      "trace_available": false
+    },
+    {
+      "abstained": false,
+      "blind_case_id": "blind-case-0005",
+      "candidate_count": 7,
+      "dataset_group": "RE2-OB",
+      "method_metrics": {
+        "graph_disabled_uniform_e009": {
+          "root_candidate_present": true,
+          "root_score": 0,
+          "top1_deterministic": 1,
+          "top1_tie_aware": 0.14285714285714285,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 0.42857142857142855,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.01": {
+          "root_candidate_present": true,
+          "root_score": 4,
+          "top1_deterministic": 1,
+          "top1_tie_aware": 0.5,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 1.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.05": {
+          "root_candidate_present": true,
+          "root_score": 4,
+          "top1_deterministic": 1,
+          "top1_tie_aware": 0.5,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 1.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.10": {
+          "root_candidate_present": true,
+          "root_score": 4,
+          "top1_deterministic": 1,
+          "top1_tie_aware": 0.5,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 1.0,
+          "top_score_set_exact": 0
+        },
+        "topology_only_e009": {
+          "root_candidate_present": true,
+          "root_score": 1,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.01": {
+          "root_candidate_present": true,
+          "root_score": 1.3333333333333333,
+          "top1_deterministic": 1,
+          "top1_tie_aware": 1.0,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 1.0,
+          "top_score_set_exact": 1
+        },
+        "topology_temporal_0.05": {
+          "root_candidate_present": true,
+          "root_score": 1.3333333333333333,
+          "top1_deterministic": 1,
+          "top1_tie_aware": 1.0,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 1.0,
+          "top_score_set_exact": 1
+        },
+        "topology_temporal_0.10": {
+          "root_candidate_present": true,
+          "root_score": 1.3333333333333333,
+          "top1_deterministic": 1,
+          "top1_tie_aware": 1.0,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 1.0,
+          "top_score_set_exact": 1
+        }
+      },
+      "temporal_consistency": {
+        "0.01": 1.0,
+        "0.05": 1.0,
+        "0.10": 1.0
+      },
+      "temporal_order_invariant": true,
+      "trace_available": true
+    },
+    {
+      "abstained": true,
+      "blind_case_id": "blind-case-0006",
+      "candidate_count": 0,
+      "dataset_group": "RE2-SS",
+      "method_metrics": {
+        "graph_disabled_uniform_e009": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.01": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.05": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.10": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_only_e009": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.01": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.05": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.10": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "temporal_consistency": {},
+      "temporal_order_invariant": true,
+      "trace_available": false
+    },
+    {
+      "abstained": false,
+      "blind_case_id": "blind-case-0007",
+      "candidate_count": 7,
+      "dataset_group": "RE3-OB",
+      "method_metrics": {
+        "graph_disabled_uniform_e009": {
+          "root_candidate_present": true,
+          "root_score": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.14285714285714285,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 0.42857142857142855,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.01": {
+          "root_candidate_present": true,
+          "root_score": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.05": {
+          "root_candidate_present": true,
+          "root_score": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.10": {
+          "root_candidate_present": true,
+          "root_score": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_only_e009": {
+          "root_candidate_present": true,
+          "root_score": 2,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 1,
+          "top3_tie_aware": 0.6666666666666666,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.01": {
+          "root_candidate_present": true,
+          "root_score": 0.6666666666666666,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.05": {
+          "root_candidate_present": true,
+          "root_score": 0.6666666666666666,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.10": {
+          "root_candidate_present": true,
+          "root_score": 0.6666666666666666,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "temporal_consistency": {
+        "0.01": 1.0,
+        "0.05": 1.0,
+        "0.10": 1.0
+      },
+      "temporal_order_invariant": true,
+      "trace_available": true
+    },
+    {
+      "abstained": true,
+      "blind_case_id": "blind-case-0008",
+      "candidate_count": 0,
+      "dataset_group": "RE3-SS",
+      "method_metrics": {
+        "graph_disabled_uniform_e009": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.01": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.05": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.10": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_only_e009": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.01": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.05": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.10": {
+          "root_candidate_present": false,
+          "root_score": null,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "temporal_consistency": {},
+      "temporal_order_invariant": true,
+      "trace_available": false
+    },
+    {
+      "abstained": false,
+      "blind_case_id": "blind-case-0009",
+      "candidate_count": 20,
+      "dataset_group": "RE3-TT",
+      "method_metrics": {
+        "graph_disabled_uniform_e009": {
+          "root_candidate_present": true,
+          "root_score": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.05,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.15,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.01": {
+          "root_candidate_present": true,
+          "root_score": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.05": {
+          "root_candidate_present": true,
+          "root_score": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "temporal_only_0.10": {
+          "root_candidate_present": true,
+          "root_score": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_only_e009": {
+          "root_candidate_present": true,
+          "root_score": 0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.01": {
+          "root_candidate_present": true,
+          "root_score": 0.0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.05": {
+          "root_candidate_present": true,
+          "root_score": 0.0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        },
+        "topology_temporal_0.10": {
+          "root_candidate_present": true,
+          "root_score": 0.0,
+          "top1_deterministic": 0,
+          "top1_tie_aware": 0.0,
+          "top3_deterministic": 0,
+          "top3_tie_aware": 0.0,
+          "top_score_set_exact": 0
+        }
+      },
+      "temporal_consistency": {
+        "0.01": 1.0,
+        "0.05": 1.0,
+        "0.10": 1.0
+      },
+      "temporal_order_invariant": true,
+      "trace_available": true
+    }
+  ],
+  "root_service_strings_in_report": false,
+  "run_id": "E010-R001",
+  "temporal_consistency": {
+    "0.01": {
+      "resolved_cross_service_reference_count": 170239,
+      "weighted_supported_reference_fraction": 1.0
+    },
+    "0.05": {
+      "resolved_cross_service_reference_count": 170239,
+      "weighted_supported_reference_fraction": 1.0
+    },
+    "0.10": {
+      "resolved_cross_service_reference_count": 170239,
+      "weighted_supported_reference_fraction": 1.0
+    }
+  }
+}

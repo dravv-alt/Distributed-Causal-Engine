@@ -1,0 +1,58 @@
+{
+  "dataset_revision": "afeacb11bcc94dadfd1c8f483ee4377b2b8b614e",
+  "e009_baseline_prediction_sha256": "36ec3964ce888b50001a70a3f02c23d33d81e4c5a7d0fa3ea62395795e5a9545",
+  "e009_input_hashes": {
+    "data/rcaeval/inference/RE2-TT-case-0001/traces.parquet": "27004088d2172421fb6ba40da73b66b9161d922b7b20110411eb0d64105c9cf9",
+    "data/rcaeval/inference/blind-case-0005/traces.parquet": "f833e959286b706b60307fc3beca2980f26a0dda62782362dbcb34e7f696b3d1",
+    "data/rcaeval/inference/blind-case-0007/traces.parquet": "4fe4f35bd2560ff05a410aa78a2cc4f664299f8dd47eef9035a354f768ae23a8",
+    "data/rcaeval/inference/blind-case-0009/traces.parquet": "06dd9fe84aa894a6c536fb15fa6f4e5a7c8e9f1dd895f784fa5dc8fc773e5240"
+  },
+  "evaluator_inputs_opened": false,
+  "git_head": "4dfd94c0e2674b36f8e0fe2b7e5d7709e1f43d71",
+  "git_status_excerpt": [
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E006.md",
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E007.md",
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E008.md",
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E009.md",
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E010.md",
+    "?? docs/research-design/2026-11-06-rcaeval-system-field-map.md",
+    "?? docs/research-design/2026-11-07-rcaeval-case-coverage-audit.md",
+    "?? docs/research-design/2026-11-07-rcaeval-index-coverage.md",
+    "?? docs/research-design/2026-11-07-rcaeval-nine-group-audit.md",
+    "?? experiments/E005_telemetry_attachment/results/E005-R002/",
+    "?? experiments/E006_rcaeval_feature_coverage/",
+    "?? experiments/E007_temporal_correctness/",
+    "?? experiments/E008_graph_correctness/",
+    "?? experiments/E009_rcaeval_topology_baseline/",
+    "?? experiments/E010_rcaeval_topology_temporal/",
+    "?? scrap/",
+    "?? scripts/audit_rcaeval_case.py",
+    "?? scripts/audit_rcaeval_case_index.py",
+    "?? src/dce_foundation/representation_v2/temporal.py",
+    "?? tools/"
+  ],
+  "mode": "standalone local; no network; OpenResearch unavailable",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "polars_version": "1.43.2",
+  "prediction_rows": 9,
+  "prediction_sha256": "1772fed05eef5ffcbb5e463f467ce65c24bd8691a7093a4412f1dc9009f866f3",
+  "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+  "run_id": "E010-R001",
+  "source_hashes": {
+    "experiments/E010_rcaeval_topology_temporal/README.md": "257dfa47f513803e1a0cf06e74753a5644ea9522292c8f3cebf347366767ee90",
+    "experiments/E010_rcaeval_topology_temporal/configuration.json": "680df34faf73fb80944087e97eb46e848fac975c84f8aa563dc09927a5b4aca2",
+    "experiments/E010_rcaeval_topology_temporal/hypothesis.md": "8fe8db1c7f17fbd5969cc599d2cafb9fe6ed2783f614cd4dc8d9aa5f773eb345",
+    "experiments/E010_rcaeval_topology_temporal/protocol.md": "337ae327c9fb1eb26b8366f7c67cb6fc0e0877eb296579d00c4a525f8f7f8066",
+    "experiments/E010_rcaeval_topology_temporal/scripts/evaluate_labels.py": "c465207737fd040f0527953dd0d29248c378ed739b3c04172118312e1753b605",
+    "experiments/E010_rcaeval_topology_temporal/scripts/independent_audit.py": "dc3da145849d465065826b933ea49eea4872878a648e5e4140e52c7ff71ba66a",
+    "experiments/E010_rcaeval_topology_temporal/scripts/independent_evaluation_audit.py": "7959686e734b254399ca51678eba31cb2ea144dce70304b9de427c95af3ded99",
+    "experiments/E010_rcaeval_topology_temporal/scripts/run_predictions.py": "48f3d589af66136c61a138e7c760a5759e5adfadce9de5dc5c56a4052ee85020"
+  },
+  "source_snapshot_sha256": "dd96dd04a0ac1aa546eb249d30ad0dbc0653428817c1e928d01cd5fce0d379ff",
+  "trace_input_hashes": {
+    "data/rcaeval/inference/RE2-TT-case-0001/traces.parquet": "27004088d2172421fb6ba40da73b66b9161d922b7b20110411eb0d64105c9cf9",
+    "data/rcaeval/inference/blind-case-0005/traces.parquet": "f833e959286b706b60307fc3beca2980f26a0dda62782362dbcb34e7f696b3d1",
+    "data/rcaeval/inference/blind-case-0007/traces.parquet": "4fe4f35bd2560ff05a410aa78a2cc4f664299f8dd47eef9035a354f768ae23a8",
+    "data/rcaeval/inference/blind-case-0009/traces.parquet": "06dd9fe84aa894a6c536fb15fa6f4e5a7c8e9f1dd895f784fa5dc8fc773e5240"
+  }
+}
