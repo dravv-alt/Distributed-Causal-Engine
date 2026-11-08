@@ -1,0 +1,47 @@
+{
+  "audit_status": "PASS",
+  "audit_type": "additive independent fixture-to-prediction recomputation",
+  "checks_failed": 0,
+  "checks_passed": 8,
+  "execution_scope": "read-only local audit; no network; no action execution",
+  "limitations": [
+    "The fixture labels and verifier rule share a deliberately simple synthetic contract.",
+    "Proposals were hand-constructed and are not outputs from the E036 neural model.",
+    "This checks rule/fixture agreement only; it does not test adversarial evidence, calibration, application integration, or real root-cause reasoning.",
+    "The audit PASS is artifact consistency, not an XP035 quality pass or reviewed human disposition."
+  ],
+  "planning_stage": "XP035",
+  "recomputed_metrics": {
+    "abstention_on_missing_modality": 1.0,
+    "class_counts": {
+      "missing_modality": {
+        "abstained": 100,
+        "accepted": 0,
+        "cases": 100
+      },
+      "supported": {
+        "abstained": 0,
+        "accepted": 100,
+        "cases": 100
+      },
+      "unsupported": {
+        "abstained": 100,
+        "accepted": 0,
+        "cases": 100
+      }
+    },
+    "scope": "synthetic verifier fixture; proposals are not neural outputs",
+    "unsupported_false_accepts": 0,
+    "valid_retention": 1.0
+  },
+  "run": "E038-R001",
+  "sha256": {
+    "configuration": "e967b3638f2fd75b4ba853851573b35c44bc0eee41dedd327176d403b064f572",
+    "evaluation_metrics": "be77eab2d397a3ccf2c004e0f6743a0781a707c4ee8ffc2484864329524167cd",
+    "evaluator_labels": "b3267e9f91a470dbbf079eb5b00b145f0b7031a1b534545510b7ae22dea93143",
+    "fixtures": "2fdc45483f9cb7d3a47a059aedd407044477cb0d59eaeb091710b57d43e0eef3",
+    "inference_source": "81363f346dd6bee9eb5bc49baa0ce1a37e2c8c9f242906f704addf1080163fca",
+    "predictions": "c27bf2f5f09909cf1561f278156ca7466f3c156e342032e8e5eb5b460e8ab58e",
+    "protocol": "c4628df0c1c6d6ad36b3619c66bf692f29ce7ed38a44e1f8db599449d469296f"
+  }
+}
