@@ -1,0 +1,54 @@
+{
+  "audit": "E009-R001 final artifact manifest, sealed inference, and evaluation chain",
+  "audit_date": "2026-11-08",
+  "checks": {
+    "all_sealed_prediction_rows_match": true,
+    "evaluation_keeps_all_nine_cases": true,
+    "evaluator_retry_followed_seal_and_blind_audit": true,
+    "failed_attempts_are_preserved": true,
+    "final_manifest_all_23_artifacts_match": true,
+    "independent_evaluator_recomputed_nine_cases": true,
+    "label_blind_audit_passed_for_all_cases": true,
+    "local_trace_input_hashes_still_match": true
+  },
+  "evaluation_aggregate": {
+    "graph_disabled_uniform_v1": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "root_explanation_coverage": 0.0,
+      "top1_deterministic": 0.1111111111111111,
+      "top1_tie_aware": 0.04285714285714285,
+      "top3_deterministic": 0.2222222222222222,
+      "top3_tie_aware": 0.12857142857142856,
+      "top_score_set_exact_accuracy": 0.0
+    },
+    "topology_shared_callers_v1": {
+      "abstentions": 5,
+      "cases": 9,
+      "root_candidate_coverage": 0.4444444444444444,
+      "root_explanation_coverage": 0.3333333333333333,
+      "top1_deterministic": 0.0,
+      "top1_tie_aware": 0.0,
+      "top3_deterministic": 0.1111111111111111,
+      "top3_tie_aware": 0.07407407407407407,
+      "top_score_set_exact_accuracy": 0.0
+    }
+  },
+  "interpretation_limit": "This verifies the selected nine-case artifact chain only. It does not support population inference, online detection, causal claims, or a full-campaign pass.",
+  "manifest_entries": 23,
+  "manifest_failures": [],
+  "passed": 8,
+  "prediction_sha256": "36ec3964ce888b50001a70a3f02c23d33d81e4c5a7d0fa3ea62395795e5a9545",
+  "scope": "Read-only verification of preserved local artifacts; no inference rerun",
+  "topology_minus_uniform": {
+    "top1_deterministic": -0.1111111111111111,
+    "top1_tie_aware": -0.04285714285714285,
+    "top3_deterministic": -0.1111111111111111,
+    "top3_tie_aware": -0.05449735449735449
+  },
+  "total": 8,
+  "trace_input_hash_failures": [],
+  "verifier": "docs/research-design/audit_e009_r001_artifacts_20261108.py",
+  "verifier_sha256": "a4387b2b088f64ef9d1331ac30f54e4046f7cb9b6280e9f17f4155ce59a6f557"
+}
