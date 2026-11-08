@@ -1,0 +1,90 @@
+﻿{
+    "run_id":  "E009-R001",
+    "supersedes":  "artifact-manifest.json, artifact-manifest-v2.json",
+    "files":  {
+                  "artifact-manifest-attempt-001-failure.json":  {
+                                                                     "bytes":  609,
+                                                                     "sha256":  "4d5b00c227f567231c914a28a8c357dec5b4419d5548d160cbd48b12d3e39ab9"
+                                                                 },
+                  "artifact-manifest-recovery.md":  {
+                                                        "bytes":  617,
+                                                        "sha256":  "a40a45ff6a8a34f161974425aaa0b279cecbcf1768cb8bba03a4164e5cf3e875"
+                                                    },
+                  "artifact-manifest-v2.json":  {
+                                                    "bytes":  6110,
+                                                    "sha256":  "1a6c506b8ff91d4ec2c4c8f9a265a3a8d5a01d40f9c0a17c77796e2ef0da54cb"
+                                                },
+                  "artifact-manifest.json":  {
+                                                 "bytes":  2638,
+                                                 "sha256":  "703bc38d41aab0bc791b985ebec40b3dfe2d443a4d26bd4246caf56c03952172"
+                                             },
+                  "evaluation-attempt-001-failure.json":  {
+                                                              "bytes":  475,
+                                                              "sha256":  "28f21e3a520d63fab3add0ddb5f31e6df269319f89fd5b8d46578c0059f9be48"
+                                                          },
+                  "evaluation-attempt-002.json":  {
+                                                      "bytes":  677,
+                                                      "sha256":  "ab99a5550f542ec1bb1e6256971350fb7390bb8af9d5bc19018bd861f9c1446a"
+                                                  },
+                  "evaluation-map-recovery.md":  {
+                                                     "bytes":  878,
+                                                     "sha256":  "4b8dfdf84d3063576299ffdca6e398b63c0afc3d8a9b5f704cb84a24adc2f96a"
+                                                 },
+                  "evaluation.json":  {
+                                          "bytes":  9978,
+                                          "sha256":  "83b5f0f9ee11b33cbec7750ae91e9020057cbc705b2b85ab75913dc66cac6056"
+                                      },
+                  "execution-commands.md":  {
+                                                "bytes":  970,
+                                                "sha256":  "0b45d8f4407bec08f9057aa3ca535c8e6182375b5d901a2052c36b24a905bf4b"
+                                            },
+                  "independent-audit-attempt-001-correction.json":  {
+                                                                        "bytes":  413,
+                                                                        "sha256":  "f83724de2eebfa6719b2a65d900b34c9b9fb16db73f9667a764b0ff0c0da7d85"
+                                                                    },
+                  "independent-audit-attempt-001-note.json":  {
+                                                                  "bytes":  435,
+                                                                  "sha256":  "267c0ffcad7ab861b431a5b5fb6661c2839e6552142f4517464fa60d0caa3277"
+                                                              },
+                  "independent-audit.json":  {
+                                                 "bytes":  904,
+                                                 "sha256":  "9e6206ab66cfe9811ca499e974484024c5742b0295e3747824c51189cf357535"
+                                             },
+                  "independent-evaluation-audit-retry.json":  {
+                                                                  "bytes":  1448,
+                                                                  "sha256":  "752d337b980a013195b9a2a7b0e34214a309904abfa91b2e7734b822a5739f52"
+                                                              },
+                  "independent-evaluation-audit.json":  {
+                                                            "bytes":  1479,
+                                                            "sha256":  "ccf61bcaa6d295d87e639e8b49272c9f56e581243e0003ee1abb89394c6c1583"
+                                                        },
+                  "interpretation.md":  {
+                                            "bytes":  2683,
+                                            "sha256":  "e63b8d522171a6addbc6f24f853d0e740f60a514e67814d7900086d9db2d1405"
+                                        },
+                  "post-prediction-source-manifest-retry.json":  {
+                                                                     "bytes":  1118,
+                                                                     "sha256":  "f5a0b8d3337a7d115d63a577efd64601cdeeb94970e7ba155b32371e25a80a2c"
+                                                                 },
+                  "post-prediction-source-manifest.json":  {
+                                                               "bytes":  1007,
+                                                               "sha256":  "ebd5e2f861a1d4e70245598dc359efb9317fb83224cb4be8a19f511862b47e41"
+                                                           },
+                  "prediction-seal.json":  {
+                                               "bytes":  329,
+                                               "sha256":  "bbc7a6ef971bb1aae41318dca2c68082700b8b1bf9c2c63ac3116267d5ca1919"
+                                           },
+                  "predictions.jsonl":  {
+                                            "bytes":  4112980,
+                                            "sha256":  "36ec3964ce888b50001a70a3f02c23d33d81e4c5a7d0fa3ea62395795e5a9545"
+                                        },
+                  "preflight.json":  {
+                                         "bytes":  3279,
+                                         "sha256":  "77d65d24749682c8c0f4460511659167ab46a6da148b00ffdd0bf1b371f43dd7"
+                                     },
+                  "source-snapshot.zip":  {
+                                              "bytes":  13135,
+                                              "sha256":  "68051d410fe0510e455a7a0bdbf2f82e83c67b8410fecae5d63338d9f09963d3"
+                                          }
+              }
+}

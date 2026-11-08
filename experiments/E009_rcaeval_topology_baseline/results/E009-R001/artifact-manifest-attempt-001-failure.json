@@ -1,0 +1,8 @@
+﻿{
+    "attempt":  "artifact-manifest-001",
+    "outcome":  "FAIL",
+    "cause":  "The manifest generator appended a literal backslash-n after the JSON document, making artifact-manifest.json invalid JSON.",
+    "effect":  "No result or prediction artifact was modified; final hash audit was blocked by this manifest-format defect.",
+    "response":  "Preserve this file and generate artifact-manifest-v2.json with a real newline; include the malformed first manifest hash and this failure record.",
+    "first_manifest_sha256":  "703bc38d41aab0bc791b985ebec40b3dfe2d443a4d26bd4246caf56c03952172"
+}
