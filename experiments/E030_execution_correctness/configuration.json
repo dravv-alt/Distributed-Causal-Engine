@@ -1,0 +1,12 @@
+{
+  "experiment_id":"E030",
+  "run_id":"E030-R001",
+  "planning_stage":"XP027",
+  "cases":200,
+  "cases_per_action":50,
+  "actions":["restart","scale","reroute","rollback"],
+  "generator_seed":30027,
+  "executor":"in-memory dictionary simulator",
+  "external_actions":false,
+  "network_access":false
+}
