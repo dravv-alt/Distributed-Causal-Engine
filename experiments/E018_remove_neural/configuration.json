@@ -1,0 +1,16 @@
+{
+  "experiment_id": "E018",
+  "run_id": "E018-R001",
+  "planning_stage": "XP015",
+  "dataset": "synthetic_fusion_v1_fresh_seed",
+  "cases": 600,
+  "services_per_case": 10,
+  "generator_seed": 28015,
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 18015,
+  "calibration_softmax_temperature": 0.1,
+  "device": "cpu",
+  "network_access": false,
+  "remote_compute": false,
+  "labels_in_inference": false
+}
