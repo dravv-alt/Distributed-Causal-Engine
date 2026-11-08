@@ -1,0 +1,15 @@
+{
+  "experiment_id":"E019",
+  "run_id":"E019-R001",
+  "planning_stage":"XP016",
+  "dataset":"synthetic_fusion_v1_fresh_seed",
+  "cases":600,
+  "services_per_case":10,
+  "generator_seed":29016,
+  "bootstrap_replicates":10000,
+  "bootstrap_seed":19016,
+  "device":"cpu",
+  "network_access":false,
+  "remote_compute":false,
+  "labels_in_inference":false
+}
