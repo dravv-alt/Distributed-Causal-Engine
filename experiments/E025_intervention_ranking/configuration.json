@@ -1,0 +1,13 @@
+{
+  "experiment_id":"E025",
+  "run_id":"E025-R001",
+  "planning_stage":"XP022",
+  "dataset":"synthetic_intervention_choices_v1",
+  "cases":600,
+  "mechanisms":["cpu_saturation","database_saturation","network_path_bottleneck"],
+  "actions":["scale_service","repair_database","reroute_traffic"],
+  "generator_seed":25022,
+  "network_access":false,
+  "remote_compute":false,
+  "outcomes_in_inference":false
+}
