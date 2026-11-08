@@ -1,0 +1,37 @@
+{
+  "command": "python experiments/E006_rcaeval_feature_coverage/scripts/run_audit.py",
+  "configuration_sha256": "3a5524b7a45819e86d27f5ab504a2062b3aa9afc12b8096c2b95ce0fb7ec25c8",
+  "execution_mode": "standalone local process; offline input audit; OpenResearch not used",
+  "git_head": "4dfd94c0e2674b36f8e0fe2b7e5d7709e1f43d71",
+  "git_status_excerpt": [
+    "?? EXPERIMENT_INDEX_AMENDMENT_2026-11-07_E006.md",
+    "?? docs/research-design/2026-11-06-rcaeval-system-field-map.md",
+    "?? docs/research-design/2026-11-07-rcaeval-case-coverage-audit.md",
+    "?? docs/research-design/2026-11-07-rcaeval-index-coverage.md",
+    "?? docs/research-design/2026-11-07-rcaeval-nine-group-audit.md",
+    "?? experiments/E005_telemetry_attachment/results/E005-R002/",
+    "?? experiments/E006_rcaeval_feature_coverage/",
+    "?? scrap/",
+    "?? scripts/audit_rcaeval_case.py",
+    "?? scripts/audit_rcaeval_case_index.py",
+    "?? tools/"
+  ],
+  "input_audit_sha256": {
+    "data\\rcaeval\\inference\\RE2-TT-case-0001\\field-audit.json": "4629b6e0777a72ab79236e7b1e2c346c8774caae090a06ed83edaf6b74181e0a",
+    "data\\rcaeval\\inference\\blind-case-0002\\field-audit.json": "18195a0d761618b6ede8de1158a69b5f7fe43dbfbc1070345dcbd2555192375e",
+    "data\\rcaeval\\inference\\blind-case-0003\\field-audit.json": "3502d17515f8167a487b16c060a0981661262287a1643c1eed5a6456d58509a8",
+    "data\\rcaeval\\inference\\blind-case-0004\\field-audit.json": "4cfb4d9a38f6b0ccff88bc3408e9e41d51a7be7195bd086cabf53b5427af5361",
+    "data\\rcaeval\\inference\\blind-case-0005\\field-audit.json": "52545a9854c5909172cfd5f9757aeff5a0b97f1ab17c97fbe728f77f249940b4",
+    "data\\rcaeval\\inference\\blind-case-0006\\field-audit.json": "d0976951dd381c4f59ea40604d02dd07ea7b8a00d0feece5c02bb420f5b269c8",
+    "data\\rcaeval\\inference\\blind-case-0007\\field-audit.json": "e6836024ee0f66eefe603481e366846a3d38e958c4eab4b353a6d0378014d204",
+    "data\\rcaeval\\inference\\blind-case-0008\\field-audit.json": "05619bc4745ab53ff4ffa5ffd952bf9970d903a928e9c5a549810081aa6ab09e",
+    "data\\rcaeval\\inference\\blind-case-0009\\field-audit.json": "c53075fb7928f4d4c56ebeaf9541ca261774bfd0c899a85ffcf1dfaf6d847563"
+  },
+  "network_access": "none by runner; local files only",
+  "orx_available_on_path": false,
+  "output_sha256": "88475a10e0626fea7e5be2a91dd90e745b122c795a0a3c0217530bfb99664353",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "protocol_sha256": "2f554f51de902e297f87274dc57fc22d058d29d555ba6299143f9e6c6e374248",
+  "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+  "runner_sha256": "fc7e84b2f85813f1cbc5f0788b9420f2572adedcf80dd249cb65c8d984301e6e"
+}
