@@ -1,0 +1,13 @@
+{
+  "run_id": "E013-R001",
+  "dataset": "frozen_synthetic_multi_root_fixture_v1",
+  "case_count": 6,
+  "multi_root_cases": 3,
+  "single_root_controls": 3,
+  "methods": ["single_root_v1", "root_set_threshold_2_v1"],
+  "root_set_threshold": 2,
+  "random_seed": null,
+  "network_access": false,
+  "remote_compute": false,
+  "labels_in_inference": false
+}
