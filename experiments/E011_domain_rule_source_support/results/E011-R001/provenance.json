@@ -1,0 +1,42 @@
+{
+  "run_id": "E011-R001",
+  "source_files": {
+    "experiments/E011_domain_rule_source_support/README.md": "d2c2abe8c72da3e020d933676d2e7201e12c38f6955dac9de78fe5a063a8b835",
+    "experiments/E011_domain_rule_source_support/hypothesis.md": "f15b94efc0091ca57323923499ba878555a7de73d300611e53bc8244c4b61bbc",
+    "experiments/E011_domain_rule_source_support/protocol.md": "1f68794e7a456dc318741f5d8d75d14eb2a5d3171575ba7b1d962b9b08684fa5",
+    "experiments/E011_domain_rule_source_support/configuration.json": "640a82bda379d7ff2a40b07b0eb4118349a2bdedf1c696a9288ef6525be7e759",
+    "experiments/E011_domain_rule_source_support/scripts/run_audit.py": "1669e49b7e6f59343a622125113bc12ea509ad29e7204578357088f20f893180"
+  },
+  "input_hashes": {
+    "data/rcaeval/inference/RE2-TT-case-0001/field-audit.json": "4629b6e0777a72ab79236e7b1e2c346c8774caae090a06ed83edaf6b74181e0a",
+    "data/rcaeval/inference/RE2-TT-case-0001/logs.parquet": "a769be23b323f895904c6be1fffeb112272ae3155cc30e541e05c981fee48fb1",
+    "data/rcaeval/inference/RE2-TT-case-0001/metrics.parquet": "be0b6f65d3989208b9aae0d3ca3e0ad5acb8955fd8ba27e104f80f46f7b11625",
+    "data/rcaeval/inference/RE2-TT-case-0001/traces.parquet": "27004088d2172421fb6ba40da73b66b9161d922b7b20110411eb0d64105c9cf9",
+    "data/rcaeval/inference/blind-case-0002/field-audit.json": "18195a0d761618b6ede8de1158a69b5f7fe43dbfbc1070345dcbd2555192375e",
+    "data/rcaeval/inference/blind-case-0002/metrics.parquet": "b05a5a4d5e05ba6ba77836f242e0f5f794048e346c9bd4a69b9e716fef2423aa",
+    "data/rcaeval/inference/blind-case-0003/field-audit.json": "3502d17515f8167a487b16c060a0981661262287a1643c1eed5a6456d58509a8",
+    "data/rcaeval/inference/blind-case-0003/metrics.parquet": "9f64528e70250d3be1c20aabae441ae937786de4cebcc5dee4b993790647995f",
+    "data/rcaeval/inference/blind-case-0004/field-audit.json": "4cfb4d9a38f6b0ccff88bc3408e9e41d51a7be7195bd086cabf53b5427af5361",
+    "data/rcaeval/inference/blind-case-0004/metrics.parquet": "052c7f9c906ebb414627011cb411856d2399ee4625922af8c803fcbfd4858f7a",
+    "data/rcaeval/inference/blind-case-0005/field-audit.json": "52545a9854c5909172cfd5f9757aeff5a0b97f1ab17c97fbe728f77f249940b4",
+    "data/rcaeval/inference/blind-case-0005/logs.parquet": "36fd5701f2d6e1f2d93131985d6feae5e284bdcbb21828ef9f3e90271a79f6b7",
+    "data/rcaeval/inference/blind-case-0005/metrics.parquet": "11f2df96b6b2b60a9600bacd8d3163b2f31a614aa756c19adfc51a41bcbebfc7",
+    "data/rcaeval/inference/blind-case-0005/traces.parquet": "f833e959286b706b60307fc3beca2980f26a0dda62782362dbcb34e7f696b3d1",
+    "data/rcaeval/inference/blind-case-0006/field-audit.json": "d0976951dd381c4f59ea40604d02dd07ea7b8a00d0feece5c02bb420f5b269c8",
+    "data/rcaeval/inference/blind-case-0006/logs.parquet": "799a11372e63e42b95f23f4819c7976c220e04081ce4ab9cae82776d6b5f2627",
+    "data/rcaeval/inference/blind-case-0006/metrics.parquet": "8d94a9276ef819cb6b6c09fc7efad007ae44e1ca2c753d437b37a35cb5890948",
+    "data/rcaeval/inference/blind-case-0007/field-audit.json": "e6836024ee0f66eefe603481e366846a3d38e958c4eab4b353a6d0378014d204",
+    "data/rcaeval/inference/blind-case-0007/logs.parquet": "ee8ab1e09786ce9e6f917f1e847f395918f101a10af505b3da05d2f3f37b2662",
+    "data/rcaeval/inference/blind-case-0007/metrics.parquet": "098251f8162ff109e401a04ab231e97ad3f42c31df859b654e74e8019e4b1ed4",
+    "data/rcaeval/inference/blind-case-0007/traces.parquet": "4fe4f35bd2560ff05a410aa78a2cc4f664299f8dd47eef9035a354f768ae23a8",
+    "data/rcaeval/inference/blind-case-0008/field-audit.json": "05619bc4745ab53ff4ffa5ffd952bf9970d903a928e9c5a549810081aa6ab09e",
+    "data/rcaeval/inference/blind-case-0008/logs.parquet": "c8ba2540b6d37c8c407d530b47d4dcecd53f86a71b61992f7fefe1f767885cc9",
+    "data/rcaeval/inference/blind-case-0008/metrics.parquet": "476b6547a3edb9b13ee3d6916bf0f20800aacd2f0baeb32d6f82219db6faf278",
+    "data/rcaeval/inference/blind-case-0009/field-audit.json": "c53075fb7928f4d4c56ebeaf9541ca261774bfd0c899a85ffcf1dfaf6d847563",
+    "data/rcaeval/inference/blind-case-0009/logs.parquet": "3305db7b2332b7a85a4526002883c774c5a67e921eb32dcdd74744c27ae94743",
+    "data/rcaeval/inference/blind-case-0009/metrics.parquet": "5fbb13acf53b8bc73cd30b7fdb1054f1e55fb4f7a3209bbc1992a83a03aaeba8",
+    "data/rcaeval/inference/blind-case-0009/traces.parquet": "06dd9fe84aa894a6c536fb15fa6f4e5a7c8e9f1dd895f784fa5dc8fc773e5240",
+    "src/dce_foundation/domain.py": "307f43ef0306caf45fbc1405e41377afd6892c152cae2b12cb6bc77e311f23c5"
+  },
+  "result_sha256": "1c2ed80880c0453aaed8cccf17e71b67a244c74243e5e201da19ef450b3fe873"
+}
