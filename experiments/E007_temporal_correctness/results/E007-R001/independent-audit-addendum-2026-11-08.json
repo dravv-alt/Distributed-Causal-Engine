@@ -1,0 +1,28 @@
+{
+  "audit": "E007-R001 saved-output integrity and fixture consistency",
+  "audit_date": "2026-11-08",
+  "checks": {
+    "all_frozen_source_hashes_match": true,
+    "all_three_saved_oracle_pairs_match": true,
+    "late_event_has_explicit_rejection": true,
+    "ordered_and_bounded_outputs_match": true,
+    "ordered_window_counts_match_frozen_fixture": true,
+    "preflight_hash_matches_manifest": true,
+    "protocol_deviation_is_preserved": true,
+    "result_hash_matches_manifest": true,
+    "schedule_accepted_counts_are_20_20_19": true,
+    "snapshot_hash_matches_both_records": true
+  },
+  "interpretation_limit": "This checks the preserved synthetic fixture outputs and their hashes. It does not validate real telemetry, DCE application integration, or RCA quality.",
+  "passed": 10,
+  "scope": "Read-only verification of saved files; no experiment rerun",
+  "source_files": {
+    "experiments/E007_temporal_correctness/results/E007-R001/preflight.json": "301d7cbf20aef0601b8ca223a1bf9ebbcfaf2d4c66d6b58ba101aa5aaa122f12",
+    "experiments/E007_temporal_correctness/results/E007-R001/results.json": "9dffab077a3ae1aa69bea9de9daf6e3c2c2a7e574691756eb8def81f4b12efb9",
+    "experiments/E007_temporal_correctness/results/E007-R001/source-manifest.json": "2bf0ed51cd1b2816e2d48aee9cfd79320f81243c44521372c8c3a280ae6d8c98",
+    "experiments/E007_temporal_correctness/results/E007-R001/source-snapshot.zip": "18215b1100a2de00eff141089c4397792182728c2cabb042346cbf5f97f7b194"
+  },
+  "total": 10,
+  "verifier": "docs/research-design/audit_e007_r001_20261108.py",
+  "verifier_sha256": "cb67c7fcd36da444c538a96f6e1e9538e4b597cfde219c38279c8592ff7c7cc4"
+}
