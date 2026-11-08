@@ -1,0 +1,12 @@
+{
+  "run_id": "E014-R001",
+  "dataset_revision": "afeacb11bcc94dadfd1c8f483ee4377b2b8b614e",
+  "blind_cases": ["blind-case-0002", "blind-case-0003", "blind-case-0004", "blind-case-0005", "blind-case-0006", "blind-case-0007", "blind-case-0008", "blind-case-0009", "RE2-TT-case-0001"],
+  "chronological_partitions": {"fit": 0.35, "calibration": 0.15, "score": 0.5},
+  "methods": ["robust_max_z_v1", "pytorch_autoencoder_v1"],
+  "calibration_quantile": 0.95,
+  "model": {"hidden_widths": [64, 16, 64], "epochs": 40, "learning_rate": 0.001, "weight_decay": 0.0001, "seed": 17, "device": "cpu"},
+  "network_access": false,
+  "remote_compute": false,
+  "labels_in_inference": false
+}
