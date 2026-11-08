@@ -1,0 +1,15 @@
+from __future__ import annotations
+import importlib.util,json
+from pathlib import Path
+import numpy as np
+ROOT=Path(__file__).resolve().parents[3]; BASE=ROOT/"experiments/E019_remove_topology"; SOURCE=ROOT/"experiments/E017_fusion_ablation/scripts/generate_fixtures.py"
+SPEC=importlib.util.spec_from_file_location("frozen_e017_generator",SOURCE); GEN=importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(GEN)
+def main():
+    rng=np.random.default_rng(29016); cases=[]; labels={}
+    for i in range(600):
+        c,l=GEN.make_case(i,rng); cases.append(c); labels[c["scenario_id"]]=l
+    fix=BASE/"fixtures"; (fix/"evaluator-only").mkdir(parents=True,exist_ok=True)
+    (fix/"test-inputs.json").write_text(json.dumps({"version":"synthetic-fusion-v1-seed-29016","cases":cases},indent=2)+"\n",encoding="utf-8")
+    (fix/"evaluator-only"/"test-labels.json").write_text(json.dumps({"case_labels":labels},indent=2)+"\n",encoding="utf-8")
+    print(json.dumps({"cases":len(cases),"labels_separated":True,"seed":29016},indent=2))
+if __name__=="__main__":main()
