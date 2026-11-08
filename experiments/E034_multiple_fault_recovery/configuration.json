@@ -1,0 +1,11 @@
+{
+  "experiment_id":"E034",
+  "run_id":"E034-R001",
+  "planning_stage":"XP031",
+  "cases":300,
+  "case_groups":{"db_only":100,"network_only":100,"joint":100},
+  "generator_seed":34031,
+  "root_signal_threshold":0.6,
+  "external_actions":false,
+  "network_access":false
+}
