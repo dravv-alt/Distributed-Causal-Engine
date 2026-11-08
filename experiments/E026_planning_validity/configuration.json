@@ -1,0 +1,13 @@
+{
+  "experiment_id":"E026",
+  "run_id":"E026-R001",
+  "planning_stage":"XP023",
+  "dataset":"synthetic_planning_states_v1",
+  "cases":400,
+  "generator_seed":26023,
+  "goal_latency_ms":100,
+  "actions":["repair_database","scale_service","reroute_traffic"],
+  "execution_mode":"offline simulation only",
+  "network_access":false,
+  "remote_actions":false
+}
