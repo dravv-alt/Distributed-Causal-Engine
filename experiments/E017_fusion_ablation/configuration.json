@@ -1,0 +1,15 @@
+{
+  "experiment_id": "E017",
+  "run_id": "E017-R001",
+  "planning_stage": "XP014",
+  "dataset": "synthetic_fusion_v1",
+  "heldout_cases": 600,
+  "services_per_case": 10,
+  "generator_seeds": {"heldout": 27014},
+  "bootstrap": {"replicates": 10000, "seed": 17015},
+  "arms": ["neural_only", "symbolic_only", "neural_topology", "neural_topology_temporal", "full_fusion"],
+  "device": "cpu",
+  "network_access": false,
+  "remote_compute": false,
+  "labels_in_inference": false
+}
