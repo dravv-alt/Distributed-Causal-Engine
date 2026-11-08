@@ -1,0 +1,12 @@
+{
+  "experiment_id":"E033",
+  "run_id":"E033-R001",
+  "planning_stage":"XP030",
+  "cases":300,
+  "generator_seed":33030,
+  "cascade":["database_degradation","service_b_slowdown","service_a_timeout","retry_storm"],
+  "recovery_checks":3,
+  "execution_mode":"in-memory simulator",
+  "external_actions":false,
+  "network_access":false
+}
